@@ -72,13 +72,17 @@ Therefore, If needChargeDepositFee(S) always returns true (indicating a fee is n
 A malicious owner can guarantee the condition described above by calling Exchange::setDepositParams and performing the following updates to the contract state:
 
 S.depositState.freeDepositMax = 0
+
 S.depositState.freeDepositRemained = 0
+
 S.depositState.freeSlotPerBlock = 0
+
 S.depositState.depositFee = type(uint256).max
+
 The Exchange::setDepositParams function does not perform any sort of input validation and simply updates the DepositState with the calldata values passed in the function call:
 
 Lines 102 - 113 in ExchangeDeposits::setDepositParams
-
+```
 102:    function setDepositParams(
 103:       ExchangeData.State storage S,
 104:        uint256 freeDepositMax,
@@ -91,10 +95,12 @@ Lines 102 - 113 in ExchangeDeposits::setDepositParams
 111:        S.depositState.freeSlotPerBlock = freeSlotPerBlock;
 112:        S.depositState.depositFee = depositFee;
 113:    }
+```
+
 As we can see above, a malicious owner can update the 4 specified state variables to any arbitrary amounts. If the owner sets the state variables to the amounts previously specified, this will result in the internal function needChargeDepositFee always returning true.
 
 Below is the code for the internal function ExchangeDeposits::needChargeDepositFee:
-
+```
 115:    function needChargeDepositFee(ExchangeData.State storage S)
 116:        private
 117:        returns (bool)
@@ -121,6 +127,7 @@ Below is the code for the internal function ExchangeDeposits::needChargeDepositF
 138:
 139:        return needCharge;
 140:    }
+```
 With the specified state changes done, the freeDepositRemained variable will always be 0. Therefore, the conditional on line 130 will enter the second branch and the code on line 133 will run, setting the needCharge variable to true (indicating a fee is needed for the deposit calls).
 
 Thus, the condition on line 66 of ExchangeDeposits::deposit will always be true, which will result in calls to Exchange::deposit to always revert on line 72, since depositState.depositFee is equal to type(uint256).max.
@@ -135,6 +142,7 @@ The exploit itself is very easy to execute since it can only be done by the owne
 In order to maintain a truly trust-less system, the privileged Exchange::setDepositParams function should validate the calldata inputs to ensure that the owner can not update the contract state with arbitrary values. An example of this would be validating that the depositState.depositFee can not be set to a value greater than X.
 
 # Proof of concept
+```
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.19;
 
@@ -192,3 +200,4 @@ contract DeGateMalOwnerPoC is Test {
         IDeGate(exchange).deposit(user, user, usdc, (amount / 2), hex'00'); // tx reverts due to extremely large deposit fee on every deposit
     }
 }
+```
