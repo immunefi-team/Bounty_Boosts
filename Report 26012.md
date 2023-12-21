@@ -15,8 +15,10 @@ Target: https://etherscan.io/address/0x2028834B2c0A36A918c10937EeA71BE4f932da52#
 - Unbounded gas consumption
 
 # Details
+
 Description
 Bug Description
+
 getTransactionIds vulnerable to run out of gas and DoS even if it's a view function. So whatever clients rely on this view function would not be able todo his job anymore as calling this function would always revert.
 
 # Impact
