@@ -1,9 +1,13 @@
 `setDelay()` function doesn't revert even when the delay doesn't exceeds MINIMUM_DELAY
+
 Submitted about 1 month ago by @ThreeHrSleep (Whitehat) for BOOSTED: DeGate Bug Bounty
 
 Report ID: #25906
+
 Report type: Smart Contract
+
 Has PoC? Yes
+
 Target: https://etherscan.io/address/0xf2991507952d9594e71a44a54fb19f3109d213a5#code
 
 # Impacts
