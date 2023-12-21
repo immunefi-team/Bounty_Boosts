@@ -25,7 +25,7 @@ A lack of input validation in the Exchange::setDepositParams function can lead t
 The following code runs for each call to Exchange::deposit:
 
 Lines 38 - 72 in ExchangeDeposits::deposit
-
+```
 38:    function deposit(
 39:        ExchangeData.State storage S,
 40:        address from,
@@ -61,6 +61,8 @@ Lines 38 - 72 in ExchangeDeposits::deposit
 70:
 71:        // Check ETH value sent
 72:        require(msg.value >= depositFeeETH, "INSUFFICIENT_DEPOSIT_FEE");
+```
+
 The internal function needChargeDepositFee on line 66 is invoked and if it returns true the depositFee stored in the DepositState struct will be amount of ETH that the user must pay during this deposit call.
 
 As we can see on line 72, if the user does not send enough ETH to cover this fee the transaction will revert.
