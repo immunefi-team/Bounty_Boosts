@@ -1,4 +1,4 @@
-`setDelay()` function doesn't revert even when the delay doesn't exceeds MINIMUM_DELAY
+# `setDelay()` function doesn't revert even when the delay doesn't exceeds MINIMUM_DELAY
 
 Submitted about 1 month ago by @ThreeHrSleep (Whitehat) for BOOSTED: DeGate Bug Bounty
 
