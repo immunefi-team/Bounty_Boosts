@@ -3,8 +3,11 @@
 Submitted 28 days ago by @holydevoti0n (Whitehat) for Boost | eBTC
 
 Report ID: #28828
+
 Report type: Smart Contract
+
 Has PoC?: Yes
+
 Target: https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/ChainlinkAdapter.sol
 
 # Impacts
