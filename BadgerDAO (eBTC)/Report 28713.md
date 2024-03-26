@@ -69,9 +69,9 @@ https://github.com/makerdao/dss-flash/blob/9d492aa6148c35f568400a1ab85cd6df43b2c
 
 # Proof of concept
 
-- First call_Flashloan() is executed to borrow the max amount of ebtc.
-- Inside onFlashLoan some_actions() will executed to borrow again the ebtc from the BorrowerOperations contract.
-- It sets attack_done = true to prevent an unbounded loop.
+- First `call_Flashloan()` is executed to borrow the max amount of ebtc.
+- Inside `onFlashLoan some_actions()` will executed to borrow again the ebtc from the BorrowerOperations contract.
+- It sets `attack_done = true` to prevent an unbounded loop.
 - Further actions will be carried out with the Flash Loan amount.
 
 ```
