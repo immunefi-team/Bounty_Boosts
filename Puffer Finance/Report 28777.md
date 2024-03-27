@@ -224,7 +224,7 @@ forge command used: `ETH_RPC_URL=https://mainnet.infura.io/v3/84da59df4c5640e0a7
 - operations multisig queues deposit tx and then executes it after timelock delay, then community multisig successfully executes same tx again.
 - Result: +-2000 stETH deposited into EL strategy contract
 
-  ```
+```
     │   │   │   ├─ [2972] 0x17144556fd3424EDC8Fc8A4C940B2D04936d17eb::balanceOf(Eigen stETH strategy: [0x93c4b944D05dfe6df7645A86cd2206016c51564D]) [delegatecall]
     │   │   │   │   └─ ← 77473584173803977821625 [7.747e22]
     │   │   │   └─ ← 77473584173803977821625 [7.747e22]
