@@ -2,8 +2,11 @@
 Submitted about 2 months ago by @ladboy233 (Whitehat) for Boost | Puffer Finance
 
 Report ID: #28698
+
 Report type: Smart Contract
+
 Has PoC? Yes
+
 Target: https://etherscan.io/address/0xd9a442856c234a39a81a089c06451ebaa4306a72
 
 # Impacts
