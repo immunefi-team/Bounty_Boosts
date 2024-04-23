@@ -2,9 +2,13 @@
 Submitted about 2 months ago by @SentientX (Whitehat) for Boost | Puffer Finance
 
 Report ID: #28827
+
 Report type: Smart Contract
+
 Has PoC? Yes
+
 PoC Link: https://gist.github.com/Sentient-XII/be0c8b215649b27c2275cefac7ab07ac
+
 Target: https://etherscan.io/address/0xd9a442856c234a39a81a089c06451ebaa4306a72
 
 # Impacts
