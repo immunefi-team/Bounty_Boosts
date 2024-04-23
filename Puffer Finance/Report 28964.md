@@ -2,9 +2,13 @@
 Submitted about 2 months ago by @LokiThe5th (Whitehat) for Boost | Puffer Finance
 
 Report ID: #28964
+
 Report type: Smart Contract
+
 Has PoC? Yes
+
 PoC Link: https://gist.github.com/lokithe5th/8a1f79c98aa7c915f42d4bcc0f1ce5c1
+
 Target: https://etherscan.io/address/0xd9a442856c234a39a81a089c06451ebaa4306a72
 
 # Impacts
