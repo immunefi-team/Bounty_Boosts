@@ -2,10 +2,12 @@
 Submitted 2 months ago by @marqymarq10 (Whitehat) for Boost | Puffer Finance
 
 Report ID: #28650
+
 Report type: Smart Contract
+
 Has PoC? Yes
-Target
-Primacy of Impact
+
+Target: Primacy of Impact
 
 # Impacts
 - Protocol insolvency
