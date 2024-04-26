@@ -15,7 +15,7 @@ Impacts
 
 -   Contract fails to deliver promised returns, but doesn't lose value
 
-## Details
+## Brief/Intro
 
 The Timelock contract's  `executeTransaction()`  has multiple checks before executing a transaction:
 
