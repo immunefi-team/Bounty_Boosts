@@ -71,7 +71,7 @@ function enforceSendReward(
 
 By implementing error handling, the contract can ensure that it responds appropriately to failures in the  `delegatecall`, reducing the risk of unexpected behavior and potential vulnerabilities.
 
-Recommendations:
+## Recommendations
 
 1.  Add error handling with  `try-catch`  statements for  `delegatecall`  operations in the  `enforceSendReward`  and  `enforceSendRewardNoFees`  functions.
 2.  Review other instances of  `delegatecall`  in the contract and ensure that proper error handling is implemented.
