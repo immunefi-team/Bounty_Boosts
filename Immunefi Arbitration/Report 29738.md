@@ -14,7 +14,7 @@ Impacts
 
 -   Theft of unclaimed royalties
 
-## Details
+## Brief/Intro
 
 Chainlink aggregators feature a built-in circuit breaker that activates during significant price fluctuations, keeping the asset price within a pre-defined range. In scenarios like the LUNA crash, the oracle reports a pre-set minimum value (`minAnswer`) rather than the real market price. This mechanism could enable malicious projects to payout rewards that are below market value by leveraging the inflated price from the Chainlink oracle.
 
