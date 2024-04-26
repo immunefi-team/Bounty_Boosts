@@ -13,7 +13,7 @@ Target: https://github.com/immunefi-team/vaults/blob/main/src/guards/ScopeGuard.
 Impacts: 
 - Contract fails to deliver promised returns, but doesn't lose value
 
-## Details
+## Brief/Intro
 
 When the emergency shutdown mode is activated,  `ImmunefiGuard`  enables vault owners to perform  **any**  action on their Gnosis Safe, including adding or removing guards and modules. This presents a vulnerability where a malicious vault owner could disable the  `ImmunefiModule`. Consequently, when emergency shutdown mode is turned off, attempts to payout rewards to whitehats via the Arbitration system would revert.
 
