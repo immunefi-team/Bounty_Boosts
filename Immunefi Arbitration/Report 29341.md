@@ -14,7 +14,7 @@ Impacts
 
 -   Unsafe Downcast vulnerability  (Out of scope)
 
-## Details
+## Brief/Intro
 
 
 In Solidity, as in many other typed programming languages, a developer may (attempt to) cast between types in their code. Solidity offers many variants of certain built-in types at different bit widths (for example, uint8 vs. uint256), and it is possible to cast between these. However, a narrowing type cast (from a higher to a lower bit width) may inadvertently truncate bits and cause the value after the cast to not be equivalent to that before the cast. This can lead to inadvertent logical errors in smart contract execution.
