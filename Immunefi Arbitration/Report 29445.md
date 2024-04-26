@@ -18,7 +18,7 @@ Impacts
 
 -   Stale Data Can Be Used  (Out of scope)
 
-## Details
+## Brief/Intro
 
 Data returned from chainlink might be old.
 
