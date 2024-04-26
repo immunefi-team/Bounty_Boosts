@@ -17,8 +17,6 @@ Impacts
 -   Temporary freezing of funds
 -   Contract fails to deliver promised returns, but doesn't lose value
 
-## Details
-
 ## Brief/Intro
 
 `RewardTimelock::executeRewardTransaction()`  - L112: Incorrect comparison operator results in not being able to execute reward tx at the very last second of tx expiration timestamp.
