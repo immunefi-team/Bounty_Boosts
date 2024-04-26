@@ -18,7 +18,7 @@ Impacts
 -   Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
 -   Causes Vault to Stay in Arbitration  (Out of scope)
 
-## Details
+## Brief/Intro
 
 Currently, the  `VaultDelegate::sendReward`  function utilizes a call from the whitehat address.  `VaultDelegate::sendReward`  allows the whitehat to create a smart contract to define a  `receive`  function to execute additional code when  `VaultDelegate::sendReward`  is executed. While the current system limits the gas fees each time  `VaultDelegate::sendReward`  is called, the  `Arbitration::enforceMultipleRewards`  allows for an array of whitehats to be paid at a time, utilizing a  `for`  loop of an array of addresses. And if a call exceeds the vault delegate's gas limit, the transaction reverts. This means that the larger the array of addresses passed to this function, the larger the gas fee will be. However, the combination of how  `VaultDelegate::sendReward`  and  `Arbitration::enforceMultipleRewards`  are set up, a whitehat could create a smart contract with a  `receive`  function that reverts  `Arbitration::enforceMultipleRewards`.
 
