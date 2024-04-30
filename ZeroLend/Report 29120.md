@@ -1,26 +1,21 @@
+
 # Bug in reward distribution logic leads to theft of rewards
 
-Submitted  about 2 months  ago by @Trust (Whitehat)  for  [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost)
-
-----------
+Submitted on Thu Mar 07 2024 11:51:17 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29120
 
 Report type: Smart Contract
 
-Has PoC?: Yes
-
 Target: https://github.com/zerolend/governance
 
-Impacts
+Impacts:
+- Theft of unclaimed yield
+- Permanent freezing of unclaimed yield
 
--   Theft of unclaimed yield
--   Permanent freezing of unclaimed yield
-
-## Details
-
+## Description
+## Brief/Intro
 The PoolVoter stores and distributes rewards for gauges based on their weights. The function below does distribution:
-
 ```
 function distribute(address _gauge) public nonReentrant {
     uint256 _claimable = claimable[_gauge];
@@ -32,11 +27,8 @@ function distribute(address _gauge) public nonReentrant {
         claimable[_gauge] = _claimable;
     }
 }
-
 ```
-
 One supported type of gauge is LendingPoolGauge. It splits rewards in 1/4, 3/4 ratio between supply and borrow gauge.
-
 ```
 function notifyRewardAmount(
     address token,
@@ -51,11 +43,9 @@ function notifyRewardAmount(
     bool b = borrowGauge.notifyRewardAmount(token, (amount / 4) * 3);
     return a && b;
 }
-
 ```
 
-Note that each GaugeIncetiveController (Supply / borrow gauge) has their own  `notifyRewardAmount()`. It's logic states that if the new reward is smaller than the current reward, it does not pick up the reward and returns false.
-
+Note that each GaugeIncetiveController (Supply / borrow gauge) has their own `notifyRewardAmount()`. It's logic states that if the new reward is smaller than the current reward, it does not pick up the reward and returns false.
 ```
 function notifyRewardAmount(
     IERC20 token,
@@ -82,13 +72,10 @@ function notifyRewardAmount(
     }
     return true;
 }
-
 ```
 
 ## Vulnerability Details
-
-The issue is in the mishandling of the response in  `distribute()`  when notifying the LendingPoolGauge of rewards. When  `notifyRewardAmount()`  returns false, we treat the entire notified amount as not sent. This is correct for most gauges, but for LendingPoolGauge it could be that one of the sub-gauges received the funds succesfully and one didn't. When that happens,  `notifyRewardAmount()`  returns false:
-
+The issue is in the mishandling of the response in `distribute()` when notifying the LendingPoolGauge of rewards. When `notifyRewardAmount()` returns false, we treat the entire notified amount as not sent. This is correct for most gauges, but for LendingPoolGauge it could be that one of the sub-gauges received the funds succesfully and one didn't. When that happens, `notifyRewardAmount()` returns false: 
 ```
 IERC20(token).approve(address(supplyGauge), amount);
 bool a = supplyGauge.notifyRewardAmount(token, amount / 4);
@@ -96,18 +83,17 @@ bool a = supplyGauge.notifyRewardAmount(token, amount / 4);
 IERC20(token).approve(address(borrowGauge), amount);
 bool b = borrowGauge.notifyRewardAmount(token, (amount / 4) * 3);
 return a && b;
-
 ```
 
-This breaks the invariant that there's always enough rewards in PoolVoter to satisfy reward dispatch - since some are sent but  `claimable`  remains unchanged, it follows that the reward mechanism is insolvent. It can also be abused by attackers to collect rewards over and over again, for free.
+This breaks the invariant that there's always enough rewards in PoolVoter to satisfy reward dispatch - since some are sent but `claimable` remains unchanged, it follows that the reward mechanism is insolvent. It can also be abused by attackers to collect rewards over and over again, for free.
 
 ## Impact Details
-
 Rewards can be misappropriated by an attacker or through natural sequence of events. Users will lose access to unclaimed yield.
 
+        
+## Proof of concept
 ## Proof of Concept
-
-The POC is implemented as a standalone file. Simply run  `attack()`  on DistributorPOC which shows that funds were sent to the supply gauge, but the  `claimable`  for LendingPoolGauge remains unchanged.
+The POC is implemented as a standalone file. Simply run `attack()` on DistributorPOC which shows that funds were sent to the supply gauge, but the `claimable` for LendingPoolGauge remains unchanged.
 
 ```
 // SPDX-License-Identifier: MIT

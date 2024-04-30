@@ -1,41 +1,35 @@
+
 # Theft of unclaimed yield due to the wrong calculation of claimable amout for a gauge that allow hackers to get the double reward from the Poolvoter contract.
 
-Submitted  about 2 months  ago by @perseverance (Whitehat)  for  [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost)
-
-----------
-
+Submitted on Wed Mar 06 2024 11:15:36 GMT-0400 (Atlantic Standard Time) by @perseverance for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29078
 
 Report type: Smart Contract
 
-Has PoC?: Yes
-
 Target: https://github.com/zerolend/governance
 
-Impacts
+Impacts:
+- Theft of unclaimed yield
 
--   Theft of unclaimed yield
+## Description
+# Description
 
-## Details
-
-Theft of unclaimed yield due to the wrong calculation of claimable amout for a gauge that allow hackers to get the double reward from the Poolvoter contract.
+Theft of unclaimed yield due to the wrong calculation of claimable amout for a gauge that allow hackers to get the double reward from the Poolvoter contract. 
 
 ## Brief/Intro
-
-The Zerolend provide the Incentive program as described in the Documentation of the protocol:  [https://docs.zerolend.xyz/zeronomics/token-overview](https://docs.zerolend.xyz/zeronomics/token-overview)
+The Zerolend provide the Incentive program as described in the Documentation of the protocol: https://docs.zerolend.xyz/zeronomics/token-overview 
 
 ```
 3. Incentive Programs: The protocol will conduct various incentive programs to encourage users to engage with the platform actively. These programs can offer token rewards or other benefits to participants who perform certain actions, such as providing liquidity, referring new users, or completing specific tasks within the ecosystem.
 
-
 ```
 
-According to the Zerolend Boost Technical Walkthrough, this is done via the Poolvoter contract  [https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol](https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol)
+According to the Zerolend Boost Technical Walkthrough, this is done via the Poolvoter contract https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol 
 
 The contract will receive the reward via the function notifyRewardAmount
 
-[https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L154-L158](https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L154-L158)
+https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L154-L158
 
 ```solidity
 function notifyRewardAmount(uint256 amount) public nonReentrant {
@@ -44,43 +38,42 @@ function notifyRewardAmount(uint256 amount) public nonReentrant {
         if (_ratio > 0) index += _ratio;
     }
 
-
 ```
 
-So the program will give the rewards to participants who perform actions such as providing liquidity. The contract will provide the rewards for all the pools in the list:
 
-[https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L22](https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L22)
+So the program will give the rewards to participants who perform actions such as providing liquidity. The contract will provide the rewards for all the pools in the list: 
+
+https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L22
 
 ```solidity
 address[] internal _pools; // all pools viable for incentives
-
 
 ```
 
 The reward is distributed based on the weights[pool]/totalWeight.
 
-So if in the _pools there are 2 Pools POOL_0 and POOL_1 with weights is 25 (POOL_0) and 75 (POOL_1), then the total weight is 100.
+So if in the _pools there are 2 Pools POOL_0 and POOL_1 with weights is 25 (POOL_0) and 75 (POOL_1), then the total weight is 100. 
 
 weight[POOL_0] = 25
 
+
 weight[POOL_1] = 75
 
-=> So if the reward amount = 100 then
+=> So if the reward amount = 100 then 
 
-Reward for POOL_0 = 25
+Reward for POOL_0 = 25 
+
 
 Reward for POOL_1 = 75
 
 ## Vulnerability Details
 
 ### Bug2
+So this vulnerability will allow POOL_0 to get the reward = 50 that is double the intended reward by the system. 
 
-So this vulnerability will allow POOL_0 to get the reward = 50 that is double the intended reward by the system.
+Details: 
 
-Details:
-
-So the reward can be distributed by function distribute
-
+So the reward can be distributed by function distribute 
 ```solidity
 function distribute(address _gauge) public nonReentrant {
         uint256 _claimable = claimable[_gauge];
@@ -92,15 +85,13 @@ function distribute(address _gauge) public nonReentrant {
             claimable[_gauge] = _claimable; 
         }
     }
-
 ```
 
-So the reward here is calculated based on claimable[_gauge].
+So the reward here is calculated based on claimable[_gauge]. 
 
-But the reward can be also distributed by function distributeEx
+But the reward can be also distributed by function distributeEx 
 
-[https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L214-L235](https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L214-L235)
-
+https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L214-L235 
 ```solidity
 function distributeEx(
         address token,
@@ -123,22 +114,24 @@ function distributeEx(
             }
         }
     }
-
 ```
 
-So notice that the reward in function distributeEx is calculated directly based on the balance of token (e.g. reward token), weights[pool] and totalWeight. But here the claimable[_gauge] is not updated. So by calling distributeEx and distribute(address), the hackers can get double reward from the protocol. By doing so, he steal unclaimed yield from others.
+So notice that the reward in function distributeEx is calculated directly based on the balance of token (e.g. reward token), weights[pool] and totalWeight. 
+But here the claimable[_gauge] is not updated. So by calling distributeEx and distribute(address), the hackers can get double reward from the protocol. By doing so, he steal unclaimed yield from others. 
+
 
 If a hacker deposit or borrow into a pool (POOL_0) and can get 50% of reward of POOL_0. According to the design of the protocol, if POOL_0 have weights is 25% of the total reward then the reward should be
 
-REWARD_AMOUNT * 0.25 * 0.5 = 0.0125 * REWARD_AMOUNT
+REWARD_AMOUNT * 0.25 * 0.5 = 0.0125 * REWARD_AMOUNT 
+
 
 But by calling distributeEx and distribute(address _gauge), the hacker can get double the reward
 
-REWARD_AMOUT * 0.25* 2 * 0.5 = 0.25 * REWARD_AMOUT = 2 times
+REWARD_AMOUT * 0.25* 2 * 0.5  = 0.25 * REWARD_AMOUT = 2 times 
 
-So the profit can be 2 times in one scenario.
+So the profit can be 2 times in one scenario. 
 
-I demonstrated this in my POC.
+I demonstrated this in my POC. 
 
 ```typescript
 it("Test the distributeEx of PoolVoter contract to get the double reward", async function () {
@@ -186,27 +179,26 @@ it("Test the distributeEx of PoolVoter contract to get the double reward", async
 
   });
 
-
 ```
 
-So assume that the reward is 100 ZERO Token (= 100 * 10 ^18).
+So assume that the reward is 100 ZERO Token (= 100 * 10 ^18). 
 
-For POOL_0 has weight is 25%
+For POOL_0 has weight is 25%  
 
-POOL_1 has weight is 75%
 
-So the reward should be split:
+POOL_1 has weight is 75%  
 
-POOL_0 should have reward 25 = (25 * 10 ^ 18)
+So the reward should be split: 
+
+POOL_0 should have reward 25 = (25 * 10 ^ 18) 
 
 POOL_1 should have reward 75 = (75 * 10 ^ 18 )
 
-But as the test log showed that POOL_0 can get the total reward = 12499999999999999998 + 37499999999999999994 = 49.999 * 10**18 = 2 times of 25 * 10 ^ 18
+But as the test log showed that POOL_0 can get the total reward = 12499999999999999998 + 37499999999999999994 = 49.999 * 10**18  = 2 times of 25 * 10 ^ 18
 
 ```log
 After distributeEx zero balance of aTokenGauge:  12499999999999999998n
 After distributeEx zero balance of varTokenGauge:  37499999999999999994n
-
 ```
 
 Full test log:
@@ -234,19 +226,21 @@ Call the claimFor gauge to claim the reward for the gauge
 After distributeEx zero balance of aTokenGauge:  12499999999999999998n
 After distributeEx zero balance of varTokenGauge:  37499999999999999994n
     ✔ Test the distributeEx of PoolVoter contract to get the double reward (296ms)
-
 ```
 
+
+
+
 ### Bug1
+To run the POC for this bug (Bug1), we need to fix another bug that cause the protocol failed to work. 
+Since the Impact "Contract fails to deliver promised returns" is not in the scope of this Bug bounty Program, so I report this bug here. 
+I am sure that the protocol need to fix it. 
 
-To run the POC for this bug (Bug1), we need to fix another bug that cause the protocol failed to work. Since the Impact "Contract fails to deliver promised returns" is not in the scope of this Bug bounty Program, so I report this bug here. I am sure that the protocol need to fix it.
-
-This bug causes the _pool array is always empty and make some functions of the protocol do not work.
+This bug causes the _pool array is always empty and make some functions of the protocol do not work. 
 
 To register a Gauge, the owner need to call the function registerGauge
 
-[https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L132-L147](https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L132-L147)
-
+https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L132-L147
 ```solidity
 
 function registerGauge(
@@ -266,20 +260,17 @@ function registerGauge(
         return _gauge;
     }
 
-
 ```
+Notice the global array _pools and isPool 
 
-Notice the global array _pools and isPool
-
-[https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L22-L24](https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L22-L24)
+https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L22-L24
 
 ```solidity
 address[] internal _pools; // all pools viable for incentives
  mapping(address => bool) public isPool; // pool => bool
-
 ```
 
-Here the check isPool[_asset] will always be false
+Here the check isPool[_asset] will always be false 
 
 ```solidity
 if (isPool[_asset]) { 
@@ -287,14 +278,12 @@ if (isPool[_asset]) {
             isPool[_asset] = true;
         }
 
-
 ```
+so the code inside the "if" branch never get executed. In the contract PoolVoter, There is no function to set isPool[_asset] to true except the function registerGauge. So this will cause the _pools array is always empty and isPool of the _asset always be false. 
 
-so the code inside the "if" branch never get executed. In the contract PoolVoter, There is no function to set isPool[_asset] to true except the function registerGauge. So this will cause the _pools array is always empty and isPool of the _asset always be false.
+There are some functions in the PoolVoter.sol will not work as expected because of this bug.  
 
-There are some functions in the PoolVoter.sol will not work as expected because of this bug.
-
-[https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L192-L200](https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L192-L200)
+https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L192-L200 
 
 ```solidity
 function distribute() external {
@@ -306,12 +295,11 @@ function distribute() external {
             distribute(gauges[_pools[x]]);
         }
     }
-
 ```
 
-Because the the _pools is always empty, so _pools[x] always return 0 so the gauges[address(0x00)] always return 0.
+Because the the _pools is always empty, so _pools[x] always return 0 so the  gauges[address(0x00)] always return 0. 
 
-[https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L181-L190](https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L181-L190)
+https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L181-L190
 
 ```solidity
 function distribute(address _gauge) public nonReentrant {
@@ -324,14 +312,14 @@ function distribute(address _gauge) public nonReentrant {
             claimable[_gauge] = _claimable; 
         }
     }
-
 ```
 
-When _gauge is 0x00 then the distribute always send _claimable = 0. There is no reward can be distributed.
+When _gauge is 0x00 then the distribute always send _claimable = 0. There is no reward can be distributed. 
 
-2 other functions also does not work as expected.
 
-[https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L208-L234](https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L208-L234)
+2 other functions also does not work as expected. 
+
+https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L208-L234
 
 ```solidity
 function distributeEx(address token) external {
@@ -362,72 +350,64 @@ function distributeEx(address token) external {
         }
     }
 
-
 ```
+Because the the _pools is always empty, so _pools[x] always return 0 so the weights[0x00]  always return 0, so this function will not distribute any reward. 
 
-Because the the _pools is always empty, so _pools[x] always return 0 so the weights[0x00] always return 0, so this function will not distribute any reward.
 
-The function length() always return 0.  [https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L149-L151](https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L149-L151)
-
+The function length() always return 0. 
+https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L149-L151
 ```solidiyty
  function length() external view returns (uint256) {
         return _pools.length;
     }
 
-
 ```
 
-## Impacts
 
-## About the severity assessment
-
-The main bug Bug2: Theft of unclaimed yield due to the wrong calculation of claimable amout for a gauge that allow hackers to get the double reward from the Poolvoter contract. This bug allow the hackers to double the reward get from the protocol and thus steal yield from other users.
+# Impacts
+# About the severity assessment
+The main bug Bug2: Theft of unclaimed yield due to the wrong calculation of claimable amout for a gauge that allow hackers to get the double reward from the Poolvoter contract. 
+This bug allow the hackers to double the reward get from the protocol and thus steal yield from other users. 
 
 This bug is High category "Theft of unclaimed yield"
-
+        
 ## Proof of concept
+#  Proof of concept
 
-Clone the latest governance contract repository from Github:  [https://github.com/zerolend/governance/tree/a30d8bb825306dfae1ec5a5a47658df57fd1189b](https://github.com/zerolend/governance/tree/a30d8bb825306dfae1ec5a5a47658df57fd1189b)
+#  Proof of concept
 
+Clone the latest governance contract repository from Github: https://github.com/zerolend/governance/tree/a30d8bb825306dfae1ec5a5a47658df57fd1189b
 ```
 git clone https://github.com/zerolend/governance.git
-
 ```
 
-Use the Git patch file: Bug2_diff.patch
+Use the Git patch file: Bug2_diff.patch  
 
-[https://drive.google.com/file/d/1Ed3FiV3K8Ob9JqnzoI-k0xwx24RmicX6/view?usp=sharing](https://drive.google.com/file/d/1Ed3FiV3K8Ob9JqnzoI-k0xwx24RmicX6/view?usp=sharing)
+https://drive.google.com/file/d/1Ed3FiV3K8Ob9JqnzoI-k0xwx24RmicX6/view?usp=sharing
 
-To apply Git patch file for governance repository based on the commit:  [https://github.com/zerolend/governance/tree/a30d8bb825306dfae1ec5a5a47658df57fd1189b](https://github.com/zerolend/governance/tree/a30d8bb825306dfae1ec5a5a47658df57fd1189b)
+To apply Git patch file for governance repository based on the commit: https://github.com/zerolend/governance/tree/a30d8bb825306dfae1ec5a5a47658df57fd1189b 
 
 ```bash
 git apply Bug2_diff.patch 
 
-
 ```
 
-cd to folder governance, To run the test, you need to
-
-1.  rename .env.example to .env
-2.  put the test Private_key to the variable
-
-```
+cd to folder governance, To run the test, you need to 
+1. rename .env.example to .env 
+2. put the test Private_key to the variable 
+```   
 WALLET_PRIVATE_KEY= 
  NODE_ENV == "test" 
-
 ```
-
-Then run
-
+Then run 
 ```
 yarn install
 yarn test  > test_all.log
 
-
 ```
 
-The POC code:
 
+The POC code: 
 ```typescript
 it("Test the distributeEx of PoolVoter contract to get the double reward", async function () {
     expect(await poolVoter.totalWeight()).eq(0); 
@@ -476,11 +456,9 @@ it("Test the distributeEx of PoolVoter contract to get the double reward", async
 
   });
 
-
 ```
 
-The test log:  [https://drive.google.com/file/d/1LlCyR6mSFRkbhhv9PhmEcdnQ5o43dx6N/view?usp=sharing](https://drive.google.com/file/d/1LlCyR6mSFRkbhhv9PhmEcdnQ5o43dx6N/view?usp=sharing)
-
+The test log: https://drive.google.com/file/d/1LlCyR6mSFRkbhhv9PhmEcdnQ5o43dx6N/view?usp=sharing 
 ```
 totalWeight:  0n
 after vote totalWeight:  0n
@@ -504,58 +482,51 @@ Call the claimFor gauge to claim the reward for the gauge
 After distributeEx zero balance of aTokenGauge:  12499999999999999998n
 After distributeEx zero balance of varTokenGauge:  37499999999999999994n
     ✔ Test the distributeEx of PoolVoter contract to get the double reward (286ms)
-
 ```
 
-----------
 
-For Bug1 POC:
+------
 
-To run the POC:
 
-Clone the latest governance contract repository from Github:  [https://github.com/zerolend/governance/tree/a30d8bb825306dfae1ec5a5a47658df57fd1189b](https://github.com/zerolend/governance/tree/a30d8bb825306dfae1ec5a5a47658df57fd1189b)
+For Bug1 POC: 
 
+
+To run the POC:  
+
+Clone the latest governance contract repository from Github: https://github.com/zerolend/governance/tree/a30d8bb825306dfae1ec5a5a47658df57fd1189b
 ```
 git clone https://github.com/zerolend/governance.git
-
 ```
+Or you can use the Git patch file: Bug1_diff.patch  
 
-Or you can use the Git patch file: Bug1_diff.patch
+https://drive.google.com/file/d/1bxNFrItUN6Po4HTCrucjsHhOgAfE3bzv/view?usp=sharing
 
-[https://drive.google.com/file/d/1bxNFrItUN6Po4HTCrucjsHhOgAfE3bzv/view?usp=sharing](https://drive.google.com/file/d/1bxNFrItUN6Po4HTCrucjsHhOgAfE3bzv/view?usp=sharing)
-
-To apply Git patch file for governance repository based on the commit:  [https://github.com/zerolend/governance/tree/a30d8bb825306dfae1ec5a5a47658df57fd1189b](https://github.com/zerolend/governance/tree/a30d8bb825306dfae1ec5a5a47658df57fd1189b)
+To apply Git patch file for governance repository based on the commit: https://github.com/zerolend/governance/tree/a30d8bb825306dfae1ec5a5a47658df57fd1189b 
 
 ```bash
 git apply Bug1_diff.patch 
 
-
 ```
 
-----------
+--- 
 
-cd to folder governance, To run the test, you need to
-
-1.  rename .env.example to .env
-2.  put the test Private_key to the variable
-
-```
+cd to folder governance, To run the test, you need to 
+1. rename .env.example to .env 
+2. put the test Private_key to the variable 
+  
+```   
 WALLET_PRIVATE_KEY= 
  NODE_ENV == "test" 
-
 ```
 
-Then run
-
+Then run 
 ```
 yarn install 
 yarn test 
 
-
 ```
 
-POC Test code:
-
+POC Test code: 
 ```typescript
 
 it("Test the distributeEx(token,start,finish) of PoolVoter contract ", async function () {
@@ -676,17 +647,15 @@ it("Test the distributeEx(token,start,finish) of PoolVoter contract ", async fun
 
   });
 
-
 ```
 
-Test log for Bug1 POC:  [https://drive.google.com/file/d/1Xc2E18UJqLFpyEdS_zla34uQOG5rEW-5/view?usp=sharing](https://drive.google.com/file/d/1Xc2E18UJqLFpyEdS_zla34uQOG5rEW-5/view?usp=sharing)
+Test log for Bug1 POC: https://drive.google.com/file/d/1Xc2E18UJqLFpyEdS_zla34uQOG5rEW-5/view?usp=sharing
 
 ```bash
  yarn test > test_all_240306_1340.log   
-
 ```
 
-```log
+```log 
 yarn run v1.22.19
 $ hardhat test
 
@@ -796,4 +765,5 @@ Step: Call distributeEx to distribute the reward
 
 
 info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
 ```

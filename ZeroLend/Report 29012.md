@@ -1,39 +1,33 @@
+
 # Votes manipulation in PoolVoter
 
-Submitted  about 2 months  ago by @ox7a69 (Whitehat)  for  [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost)
-
-----------
-
+Submitted on Mon Mar 04 2024 12:33:40 GMT-0400 (Atlantic Standard Time) by @ox7a69 for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29012
 
 Report type: Smart Contract
 
-Has PoC?: Yes
-
 Target: https://github.com/zerolend/governance
 
-Impacts
+Impacts:
+- Manipulation of governance voting result deviating from voted outcome and resulting in a direct change from intended effect of original results
 
--   Manipulation of governance voting result deviating from voted outcome and resulting in a direct change from intended effect of original results
-
+## Description
 ## Vulnerability Details
+**Affected asset**: https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol
 
-**Affected asset**:  [https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol](https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol)
+`PoolVoter` contract allows to vote for the Gauge for anyone who has voting power by staking in the `VestedZeroNFT`.
 
-`PoolVoter`  contract allows to vote for the Gauge for anyone who has voting power by staking in the  `VestedZeroNFT`.
-
-The  `vote()`  function allows to specify pools associated with gauges and their respective weights.
+The `vote()` function allows to specify pools associated with gauges and their respective weights.
 
 ```
 function vote(
     address[] calldata _poolVote,
     uint256[] calldata _weights
 ) external {}
-
 ```
 
-However, a crucial flaw exists as the function fails to check for repeated pools in the  `_poolVote`  array. Moreover, it only considers the last weight if the same pool is utilized, as seen here -  [https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L117](https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L117).
+However, a crucial flaw exists as the function fails to check for repeated pools in the `_poolVote` array. Moreover, it only considers the last weight if the same pool is utilized, as seen here - https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L117.
 
 ```
 if (_gauge != address(0x0)) {
@@ -44,12 +38,11 @@ if (_gauge != address(0x0)) {
     poolVote[_who].push(_pool);
     votes[_who][_pool] = _poolWeight;  // !!!
 }
-
 ```
 
-When a voter calls the  `reset()`  function to retrieve their voting power back and vote for another gauge, only the last weight is taken into account in case of repeated pool voting.
+When a voter calls the `reset()` function to retrieve their voting power back and vote for another gauge, only the last weight is taken into account in case of repeated pool voting.
 
-As a result, the voter recovers the full voting power. Yet  `totalWeight`  and  `weights[_pool]`  are decreased only by the last element from the  `_weights`  array passed to the  `vote()`.
+As a result, the voter recovers the full voting power. Yet `totalWeight` and `weights[_pool]` are decreased only by the last element from the `_weights` array passed to the `vote()`.
 
 ```
 uint256 _votes = votes[_who][_pool];
@@ -60,28 +53,24 @@ if (_votes > 0) {
     weights[_pool] -= _votes;
     votes[_who][_pool] = 0;
 }
-
 ```
 
 **Attack scenario**:
-
-1.  The attacker possesses a voting power of  `19.01 ether`.
-2.  They invoke  `vote()`  to vote for the same gauge with the following parameters:
-    -   _poolVote = [gauge, gauge]
-    -   _weights = [19 ether, 1e8]
-3.  Further they call  `reset()`, but  `weights[_pool]`  and  `totalWeight`  are only decreased by  `1e8`.
-4.  The attacker retains the full  `19.01 ether`  voting power. But  `weights[_pool]`  and  `totalWeight`  are now increased by  `19 ether`.
-5.  By repeating steps 2-3 in a loop many times, the attacker can consolidate the majority of votes for their chosen gauge, and all rewards will be distributed to it.
-6.  By repeating steps 2-3 for  **100**  times, it's tantamount to having  `1900 ether`  voting power.
-
-
+1. The attacker possesses a voting power of `19.01 ether`.
+2. They invoke `vote()` to vote for the same gauge with the following parameters:
+    - _poolVote = [gauge, gauge]
+    - _weights = [19 ether, 1e8]
+3.  Further they call `reset()`, but `weights[_pool]` and `totalWeight` are only decreased by `1e8`.
+4. The attacker retains the full `19.01 ether` voting power. But `weights[_pool]` and `totalWeight` are now increased by `19 ether`.
+5. By repeating steps 2-3 in a loop many times, the attacker can consolidate the majority of votes for their chosen gauge, and all rewards will be distributed to it.
+6. By repeating steps 2-3 for **100** times, it's tantamount to having `1900 ether` voting power.
+        
+## Proof of concept
 ## Proof of Concept
-
-To run the Poc put it's code to the  `governance-main/test/PoolVoter.poc.ts`  file, generate random private key, and issue the following command:
+To run the Poc put it's code to the `governance-main/test/PoolVoter.poc.ts` file, generate random private key, and issue the following command:
 
 ```
 WALLET_PRIVATE_KEY=0x... NODE_ENV=test npx hardhat test test/PoolVoter.poc.ts --config hardhat.config.ts --network hardhat
-
 ```
 
 ```
@@ -176,7 +165,4 @@ describe.only("PoolVoter Immunefi Boost", () => {
     expect(await poolVoter.totalWeight()).greaterThan(e18 * 19n * 100n);
   });
 });
-
 ```
-
-----------

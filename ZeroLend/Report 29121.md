@@ -1,25 +1,20 @@
+
 # Any rewards sent to the PoolVoter will be undispatchable and lost
 
-Submitted  about 2 months  ago by @Trust (Whitehat)  for  [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost)
-
-----------
+Submitted on Thu Mar 07 2024 12:36:15 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29121
 
 Report type: Smart Contract
 
-Has PoC?: Yes
-
 Target: https://github.com/zerolend/governance
 
-Impacts
+Impacts:
+- Permanent freezing of unclaimed yield
 
--   Permanent freezing of unclaimed yield
-
-## Details
-
+## Description
+## Brief/Intro
 The PoolVoter distributes reward tokens to different gauges. Gauges are registered below:
-
 ```
 function registerGauge(
     address _asset,
@@ -35,11 +30,9 @@ function registerGauge(
     _updateFor(_gauge);
     return _gauge;
 }
-
 ```
 
-Distribution of rewards other than  `reward`  token are done through  `distributeEx()`:
-
+Distribution of rewards other than `reward` token are done through `distributeEx()`:
 ```
 function distributeEx(
     address token,
@@ -61,35 +54,32 @@ function distributeEx(
         }
     }
 }
-
 ```
 
-The weights are accessed according to the  `_pools[]`  entry populated by  `registerGauge()`
+The weights are accessed according to the `_pools[]` entry populated by `registerGauge()`
+
+
 
 ## Vulnerability Details
-
-Distribution will always fail because there's wrong logic when registering gauges. Specifically this part will never be executed:
-
+Distribution will always fail because there's wrong logic when  registering gauges. Specifically this part will never be executed:
 ```
 if (isPool[_asset]) {
     _pools.push(_asset);
     isPool[_asset] = true;
 }
-
 ```
-
-The intention is to use  `!isPool[_asset]`.
+The intention is to use `!isPool[_asset]`.
 
 This means _pools will never be populated. After funds are sent to the PoolVoter for dispatch, they can never be claimed by any gauge. There is no escape hatch to unfreeze the rewards.
 
 ## Impact Details
-
 Rewards sent to the PoolVoter will be forever stuck.
 
+
+        
+## Proof of concept
 ## Proof of Concept
-
-The POC is implemented in a single file. Simply run DistributorPOC's  `PoolFailPOC()`  which shows that  `_pools`  stays empty.
-
+The POC is implemented in a single file. Simply run DistributorPOC's `PoolFailPOC()` which shows that `_pools` stays empty.
 ```
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
@@ -318,5 +308,4 @@ contract DistributorPOC {
 
     }
 }
-
 ```

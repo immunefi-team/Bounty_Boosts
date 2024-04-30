@@ -1,31 +1,23 @@
+
 # Race condition in StakingBonus will result in some users locking their tokens without receiving the assumed rewards
 
-Submitted  about 2 months  ago by @Trust (Whitehat)  for  [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost)
-
-----------
-
+Submitted on Tue Mar 05 2024 19:38:00 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29059
 
 Report type: Smart Contract
 
-Has PoC?: Yes
-
 Target: https://github.com/zerolend/governance
 
-Impacts
+Impacts:
+- Theft of unclaimed yield
 
--   Theft of unclaimed yield
-
-## Details
-
-
+## Description
+## Brief/Intro
 Holders of VestedZeroNFT tokens can lock them in exchange for boosted rewards through the StakingBonus contract.
 
 ## Vulnerability Details
-
-When transferring tokens into StakingBonus, it's  `onERC721Received()`  function determines the bonus amount. If there's insufficient funds for the bonus, it sets bonus to zero.
-
+When transferring tokens into StakingBonus, it's `onERC721Received()` function determines the bonus amount. If there's insufficient funds for the bonus, it sets bonus to zero. 
 ```
 function calculateBonus(
     uint256 amount
@@ -35,11 +27,9 @@ function calculateBonus(
     if (zero.balanceOf(address(this)) < bonus) return 0;
     return (amount * bonusBps) / 100;
 }
-
 ```
 
 The lock is set for four years:
-
 ```
 // stake for 4 years for the user
 locker.createLockFor(
@@ -48,21 +38,20 @@ locker.createLockFor(
     to, // address _to,
     stake // bool _stakeNFT
 );
-
 ```
 
 Suppose there's 100 Zero remaining as bonus in the contract, the bonus % is 50%, and two NFT holders of 200 Zero pending wish to lock for the bonus. They will both see there's enough bonus and transfer their NFT. In fact, there is a race condition - only the first one which is executed will receive the bonus. Because of the architecture of blockchains, there's literally no way to know if the user's call will be frontrun, therefore it is not the fault of the user.
 
-The  `data`  passed to  `onERC721Received()`  should include a  `minBonus`  amount, to prevent slippage (i.e. lack of bonus) being suffered by the user.
+The `data` passed to `onERC721Received()` should include a `minBonus` amount, to prevent slippage (i.e. lack of bonus) being suffered by the user.
 
 ## Impact Details
-
 A user will lock their tokens for 4 years unnecessarily, so they suffer from an unwanted freeze for lack of rewards.
 
+        
+## Proof of concept
 ## Proof of Concept
 
 We have modified the test in StakingBonus.test.ts to show the issue:
-
 ```
 it("giving bonus fails when another user snatches the bonus", async function () {
   // fund 10 Zero
@@ -91,5 +80,4 @@ it("giving bonus fails when another user snatches the bonus", async function () 
   );
   expect(await locker.balanceOfNFT(2)).eq(20);
 });
-
 ```

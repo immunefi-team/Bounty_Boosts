@@ -1,64 +1,46 @@
+
 # Griefing attack for VestedZeroNFT
 
-Submitted  about 2 months  ago by @ox7a69 (Whitehat)  for  [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost)
-
-----------
-
-Whitehat Level
-
-![](data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2728%27%20height=%2728%27/%3e)![](https://bugs.immunefi.com/icons/advanced-whitehat-level.svg)
-
-Advanced
-
-[Score](https://immunefisupport.zendesk.com/hc/en-us/articles/16812282870545)9
-
-[Accuracy](https://immunefisupport.zendesk.com/hc/en-us/articles/16812282870545)24% (16/66)
-
-[Rank](https://immunefisupport.zendesk.com/hc/en-us/articles/16812282870545)118th
-
-Valid Smart Contract Reports16
+Submitted on Thu Mar 07 2024 13:12:50 GMT-0400 (Atlantic Standard Time) by @ox7a69 for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29123
 
 Report type: Smart Contract
 
-Has PoC?: Yes
-
 Target: https://github.com/zerolend/governance
 
-Impacts
+Impacts:
+- Permanent freezing of funds
+- Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
 
--   Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
--   Permanent freezing of funds
-
+## Description
 ## Vulnerability Details
+It is possible for anyone to call the `claim()` function of the `VestedZeroNFT` contract on behalf of the NFT owner. This poses an issue especially when an NFT is minted with `penalty=true`. In such cases, the NFT owner ends up paying a penalty (currently 50%) and loses the ability to utilize the `StakingBonus` contract.
 
-It is possible for anyone to call the  `claim()`  function of the  `VestedZeroNFT`  contract on behalf of the NFT owner. This poses an issue especially when an NFT is minted with  `penalty=true`. In such cases, the NFT owner ends up paying a penalty (currently 50%) and loses the ability to utilize the  `StakingBonus`  contract.
-
-This situation sets the stage for a Griefing attack scenario where an attacker can trigger  `claim()`  for NFTs with  `penalty=true`. Consequently, the owners bear penalties and forfeit the opportunity to receive bonuses through the  `StakingBonus`  mechanism.
+This situation sets the stage for a Griefing attack scenario where an attacker can trigger `claim()` for NFTs with `penalty=true`. Consequently, the owners bear penalties and forfeit the opportunity to receive bonuses through the `StakingBonus` mechanism.
 
 ## References
+- https://github.com/zerolend/governance/blob/main/contracts/vesting/VestedZeroNFT.sol#L159
+- https://github.com/zerolend/governance/blob/main/contracts/vesting/VestedZeroNFT.sol#L211
+- https://github.com/zerolend/governance/blob/main/contracts/vesting/StakingBonus.sol#L74
+- https://github.com/zerolend/governance/blob/main/contracts/locker/BaseLocker.sol#L333
 
--   [https://github.com/zerolend/governance/blob/main/contracts/vesting/VestedZeroNFT.sol#L159](https://github.com/zerolend/governance/blob/main/contracts/vesting/VestedZeroNFT.sol#L159)
--   [https://github.com/zerolend/governance/blob/main/contracts/vesting/VestedZeroNFT.sol#L211](https://github.com/zerolend/governance/blob/main/contracts/vesting/VestedZeroNFT.sol#L211)
--   [https://github.com/zerolend/governance/blob/main/contracts/vesting/StakingBonus.sol#L74](https://github.com/zerolend/governance/blob/main/contracts/vesting/StakingBonus.sol#L74)
--   [https://github.com/zerolend/governance/blob/main/contracts/locker/BaseLocker.sol#L333](https://github.com/zerolend/governance/blob/main/contracts/locker/BaseLocker.sol#L333)
-
+        
+## Proof of concept
 ## Proof of Concept
-
-To run the Poc put it's code to the  `governance-main/test/Gauge.poc.ts`  file, generate a random private key, and issue the following command:
+To run the Poc put it's code to the `governance-main/test/Gauge.poc.ts` file, generate a random private key, and issue the following command:
 
 ```
 WALLET_PRIVATE_KEY=0x... NODE_ENV=test npx hardhat test test/Gauge.poc.ts --config hardhat.config.ts --network hardhat
-
 ```
 
-### **PoC scenario**:
+**PoC scenario**:
+1. The deployer generates `VestedZeroNFT` with `penalty=true` to the Whale.
+2. The Ant (attacker) quickly invokes `claim()` for the Whale's Nft.
+3. As a result `50%` penalty is paid and now `unclaimed()` returns `0` for the Nft.
+4. The Whale wants to transfer Nft to the `StakingBonus` contract, but their tx reverts since `unclaimed()` returns `0`.
 
-1.  The deployer generates  `VestedZeroNFT`  with  `penalty=true`  to the Whale.
-2.  The Ant (attacker) quickly invokes  `claim()`  for the Whale's Nft.
-3.  As a result  `50%`  penalty is paid and now  `unclaimed()`  returns  `0`  for the Nft.
-4.  The Whale wants to transfer Nft to the  `StakingBonus`  contract, but their tx reverts since  `unclaimed()`  returns  `0`.
+
 
 ```
 import { expect } from "chai";
@@ -137,5 +119,4 @@ describe("Immunefi Boost", () => {
     });
   });
 });
-
 ```

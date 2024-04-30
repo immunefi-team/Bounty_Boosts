@@ -1,39 +1,33 @@
+
 # All reward tokens can be stolen by an attacker due to misaccounting in distributeEx
 
-Submitted  about 2 months  ago by @Trust (Whitehat)  for  [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost)
-
-----------
-
+Submitted on Thu Mar 07 2024 12:58:55 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29122
 
 Report type: Smart Contract
 
-Has PoC?: Yes
-
 Target: https://github.com/zerolend/governance
 
-Impacts
+Impacts:
+- Theft of unclaimed yield
 
--   Theft of unclaimed yield
-
-## Details
-
-Tokens can be distributed in the PoolVoter through  `distributeEx()`. It will allocate tokens to different gauges based on their weights.
+## Description
+## Brief/Intro
+Tokens can be distributed in the PoolVoter through `distributeEx()`. It will allocate tokens to different gauges based on their weights.
 
 ## Vulnerability Details
-
-The root issue is that when distributing it assumes all rewards were sent in the correct ratio, therefore it doesn't store how much was sent for each gauge. This could be exploited if  `notifyRewardAmount()`  returns false, in this case attacker can call  `distributeEx()`  again to re-dispatch the remaining balance of rewards. It could be repeated to claim a larger and large percentage of the reward balance, until there's diminishing returns. However, since  `distributeEx()`  can be called with any  `start,finish`  pair, we could exploit it regardly of any other token's notifyRewardAmount(). Just repeatedly call  `distributeEx()`  with the attacker's gauge to claim almost all rewards. We view this as a single root cause of not accounting for already sent portions for each gauge, so it is not submitted as two exploits.
+The root issue is that when distributing it assumes all rewards were sent in the correct ratio, therefore it doesn't store how much was sent for each gauge. This could be exploited if `notifyRewardAmount()` returns false, in this case attacker can call `distributeEx()` again to re-dispatch the remaining balance of rewards. It could be repeated to claim a larger and large percentage of the reward balance, until there's diminishing returns.
+However, since `distributeEx()` can be called with any `start,finish` pair, we could exploit it regardly of any other token's notifyRewardAmount(). Just repeatedly call `distributeEx()` with the attacker's gauge to claim almost all rewards. 
+We view this as a single root cause of not accounting for already sent portions for each gauge, so it is not submitted as two exploits.
 
 ## Impact Details
-
 All reward tokens can be stolen by an attacker with interest in a particular gauge.
 
-
+        
+## Proof of concept
 ## Proof of Concept
-
 The POC is implemented in a single file. Simply run steal_rewards() to see an example of one gauge getting more rewards than it should. The lines can also be uncommented to view the correct allocation when distributeEx() is called with all gauges.
-
 ```
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
@@ -330,5 +324,4 @@ contract DistributorExPOC {
         require(zero.balanceOf(d.gauges(address(0x1111))) == 7.5e18);
     }
 }
-
 ```

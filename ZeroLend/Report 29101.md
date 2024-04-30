@@ -1,26 +1,21 @@
+
 # Staking in BaseLocker is broken
 
-Submitted  about 2 months  ago by @Trust (Whitehat)  for  [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost)
-
-----------
+Submitted on Wed Mar 06 2024 21:05:50 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29101
 
 Report type: Smart Contract
 
-Has PoC?: Yes
-
 Target: https://github.com/zerolend/governance
 
-Impacts
+Impacts:
+- Permanent freezing of funds
+- Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
 
--   Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
--   Permanent freezing of funds
-
-## Details
-
-The LockerLP/LockerToken are BaseLocker instances and allow users to create locks holding Zero tokens. Users can choose to stake the Locker NFTs by passing the  `stakeNFT`  flag, it will run:
-
+## Description
+## Brief/Intro
+The LockerLP/LockerToken are BaseLocker instances and allow users to create locks holding Zero tokens. Users can choose to stake the Locker NFTs by passing the `stakeNFT` flag, it will run:
 ```
 // if the user wants to stake the NFT then we mint to the contract and
 // stake on behalf of the user
@@ -29,19 +24,16 @@ if (_stakeNFT) {
     bytes memory data = abi.encode(_to);
     safeTransferFrom(address(this), address(staking), _tokenId, data);
 } else _mint(_to, _tokenId);
-
 ```
 
 ## Vulnerability Details
-
-The staking functionality is actually broken for any user except when it is called directly from the StakingBonus contract. The root cause is that when it is transferring the newly minted  `_tokenID`, it calls  `safeTransferFrom()`  with an internal call (JMP), instead of an external call. The result is that eventually when the ERC721 logic performs access control checks, it will verify that the  `msg.sender`, the user, is approved access by the BaseLocker, which is never the case except for StakingBonus. The code path in ERC721 is:
-
+The staking functionality is actually broken for any user except when it is called directly from the StakingBonus contract. The root cause is that when it is transferring the newly minted `_tokenID`, it calls `safeTransferFrom()` with an internal call (JMP), instead of an external call. The result is that eventually when the ERC721 logic performs access control checks, it will verify that the `msg.sender`, the user, is approved access by the BaseLocker, which is never the case except for StakingBonus.
+The code path in ERC721 is:
 ```
     function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) public virtual {
         transferFrom(from, to, tokenId);
         ERC721Utils.checkOnERC721Received(_msgSender(), from, to, tokenId, data);
     }
-
 ```
 
 ```
@@ -57,7 +49,6 @@ The staking functionality is actually broken for any user except when it is call
             revert ERC721IncorrectOwner(from, tokenId, previousOwner);
         }
     }
-
 ```
 
 ```
@@ -68,7 +59,6 @@ The staking functionality is actually broken for any user except when it is call
         if (auth != address(0)) {
             _checkAuthorized(from, auth, tokenId);
         }
-
 ```
 
 ```
@@ -81,11 +71,9 @@ The staking functionality is actually broken for any user except when it is call
             }
         }
     }
-
 ```
 
 We can see the verification is with msg.sender as spender and BaseLocker as owner. This means the following functions are unusable:
-
 ```
 function createLockFor(
     uint256 _value,
@@ -106,27 +94,27 @@ function createLock(
 ) external override nonReentrant returns (uint256) {
     return _createLock(_value, _lockDuration, msg.sender, _stakeNFT);
 }
-
 ```
 
 As a result, the platform would lose out on a large amount of staking activity and lose the interest of users, as that is a key part of the ZeroLend functionality.
 
-Also note that any contracts that assume  `createLock()`  doesn't revert (which should be the case) may lose access to stored funds. For example one could imagine a pooling contract which accumulates zero and calls  `createLockFor()`  and passed the user's address. Since that reverts, the Zero would be permanently stuck in the contract unless there was an emergency escape hatch.
+Also note that any contracts that assume `createLock()` doesn't revert (which should be the case) may lose access to stored funds. For example one could imagine a pooling contract which accumulates zero and calls `createLockFor()` and passed the user's address. Since that reverts, the Zero would be permanently stuck in the contract unless there was an emergency escape hatch.
+
 
 ## Impact Details
-
 Provide a detailed breakdown of possible losses from an exploit, especially if there are funds at risk. This illustrates the severity of the vulnerability, but it also provides the best possible case for you to be paid the correct amount. Make sure the selected impact is within the program’s list of in-scope impacts and matches the impact you selected.
 
 ## Recommended fix
+Replace the `safeTransferFrom()` call with an external call:
+`IERC721(address(this)).safeTransferFrom(address(this), address(staking), _tokenId, data);`
+This way, the msg.sender is the Locker itself, so `spender` and `owner` line up.
 
-Replace the  `safeTransferFrom()`  call with an external call:  `IERC721(address(this)).safeTransferFrom(address(this), address(staking), _tokenId, data);`  This way, the msg.sender is the Locker itself, so  `spender`  and  `owner`  line up.
-
+        
+## Proof of concept
 ## Proof of Concept
-
-A single file POC is attached below. Simply run  `showBrokenStaking()`  to see that  `createLock()`  reverts. You can then do the following two actions to fix the issue:
-
--   comment the  `safeTransferFrom()`  function and uncomment the fix, one line above it.
--   use the backdoor  `trustAddress()`  function inserted to the Locker by uncommenting the  `locker.trustAddress(address(s1))`  line.
+A single file POC is attached below. Simply run `showBrokenStaking()` to see that `createLock()` reverts. You can then do the following two actions to fix the issue:
+- comment the `safeTransferFrom()` function and uncomment the fix, one line above it.
+- use the backdoor `trustAddress()` function inserted to the Locker by uncommenting the `locker.trustAddress(address(s1))` line.
 
 ```
 // SPDX-License-Identifier: MIT

