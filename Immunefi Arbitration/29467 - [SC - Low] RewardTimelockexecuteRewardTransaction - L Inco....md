@@ -1,7 +1,7 @@
 
 # `RewardTimelock::executeRewardTransaction()` - L112: Incorrect comparison operator results in not being able to execute reward tx at the very last second of tx expiration timestamp.
 
-Submitted on Tue Mar 19 2024 18:07:36 GMT-0400 (Atlantic Standard Time) by @OxSCSamurai for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
+Submitted on Mar 20th 2024 at 00:07:36 UTC by @OxSCSamurai for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29467
 
@@ -62,8 +62,8 @@ OR
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 PoC:

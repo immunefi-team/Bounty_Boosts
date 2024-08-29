@@ -1,7 +1,7 @@
 
 # Token price returned by `PriceConsumer` may be inaccurate
 
-Submitted on Thu Mar 14 2024 13:19:29 GMT-0400 (Atlantic Standard Time) by @greed for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
+Submitted on Mar 14th 2024 at 19:19:29 UTC by @greed for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29348
 
@@ -47,8 +47,8 @@ The check basically accepts a price that is at worse `1 days` old.
 
 Lower the value of `FEED_TIMEOUT` to make the transaction revert in case the price may not be accurate enough
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 In order to test the **execution reverts when it should not** case, the following script (based on `testQueuesAndExecutesRewardTx()`) can be added in `test/foundry/RewardTimelock.t.sol`

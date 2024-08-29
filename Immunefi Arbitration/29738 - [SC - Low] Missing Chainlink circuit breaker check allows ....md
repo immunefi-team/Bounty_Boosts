@@ -1,7 +1,7 @@
 
 # Missing Chainlink circuit breaker check allows malicious project to send lower than market value rewards
 
-Submitted on Mon Apr 01 2024 00:09:20 GMT-0400 (Atlantic Standard Time) by @marchev for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
+Submitted on Apr 1st 2024 at 06:09:20 UTC by @marchev for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29738
 
@@ -106,8 +106,8 @@ interface IOffchainAggregatorMinimal {
 }
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The following coded PoC demonstrates how a payout could be performed even if the Chainlink price oracle's circuit breaker is activated.

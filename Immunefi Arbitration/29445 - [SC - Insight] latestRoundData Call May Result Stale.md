@@ -1,7 +1,7 @@
 
 # `latestRoundData()` Call May Result Stale
 
-Submitted on Mon Mar 18 2024 23:06:55 GMT-0400 (Atlantic Standard Time) by @caglankaan for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
+Submitted on Mar 19th 2024 at 05:06:55 UTC by @caglankaan for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29445
 
@@ -48,6 +48,6 @@ require(answeredInRound >= roundId, "Stale price");
 ```        
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept

@@ -1,7 +1,7 @@
 
 # Projects can pay rewards at up to 2.97% below market value due to hardcoded price deviation tolerance
 
-Submitted on Mon Apr 01 2024 14:45:03 GMT-0400 (Atlantic Standard Time) by @marchev for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
+Submitted on Apr 1st 2024 at 20:45:03 UTC by @marchev for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29744
 
@@ -40,8 +40,8 @@ While the price oracle price deviation cannot be avoided, adjusting the hardcode
 ## Impact Details
 
 The hardcoded deviation combined with Chainlink's deviation can lead to significant losses for whitehats. This risk is medium, as it depends on specific price feed deviations (2%) and market conditions. The severity is also considered medium due to the financial impact on whitehats. A more adaptable configuration for the reward value deviation could mitigate the issue.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 To illustrate the vulnerability, I provide a coded PoC which demonstrates its impact. Add the following test case to `RewardTimelock.t.sol`:

@@ -1,7 +1,7 @@
 
 # Chainlink's latestRoundData might return stale or incorrect results
 
-Submitted on Thu Mar 14 2024 10:48:24 GMT-0400 (Atlantic Standard Time) by @OxRizwan for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
+Submitted on Mar 14th 2024 at 16:48:24 UTC by @OxRizwan for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29347
 
@@ -64,6 +64,6 @@ require(answeredInRound >= roundID, "Stale price");
 require(timestamp != 0, "Round not complete");
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept

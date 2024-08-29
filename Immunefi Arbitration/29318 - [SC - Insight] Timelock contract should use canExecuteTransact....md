@@ -1,7 +1,7 @@
 
 # Timelock contract should use `canExecuteTransaction()` instead of multiple require statement on `executeTransaction()`
 
-Submitted on Wed Mar 13 2024 16:35:50 GMT-0400 (Atlantic Standard Time) by @shanb1605 for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
+Submitted on Mar 13th 2024 at 22:35:50 UTC by @shanb1605 for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29318
 
@@ -44,8 +44,8 @@ Immunefi can add this snippet if they wish to handle this as a single require st
 require(canExecuteTransaction(txHash) == true);
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 I have commented out unnecessary require statements on `executeTransaction()` and added a single line of code as per recommendation.
 

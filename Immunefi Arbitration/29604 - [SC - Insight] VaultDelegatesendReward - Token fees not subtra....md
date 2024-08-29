@@ -1,7 +1,7 @@
 
 # `VaultDelegate::sendReward()` - Token fees not subtracted from vault balance before rewards are sent, triggering DoS of reward distribution functionality.
 
-Submitted on Tue Mar 26 2024 23:40:27 GMT-0400 (Atlantic Standard Time) by @OxSCSamurai for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
+Submitted on Mar 27th 2024 at 05:40:27 UTC by @OxSCSamurai for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29604
 
@@ -113,8 +113,8 @@ Impacts in Scope:
 
 https://github.com/immunefi-team/vaults/blob/49c1de26cda19c9e8a4aa311ba3b0dc864f34a25/src/common/VaultDelegate.sol#L61-L114
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 # PoC:

@@ -1,7 +1,7 @@
 
 # `RewardTimelock::canExecuteTransaction()` - Reward transaction allowed to execute before the cooldown period has strictly passed.
 
-Submitted on Wed Mar 20 2024 15:59:38 GMT-0400 (Atlantic Standard Time) by @OxSCSamurai for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
+Submitted on Mar 20th 2024 at 21:59:38 UTC by @OxSCSamurai for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29483
 
@@ -72,8 +72,8 @@ If we were to use `<=` instead, this would open up the possibility of executing 
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 # PoC:

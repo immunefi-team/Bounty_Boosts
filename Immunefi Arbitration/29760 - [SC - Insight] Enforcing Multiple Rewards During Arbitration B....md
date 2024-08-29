@@ -1,7 +1,7 @@
 
 # Enforcing Multiple Rewards During Arbitration Bug Allows Malicious Whitehats to Grief Vaults Causing Large Unnecessary Gas Fees, Revert Payment to Benevolent Whitehats, and Leave Vault in Arbitration
 
-Submitted on Tue Apr 02 2024 05:57:11 GMT-0400 (Atlantic Standard Time) by @seinsidler for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
+Submitted on Apr 2nd 2024 at 11:57:11 UTC by @seinsidler for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29760
 
@@ -40,7 +40,7 @@ The following scenario describes how the griefing attack would go and the conseq
 ## Recommendations
 I would recommend not using ```Arbitration::enforceMultipleReward``` at all. Especially in a live mainnet environment, debugging which address is causing the revert can be hard. If multiple whitehats colluded to do this attack, it could take several failed calls of ```Arbitration::enforceMultipleReward``` before removing all malicious addresses in an array. Sending a single reward during the arbitration at a time still allows for a whitehat to make this attack, but the attack is way less effective because the function call does not have the potential of having a hefty gas fee associated, and the arbiter or vault can quickly identify the address causing the revert. 
 If ```Arbitration::enforceMultipleReward``` is still a function necessary for arbitration, it might make sense to have checks on whitehat addresses to prevent them from being other smart contracts. This wouldn't allow any code execution to cause transactions to revert. 
-        
+
 ## Proof of concept
 ### PoC
 The following is a PoC of the attack described above. This test was based on ```testArbSendsMultipleRewardsAndCloses``` in ```Arbitration.t.sol``` with slight changes to execute the attack. The first code snippet is the contract of the malicious whitehat that has a ```receive``` function that gets called through the execution of ``` Arbitration::enforceMultipleRewards``` (more specifically ```VaultDelegate::sendReward``` within this ``` Arbitration::enforceMultipleRewards```). A malicious whitehat could supply the address of this smart contract when deployed to do this griefing attack. The second code snippet is the test function that demonstrates the attack. 

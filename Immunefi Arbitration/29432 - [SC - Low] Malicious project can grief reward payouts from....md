@@ -1,7 +1,7 @@
 
 # Malicious project can grief reward payouts from their vault post-emergency shutdown
 
-Submitted on Mon Mar 18 2024 12:18:42 GMT-0400 (Atlantic Standard Time) by @marchev for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
+Submitted on Mar 18th 2024 at 18:18:42 UTC by @marchev for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29432
 
@@ -90,8 +90,8 @@ The ability to add/remove guards is not critical in case of emergency, especiall
 ## References
 
 https://github.com/immunefi-team/vaults/blob/49c1de26cda19c9e8a4aa311ba3b0dc864f34a25/src/guards/ImmunefiGuard.sol#L66-L68
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The vulnerability could be reproduced by modifying the `Arbitration.t.sol` file and adding the following test to it.

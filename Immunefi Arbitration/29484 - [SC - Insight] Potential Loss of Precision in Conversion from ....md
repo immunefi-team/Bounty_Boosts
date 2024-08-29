@@ -1,7 +1,7 @@
 
 # Potential Loss of Precision in Conversion from uint256 to uint32
 
-Submitted on Wed Mar 20 2024 17:27:54 GMT-0400 (Atlantic Standard Time) by @Flare for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
+Submitted on Mar 20th 2024 at 23:27:54 UTC by @Flare for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29484
 
@@ -29,6 +29,6 @@ the impact of the potential loss of precision in the conversion from `uint256` t
 ## References
 change input var _txCooldown as uint32 in `setUp` function
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
