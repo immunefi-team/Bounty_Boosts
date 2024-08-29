@@ -1,7 +1,7 @@
 
-# Possible emission of wrong data in `cancelTransaction()`
+# Possible emission of wrong data in `cancelTransaction()` 
 
-Submitted on Mon Dec 04 2023 08:22:36 GMT-0400 (Atlantic Standard Time) by @Obin for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 4th 2023 at 14:22:36 UTC by @Obin for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26527
 

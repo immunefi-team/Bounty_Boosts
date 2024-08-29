@@ -1,7 +1,7 @@
 
 # Potential Signature Validation Bypass
 
-Submitted on Thu Nov 30 2023 03:33:15 GMT-0400 (Atlantic Standard Time) by @EricTee for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 30th 2023 at 09:33:15 UTC by @EricTee for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26286
 
@@ -78,6 +78,6 @@ Consider adding the check `require(signers.length != 0, "BAD_SIGNATURE_DATA");`:
 
 ## References
 NA
-        
+
 ## Proof of concept
 NA

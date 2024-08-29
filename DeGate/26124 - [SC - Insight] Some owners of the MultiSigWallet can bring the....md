@@ -1,7 +1,7 @@
 
 # Some owners of the MultiSigWallet can bring the system in a state where future upgrade/any operation is  impossible
 
-Submitted on Sat Nov 25 2023 11:38:27 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 25th 2023 at 17:38:27 UTC by @savi0ur for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26124
 
@@ -119,8 +119,8 @@ We recommend to not allow any owner to get replaced with null address using `rep
 ## References
 
 - Gnosis MultiSig - https://etherscan.io/address/0x2028834B2c0A36A918c10937EeA71BE4f932da52?utm_source=immunefi#code
-        
-## Proof of concept
+
+
 ## Proof Of Concept
 
 **Steps to Run using Foundry:**

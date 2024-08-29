@@ -1,7 +1,7 @@
 
 # Proxy contract deployments can be front-run to take over ownership
 
-Submitted on Thu Nov 23 2023 08:43:11 GMT-0400 (Atlantic Standard Time) by @p4rsely for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 23rd 2023 at 14:43:11 UTC by @p4rsely for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26039
 
@@ -99,7 +99,7 @@ https://github.com/degatedev/protocols/blob/degate_mainnet/packages/loopring_v3/
 Deployment script:
 
 https://github.com/degatedev/protocols/blob/degate_mainnet/packages/loopring_v3/migrations/8_deploy_exchange_v3.js
-        
+
 ## Proof of concept
 ## PoC
 Please copy/paste the code below into a file in the test directory of a foundry project called `ExchangeFrontrunTest.sol`

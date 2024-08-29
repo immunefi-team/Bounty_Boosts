@@ -1,7 +1,7 @@
 
 # Bad implementation of executeTransaction function can cause issue by 3rd Party Executor Threat
 
-Submitted on Wed Nov 29 2023 20:13:44 GMT-0400 (Atlantic Standard Time) by @v0id for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 30th 2023 at 02:13:44 UTC by @v0id for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26275
 
@@ -37,7 +37,7 @@ the above scenario is just one example to help to understand the issue. and beca
 to fix the issue , first of all executetransaction function can contain a requirement where it will only accept calls from owners/admins/executors and/or revert a confirmation transaction if it got reverted at executetransaction call . 
 
 because of some Low probability of occurrence conditions that this vulnerability requires we somehow agree if project wants to change the severity .
-        
+
 ## Proof of concept
 ```
 // SPDX-License-Identifier: MIT

@@ -1,7 +1,7 @@
 
 # The `MultiSigWallet::getTransactionIds()` function contains logic bugs which would exclude one valid transaction ID from the defined range in the returned list.
 
-Submitted on Sat Nov 25 2023 06:28:13 GMT-0400 (Atlantic Standard Time) by @OxSCSamurai for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 25th 2023 at 12:28:13 UTC by @OxSCSamurai for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26116
 
@@ -111,7 +111,7 @@ CVSS2 Score:
 
 ## References
 
-        
+
 ## Proof of concept
 (Please note: My experience with foundry tests is new, so please make sure you understand my tests correctly, especially how I constructed them. I added comments in the test contract in the test functions to help you to understand my logic and method/approach. Please make sure to read those comments to avoid any confusion. Feel free to give me a shout if you need clarifications/explanations.)
 

@@ -1,7 +1,7 @@
 
 # Malicious DeGate Operator EOA can irreversibly shutdown Exchange and change its parameters (Centralization)
 
-Submitted on Tue Nov 28 2023 18:53:43 GMT-0400 (Atlantic Standard Time) by @ongrid for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 29th 2023 at 00:53:43 UTC by @ongrid for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26236
 
@@ -48,7 +48,7 @@ To mitigate centralized control risks, Exchange's ownership (not just the proxy 
 
 * **Consider Using Timelock**: Use Timelock contract as the owner to introduce a delay in critical operations, enhancing transparency.
 
-        
+
 ## Proof of concept
 I have created a forge test, functioning on an Ethereum mainnet fork using the addreses of the live contracts. The file demonstrating vulnerabilities is `MaliciousOperatorStopsExchangeContract.t.sol`
 

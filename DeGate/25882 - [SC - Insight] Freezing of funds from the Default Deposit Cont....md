@@ -1,7 +1,7 @@
 
 # Freezing of funds from the Default Deposit Contract that requires malicious actions from the DeGate Operator.
 
-Submitted on Mon Nov 20 2023 16:25:24 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 20th 2023 at 22:25:24 UTC by @infosec_us_team for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25882
 
@@ -208,7 +208,7 @@ function forceWithdrawFromMerkleTree(
 ```
 
 
-        
+
 ## Proof of concept
 A proof of concept demonstrating how a forced withdrawal requested from an incorrect owner will be ignored, is in the `testExchangeDepositWithdraw.ts` test file.
 Here's the test:

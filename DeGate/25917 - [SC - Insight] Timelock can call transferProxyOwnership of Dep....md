@@ -1,7 +1,7 @@
 
 # Timelock can call `transferProxyOwnership` of `DepositContractProxy` and `ExchangeProxy`, violating trustless assumption
 
-Submitted on Mon Nov 20 2023 19:59:51 GMT-0400 (Atlantic Standard Time) by @said for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 21st 2023 at 01:59:51 UTC by @said for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25917
 
@@ -54,7 +54,7 @@ https://github.com/degatedev/protocols/commit/180138015197c886ec3c87efa8bf0031b6
 
 https://github.com/degatedev/protocols/commit/180138015197c886ec3c87efa8bf0031b653359f?utm_source=immunefi#diff-83099129c62e972adeec76325e36fa907afaac960342ce8de1c451d033ac41ef
 
-        
+
 ## Proof of concept
 PoC Scenario :
 

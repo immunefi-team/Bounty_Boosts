@@ -1,7 +1,7 @@
 
 # Timelock executeTransaction() function will succeed despite contract being non-existent.
 
-Submitted on Sat Dec 02 2023 13:11:25 GMT-0400 (Atlantic Standard Time) by @hoshiyari for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 2nd 2023 at 19:11:25 UTC by @hoshiyari for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26423
 
@@ -62,7 +62,7 @@ CVSS2 Score:
 ## References
 Openzeppelin have this issue open and currently under discussion regarding it's mitigation. 
 https://github.com/OpenZeppelin/openzeppelin-contracts/issues/3874 - "Consider adding a contract existence check in TimelockController's _execute function"
-        
+
 ## Proof of concept
 1. Fork chain in local - anvil -f RPC_URL
 2. Copy following test in foundry environment and run "forge test --match-contract DeGate --evm-version Shanghai -vvvv"

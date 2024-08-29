@@ -1,7 +1,7 @@
 
 # `txHash` collision is possible
 
-Submitted on Wed Nov 29 2023 12:23:56 GMT-0400 (Atlantic Standard Time) by @Madalad for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 29th 2023 at 18:23:56 UTC by @Madalad for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26259
 
@@ -31,7 +31,7 @@ While it is possible to workaround this issue fairly simply, e.g. altering the `
 
 ## References
 
-        
+
 ## Proof of concept
 See below the proof of concept in the form of a foundry test file.
 

@@ -1,7 +1,7 @@
 
 # MultiSig Owners can set malicious implementation contract
 
-Submitted on Mon Nov 20 2023 23:25:48 GMT-0400 (Atlantic Standard Time) by @Shogoki for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 21st 2023 at 05:25:48 UTC by @Shogoki for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25927
 
@@ -49,7 +49,7 @@ One way to avoid this would be to also pass the hash of the bytecode for the imp
 https://github.com/degatedev/protocols/blob/c8961f2cd354a6578bb332337f983ab4c39c1806/packages/loopring_v3/contracts/thirdparty/proxies/OwnedUpgradabilityProxy.sol#L74-L76
 
 
-        
+
 ## Proof of concept
 I attached a PoC in Foundry as a Gist.
 Note: Because selfdestruct is only executed at the end of the call and a limitation in Foundry i added the first part of the test in Setup.

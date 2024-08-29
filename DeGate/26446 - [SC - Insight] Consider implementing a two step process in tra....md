@@ -1,7 +1,7 @@
 
 # Consider implementing a two step process in `transferProxyOwnership()`
 
-Submitted on Sat Dec 02 2023 22:50:11 GMT-0400 (Atlantic Standard Time) by @Bauchibred for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 3rd 2023 at 04:50:11 UTC by @Bauchibred for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26446
 
@@ -53,7 +53,7 @@ Lack of two-step procedure for critical operations leaves them error-prone if th
 
 Consider implementing a two step process where the owner nominates an account and the nominated account needs to call an acceptOwnership() function for the transfer of ownership to fully succeed. This ensures the nominated EOA account is a valid and active account.
 
-        
+
 ## Proof of concept
 
 ```solidity

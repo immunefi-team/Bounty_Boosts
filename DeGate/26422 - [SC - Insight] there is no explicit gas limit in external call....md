@@ -1,7 +1,7 @@
 
 # there is no explicit gas limit in external call during executeTransaction on the timelock; execution of an action has the possibility to behave differently
 
-Submitted on Sat Dec 02 2023 13:06:22 GMT-0400 (Atlantic Standard Time) by @KaloMen for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 2nd 2023 at 19:06:22 UTC by @KaloMen for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26422
 
@@ -49,7 +49,7 @@ CVSS2 Score:
 
 2. Consider not to bubble up the unbounded bytes from the external call.
 ## Reference
-        
+
 ## Proof of concept
 just psuedo code to illustrate the logic
 

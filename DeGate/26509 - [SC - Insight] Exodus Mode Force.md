@@ -1,7 +1,7 @@
 
 # Exodus Mode Force
 
-Submitted on Mon Dec 04 2023 00:24:17 GMT-0400 (Atlantic Standard Time) by @lordagnew for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 4th 2023 at 06:24:17 UTC by @lordagnew for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26509
 
@@ -35,7 +35,7 @@ Difficulty to Exploit: Easy just would take some time but still easy
 
 
 
-        
+
 ## Proof of concept
 First thing you would need to do is make enough accounts with wallets that have a very small amount of money in them because you will get the money back so no lose in revenue at all for this part. Yes, you would need to make a TON of accounts but that is why you would use a program to create these accounts which is something that already exists.
 Secondly, when all of these accounts are ready, you Parse Calldata of all submitBlock transactions in the DeGate smart contract and you do this so you can look for other accounts that might be able to help you with this because ANYONE can call this for any account which is a problem.

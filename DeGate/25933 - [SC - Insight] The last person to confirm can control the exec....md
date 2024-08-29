@@ -1,7 +1,7 @@
 
 # The last person to confirm can control the execution order of `MultiSigWallet`
 
-Submitted on Tue Nov 21 2023 04:54:26 GMT-0400 (Atlantic Standard Time) by @yttriumzz for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 21st 2023 at 10:54:26 UTC by @yttriumzz for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25933
 
@@ -57,7 +57,7 @@ Each transaction sets a pre-transaction, and the transaction can only be execute
 
 ## References
 
-        
+
 ## Proof of concept
 ```solidity
 // SPDX-License-Identifier: UNLICENSED

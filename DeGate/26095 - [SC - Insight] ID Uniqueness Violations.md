@@ -1,7 +1,7 @@
 
 # ID Uniqueness Violations
 
-Submitted on Fri Nov 24 2023 12:13:41 GMT-0400 (Atlantic Standard Time) by @SentientX for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 24th 2023 at 18:13:41 UTC by @SentientX for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26095
 
@@ -76,7 +76,7 @@ with the mapping
 
 ## References
 
-        
+
 ## Proof of concept
 This POC is just to show parameter uniqueness is not validated and should be known information to Degate Devs: 
 1. mkdir degatePOC

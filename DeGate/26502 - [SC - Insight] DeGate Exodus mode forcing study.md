@@ -1,7 +1,7 @@
 
 # DeGate Exodus mode forcing study
 
-Submitted on Sun Dec 03 2023 23:09:53 GMT-0400 (Atlantic Standard Time) by @Merkle_Bonsai for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 4th 2023 at 05:09:53 UTC by @Merkle_Bonsai for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26502
 
@@ -100,6 +100,6 @@ Increment seems slightly inconsistent, but reasons seems understandable and it d
 
 As I'm not proficient enough 
 I would say that research on this small area of DeGate was really interesting, as study on a mix of ZK and Solidity logic is significantly different and makes brains to think alternatively.
-        
+
 ## Proof of concept
 ---

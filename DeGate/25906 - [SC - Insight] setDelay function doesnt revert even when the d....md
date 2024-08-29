@@ -1,7 +1,7 @@
 
 # `setDelay()` function doesn't revert even when the delay doesn't exceeds MINIMUM_DELAY
 
-Submitted on Mon Nov 20 2023 17:43:57 GMT-0400 (Atlantic Standard Time) by @ThreeHrSleep for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 20th 2023 at 23:43:57 UTC by @ThreeHrSleep for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25906
 
@@ -53,7 +53,7 @@ https://etherscan.io/address/0xf2991507952d9594e71a44a54fb19f3109d213a5#code#F1#
         emit NewDelay(delay);
     }
 ```
-        
+
 ## Proof of concept
 To demonstrate the issue,here the `setDelay()` function is called with the exact Minimum Delay(45 days,which is 3888000 seconds),and it is not reverting even though the delay isn't exceeding minimum delay
 

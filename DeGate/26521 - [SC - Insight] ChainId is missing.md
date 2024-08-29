@@ -1,7 +1,7 @@
 
 # ChainId is missing.
 
-Submitted on Mon Dec 04 2023 06:44:43 GMT-0400 (Atlantic Standard Time) by @sachinZmishra for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 4th 2023 at 12:44:43 UTC by @sachinZmishra for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26521
 
@@ -29,7 +29,7 @@ To address this potential vulnerability, you should update the DOMAIN_SEPARATOR 
 
 DOMAIN_SEPARATOR = EIP712.hash( EIP712.Domain( "FastWithdrawalLiquidityProvider", "1.0", address(this), chainId // Include the chainId in the domain separator ) );
 
-        
+
 ## Proof of concept
 Scenario:
 

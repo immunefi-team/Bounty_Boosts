@@ -1,7 +1,7 @@
 
 # ExchangeV3 cannot be reinitialized after an upgrade
 
-Submitted on Sun Dec 03 2023 15:46:50 GMT-0400 (Atlantic Standard Time) by @Paludo0x for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 3rd 2023 at 21:46:50 UTC by @Paludo0x for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26479
 
@@ -49,7 +49,7 @@ Alternative is to implement a permissioned functions to upgrade **DOMAIN_SEPARAT
 
 
 
-        
+
 ## Proof of concept
 The purpose of the Proof of Concept (POC) is to demonstrate whether the initialize function works or not if it is called after an upgrade of implementation contract.
 

@@ -1,7 +1,7 @@
 
 # Consider introducing the ability to change `required` while adding owners
 
-Submitted on Mon Dec 04 2023 06:21:59 GMT-0400 (Atlantic Standard Time) by @Another for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 4th 2023 at 12:21:59 UTC by @Another for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26519
 

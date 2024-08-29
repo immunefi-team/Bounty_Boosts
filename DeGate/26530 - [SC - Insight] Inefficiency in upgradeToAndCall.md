@@ -1,7 +1,7 @@
 
 # Inefficiency in upgradeToAndCall
 
-Submitted on Mon Dec 04 2023 08:53:54 GMT-0400 (Atlantic Standard Time) by @whunter for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 4th 2023 at 14:53:54 UTC by @whunter for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26530
 

@@ -1,7 +1,7 @@
 
 # DeGate Operator has capability to disable balance checks (EOA Control Risks in DepositContractProxy Deployment)
 
-Submitted on Mon Nov 27 2023 23:39:37 GMT-0400 (Atlantic Standard Time) by @ongrid for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 28th 2023 at 05:39:37 UTC by @ongrid for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26204
 
@@ -57,7 +57,7 @@ Ownership of `DepositContractProxy` should align with the auditor's guidance on 
 
 ## References
 
-        
+
 ## Proof of concept
 To demonstrate the potential misuse of an Externally Owned Account (EOA) by the DeGate Operator, I have created a specific branch in the repository with a forge test, functioning on an Ethereum mainnet fork using the address of the live contract.
 

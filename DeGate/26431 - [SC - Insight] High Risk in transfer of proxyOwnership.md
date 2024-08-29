@@ -1,7 +1,7 @@
 
 # High Risk in transfer of proxyOwnership()
 
-Submitted on Sat Dec 02 2023 16:05:37 GMT-0400 (Atlantic Standard Time) by @SentientX for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 2nd 2023 at 22:05:37 UTC by @SentientX for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26431
 
@@ -107,7 +107,7 @@ Reference implementation:
 
 https://www.codeslaw.app/contracts/ethereum/0x0000852600ceb001e08e00bc008be620d60031f2?file=TrueHKD.sol&start=98
 
-        
+
 ## Proof of concept
 1. Current Proxy owner calls ```transferProxyOwnership(address newOwner) public onlyProxyOwner``` setting new owner to compromised address accidently or maliciously.
 

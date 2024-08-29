@@ -1,7 +1,7 @@
 
 # Gnosis Multisig Contract can become unusable
 
-Submitted on Mon Dec 04 2023 05:54:01 GMT-0400 (Atlantic Standard Time) by @copperscrewer for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 4th 2023 at 11:54:01 UTC by @copperscrewer for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26516
 
@@ -35,7 +35,7 @@ CVSS2 Score: Overall CVSS Score 6.9
 Add a notNull modifier to replaceOwner
 
 
-        
+
 ## Proof of concept
 steps to reproduce
 ------------------

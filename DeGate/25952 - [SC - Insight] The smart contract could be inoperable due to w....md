@@ -1,7 +1,7 @@
 
 # The smart contract could be inoperable due to wrong replaceOwner() calling
 
-Submitted on Tue Nov 21 2023 16:07:40 GMT-0400 (Atlantic Standard Time) by @piken for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 21st 2023 at 22:07:40 UTC by @piken for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25952
 
@@ -104,7 +104,7 @@ Check if `newOwner` is `address(0)`:
 https://etherscan.io/address/0x2028834B2c0A36A918c10937EeA71BE4f932da52#code
 
 Line165~Line180
-        
+
 ## Proof of concept
 1. Create a foundry project
 2. Copy below codes to test/MultiSigWallet.t.sol

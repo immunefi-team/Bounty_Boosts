@@ -1,7 +1,7 @@
 
 # Malicious owner can update the `DepositParams` state variables to arbitrary values and DOS the `ExchangeV3::deposit` function
 
-Submitted on Tue Nov 21 2023 00:05:01 GMT-0400 (Atlantic Standard Time) by @JCN2023 for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 21st 2023 at 06:05:01 UTC by @JCN2023 for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25930
 
@@ -136,7 +136,7 @@ The exploit itself is very easy to execute since it can only be done by the `own
 
 ## Recommendation
 In order to maintain a truly trust-less system, the privileged `Exchange::setDepositParams` function should validate the calldata inputs to ensure that the owner can not update the contract state with arbitrary values. An example of this would be validating that the `depositState.depositFee` can not be set to a value greater than `X`.
-        
+
 ## Proof of concept
 ```solidity
 // SPDX-License-Identifier: UNLICENSED

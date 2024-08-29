@@ -1,7 +1,7 @@
 
 # Multisig Contract onChain can be bricked
 
-Submitted on Mon Dec 04 2023 06:26:36 GMT-0400 (Atlantic Standard Time) by @copperscrewer for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 4th 2023 at 12:26:36 UTC by @copperscrewer for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26520
 
@@ -30,7 +30,7 @@ CVSS2 Score:6.9
 Add a notNull modifier to replaceOwner
 
 
-        
+
 ## Proof of concept
 steps to reproduce
 As we are testing the Gnosis Multisig, that works independently to the L2 contracts, we can test just this contract while replicating the Owners and required state.

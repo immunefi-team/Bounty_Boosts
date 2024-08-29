@@ -1,7 +1,7 @@
 
 # Mitigate Griefing Attacks + Theft of Gas by Implementing Return Data Bombs Protection in `executeTransaction` and limiting gas
 
-Submitted on Mon Dec 04 2023 08:47:40 GMT-0400 (Atlantic Standard Time) by @Breeje for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 4th 2023 at 14:47:40 UTC by @Breeje for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26529
 
@@ -35,7 +35,7 @@ Checkout PoC for detail.
 * To address the issue to prevent potential Griefing Attacks, it is recommended to implement protection against Return Data Bombs. Consider using [ExcessivelySafeCall](https://github.com/nomad-xyz/ExcessivelySafeCall) when interacting with untrusted contracts. This solution aims to safeguard against excessive gas costs incurred during memory allocation for large return data payloads, enhancing the security of the `Timelock` contract.
 
 * To address the issue to prevent Gas Theft, cap the amount of gas used in the external call by passing it as a parameter.
-        
+
 ## Proof of concept
 The Timelock functionality works as:
 

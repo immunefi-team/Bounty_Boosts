@@ -1,7 +1,7 @@
 
 # A malicious user can DoS force withdraw request for any legitimate user
 
-Submitted on Mon Nov 20 2023 16:59:01 GMT-0400 (Atlantic Standard Time) by @CanYeRest298751 for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 20th 2023 at 22:59:01 UTC by @CanYeRest298751 for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25892
 
@@ -32,7 +32,7 @@ Also include the `from` variable in the mapping to check if forceWithdraw has be
 
 ## References
 
-        
+
 ## Proof of concept
 import as a test in a forge project and run `forge test -vvvv`
 

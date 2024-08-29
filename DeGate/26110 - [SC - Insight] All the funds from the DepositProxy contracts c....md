@@ -1,7 +1,7 @@
 
 # All the funds from the DepositProxy contracts can be stolen by frontrunning initialize() tx of the proxy's implementation
 
-Submitted on Fri Nov 24 2023 20:03:18 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 25th 2023 at 02:03:18 UTC by @savi0ur for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26110
 
@@ -105,8 +105,8 @@ DepositProxy : https://etherscan.io/address/0x54D7aE423Edb07282645e740C046B93739
 DepositProxy Implementation : https://etherscan.io/address/0x8ccc06c4c3b2b06616eee1b62f558f5b9c08f973
 UpgradeTo tx - https://etherscan.io/tx/0xb1e5bc43a9a516618be17e0075ca12b7420b5daa42e377af2906a2c8d9619bdc
 Initialize tx - https://etherscan.io/tx/0xd263c3c19fedb4a8765b8facd6bce1d1609b940d415d460351b590edba371970
-        
-## Proof of concept
+
+
 ## Proof Of Concept
 
 **NOTE:** 

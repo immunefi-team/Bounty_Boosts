@@ -1,7 +1,7 @@
 
 # getTransactionCount will break at some point running out of gas
 
-Submitted on Wed Nov 22 2023 20:11:00 GMT-0400 (Atlantic Standard Time) by @dontonka for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 23rd 2023 at 02:11:00 UTC by @dontonka for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26017
 
@@ -43,7 +43,7 @@ Similar to what `getTransactionIds` is doing, you would need to introduce a `ran
     }
 ```
 
-        
+
 ## Proof of concept
 You will have to clone the immunefi poc repo and follow the steps below. I had to upgrade the MultiSigWallet code to match solc v0.8.19 compiler in order todo this PoC. Nevertheles, I also tested in Remix using the same compiler (v0.4.26, also using the original code) and the it start reverting at around 1300 txs. Once you run the test, you can see the `gas used` which is above 30M.
 

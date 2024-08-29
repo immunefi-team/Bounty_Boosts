@@ -1,7 +1,7 @@
 
 # Fee-on-transfer tokens can be used to steal other depositor's funds
 
-Submitted on Sun Dec 03 2023 09:57:51 GMT-0400 (Atlantic Standard Time) by @xBentley for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 3rd 2023 at 15:57:51 UTC by @xBentley for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26468
 
@@ -28,7 +28,7 @@ CVSS2 Score:
 It is recommended that the contract instead should rely on ACTUAL balances before and after a deposit to determine if the token applies fees on transfers.
 ## References
 
-        
+
 ## Proof of concept
 I have provided this test as a POC:
 

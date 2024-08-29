@@ -1,7 +1,7 @@
 
 # Malicious Exchange Owner can sandwich-attack Ether deposits to steal arbitrarily large user funds
 
-Submitted on Mon Nov 27 2023 18:54:00 GMT-0400 (Atlantic Standard Time) by @peterm for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 28th 2023 at 00:54:00 UTC by @peterm for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26189
 
@@ -40,7 +40,7 @@ Add hard-limit to deposit fee to bound attack vector or otherwise rate-limit how
 
 ## Reference
 Contracts in scope, Foundry
-        
+
 ## Proof of concept
 1. Create empty Foundry project:
 ```shell

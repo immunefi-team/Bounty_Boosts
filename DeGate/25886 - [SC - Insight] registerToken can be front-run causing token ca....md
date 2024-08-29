@@ -1,7 +1,7 @@
 
 # `registerToken` can be front-run causing token can not be added to `reservedTokens` list
 
-Submitted on Mon Nov 20 2023 16:35:43 GMT-0400 (Atlantic Standard Time) by @yttriumzz for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 20th 2023 at 22:35:43 UTC by @yttriumzz for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25886
 
@@ -81,7 +81,7 @@ Difficulty to Exploit: Easy
 Owner can convert `normalTokens` into `reservedTokens`, which can prevent this BUG. And it allows the Owner to have the ability to add `reservedTokens` in the future. (For example, if a Token becomes popular, consider upgrading it from `normalTokens` to `reservedTokens`).
 
 ## References
-        
+
 ## Proof of concept
 ```solidity
 // SPDX-License-Identifier: UNLICENSED

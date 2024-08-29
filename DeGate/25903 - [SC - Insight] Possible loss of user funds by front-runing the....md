@@ -1,7 +1,7 @@
 
 # Possible loss of user funds by front-runing the initialization after deployment
 
-Submitted on Mon Nov 20 2023 17:39:49 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 20th 2023 at 23:39:49 UTC by @infosec_us_team for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25903
 
@@ -56,7 +56,7 @@ There are 3 ways of fixing this and we consider it is so easy to fix that doing 
 - **Modify the `initialize(...)` function of `DefaultDepositContract` and `ExchangeV3` to only allow the deployer to initialize them**
 
 
-        
+
 ## Proof of concept
 Here's the deployment script proving that the result from the `initialize(...)` transaction is not checked:
 ```javascript

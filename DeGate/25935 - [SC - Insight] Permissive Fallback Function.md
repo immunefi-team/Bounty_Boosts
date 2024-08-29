@@ -1,7 +1,7 @@
 
 # Permissive Fallback Function
 
-Submitted on Tue Nov 21 2023 09:08:55 GMT-0400 (Atlantic Standard Time) by @kankodu for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 21st 2023 at 15:08:55 UTC by @kankodu for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25935
 
@@ -31,7 +31,7 @@ Impacts:
 # References
 - [Ethereum Classic Multisig Issue](https://github.com/EthereumCommonwealth/ethereum-classic-multisig/issues/1)
 
-        
+
 ## Proof of concept
 - Initiate a new foundry repo by running forge init. see [here](https://book.getfoundry.sh/projects/creating-a-new-project).
 - Add the below code in `test/PermissiveFallback.t.sol` and run it using `forge test --fork-url MAINNET_RPC_URL`

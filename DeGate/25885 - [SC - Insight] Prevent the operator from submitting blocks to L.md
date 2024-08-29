@@ -1,7 +1,7 @@
 
 # Prevent the operator from submitting blocks to L1.
 
-Submitted on Mon Nov 20 2023 16:28:23 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 20th 2023 at 22:28:23 UTC by @infosec_us_team for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25885
 
@@ -151,7 +151,7 @@ function requireAuthorizedTx(
 ```
 
 
-        
+
 ## Proof of concept
 
 As a proof of concept here's the code for an oversimplified evil EIP-1271 Contract Account that makes the same signature succeed or revert on convenience.

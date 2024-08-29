@@ -1,7 +1,7 @@
 
 # Timelock eta variable can be set further than in the future than the anticipated delay.
 
-Submitted on Thu Nov 23 2023 19:24:49 GMT-0400 (Atlantic Standard Time) by @p4rsely for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 24th 2023 at 01:24:49 UTC by @p4rsely for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26066
 
@@ -65,7 +65,7 @@ This approach would allow for more predictable upgrade schedules.
 Contracts: 
 
 https://github.com/degatedev/protocols/blob/degate_mainnet/packages/loopring_v3/contracts/thirdparty/timelock/Timelock.sol#L63-L72
-        
+
 ## Proof of concept
 ## PoC
 Please copy/paste the code below into a file in the test directory of a foundry project called `TansactionQueueTest.t.sol`

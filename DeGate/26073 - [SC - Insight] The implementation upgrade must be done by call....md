@@ -1,7 +1,7 @@
 
 # The implementation upgrade must be done by calling the upgradeToAndCall function to avoid frontrunning of the initialization.
 
-Submitted on Thu Nov 23 2023 22:30:05 GMT-0400 (Atlantic Standard Time) by @Paludo0x for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 24th 2023 at 04:30:05 UTC by @Paludo0x for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26073
 
@@ -77,7 +77,7 @@ This situation could be unnoticed by legitimate owners.
 
 
 
-        
+
 ## Proof of concept
 The POC verifies that any user can call initialize the function after upgrading of implementation and if the same function is called by the owner afterwards it reverts because already initialized.
 It shall be run with foundry with the following command

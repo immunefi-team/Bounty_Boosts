@@ -1,7 +1,7 @@
 
 # Timelock should handle queuing transactions and initializing implementation contracts
 
-Submitted on Sun Dec 03 2023 22:58:15 GMT-0400 (Atlantic Standard Time) by @conqueror for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Dec 4th 2023 at 04:58:15 UTC by @conqueror for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #26501
 

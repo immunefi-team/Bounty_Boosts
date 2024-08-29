@@ -1,7 +1,7 @@
 
 # Flaw in upgradeToAndCall leads to the proxy calling himself, which sets msg.sender to the proxy instead of Timelock
 
-Submitted on Mon Nov 20 2023 21:11:43 GMT-0400 (Atlantic Standard Time) by @neth for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
+Submitted on Nov 21st 2023 at 03:11:43 UTC by @neth for [Boost | DeGate](https://immunefi.com/bounty/boosteddegatebugbounty/)
 
 Report ID: #25921
 
@@ -43,7 +43,7 @@ The same applies to [ExchangeProxy](https://etherscan.io/address/0x9C07A72177c5A
     require(success);
   }
 ```
-        
+
 ## Proof of concept
 (Simplified POC, if you need the mainnet fork I can give it to you but it was far more verbose)
 
