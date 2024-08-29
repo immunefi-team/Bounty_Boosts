@@ -3,7 +3,16 @@
 
 ## Reports by Severity
 
-[Insight](<README.md#insight>) | [Low](<README.md#low>)
+[Low](<README.md#low>) | [Insight](<README.md#insight>)
+<details>
+<summary>Low</summary>
+
+* [28791 - [SC - Low] The system protects from any rounding issues wh...](./28791%20-%20%5BSC%20-%20Low%5D%20The%20system%20protects%20from%20any%20rounding%20issues%20wh....md)
+* [28828 - [SC - Low] Use of deprecated Chainlink API can lead contra...](./28828%20-%20%5BSC%20-%20Low%5D%20Use%20of%20deprecated%20Chainlink%20API%20can%20lead%20contra....md)
+* [28843 - [SC - Low] Canceled partial redeeming syncs the accounting...](./28843%20-%20%5BSC%20-%20Low%5D%20Canceled%20partial%20redeeming%20syncs%20the%20accounting....md)
+* [28849 - [SC - Low] Using batchRedemption even if the TCR becomes s...](./28849%20-%20%5BSC%20-%20Low%5D%20Using%20batchRedemption%20even%20if%20the%20TCR%20becomes%20s....md)
+
+</details>
 <details>
 <summary>Insight</summary>
 
@@ -23,15 +32,6 @@
 * [28980 - [SC - Insight] Ther is an invariant Check Failure in flashLoan...](./28980%20-%20%5BSC%20-%20Insight%5D%20Ther%20is%20an%20invariant%20Check%20Failure%20in%20flashLoan....md)
 * [29000 - [SC - Insight] Potential for Denial-of-Service in the redeemCo...](./29000%20-%20%5BSC%20-%20Insight%5D%20Potential%20for%20Denial-of-Service%20in%20the%20redeemCo....md)
 * [29002 - [SC - Insight] Incorrect implementation of EIP- domain separat...](./29002%20-%20%5BSC%20-%20Insight%5D%20Incorrect%20implementation%20of%20EIP-%20domain%20separat....md)
-
-</details>
-<details>
-<summary>Low</summary>
-
-* [28791 - [SC - Low] The system protects from any rounding issues wh...](./28791%20-%20%5BSC%20-%20Low%5D%20The%20system%20protects%20from%20any%20rounding%20issues%20wh....md)
-* [28828 - [SC - Low] Use of deprecated Chainlink API can lead contra...](./28828%20-%20%5BSC%20-%20Low%5D%20Use%20of%20deprecated%20Chainlink%20API%20can%20lead%20contra....md)
-* [28843 - [SC - Low] Canceled partial redeeming syncs the accounting...](./28843%20-%20%5BSC%20-%20Low%5D%20Canceled%20partial%20redeeming%20syncs%20the%20accounting....md)
-* [28849 - [SC - Low] Using batchRedemption even if the TCR becomes s...](./28849%20-%20%5BSC%20-%20Low%5D%20Using%20batchRedemption%20even%20if%20the%20TCR%20becomes%20s....md)
 
 </details>
 

@@ -3,7 +3,15 @@
 
 ## Reports by Severity
 
-[Insight](<README.md#insight>) | [Low](<README.md#low>)
+[Low](<README.md#low>) | [Insight](<README.md#insight>)
+<details>
+<summary>Low</summary>
+
+* [29432 - [SC - Low] Malicious project can grief reward payouts from...](./29432%20-%20%5BSC%20-%20Low%5D%20Malicious%20project%20can%20grief%20reward%20payouts%20from....md)
+* [29467 - [SC - Low] RewardTimelockexecuteRewardTransaction - L Inco...](./29467%20-%20%5BSC%20-%20Low%5D%20RewardTimelockexecuteRewardTransaction%20-%20L%20Inco....md)
+* [29738 - [SC - Low] Missing Chainlink circuit breaker check allows ...](./29738%20-%20%5BSC%20-%20Low%5D%20Missing%20Chainlink%20circuit%20breaker%20check%20allows%20....md)
+
+</details>
 <details>
 <summary>Insight</summary>
 
@@ -20,14 +28,6 @@
 * [29604 - [SC - Insight] VaultDelegatesendReward - Token fees not subtra...](./29604%20-%20%5BSC%20-%20Insight%5D%20VaultDelegatesendReward%20-%20Token%20fees%20not%20subtra....md)
 * [29744 - [SC - Insight] Projects can pay rewards at up to  below market...](./29744%20-%20%5BSC%20-%20Insight%5D%20Projects%20can%20pay%20rewards%20at%20up%20to%20%20below%20market....md)
 * [29760 - [SC - Insight] Enforcing Multiple Rewards During Arbitration B...](./29760%20-%20%5BSC%20-%20Insight%5D%20Enforcing%20Multiple%20Rewards%20During%20Arbitration%20B....md)
-
-</details>
-<details>
-<summary>Low</summary>
-
-* [29432 - [SC - Low] Malicious project can grief reward payouts from...](./29432%20-%20%5BSC%20-%20Low%5D%20Malicious%20project%20can%20grief%20reward%20payouts%20from....md)
-* [29467 - [SC - Low] RewardTimelockexecuteRewardTransaction - L Inco...](./29467%20-%20%5BSC%20-%20Low%5D%20RewardTimelockexecuteRewardTransaction%20-%20L%20Inco....md)
-* [29738 - [SC - Low] Missing Chainlink circuit breaker check allows ...](./29738%20-%20%5BSC%20-%20Low%5D%20Missing%20Chainlink%20circuit%20breaker%20check%20allows%20....md)
 
 </details>
 

@@ -3,27 +3,18 @@
 
 ## Reports by Severity
 
-[Medium](<README.md#medium>) | [High](<README.md#high>) | [Critical](<README.md#critical>) | [Insight](<README.md#insight>)
+[Critical](<README.md#critical>) | [High](<README.md#high>) | [Medium](<README.md#medium>) | [Insight](<README.md#insight>)
 <details>
-<summary>Medium</summary>
+<summary>Critical</summary>
 
-* [28875 - [SC - Medium] Unauthorized minting of vested NFTs](./28875%20-%20%5BSC%20-%20Medium%5D%20Unauthorized%20minting%20of%20vested%20NFTs.md)
-* [28885 - [SC - Medium] Lack of check for Lockend in merge LockerToken ...](./28885%20-%20%5BSC%20-%20Medium%5D%20Lack%20of%20check%20for%20Lockend%20in%20merge%20LockerToken%20....md)
-* [28892 - [SC - Medium] ZeroLockermerge can make a voting lock last lon...](./28892%20-%20%5BSC%20-%20Medium%5D%20ZeroLockermerge%20can%20make%20a%20voting%20lock%20last%20lon....md)
-* [28938 - [SC - Medium] Attacker can invalidate users supplyWithPermit ...](./28938%20-%20%5BSC%20-%20Medium%5D%20Attacker%20can%20invalidate%20users%20supplyWithPermit%20....md)
-* [28943 - [SC - Medium] DoS when user want to supply  repay asset using...](./28943%20-%20%5BSC%20-%20Medium%5D%20DoS%20when%20user%20want%20to%20supply%20%20repay%20asset%20using....md)
-* [28970 - [SC - Medium] Attacker can grief a user by making his supplyW...](./28970%20-%20%5BSC%20-%20Medium%5D%20Attacker%20can%20grief%20a%20user%20by%20making%20his%20supplyW....md)
-* [28987 - [SC - Medium] Manipulation of governance is possible by minti...](./28987%20-%20%5BSC%20-%20Medium%5D%20Manipulation%20of%20governance%20is%20possible%20by%20minti....md)
-* [29052 - [SC - Medium] Pool funds could be locked due to Division by zero](./29052%20-%20%5BSC%20-%20Medium%5D%20Pool%20funds%20could%20be%20locked%20due%20to%20Division%20by%20zero.md)
-* [29059 - [SC - Medium] Race condition in StakingBonus will result in s...](./29059%20-%20%5BSC%20-%20Medium%5D%20Race%20condition%20in%20StakingBonus%20will%20result%20in%20s....md)
-* [29068 - [SC - Medium] AaveOracle contract does not verify price stale...](./29068%20-%20%5BSC%20-%20Medium%5D%20AaveOracle%20contract%20does%20not%20verify%20price%20stale....md)
-* [29069 - [SC - Medium] Ability to deny users from repaying and supplyi...](./29069%20-%20%5BSC%20-%20Medium%5D%20Ability%20to%20deny%20users%20from%20repaying%20and%20supplyi....md)
-* [29123 - [SC - Medium] Griefing attack for VestedZeroNFT](./29123%20-%20%5BSC%20-%20Medium%5D%20Griefing%20attack%20for%20VestedZeroNFT.md)
-* [29130 - [SC - Medium] Unlimited Minting of VestedZeroNFT](./29130%20-%20%5BSC%20-%20Medium%5D%20Unlimited%20Minting%20of%20VestedZeroNFT.md)
-* [29139 - [SC - Medium] Griefing attack to cause users to suffer penalt...](./29139%20-%20%5BSC%20-%20Medium%5D%20Griefing%20attack%20to%20cause%20users%20to%20suffer%20penalt....md)
-* [29170 - [SC - Medium] DoS by front-runnable externall call](./29170%20-%20%5BSC%20-%20Medium%5D%20DoS%20by%20front-runnable%20externall%20call.md)
-* [29198 - [SC - Medium] Griefing attack to cause the rewards of a user ...](./29198%20-%20%5BSC%20-%20Medium%5D%20Griefing%20attack%20to%20cause%20the%20rewards%20of%20a%20user%20....md)
-* [29286 - [SC - Medium] MultiSigWalletremoveOwner - L The bug allows th...](./29286%20-%20%5BSC%20-%20Medium%5D%20MultiSigWalletremoveOwner%20-%20L%20The%20bug%20allows%20th....md)
+* [28912 - [SC - Critical] Attackers can control the vote result and ampli...](./28912%20-%20%5BSC%20-%20Critical%5D%20Attackers%20can%20control%20the%20vote%20result%20and%20ampli....md)
+* [29031 - [SC - Critical] VestedZeroNFT tokens can be directly stolen thr...](./29031%20-%20%5BSC%20-%20Critical%5D%20VestedZeroNFT%20tokens%20can%20be%20directly%20stolen%20thr....md)
+* [29062 - [SC - Critical] Attacker can steal locked balance of staked nft...](./29062%20-%20%5BSC%20-%20Critical%5D%20Attacker%20can%20steal%20locked%20balance%20of%20staked%20nft....md)
+* [29103 - [SC - Critical] Omnichain Stakers can permanently lose access t...](./29103%20-%20%5BSC%20-%20Critical%5D%20Omnichain%20Stakers%20can%20permanently%20lose%20access%20t....md)
+* [29135 - [SC - Critical] OmnichainStakingsolunstakeLP and OmnichainStaki...](./29135%20-%20%5BSC%20-%20Critical%5D%20OmnichainStakingsolunstakeLP%20and%20OmnichainStaki....md)
+* [29204 - [SC - Critical] Direct theft of Users VestedZeroNFT by using sp...](./29204%20-%20%5BSC%20-%20Critical%5D%20Direct%20theft%20of%20Users%20VestedZeroNFT%20by%20using%20sp....md)
+* [29211 - [SC - Critical] Voting manipulation cause by the possibility to...](./29211%20-%20%5BSC%20-%20Critical%5D%20Voting%20manipulation%20cause%20by%20the%20possibility%20to....md)
+* [29288 - [SC - Critical] all NFTs can be stolen by calling VestedZeroNFT...](./29288%20-%20%5BSC%20-%20Critical%5D%20all%20NFTs%20can%20be%20stolen%20by%20calling%20VestedZeroNFT....md)
 
 </details>
 <details>
@@ -52,16 +43,25 @@
 
 </details>
 <details>
-<summary>Critical</summary>
+<summary>Medium</summary>
 
-* [28912 - [SC - Critical] Attackers can control the vote result and ampli...](./28912%20-%20%5BSC%20-%20Critical%5D%20Attackers%20can%20control%20the%20vote%20result%20and%20ampli....md)
-* [29031 - [SC - Critical] VestedZeroNFT tokens can be directly stolen thr...](./29031%20-%20%5BSC%20-%20Critical%5D%20VestedZeroNFT%20tokens%20can%20be%20directly%20stolen%20thr....md)
-* [29062 - [SC - Critical] Attacker can steal locked balance of staked nft...](./29062%20-%20%5BSC%20-%20Critical%5D%20Attacker%20can%20steal%20locked%20balance%20of%20staked%20nft....md)
-* [29103 - [SC - Critical] Omnichain Stakers can permanently lose access t...](./29103%20-%20%5BSC%20-%20Critical%5D%20Omnichain%20Stakers%20can%20permanently%20lose%20access%20t....md)
-* [29135 - [SC - Critical] OmnichainStakingsolunstakeLP and OmnichainStaki...](./29135%20-%20%5BSC%20-%20Critical%5D%20OmnichainStakingsolunstakeLP%20and%20OmnichainStaki....md)
-* [29204 - [SC - Critical] Direct theft of Users VestedZeroNFT by using sp...](./29204%20-%20%5BSC%20-%20Critical%5D%20Direct%20theft%20of%20Users%20VestedZeroNFT%20by%20using%20sp....md)
-* [29211 - [SC - Critical] Voting manipulation cause by the possibility to...](./29211%20-%20%5BSC%20-%20Critical%5D%20Voting%20manipulation%20cause%20by%20the%20possibility%20to....md)
-* [29288 - [SC - Critical] all NFTs can be stolen by calling VestedZeroNFT...](./29288%20-%20%5BSC%20-%20Critical%5D%20all%20NFTs%20can%20be%20stolen%20by%20calling%20VestedZeroNFT....md)
+* [28875 - [SC - Medium] Unauthorized minting of vested NFTs](./28875%20-%20%5BSC%20-%20Medium%5D%20Unauthorized%20minting%20of%20vested%20NFTs.md)
+* [28885 - [SC - Medium] Lack of check for Lockend in merge LockerToken ...](./28885%20-%20%5BSC%20-%20Medium%5D%20Lack%20of%20check%20for%20Lockend%20in%20merge%20LockerToken%20....md)
+* [28892 - [SC - Medium] ZeroLockermerge can make a voting lock last lon...](./28892%20-%20%5BSC%20-%20Medium%5D%20ZeroLockermerge%20can%20make%20a%20voting%20lock%20last%20lon....md)
+* [28938 - [SC - Medium] Attacker can invalidate users supplyWithPermit ...](./28938%20-%20%5BSC%20-%20Medium%5D%20Attacker%20can%20invalidate%20users%20supplyWithPermit%20....md)
+* [28943 - [SC - Medium] DoS when user want to supply  repay asset using...](./28943%20-%20%5BSC%20-%20Medium%5D%20DoS%20when%20user%20want%20to%20supply%20%20repay%20asset%20using....md)
+* [28970 - [SC - Medium] Attacker can grief a user by making his supplyW...](./28970%20-%20%5BSC%20-%20Medium%5D%20Attacker%20can%20grief%20a%20user%20by%20making%20his%20supplyW....md)
+* [28987 - [SC - Medium] Manipulation of governance is possible by minti...](./28987%20-%20%5BSC%20-%20Medium%5D%20Manipulation%20of%20governance%20is%20possible%20by%20minti....md)
+* [29052 - [SC - Medium] Pool funds could be locked due to Division by zero](./29052%20-%20%5BSC%20-%20Medium%5D%20Pool%20funds%20could%20be%20locked%20due%20to%20Division%20by%20zero.md)
+* [29059 - [SC - Medium] Race condition in StakingBonus will result in s...](./29059%20-%20%5BSC%20-%20Medium%5D%20Race%20condition%20in%20StakingBonus%20will%20result%20in%20s....md)
+* [29068 - [SC - Medium] AaveOracle contract does not verify price stale...](./29068%20-%20%5BSC%20-%20Medium%5D%20AaveOracle%20contract%20does%20not%20verify%20price%20stale....md)
+* [29069 - [SC - Medium] Ability to deny users from repaying and supplyi...](./29069%20-%20%5BSC%20-%20Medium%5D%20Ability%20to%20deny%20users%20from%20repaying%20and%20supplyi....md)
+* [29123 - [SC - Medium] Griefing attack for VestedZeroNFT](./29123%20-%20%5BSC%20-%20Medium%5D%20Griefing%20attack%20for%20VestedZeroNFT.md)
+* [29130 - [SC - Medium] Unlimited Minting of VestedZeroNFT](./29130%20-%20%5BSC%20-%20Medium%5D%20Unlimited%20Minting%20of%20VestedZeroNFT.md)
+* [29139 - [SC - Medium] Griefing attack to cause users to suffer penalt...](./29139%20-%20%5BSC%20-%20Medium%5D%20Griefing%20attack%20to%20cause%20users%20to%20suffer%20penalt....md)
+* [29170 - [SC - Medium] DoS by front-runnable externall call](./29170%20-%20%5BSC%20-%20Medium%5D%20DoS%20by%20front-runnable%20externall%20call.md)
+* [29198 - [SC - Medium] Griefing attack to cause the rewards of a user ...](./29198%20-%20%5BSC%20-%20Medium%5D%20Griefing%20attack%20to%20cause%20the%20rewards%20of%20a%20user%20....md)
+* [29286 - [SC - Medium] MultiSigWalletremoveOwner - L The bug allows th...](./29286%20-%20%5BSC%20-%20Medium%5D%20MultiSigWalletremoveOwner%20-%20L%20The%20bug%20allows%20th....md)
 
 </details>
 <details>

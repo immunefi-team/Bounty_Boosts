@@ -3,7 +3,49 @@
 
 ## Reports by Severity
 
-[Insight](<README.md#insight>) | [Medium](<README.md#medium>) | [Low](<README.md#low>) | [Critical](<README.md#critical>) | [High](<README.md#high>)
+[Critical](<README.md#critical>) | [High](<README.md#high>) | [Medium](<README.md#medium>) | [Low](<README.md#low>) | [Insight](<README.md#insight>)
+<details>
+<summary>Critical</summary>
+
+* [28788 - [SC - Critical] Slash during a withdrawal from EigenLayer will ...](./28788%20-%20%5BSC%20-%20Critical%5D%20Slash%20during%20a%20withdrawal%20from%20EigenLayer%20will%20....md)
+
+</details>
+<details>
+<summary>High</summary>
+
+* [29033 - [SC - High] Queued data will be lost if Tx is unsuccessful ...](./29033%20-%20%5BSC%20-%20High%5D%20Queued%20data%20will%20be%20lost%20if%20Tx%20is%20unsuccessful%20....md)
+* [29106 - [SC - High] Insufficient Handling of Partial Failures in Wi...](./29106%20-%20%5BSC%20-%20High%5D%20Insufficient%20Handling%20of%20Partial%20Failures%20in%20Wi....md)
+
+</details>
+<details>
+<summary>Medium</summary>
+
+* [28613 - [SC - Medium] User will lose funds](./28613%20-%20%5BSC%20-%20Medium%5D%20User%20will%20lose%20funds.md)
+* [28689 - [SC - Medium] incorrect lidoLockedETH value can block full re...](./28689%20-%20%5BSC%20-%20Medium%5D%20incorrect%20lidoLockedETH%20value%20can%20block%20full%20re....md)
+* [28921 - [SC - Medium] Possibly protocol insolvency during a LIDO slas...](./28921%20-%20%5BSC%20-%20Medium%5D%20Possibly%20protocol%20insolvency%20during%20a%20LIDO%20slas....md)
+* [29006 - [SC - Medium] Lack of Success check of the Timelock  executeT...](./29006%20-%20%5BSC%20-%20Medium%5D%20Lack%20of%20Success%20check%20of%20the%20Timelock%20%20executeT....md)
+* [29054 - [SC - Medium] Lido discounted withdrawals are not accounted for](./29054%20-%20%5BSC%20-%20Medium%5D%20Lido%20discounted%20withdrawals%20are%20not%20accounted%20for.md)
+* [29060 - [SC - Medium] initiateETHWithdrawalsFromLido decreases totalA...](./29060%20-%20%5BSC%20-%20Medium%5D%20initiateETHWithdrawalsFromLido%20decreases%20totalA....md)
+
+</details>
+<details>
+<summary>Low</summary>
+
+* [28623 - [SC - Low] Timelock transaction that consume more then _ g...](./28623%20-%20%5BSC%20-%20Low%5D%20Timelock%20transaction%20that%20consume%20more%20then%20_%20g....md)
+* [28663 - [SC - Low] Deposit of stETH fails due to LIDOs - wei corno...](./28663%20-%20%5BSC%20-%20Low%5D%20Deposit%20of%20stETH%20fails%20due%20to%20LIDOs%20-%20wei%20corno....md)
+* [28665 - [SC - Low] Underflow risk in receive function due to discr...](./28665%20-%20%5BSC%20-%20Low%5D%20Underflow%20risk%20in%20receive%20function%20due%20to%20discr....md)
+* [28687 - [SC - Low] Timelocks executeTransaction incorrectly delete...](./28687%20-%20%5BSC%20-%20Low%5D%20Timelocks%20executeTransaction%20incorrectly%20delete....md)
+* [28777 - [SC - Low] pufETHsrcTimelocksolexecuteTransaction - This b...](./28777%20-%20%5BSC%20-%20Low%5D%20pufETHsrcTimelocksolexecuteTransaction%20-%20This%20b....md)
+* [28789 - [SC - Low] Return value of call is not checked causing fai...](./28789%20-%20%5BSC%20-%20Low%5D%20Return%20value%20of%20call%20is%20not%20checked%20causing%20fai....md)
+* [28792 - [SC - Low] Return value of low level isnt checked executio...](./28792%20-%20%5BSC%20-%20Low%5D%20Return%20value%20of%20low%20level%20isnt%20checked%20executio....md)
+* [28796 - [SC - Low] The PufferVaultgetPendingLidoETHAmount will ret...](./28796%20-%20%5BSC%20-%20Low%5D%20The%20PufferVaultgetPendingLidoETHAmount%20will%20ret....md)
+* [28946 - [SC - Low] The assets accounting of the vault can become o...](./28946%20-%20%5BSC%20-%20Low%5D%20The%20assets%20accounting%20of%20the%20vault%20can%20become%20o....md)
+* [28971 - [SC - Low] Double spending or double execution of transact...](./28971%20-%20%5BSC%20-%20Low%5D%20Double%20spending%20or%20double%20execution%20of%20transact....md)
+* [29015 - [SC - Low] Boolean return value of addresscall function no...](./29015%20-%20%5BSC%20-%20Low%5D%20Boolean%20return%20value%20of%20addresscall%20function%20no....md)
+* [29067 - [SC - Low] Puffer Finance  Missing Verification of Externa...](./29067%20-%20%5BSC%20-%20Low%5D%20Puffer%20Finance%20%20Missing%20Verification%20of%20Externa....md)
+* [29116 - [SC - Low] Using deposit results in more shares for the sa...](./29116%20-%20%5BSC%20-%20Low%5D%20Using%20deposit%20results%20in%20more%20shares%20for%20the%20sa....md)
+
+</details>
 <details>
 <summary>Insight</summary>
 
@@ -43,48 +85,6 @@
 * [29099 - [SC - Insight] Actual amount of stETH deposited is less than t...](./29099%20-%20%5BSC%20-%20Insight%5D%20Actual%20amount%20of%20stETH%20deposited%20is%20less%20than%20t....md)
 * [29110 - [SC - Insight] Insecure Token Allowance Management in PufferDe...](./29110%20-%20%5BSC%20-%20Insight%5D%20Insecure%20Token%20Allowance%20Management%20in%20PufferDe....md)
 * [29111 - [SC - Insight] Silent Failure of ERC Permit Calls in PufferDep...](./29111%20-%20%5BSC%20-%20Insight%5D%20Silent%20Failure%20of%20ERC%20Permit%20Calls%20in%20PufferDep....md)
-
-</details>
-<details>
-<summary>Medium</summary>
-
-* [28613 - [SC - Medium] User will lose funds](./28613%20-%20%5BSC%20-%20Medium%5D%20User%20will%20lose%20funds.md)
-* [28689 - [SC - Medium] incorrect lidoLockedETH value can block full re...](./28689%20-%20%5BSC%20-%20Medium%5D%20incorrect%20lidoLockedETH%20value%20can%20block%20full%20re....md)
-* [28921 - [SC - Medium] Possibly protocol insolvency during a LIDO slas...](./28921%20-%20%5BSC%20-%20Medium%5D%20Possibly%20protocol%20insolvency%20during%20a%20LIDO%20slas....md)
-* [29006 - [SC - Medium] Lack of Success check of the Timelock  executeT...](./29006%20-%20%5BSC%20-%20Medium%5D%20Lack%20of%20Success%20check%20of%20the%20Timelock%20%20executeT....md)
-* [29054 - [SC - Medium] Lido discounted withdrawals are not accounted for](./29054%20-%20%5BSC%20-%20Medium%5D%20Lido%20discounted%20withdrawals%20are%20not%20accounted%20for.md)
-* [29060 - [SC - Medium] initiateETHWithdrawalsFromLido decreases totalA...](./29060%20-%20%5BSC%20-%20Medium%5D%20initiateETHWithdrawalsFromLido%20decreases%20totalA....md)
-
-</details>
-<details>
-<summary>Low</summary>
-
-* [28623 - [SC - Low] Timelock transaction that consume more then _ g...](./28623%20-%20%5BSC%20-%20Low%5D%20Timelock%20transaction%20that%20consume%20more%20then%20_%20g....md)
-* [28663 - [SC - Low] Deposit of stETH fails due to LIDOs - wei corno...](./28663%20-%20%5BSC%20-%20Low%5D%20Deposit%20of%20stETH%20fails%20due%20to%20LIDOs%20-%20wei%20corno....md)
-* [28665 - [SC - Low] Underflow risk in receive function due to discr...](./28665%20-%20%5BSC%20-%20Low%5D%20Underflow%20risk%20in%20receive%20function%20due%20to%20discr....md)
-* [28687 - [SC - Low] Timelocks executeTransaction incorrectly delete...](./28687%20-%20%5BSC%20-%20Low%5D%20Timelocks%20executeTransaction%20incorrectly%20delete....md)
-* [28777 - [SC - Low] pufETHsrcTimelocksolexecuteTransaction - This b...](./28777%20-%20%5BSC%20-%20Low%5D%20pufETHsrcTimelocksolexecuteTransaction%20-%20This%20b....md)
-* [28789 - [SC - Low] Return value of call is not checked causing fai...](./28789%20-%20%5BSC%20-%20Low%5D%20Return%20value%20of%20call%20is%20not%20checked%20causing%20fai....md)
-* [28792 - [SC - Low] Return value of low level isnt checked executio...](./28792%20-%20%5BSC%20-%20Low%5D%20Return%20value%20of%20low%20level%20isnt%20checked%20executio....md)
-* [28796 - [SC - Low] The PufferVaultgetPendingLidoETHAmount will ret...](./28796%20-%20%5BSC%20-%20Low%5D%20The%20PufferVaultgetPendingLidoETHAmount%20will%20ret....md)
-* [28946 - [SC - Low] The assets accounting of the vault can become o...](./28946%20-%20%5BSC%20-%20Low%5D%20The%20assets%20accounting%20of%20the%20vault%20can%20become%20o....md)
-* [28971 - [SC - Low] Double spending or double execution of transact...](./28971%20-%20%5BSC%20-%20Low%5D%20Double%20spending%20or%20double%20execution%20of%20transact....md)
-* [29015 - [SC - Low] Boolean return value of addresscall function no...](./29015%20-%20%5BSC%20-%20Low%5D%20Boolean%20return%20value%20of%20addresscall%20function%20no....md)
-* [29067 - [SC - Low] Puffer Finance  Missing Verification of Externa...](./29067%20-%20%5BSC%20-%20Low%5D%20Puffer%20Finance%20%20Missing%20Verification%20of%20Externa....md)
-* [29116 - [SC - Low] Using deposit results in more shares for the sa...](./29116%20-%20%5BSC%20-%20Low%5D%20Using%20deposit%20results%20in%20more%20shares%20for%20the%20sa....md)
-
-</details>
-<details>
-<summary>Critical</summary>
-
-* [28788 - [SC - Critical] Slash during a withdrawal from EigenLayer will ...](./28788%20-%20%5BSC%20-%20Critical%5D%20Slash%20during%20a%20withdrawal%20from%20EigenLayer%20will%20....md)
-
-</details>
-<details>
-<summary>High</summary>
-
-* [29033 - [SC - High] Queued data will be lost if Tx is unsuccessful ...](./29033%20-%20%5BSC%20-%20High%5D%20Queued%20data%20will%20be%20lost%20if%20Tx%20is%20unsuccessful%20....md)
-* [29106 - [SC - High] Insufficient Handling of Partial Failures in Wi...](./29106%20-%20%5BSC%20-%20High%5D%20Insufficient%20Handling%20of%20Partial%20Failures%20in%20Wi....md)
 
 </details>
 

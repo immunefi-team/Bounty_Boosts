@@ -3,99 +3,7 @@
 
 ## Reports by Severity
 
-[Low](<README.md#low>) | [Insight](<README.md#insight>) | [Medium](<README.md#medium>) | [Critical](<README.md#critical>) | [High](<README.md#high>)
-<details>
-<summary>Low</summary>
-
-* [30555 - [SC - Low] Precision loss when calculating the FLUX amount...](./30555%20-%20%5BSC%20-%20Low%5D%20Precision%20loss%20when%20calculating%20the%20FLUX%20amount....md)
-* [30556 - [SC - Low] Past defeated proposals may become executable i...](./30556%20-%20%5BSC%20-%20Low%5D%20Past%20defeated%20proposals%20may%20become%20executable%20i....md)
-* [30565 - [SC - Low] veALCX does not comply with ERC breaking compos...](./30565%20-%20%5BSC%20-%20Low%5D%20veALCX%20does%20not%20comply%20with%20ERC%20breaking%20compos....md)
-* [30598 - [SC - Low] Access Control Flaw in _burn Function Leads to ...](./30598%20-%20%5BSC%20-%20Low%5D%20Access%20Control%20Flaw%20in%20_burn%20Function%20Leads%20to%20....md)
-* [30694 - [SC - Low] Users approved for a single token id cannot wit...](./30694%20-%20%5BSC%20-%20Low%5D%20Users%20approved%20for%20a%20single%20token%20id%20cannot%20wit....md)
-* [30708 - [SC - Low] treasuryPct can be exceeded than BPS due to inc...](./30708%20-%20%5BSC%20-%20Low%5D%20treasuryPct%20can%20be%20exceeded%20than%20BPS%20due%20to%20inc....md)
-* [30711 - [SC - Low] The result of the AggregatorVInterface is not v...](./30711%20-%20%5BSC%20-%20Low%5D%20The%20result%20of%20the%20AggregatorVInterface%20is%20not%20v....md)
-* [30781 - [SC - Low] It is possible to lower the quorum requirements...](./30781%20-%20%5BSC%20-%20Low%5D%20It%20is%20possible%20to%20lower%20the%20quorum%20requirements....md)
-* [30818 - [SC - Low] division before multiplication in theamountToRa...](./30818%20-%20%5BSC%20-%20Low%5D%20division%20before%20multiplication%20in%20theamountToRa....md)
-* [30920 - [SC - Low] User loses access to claims after merging of to...](./30920%20-%20%5BSC%20-%20Low%5D%20User%20loses%20access%20to%20claims%20after%20merging%20of%20to....md)
-* [30921 - [SC - Low] Referential assignment causes incorrect block i...](./30921%20-%20%5BSC%20-%20Low%5D%20Referential%20assignment%20causes%20incorrect%20block%20i....md)
-* [30926 - [SC - Low] AlchemixGovernor updates to quorum can affect p...](./30926%20-%20%5BSC%20-%20Low%5D%20AlchemixGovernor%20updates%20to%20quorum%20can%20affect%20p....md)
-* [30951 - [SC - Low] Incorrect ownerOf implementation makes veALCX n...](./30951%20-%20%5BSC%20-%20Low%5D%20Incorrect%20ownerOf%20implementation%20makes%20veALCX%20n....md)
-* [30973 - [SC - Low] Incorrect Validation of treasuryPct in the Reve...](./30973%20-%20%5BSC%20-%20Low%5D%20Incorrect%20Validation%20of%20treasuryPct%20in%20the%20Reve....md)
-* [31087 - [SC - Low] Colition between approve and _isApprovedOrOwner...](./31087%20-%20%5BSC%20-%20Low%5D%20Colition%20between%20approve%20and%20_isApprovedOrOwner....md)
-* [31272 - [SC - Low] Approved user cant merge tokens not approved fo...](./31272%20-%20%5BSC%20-%20Low%5D%20Approved%20user%20cant%20merge%20tokens%20not%20approved%20fo....md)
-* [31281 - [SC - Low] Approved spender cannot withdraw or merge](./31281%20-%20%5BSC%20-%20Low%5D%20Approved%20spender%20cannot%20withdraw%20or%20merge.md)
-* [31355 - [SC - Low] Past Defeated Proposals Can Be Executed in the ...](./31355%20-%20%5BSC%20-%20Low%5D%20Past%20Defeated%20Proposals%20Can%20Be%20Executed%20in%20the%20....md)
-* [31381 - [SC - Low] Alchemix  Incorrect Initialisation of struct in...](./31381%20-%20%5BSC%20-%20Low%5D%20Alchemix%20%20Incorrect%20Initialisation%20of%20struct%20in....md)
-* [31383 - [SC - Low] price feeds sanity checks isnt correct in funct...](./31383%20-%20%5BSC%20-%20Low%5D%20price%20feeds%20sanity%20checks%20isnt%20correct%20in%20funct....md)
-* [31385 - [SC - Low] RewardsDistributortokensPerWeek might be zero i...](./31385%20-%20%5BSC%20-%20Low%5D%20RewardsDistributortokensPerWeek%20might%20be%20zero%20i....md)
-* [31449 - [SC - Low] BribegetRewardForOwner should not revert if the...](./31449%20-%20%5BSC%20-%20Low%5D%20BribegetRewardForOwner%20should%20not%20revert%20if%20the....md)
-* [31487 - [SC - Low] Wrong condition check on RevenueHandlerconstruc...](./31487%20-%20%5BSC%20-%20Low%5D%20Wrong%20condition%20check%20on%20RevenueHandlerconstruc....md)
-* [31497 - [SC - Low] executeBatch lacks payable so ethers can not be...](./31497%20-%20%5BSC%20-%20Low%5D%20executeBatch%20lacks%20payable%20so%20ethers%20can%20not%20be....md)
-* [31519 - [SC - Low] Lack of revert statement in Votersolpoke result...](./31519%20-%20%5BSC%20-%20Low%5D%20Lack%20of%20revert%20statement%20in%20Votersolpoke%20result....md)
-* [31523 - [SC - Low] USDT Approval will cause function failure](./31523%20-%20%5BSC%20-%20Low%5D%20USDT%20Approval%20will%20cause%20function%20failure.md)
-* [31542 - [SC - Low] Bribeearned - L Its potentially possible to ear...](./31542%20-%20%5BSC%20-%20Low%5D%20Bribeearned%20-%20L%20Its%20potentially%20possible%20to%20ear....md)
-* [31555 - [SC - Low] RewardsDistributoramountToCompound - L The stal...](./31555%20-%20%5BSC%20-%20Low%5D%20RewardsDistributoramountToCompound%20-%20L%20The%20stal....md)
-* [31559 - [SC - Low] Minter UpdatePeriod after  weeks causes Rewards...](./31559%20-%20%5BSC%20-%20Low%5D%20Minter%20UpdatePeriod%20after%20%20weeks%20causes%20Rewards....md)
-* [31563 - [SC - Low] Oracle  days staleThreshold for priceTimestamp ...](./31563%20-%20%5BSC%20-%20Low%5D%20Oracle%20%20days%20staleThreshold%20for%20priceTimestamp%20....md)
-* [31588 - [SC - Low] Users could start cooldown period for their wit...](./31588%20-%20%5BSC%20-%20Low%5D%20Users%20could%20start%20cooldown%20period%20for%20their%20wit....md)
-
-</details>
-<details>
-<summary>Insight</summary>
-
-* [30584 - [SC - Insight] Invalid check to make sure Minter is already in...](./30584%20-%20%5BSC%20-%20Insight%5D%20Invalid%20check%20to%20make%20sure%20Minter%20is%20already%20in....md)
-* [30710 - [SC - Insight] The execution of the proposal has no expiration](./30710%20-%20%5BSC%20-%20Insight%5D%20The%20execution%20of%20the%20proposal%20has%20no%20expiration.md)
-* [30918 - [SC - Insight] Incorrect implementation of ownerOf makes veALC...](./30918%20-%20%5BSC%20-%20Insight%5D%20Incorrect%20implementation%20of%20ownerOf%20makes%20veALC....md)
-* [30959 - [SC - Insight] Immutable gauges can break the state of the vot...](./30959%20-%20%5BSC%20-%20Insight%5D%20Immutable%20gauges%20can%20break%20the%20state%20of%20the%20vot....md)
-* [30992 - [SC - Insight] Inconsistent State Missing Event Emission in Fl...](./30992%20-%20%5BSC%20-%20Insight%5D%20Inconsistent%20State%20Missing%20Event%20Emission%20in%20Fl....md)
-* [31080 - [SC - Insight] DoS in startCooldown when users want start cool...](./31080%20-%20%5BSC%20-%20Insight%5D%20DoS%20in%20startCooldown%20when%20users%20want%20start%20cool....md)
-* [31226 - [SC - Insight] Missing Revert Message in require statement lea...](./31226%20-%20%5BSC%20-%20Insight%5D%20Missing%20Revert%20Message%20in%20require%20statement%20lea....md)
-* [31264 - [SC - Insight] Multiple Reports QALowOOS Medium](./31264%20-%20%5BSC%20-%20Insight%5D%20Multiple%20Reports%20QALowOOS%20Medium.md)
-* [31277 - [SC - Insight] The user can propose with less voting power tha...](./31277%20-%20%5BSC%20-%20Insight%5D%20The%20user%20can%20propose%20with%20less%20voting%20power%20tha....md)
-* [31284 - [SC - Insight] cancel should allow to cancel the proposal of t...](./31284%20-%20%5BSC%20-%20Insight%5D%20cancel%20should%20allow%20to%20cancel%20the%20proposal%20of%20t....md)
-* [31407 - [SC - Insight] Alchemist is given over Allowance through Reven...](./31407%20-%20%5BSC%20-%20Insight%5D%20Alchemist%20is%20given%20over%20Allowance%20through%20Reven....md)
-* [31416 - [SC - Insight] Impossible to set boostMultiplier to MIN_BOOST](./31416%20-%20%5BSC%20-%20Insight%5D%20Impossible%20to%20set%20boostMultiplier%20to%20MIN_BOOST.md)
-* [31417 - [SC - Insight] Compound claiming transactions will revert if u...](./31417%20-%20%5BSC%20-%20Insight%5D%20Compound%20claiming%20transactions%20will%20revert%20if%20u....md)
-* [31420 - [SC - Insight] No array lengths check in VotersolclaimBribes](./31420%20-%20%5BSC%20-%20Insight%5D%20No%20array%20lengths%20check%20in%20VotersolclaimBribes.md)
-* [31430 - [SC - Insight] QA](./31430%20-%20%5BSC%20-%20Insight%5D%20QA.md)
-* [31443 - [SC - Insight] Incorrect values of votingDelay and votingPerio...](./31443%20-%20%5BSC%20-%20Insight%5D%20Incorrect%20values%20of%20votingDelay%20and%20votingPerio....md)
-* [31451 - [SC - Insight] MAX_PROPOSAL_NUMERATOR is incorrectly set](./31451%20-%20%5BSC%20-%20Insight%5D%20MAX_PROPOSAL_NUMERATOR%20is%20incorrectly%20set.md)
-* [31460 - [SC - Insight] supportsInterface does not return typeIERCRecei...](./31460%20-%20%5BSC%20-%20Insight%5D%20supportsInterface%20does%20not%20return%20typeIERCRecei....md)
-* [31503 - [SC - Insight] Incorrect value of MAX_PROPOSAL_NUMERATOR in Al...](./31503%20-%20%5BSC%20-%20Insight%5D%20Incorrect%20value%20of%20MAX_PROPOSAL_NUMERATOR%20in%20Al....md)
-* [31540 - [SC - Insight] Expired Token Locks Impacting Vote Weight Calcu...](./31540%20-%20%5BSC%20-%20Insight%5D%20Expired%20Token%20Locks%20Impacting%20Vote%20Weight%20Calcu....md)
-* [31552 - [SC - Insight] Lack of the validation for a Flash token protec...](./31552%20-%20%5BSC%20-%20Insight%5D%20Lack%20of%20the%20validation%20for%20a%20Flash%20token%20protec....md)
-* [31558 - [SC - Insight] Discrepancy in MAX_PROPOSAL_NUMERATOR Value in ...](./31558%20-%20%5BSC%20-%20Insight%5D%20Discrepancy%20in%20MAX_PROPOSAL_NUMERATOR%20Value%20in%20....md)
-* [31583 - [SC - Insight] Off by one error while adding reward pool token](./31583%20-%20%5BSC%20-%20Insight%5D%20Off%20by%20one%20error%20while%20adding%20reward%20pool%20token.md)
-* [31592 - [SC - Insight] Collection of other important issues](./31592%20-%20%5BSC%20-%20Insight%5D%20Collection%20of%20other%20important%20issues.md)
-* [31594 - [SC - Insight] RewardPoolManager can only add RewardPoolToken ...](./31594%20-%20%5BSC%20-%20Insight%5D%20RewardPoolManager%20can%20only%20add%20RewardPoolToken%20....md)
-
-</details>
-<details>
-<summary>Medium</summary>
-
-* [30592 - [SC - Medium] DOS attack by delegating tokens at MAX_DELEGATE...](./30592%20-%20%5BSC%20-%20Medium%5D%20DOS%20attack%20by%20delegating%20tokens%20at%20MAX_DELEGATE....md)
-* [30613 - [SC - Medium] malicious user can front run any call to the sw...](./30613%20-%20%5BSC%20-%20Medium%5D%20malicious%20user%20can%20front%20run%20any%20call%20to%20the%20sw....md)
-* [30667 - [SC - Medium] Unlimited gauge numbers can DoS users distribut...](./30667%20-%20%5BSC%20-%20Medium%5D%20Unlimited%20gauge%20numbers%20can%20DoS%20users%20distribut....md)
-* [30685 - [SC - Medium] The proposer can be impeded from submitting a p...](./30685%20-%20%5BSC%20-%20Medium%5D%20The%20proposer%20can%20be%20impeded%20from%20submitting%20a%20p....md)
-* [30704 - [SC - Medium] Griefing an account from getting votes delegate...](./30704%20-%20%5BSC%20-%20Medium%5D%20Griefing%20an%20account%20from%20getting%20votes%20delegate....md)
-* [30886 - [SC - Medium] Wrong totalWeight in Votersol](./30886%20-%20%5BSC%20-%20Medium%5D%20Wrong%20totalWeight%20in%20Votersol.md)
-* [30985 - [SC - Medium] Griefing attack prevents admins from disabling ...](./30985%20-%20%5BSC%20-%20Medium%5D%20Griefing%20attack%20prevents%20admins%20from%20disabling%20....md)
-* [31151 - [SC - Medium] Delegation Saturation Leading to Asset Freezing...](./31151%20-%20%5BSC%20-%20Medium%5D%20Delegation%20Saturation%20Leading%20to%20Asset%20Freezing....md)
-* [31234 - [SC - Medium] Alchemix  BlockSlope variable in checkpoint rou...](./31234%20-%20%5BSC%20-%20Medium%5D%20Alchemix%20%20BlockSlope%20variable%20in%20checkpoint%20rou....md)
-* [31298 - [SC - Medium] Anyone can let users delegates reach the upper ...](./31298%20-%20%5BSC%20-%20Medium%5D%20Anyone%20can%20let%20users%20delegates%20reach%20the%20upper%20....md)
-* [31410 - [SC - Medium] Griefing Attack using delegate will expose User...](./31410%20-%20%5BSC%20-%20Medium%5D%20Griefing%20Attack%20using%20delegate%20will%20expose%20User....md)
-* [31413 - [SC - Medium] DOS attack by delegating tokens at MAX_DELEGATES  ](./31413%20-%20%5BSC%20-%20Medium%5D%20DOS%20attack%20by%20delegating%20tokens%20at%20MAX_DELEGATES%20%20.md)
-* [31425 - [SC - Medium] Users can call reset on their token even if the...](./31425%20-%20%5BSC%20-%20Medium%5D%20Users%20can%20call%20reset%20on%20their%20token%20even%20if%20the....md)
-* [31448 - [SC - Medium] Bypassing the Governances proposal threshold to...](./31448%20-%20%5BSC%20-%20Medium%5D%20Bypassing%20the%20Governances%20proposal%20threshold%20to....md)
-* [31462 - [SC - Medium] Alchemix  addReward access control can be bypas...](./31462%20-%20%5BSC%20-%20Medium%5D%20Alchemix%20%20addReward%20access%20control%20can%20be%20bypas....md)
-* [31514 - [SC - Medium] Malicious users can cause pokeTokens to revert](./31514%20-%20%5BSC%20-%20Medium%5D%20Malicious%20users%20can%20cause%20pokeTokens%20to%20revert.md)
-* [31521 - [SC - Medium] Early return in RewardsDistributorclaim can cau...](./31521%20-%20%5BSC%20-%20Medium%5D%20Early%20return%20in%20RewardsDistributorclaim%20can%20cau....md)
-* [31539 - [SC - Medium] The Voterdistribute function can continue to fail](./31539%20-%20%5BSC%20-%20Medium%5D%20The%20Voterdistribute%20function%20can%20continue%20to%20fail.md)
-* [31562 - [SC - Medium] Every consecutive epoch will have same number o...](./31562%20-%20%5BSC%20-%20Medium%5D%20Every%20consecutive%20epoch%20will%20have%20same%20number%20o....md)
-* [31566 - [SC - Medium] Checkpoints wont update block number in point b...](./31566%20-%20%5BSC%20-%20Medium%5D%20Checkpoints%20wont%20update%20block%20number%20in%20point%20b....md)
-* [31575 - [SC - Medium] depositIntoRewardPool and  withdrawFromRewardPo...](./31575%20-%20%5BSC%20-%20Medium%5D%20depositIntoRewardPool%20and%20%20withdrawFromRewardPo....md)
-
-</details>
+[Critical](<README.md#critical>) | [High](<README.md#high>) | [Medium](<README.md#medium>) | [Low](<README.md#low>) | [Insight](<README.md#insight>)
 <details>
 <summary>Critical</summary>
 
@@ -208,6 +116,98 @@
 * [31524 - [SC - High] Rounding down in getClaimableFlux leads to less...](./31524%20-%20%5BSC%20-%20High%5D%20Rounding%20down%20in%20getClaimableFlux%20leads%20to%20less....md)
 * [31544 - [SC - High] Certain small amount of tokens are not accounte...](./31544%20-%20%5BSC%20-%20High%5D%20Certain%20small%20amount%20of%20tokens%20are%20not%20accounte....md)
 * [31597 - [SC - High] Loss of precision while calculating claimable f...](./31597%20-%20%5BSC%20-%20High%5D%20Loss%20of%20precision%20while%20calculating%20claimable%20f....md)
+
+</details>
+<details>
+<summary>Medium</summary>
+
+* [30592 - [SC - Medium] DOS attack by delegating tokens at MAX_DELEGATE...](./30592%20-%20%5BSC%20-%20Medium%5D%20DOS%20attack%20by%20delegating%20tokens%20at%20MAX_DELEGATE....md)
+* [30613 - [SC - Medium] malicious user can front run any call to the sw...](./30613%20-%20%5BSC%20-%20Medium%5D%20malicious%20user%20can%20front%20run%20any%20call%20to%20the%20sw....md)
+* [30667 - [SC - Medium] Unlimited gauge numbers can DoS users distribut...](./30667%20-%20%5BSC%20-%20Medium%5D%20Unlimited%20gauge%20numbers%20can%20DoS%20users%20distribut....md)
+* [30685 - [SC - Medium] The proposer can be impeded from submitting a p...](./30685%20-%20%5BSC%20-%20Medium%5D%20The%20proposer%20can%20be%20impeded%20from%20submitting%20a%20p....md)
+* [30704 - [SC - Medium] Griefing an account from getting votes delegate...](./30704%20-%20%5BSC%20-%20Medium%5D%20Griefing%20an%20account%20from%20getting%20votes%20delegate....md)
+* [30886 - [SC - Medium] Wrong totalWeight in Votersol](./30886%20-%20%5BSC%20-%20Medium%5D%20Wrong%20totalWeight%20in%20Votersol.md)
+* [30985 - [SC - Medium] Griefing attack prevents admins from disabling ...](./30985%20-%20%5BSC%20-%20Medium%5D%20Griefing%20attack%20prevents%20admins%20from%20disabling%20....md)
+* [31151 - [SC - Medium] Delegation Saturation Leading to Asset Freezing...](./31151%20-%20%5BSC%20-%20Medium%5D%20Delegation%20Saturation%20Leading%20to%20Asset%20Freezing....md)
+* [31234 - [SC - Medium] Alchemix  BlockSlope variable in checkpoint rou...](./31234%20-%20%5BSC%20-%20Medium%5D%20Alchemix%20%20BlockSlope%20variable%20in%20checkpoint%20rou....md)
+* [31298 - [SC - Medium] Anyone can let users delegates reach the upper ...](./31298%20-%20%5BSC%20-%20Medium%5D%20Anyone%20can%20let%20users%20delegates%20reach%20the%20upper%20....md)
+* [31410 - [SC - Medium] Griefing Attack using delegate will expose User...](./31410%20-%20%5BSC%20-%20Medium%5D%20Griefing%20Attack%20using%20delegate%20will%20expose%20User....md)
+* [31413 - [SC - Medium] DOS attack by delegating tokens at MAX_DELEGATES  ](./31413%20-%20%5BSC%20-%20Medium%5D%20DOS%20attack%20by%20delegating%20tokens%20at%20MAX_DELEGATES%20%20.md)
+* [31425 - [SC - Medium] Users can call reset on their token even if the...](./31425%20-%20%5BSC%20-%20Medium%5D%20Users%20can%20call%20reset%20on%20their%20token%20even%20if%20the....md)
+* [31448 - [SC - Medium] Bypassing the Governances proposal threshold to...](./31448%20-%20%5BSC%20-%20Medium%5D%20Bypassing%20the%20Governances%20proposal%20threshold%20to....md)
+* [31462 - [SC - Medium] Alchemix  addReward access control can be bypas...](./31462%20-%20%5BSC%20-%20Medium%5D%20Alchemix%20%20addReward%20access%20control%20can%20be%20bypas....md)
+* [31514 - [SC - Medium] Malicious users can cause pokeTokens to revert](./31514%20-%20%5BSC%20-%20Medium%5D%20Malicious%20users%20can%20cause%20pokeTokens%20to%20revert.md)
+* [31521 - [SC - Medium] Early return in RewardsDistributorclaim can cau...](./31521%20-%20%5BSC%20-%20Medium%5D%20Early%20return%20in%20RewardsDistributorclaim%20can%20cau....md)
+* [31539 - [SC - Medium] The Voterdistribute function can continue to fail](./31539%20-%20%5BSC%20-%20Medium%5D%20The%20Voterdistribute%20function%20can%20continue%20to%20fail.md)
+* [31562 - [SC - Medium] Every consecutive epoch will have same number o...](./31562%20-%20%5BSC%20-%20Medium%5D%20Every%20consecutive%20epoch%20will%20have%20same%20number%20o....md)
+* [31566 - [SC - Medium] Checkpoints wont update block number in point b...](./31566%20-%20%5BSC%20-%20Medium%5D%20Checkpoints%20wont%20update%20block%20number%20in%20point%20b....md)
+* [31575 - [SC - Medium] depositIntoRewardPool and  withdrawFromRewardPo...](./31575%20-%20%5BSC%20-%20Medium%5D%20depositIntoRewardPool%20and%20%20withdrawFromRewardPo....md)
+
+</details>
+<details>
+<summary>Low</summary>
+
+* [30555 - [SC - Low] Precision loss when calculating the FLUX amount...](./30555%20-%20%5BSC%20-%20Low%5D%20Precision%20loss%20when%20calculating%20the%20FLUX%20amount....md)
+* [30556 - [SC - Low] Past defeated proposals may become executable i...](./30556%20-%20%5BSC%20-%20Low%5D%20Past%20defeated%20proposals%20may%20become%20executable%20i....md)
+* [30565 - [SC - Low] veALCX does not comply with ERC breaking compos...](./30565%20-%20%5BSC%20-%20Low%5D%20veALCX%20does%20not%20comply%20with%20ERC%20breaking%20compos....md)
+* [30598 - [SC - Low] Access Control Flaw in _burn Function Leads to ...](./30598%20-%20%5BSC%20-%20Low%5D%20Access%20Control%20Flaw%20in%20_burn%20Function%20Leads%20to%20....md)
+* [30694 - [SC - Low] Users approved for a single token id cannot wit...](./30694%20-%20%5BSC%20-%20Low%5D%20Users%20approved%20for%20a%20single%20token%20id%20cannot%20wit....md)
+* [30708 - [SC - Low] treasuryPct can be exceeded than BPS due to inc...](./30708%20-%20%5BSC%20-%20Low%5D%20treasuryPct%20can%20be%20exceeded%20than%20BPS%20due%20to%20inc....md)
+* [30711 - [SC - Low] The result of the AggregatorVInterface is not v...](./30711%20-%20%5BSC%20-%20Low%5D%20The%20result%20of%20the%20AggregatorVInterface%20is%20not%20v....md)
+* [30781 - [SC - Low] It is possible to lower the quorum requirements...](./30781%20-%20%5BSC%20-%20Low%5D%20It%20is%20possible%20to%20lower%20the%20quorum%20requirements....md)
+* [30818 - [SC - Low] division before multiplication in theamountToRa...](./30818%20-%20%5BSC%20-%20Low%5D%20division%20before%20multiplication%20in%20theamountToRa....md)
+* [30920 - [SC - Low] User loses access to claims after merging of to...](./30920%20-%20%5BSC%20-%20Low%5D%20User%20loses%20access%20to%20claims%20after%20merging%20of%20to....md)
+* [30921 - [SC - Low] Referential assignment causes incorrect block i...](./30921%20-%20%5BSC%20-%20Low%5D%20Referential%20assignment%20causes%20incorrect%20block%20i....md)
+* [30926 - [SC - Low] AlchemixGovernor updates to quorum can affect p...](./30926%20-%20%5BSC%20-%20Low%5D%20AlchemixGovernor%20updates%20to%20quorum%20can%20affect%20p....md)
+* [30951 - [SC - Low] Incorrect ownerOf implementation makes veALCX n...](./30951%20-%20%5BSC%20-%20Low%5D%20Incorrect%20ownerOf%20implementation%20makes%20veALCX%20n....md)
+* [30973 - [SC - Low] Incorrect Validation of treasuryPct in the Reve...](./30973%20-%20%5BSC%20-%20Low%5D%20Incorrect%20Validation%20of%20treasuryPct%20in%20the%20Reve....md)
+* [31087 - [SC - Low] Colition between approve and _isApprovedOrOwner...](./31087%20-%20%5BSC%20-%20Low%5D%20Colition%20between%20approve%20and%20_isApprovedOrOwner....md)
+* [31272 - [SC - Low] Approved user cant merge tokens not approved fo...](./31272%20-%20%5BSC%20-%20Low%5D%20Approved%20user%20cant%20merge%20tokens%20not%20approved%20fo....md)
+* [31281 - [SC - Low] Approved spender cannot withdraw or merge](./31281%20-%20%5BSC%20-%20Low%5D%20Approved%20spender%20cannot%20withdraw%20or%20merge.md)
+* [31355 - [SC - Low] Past Defeated Proposals Can Be Executed in the ...](./31355%20-%20%5BSC%20-%20Low%5D%20Past%20Defeated%20Proposals%20Can%20Be%20Executed%20in%20the%20....md)
+* [31381 - [SC - Low] Alchemix  Incorrect Initialisation of struct in...](./31381%20-%20%5BSC%20-%20Low%5D%20Alchemix%20%20Incorrect%20Initialisation%20of%20struct%20in....md)
+* [31383 - [SC - Low] price feeds sanity checks isnt correct in funct...](./31383%20-%20%5BSC%20-%20Low%5D%20price%20feeds%20sanity%20checks%20isnt%20correct%20in%20funct....md)
+* [31385 - [SC - Low] RewardsDistributortokensPerWeek might be zero i...](./31385%20-%20%5BSC%20-%20Low%5D%20RewardsDistributortokensPerWeek%20might%20be%20zero%20i....md)
+* [31449 - [SC - Low] BribegetRewardForOwner should not revert if the...](./31449%20-%20%5BSC%20-%20Low%5D%20BribegetRewardForOwner%20should%20not%20revert%20if%20the....md)
+* [31487 - [SC - Low] Wrong condition check on RevenueHandlerconstruc...](./31487%20-%20%5BSC%20-%20Low%5D%20Wrong%20condition%20check%20on%20RevenueHandlerconstruc....md)
+* [31497 - [SC - Low] executeBatch lacks payable so ethers can not be...](./31497%20-%20%5BSC%20-%20Low%5D%20executeBatch%20lacks%20payable%20so%20ethers%20can%20not%20be....md)
+* [31519 - [SC - Low] Lack of revert statement in Votersolpoke result...](./31519%20-%20%5BSC%20-%20Low%5D%20Lack%20of%20revert%20statement%20in%20Votersolpoke%20result....md)
+* [31523 - [SC - Low] USDT Approval will cause function failure](./31523%20-%20%5BSC%20-%20Low%5D%20USDT%20Approval%20will%20cause%20function%20failure.md)
+* [31542 - [SC - Low] Bribeearned - L Its potentially possible to ear...](./31542%20-%20%5BSC%20-%20Low%5D%20Bribeearned%20-%20L%20Its%20potentially%20possible%20to%20ear....md)
+* [31555 - [SC - Low] RewardsDistributoramountToCompound - L The stal...](./31555%20-%20%5BSC%20-%20Low%5D%20RewardsDistributoramountToCompound%20-%20L%20The%20stal....md)
+* [31559 - [SC - Low] Minter UpdatePeriod after  weeks causes Rewards...](./31559%20-%20%5BSC%20-%20Low%5D%20Minter%20UpdatePeriod%20after%20%20weeks%20causes%20Rewards....md)
+* [31563 - [SC - Low] Oracle  days staleThreshold for priceTimestamp ...](./31563%20-%20%5BSC%20-%20Low%5D%20Oracle%20%20days%20staleThreshold%20for%20priceTimestamp%20....md)
+* [31588 - [SC - Low] Users could start cooldown period for their wit...](./31588%20-%20%5BSC%20-%20Low%5D%20Users%20could%20start%20cooldown%20period%20for%20their%20wit....md)
+
+</details>
+<details>
+<summary>Insight</summary>
+
+* [30584 - [SC - Insight] Invalid check to make sure Minter is already in...](./30584%20-%20%5BSC%20-%20Insight%5D%20Invalid%20check%20to%20make%20sure%20Minter%20is%20already%20in....md)
+* [30710 - [SC - Insight] The execution of the proposal has no expiration](./30710%20-%20%5BSC%20-%20Insight%5D%20The%20execution%20of%20the%20proposal%20has%20no%20expiration.md)
+* [30918 - [SC - Insight] Incorrect implementation of ownerOf makes veALC...](./30918%20-%20%5BSC%20-%20Insight%5D%20Incorrect%20implementation%20of%20ownerOf%20makes%20veALC....md)
+* [30959 - [SC - Insight] Immutable gauges can break the state of the vot...](./30959%20-%20%5BSC%20-%20Insight%5D%20Immutable%20gauges%20can%20break%20the%20state%20of%20the%20vot....md)
+* [30992 - [SC - Insight] Inconsistent State Missing Event Emission in Fl...](./30992%20-%20%5BSC%20-%20Insight%5D%20Inconsistent%20State%20Missing%20Event%20Emission%20in%20Fl....md)
+* [31080 - [SC - Insight] DoS in startCooldown when users want start cool...](./31080%20-%20%5BSC%20-%20Insight%5D%20DoS%20in%20startCooldown%20when%20users%20want%20start%20cool....md)
+* [31226 - [SC - Insight] Missing Revert Message in require statement lea...](./31226%20-%20%5BSC%20-%20Insight%5D%20Missing%20Revert%20Message%20in%20require%20statement%20lea....md)
+* [31264 - [SC - Insight] Multiple Reports QALowOOS Medium](./31264%20-%20%5BSC%20-%20Insight%5D%20Multiple%20Reports%20QALowOOS%20Medium.md)
+* [31277 - [SC - Insight] The user can propose with less voting power tha...](./31277%20-%20%5BSC%20-%20Insight%5D%20The%20user%20can%20propose%20with%20less%20voting%20power%20tha....md)
+* [31284 - [SC - Insight] cancel should allow to cancel the proposal of t...](./31284%20-%20%5BSC%20-%20Insight%5D%20cancel%20should%20allow%20to%20cancel%20the%20proposal%20of%20t....md)
+* [31407 - [SC - Insight] Alchemist is given over Allowance through Reven...](./31407%20-%20%5BSC%20-%20Insight%5D%20Alchemist%20is%20given%20over%20Allowance%20through%20Reven....md)
+* [31416 - [SC - Insight] Impossible to set boostMultiplier to MIN_BOOST](./31416%20-%20%5BSC%20-%20Insight%5D%20Impossible%20to%20set%20boostMultiplier%20to%20MIN_BOOST.md)
+* [31417 - [SC - Insight] Compound claiming transactions will revert if u...](./31417%20-%20%5BSC%20-%20Insight%5D%20Compound%20claiming%20transactions%20will%20revert%20if%20u....md)
+* [31420 - [SC - Insight] No array lengths check in VotersolclaimBribes](./31420%20-%20%5BSC%20-%20Insight%5D%20No%20array%20lengths%20check%20in%20VotersolclaimBribes.md)
+* [31430 - [SC - Insight] QA](./31430%20-%20%5BSC%20-%20Insight%5D%20QA.md)
+* [31443 - [SC - Insight] Incorrect values of votingDelay and votingPerio...](./31443%20-%20%5BSC%20-%20Insight%5D%20Incorrect%20values%20of%20votingDelay%20and%20votingPerio....md)
+* [31451 - [SC - Insight] MAX_PROPOSAL_NUMERATOR is incorrectly set](./31451%20-%20%5BSC%20-%20Insight%5D%20MAX_PROPOSAL_NUMERATOR%20is%20incorrectly%20set.md)
+* [31460 - [SC - Insight] supportsInterface does not return typeIERCRecei...](./31460%20-%20%5BSC%20-%20Insight%5D%20supportsInterface%20does%20not%20return%20typeIERCRecei....md)
+* [31503 - [SC - Insight] Incorrect value of MAX_PROPOSAL_NUMERATOR in Al...](./31503%20-%20%5BSC%20-%20Insight%5D%20Incorrect%20value%20of%20MAX_PROPOSAL_NUMERATOR%20in%20Al....md)
+* [31540 - [SC - Insight] Expired Token Locks Impacting Vote Weight Calcu...](./31540%20-%20%5BSC%20-%20Insight%5D%20Expired%20Token%20Locks%20Impacting%20Vote%20Weight%20Calcu....md)
+* [31552 - [SC - Insight] Lack of the validation for a Flash token protec...](./31552%20-%20%5BSC%20-%20Insight%5D%20Lack%20of%20the%20validation%20for%20a%20Flash%20token%20protec....md)
+* [31558 - [SC - Insight] Discrepancy in MAX_PROPOSAL_NUMERATOR Value in ...](./31558%20-%20%5BSC%20-%20Insight%5D%20Discrepancy%20in%20MAX_PROPOSAL_NUMERATOR%20Value%20in%20....md)
+* [31583 - [SC - Insight] Off by one error while adding reward pool token](./31583%20-%20%5BSC%20-%20Insight%5D%20Off%20by%20one%20error%20while%20adding%20reward%20pool%20token.md)
+* [31592 - [SC - Insight] Collection of other important issues](./31592%20-%20%5BSC%20-%20Insight%5D%20Collection%20of%20other%20important%20issues.md)
+* [31594 - [SC - Insight] RewardPoolManager can only add RewardPoolToken ...](./31594%20-%20%5BSC%20-%20Insight%5D%20RewardPoolManager%20can%20only%20add%20RewardPoolToken%20....md)
 
 </details>
 

@@ -265,8 +265,6 @@
     * [29738 - [SC - Low] Missing Chainlink circuit breaker check allows ...](Immunefi%20Arbitration/29738%20-%20%5bSC%20-%20Low%5d%20Missing%20Chainlink%20circuit%20breaker%20check%20allows%20....md)
     * [29744 - [SC - Insight] Projects can pay rewards at up to  below market...](Immunefi%20Arbitration/29744%20-%20%5bSC%20-%20Insight%5d%20Projects%20can%20pay%20rewards%20at%20up%20to%20%20below%20market....md)
     * [29760 - [SC - Insight] Enforcing Multiple Rewards During Arbitration B...](Immunefi%20Arbitration/29760%20-%20%5bSC%20-%20Insight%5d%20Enforcing%20Multiple%20Rewards%20During%20Arbitration%20B....md)
-* [Ionic](Ionic/README.md)
-    * [*](Ionic/%2a.md)
 * [Puffer Finance](Puffer%20Finance/README.md)
     * [28612 - [SC - Insight] EigenLayers share rate can be massively inflate...](Puffer%20Finance/28612%20-%20%5bSC%20-%20Insight%5d%20EigenLayers%20share%20rate%20can%20be%20massively%20inflate....md)
     * [28613 - [SC - Medium] User will lose funds](Puffer%20Finance/28613%20-%20%5bSC%20-%20Medium%5d%20User%20will%20lose%20funds.md)
