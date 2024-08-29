@@ -1,7 +1,7 @@
 
 # Mechanism for distributing extra reward tokens is broken
 
-Submitted on Sun Mar 03 2024 22:07:39 GMT-0400 (Atlantic Standard Time) by @MahdiKarimi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 4th 2024 at 04:07:39 UTC by @MahdiKarimi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28988
 
@@ -26,8 +26,8 @@ It enables a malicious user to transfer all additional reward tokens to one spec
 
 ## References
 https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L214-L234
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```
   describe("transfer additional rewards test", () => {

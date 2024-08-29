@@ -1,7 +1,7 @@
 
 # Ability to deny users from repaying and supplying at the Pool contract
 
-Submitted on Wed Mar 06 2024 08:21:15 GMT-0400 (Atlantic Standard Time) by @OceanAndThunders for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 6th 2024 at 14:21:15 UTC by @OceanAndThunders for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29069
 
@@ -30,8 +30,8 @@ Denying users from using the pool.repayWithPermit and pool.supplyWithPermit prop
 ## References
 Example explanation of the issue : https://www.trust-security.xyz/post/permission-denied
 
-        
-## Proof of concept
+
+
 ## Proof of concept :
 
 In this test "https://github.com/zerolend/core-contracts/blob/146f7bc50b8b9850cf9048989cd734e51c400b48/test-suites/pool-l2.spec.ts#L382" include this line at 411 (as the attacker called the permit before the protocols call usdc.permit) :

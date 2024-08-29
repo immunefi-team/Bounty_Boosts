@@ -1,7 +1,7 @@
 
 # Attacker can steal locked balance of staked nft at OmnichainStaking
 
-Submitted on Tue Mar 05 2024 22:05:14 GMT-0400 (Atlantic Standard Time) by @MahdiKarimi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 6th 2024 at 04:05:14 UTC by @MahdiKarimi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29062
 
@@ -42,8 +42,8 @@ https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1
 https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/locker/OmnichainStaking.sol#L68-L70
 https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/locker/OmnichainStaking.sol#L76-L79
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```
   describe("attacker can drain staked amount of tokenLocker", () => {

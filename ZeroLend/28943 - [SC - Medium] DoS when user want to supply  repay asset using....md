@@ -1,7 +1,7 @@
 
 # DoS when user want to supply / repay asset using a permit
 
-Submitted on Sat Mar 02 2024 08:40:11 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 2nd 2024 at 14:40:11 UTC by @savi0ur for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28943
 
@@ -156,8 +156,8 @@ function supplyWithPermit(
 - Proxy - https://explorer.zksync.io/address/0x4d9429246EA989C9CeE203B43F6d1C7D83e3B8F8#contract
 - Implementation - https://explorer.zksync.io/address/0x54d6f91be4509826559ad12e1ca6ca3a6c3811e0#contract
 
-        
-## Proof of concept
+
+
 ## Proof Of Concept
 
 **Steps to Run using Foundry:**

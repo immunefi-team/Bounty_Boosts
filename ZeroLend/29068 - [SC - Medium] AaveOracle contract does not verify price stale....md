@@ -1,7 +1,7 @@
 
 # AaveOracle contract does not verify price staleness
 
-Submitted on Wed Mar 06 2024 08:02:31 GMT-0400 (Atlantic Standard Time) by @Paludo0x for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 6th 2024 at 14:02:31 UTC by @Paludo0x for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29068
 
@@ -85,7 +85,7 @@ function latestTimestamp() public view returns (uint256) {
 
 ```
 
-        
+
 ## Proof of concept
 The requirement of price staleness verification is suggested by Pyth protocol in NATSPEC of function `pyth.getPriceUnsafe(priceId);` 
 

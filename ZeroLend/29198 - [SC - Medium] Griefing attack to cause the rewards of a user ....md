@@ -1,7 +1,7 @@
 
 # Griefing attack to cause the rewards of a user to be locked and when users claim the reward after maturity date, user will suffer the penalty. 
 
-Submitted on Sun Mar 10 2024 05:49:33 GMT-0400 (Atlantic Standard Time) by @perseverance for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 10th 2024 at 11:49:33 UTC by @perseverance for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29198
 
@@ -196,8 +196,8 @@ So the bug allow griefing attack that don't bring benefit to the hacker that cau
 So the Severity is Medium with Category: Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
 
 The bug root cause is that the penalty of ZeroVestedNFT amount calculation does not take into account the LinearDuration and unlockedDate. 
-        
-## Proof of concept
+
+
 # Proof of Concept
 
 Test code POC: 

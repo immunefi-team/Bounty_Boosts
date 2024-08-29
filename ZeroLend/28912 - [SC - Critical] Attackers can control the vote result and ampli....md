@@ -1,7 +1,7 @@
 
-# Attackers can control the vote result and amplify target gauge's share
+# Attackers can control the vote result and amplify target gauge's share 
 
-Submitted on Fri Mar 01 2024 11:54:55 GMT-0400 (Atlantic Standard Time) by @offside0011 for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 1st 2024 at 17:54:55 UTC by @offside0011 for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28912
 
@@ -104,7 +104,7 @@ The voting results can be manipulated and amplified, and the gauge pool rewards 
 https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L98
 https://github.com/zerolend/governance/blob/main/contracts/locker/OmnichainStaking.sol#L60
 
-        
+
 ## Proof of concept
 ```
 // SPDX-License-Identifier: UNLICENSED

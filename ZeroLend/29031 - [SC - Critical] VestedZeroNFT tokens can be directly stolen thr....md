@@ -1,7 +1,7 @@
 
 # VestedZeroNFT tokens can be directly stolen through the split() function
 
-Submitted on Mon Mar 04 2024 21:07:39 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 5th 2024 at 03:07:39 UTC by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29031
 
@@ -29,7 +29,7 @@ This means anyone can pass an existing tokenID and `fraction=1` to still 99.99% 
 ## Impact Details
 Anyone can steal the underlying value of vestedZeroNFTs
 
-        
+
 ## Proof of concept
 Since the project's test suite does not run, as indicated in chat, I've prepped a POC as a standalone contract which directly copies the `split()` function from VestedZeroNFT.
 

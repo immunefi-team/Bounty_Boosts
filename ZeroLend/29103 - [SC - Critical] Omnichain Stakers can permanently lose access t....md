@@ -1,7 +1,7 @@
 
 # Omnichain Stakers can permanently lose access to their funds
 
-Submitted on Wed Mar 06 2024 21:49:33 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 7th 2024 at 03:49:33 UTC by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29103
 
@@ -30,8 +30,8 @@ Another critical impact is that someone may cash out another user's tokenID to g
 ## Impact Details
 Users can permanently lose access to their underlying Zero tokens. 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 The single file POC below shows staker s2 has access to s1's NFT. Simple deploy the contract and run `showBrokenStaking()` of BaseLockerPOC.
 ```

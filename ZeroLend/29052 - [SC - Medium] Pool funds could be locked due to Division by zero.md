@@ -1,7 +1,7 @@
 
 # Pool funds could be locked due to Division by zero
 
-Submitted on Tue Mar 05 2024 16:04:05 GMT-0400 (Atlantic Standard Time) by @DuckAstronomer for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 5th 2024 at 22:04:05 UTC by @DuckAstronomer for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29052
 
@@ -71,8 +71,8 @@ In summary, an attacker could block other users' funds and receive rewards from 
 4. Subsequent **AToken** actions within the pool will trigger reverts.
 5. Consequently, the attacker locks users' funds in the pool and earns rewards from the gauge as the sole staker.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 **To run the Poc**:
 1. Put the code from below to the `governance-main/test/Gauge.poc.2.ts` file.

@@ -1,7 +1,7 @@
 
 # Using permit inside the function can lead to DoS and griefing
 
-Submitted on Mon Mar 11 2024 16:47:53 GMT-0400 (Atlantic Standard Time) by @stiglitz for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 11th 2024 at 22:47:53 UTC by @stiglitz for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29244
 
@@ -51,8 +51,8 @@ DoS, which can be temporary or longer lasting if there is no walk-around for the
 It is exactly the scenario described by Trust: 
 https://www.trust-security.xyz/post/permission-denied
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 As it is a known issue, I believe the blog post from Trust Security (https://www.trust-security.xyz/post/permission-denied) is sufficient proof of the existence of the vulnerability. 
 In case it is not I can provide PoC

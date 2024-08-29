@@ -1,7 +1,7 @@
 
 # Bug in reward distribution logic leads to theft of rewards
 
-Submitted on Thu Mar 07 2024 11:51:17 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 7th 2024 at 17:51:17 UTC by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29120
 
@@ -92,8 +92,8 @@ This breaks the invariant that there's always enough rewards in PoolVoter to sat
 ## Impact Details
 Rewards can be misappropriated by an attacker or through natural sequence of events. Users will lose access to unclaimed yield.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 The POC is implemented as a standalone file. Simply run `attack()` on DistributorPOC which shows that funds were sent to the supply gauge, but the `claimable` for LendingPoolGauge remains unchanged.
 

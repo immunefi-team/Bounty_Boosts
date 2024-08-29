@@ -1,7 +1,7 @@
 
 # Unauthorized minting of vested NFTs
 
-Submitted on Thu Feb 29 2024 10:43:28 GMT-0400 (Atlantic Standard Time) by @riptide for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Feb 29th 2024 at 16:43:28 UTC by @riptide for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28875
 
@@ -27,7 +27,7 @@ Low impact other than misrepresenting the `VestCategory` at will and corrupting 
 ## References
 Add any relevant links to documentation or code
 
-        
+
 ## Proof of concept
 ```
 import { expect } from "chai";

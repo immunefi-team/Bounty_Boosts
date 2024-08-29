@@ -1,7 +1,7 @@
 
-# The locker's supply can be arbitrarily inflated by an attacker due to unaccounted merge()
+# The locker's supply can be arbitrarily inflated by an attacker due to unaccounted merge() 
 
-Submitted on Wed Mar 06 2024 18:56:31 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 7th 2024 at 00:56:31 UTC by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29095
 
@@ -58,8 +58,8 @@ require(unlockTime > block.timestamp, "Can only lock in the future");
 Anything that accounts using the locker supply() can be manipulated, for example to lead to a diluted reward distribution for a particular chain. Attacker can also make `supply` drift to a very large number, so that future deposits would overflow, making the contract unable to service `createLock()` requests.
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 THe POC is a standalone file including all the necessary contracts. Simply deploy BaseLockerPOC and run `inflate_supply()` to see that merging leaks supply() by the attacker.
 

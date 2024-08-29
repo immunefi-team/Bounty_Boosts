@@ -1,7 +1,7 @@
 
 # The ZeroLendToken contract in the Governance module mishandles the whitelist
 
-Submitted on Mon Mar 04 2024 14:56:25 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 4th 2024 at 20:56:25 UTC by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29019
 
@@ -44,8 +44,8 @@ Consider refactoring the code as suggestedbelow:
 ## References
 https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/ZeroLendToken.sol#L61
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 1. User A is inserted to the whitelist
 2. User A wishes to transfer their tokens to User B

@@ -1,7 +1,7 @@
 
-# Theft of unclaimed yield due to the wrong calculation of claimable amout for a gauge that allow hackers to get the double reward from the Poolvoter contract.
+# Theft of unclaimed yield due to the wrong calculation of claimable amout for a gauge that allow hackers to get the double reward from the Poolvoter contract. 
 
-Submitted on Wed Mar 06 2024 11:15:36 GMT-0400 (Atlantic Standard Time) by @perseverance for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 6th 2024 at 17:15:36 UTC by @perseverance for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29078
 
@@ -372,7 +372,7 @@ The main bug Bug2: Theft of unclaimed yield due to the wrong calculation of clai
 This bug allow the hackers to double the reward get from the protocol and thus steal yield from other users. 
 
 This bug is High category "Theft of unclaimed yield"
-        
+
 ## Proof of concept
 #  Proof of concept
 

@@ -1,7 +1,7 @@
 
 # Use safeTransfer instead of transfer
 
-Submitted on Wed Mar 13 2024 18:40:23 GMT-0400 (Atlantic Standard Time) by @bugtester for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 14th 2024 at 00:40:23 UTC by @bugtester for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29322
 
@@ -26,7 +26,7 @@ A call to transferFrom or transfer is frequently done without checking the resul
 transfer() might return false instead of reverting, in this case, ignoring return value leads to considering it successful. and cause permanent loss of funds
 ## Fix
 Use safeTransfer instead of transfer
-        
+
 ## Proof of concept
 https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/vesting/VestedZeroNFT.sol#L223C2-L228C1
 

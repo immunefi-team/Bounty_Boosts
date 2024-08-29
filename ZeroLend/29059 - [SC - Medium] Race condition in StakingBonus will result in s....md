@@ -1,7 +1,7 @@
 
 # Race condition in StakingBonus will result in some users locking their tokens without receiving the assumed rewards
 
-Submitted on Tue Mar 05 2024 19:38:00 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 6th 2024 at 01:38:00 UTC by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29059
 
@@ -49,8 +49,8 @@ The `data` passed to `onERC721Received()` should include a `minBonus` amount, to
 ## Impact Details
 A user will lock their tokens for 4 years unnecessarily, so they suffer from an unwanted freeze for lack of rewards.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 We have modified the test in StakingBonus.test.ts to show the issue:

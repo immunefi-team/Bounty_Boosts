@@ -1,7 +1,7 @@
 
 # All reward tokens can be stolen by an attacker due to misaccounting in distributeEx
 
-Submitted on Thu Mar 07 2024 12:58:55 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 7th 2024 at 18:58:55 UTC by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29122
 
@@ -26,8 +26,8 @@ We view this as a single root cause of not accounting for already sent portions 
 ## Impact Details
 All reward tokens can be stolen by an attacker with interest in a particular gauge.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 The POC is implemented in a single file. Simply run steal_rewards() to see an example of one gauge getting more rewards than it should. The lines can also be uncommented to view the correct allocation when distributeEx() is called with all gauges.
 ```

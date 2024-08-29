@@ -1,7 +1,7 @@
 
-# Lack of check for Lock.end in merge LockerToken && LockerLp
+# Lack of check for Lock.end in merge LockerToken && LockerLp 
 
-Submitted on Thu Feb 29 2024 16:55:06 GMT-0400 (Atlantic Standard Time) by @offside0011 for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Feb 29th 2024 at 22:55:06 UTC by @offside0011 for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28885
 
@@ -50,8 +50,8 @@ Amplifying the power of a locker in the governance
 ## References
 https://github.com/zerolend/governance/blob/main/contracts/locker/BaseLocker.sol#L183
 
-        
-## Proof of concept
+
+
 ## Proof of Concept (Take LockerLP as Example)
 1. call createLockFor, _lockDuration = 4 * 365 * 86400 return nftid=1
 2. vm.wrap(block.timestamp + 86400 * 30)

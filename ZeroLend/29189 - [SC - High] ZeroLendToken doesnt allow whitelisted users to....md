@@ -1,7 +1,7 @@
 
 # ZeroLendToken doesn't allow whitelisted users to transfer
 
-Submitted on Sat Mar 09 2024 19:34:08 GMT-0400 (Atlantic Standard Time) by @jovi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 10th 2024 at 01:34:08 UTC by @jovi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29189
 
@@ -55,8 +55,8 @@ Whitelisted users are never able to transfer their tokens.
 update internal function implementation at the ZeroLendToken contract:
 [governance/contracts/ZeroLendToken.sol at a30d8bb825306dfae1ec5a5a47658df57fd1189b · zerolend/governance (github.com)](https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/ZeroLendToken.sol#L56C4-L64C6)
 
-        
-## Proof of concept
+
+
 ## Proof of concept
 Paste the following code snippet inside the test folder:
 ```solidity

@@ -1,7 +1,7 @@
 
 # ZeroLocker:merge can make a voting lock last longer than MAXTIME and inflate voting power
 
-Submitted on Thu Feb 29 2024 19:23:04 GMT-0400 (Atlantic Standard Time) by @jovi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 1st 2024 at 01:23:04 UTC by @jovi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28892
 
@@ -60,7 +60,7 @@ The whole voting mechanics is spoofed as merging allows users to have voting pow
 ## References
 Snippet in which merge doesn't check the total duration of the lock: https://github.com/zerolend/governance/blob/main/contracts/locker/BaseLocker.sol#L180C8-L185C28
 CalculatePower internal method: https://github.com/zerolend/governance/blob/main/contracts/locker/BaseLocker.sol#L112C4-L117C1
-        
+
 ## Proof of concept
 ### PoC
 Set up foundry on hardhat by placing

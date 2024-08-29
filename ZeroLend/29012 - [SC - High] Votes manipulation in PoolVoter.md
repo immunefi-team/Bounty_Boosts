@@ -1,7 +1,7 @@
 
 # Votes manipulation in PoolVoter
 
-Submitted on Mon Mar 04 2024 12:33:40 GMT-0400 (Atlantic Standard Time) by @DuckAstronomer for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 4th 2024 at 18:33:40 UTC by @DuckAstronomer for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29012
 
@@ -66,8 +66,8 @@ if (_votes > 0) {
 4. The attacker retains the full `19.01 ether` voting power. But `weights[_pool]` and `totalWeight` are now increased by `19 ether`.
 5. By repeating steps 2-3 in a loop many times, the attacker can consolidate the majority of votes for their chosen gauge, and all rewards will be distributed to it.
 6. By repeating steps 2-3 for **100** times, it's tantamount to having `1900 ether` voting power.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 To run the Poc put it's code to the `governance-main/test/PoolVoter.poc.ts` file, generate random private key, and issue the following command:
 

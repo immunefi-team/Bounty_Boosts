@@ -1,7 +1,7 @@
 
 # EarlyZEROVesting is having a rounding issue and missing a key approval when staking
 
-Submitted on Mon Mar 11 2024 00:28:52 GMT-0400 (Atlantic Standard Time) by @dontonka for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 11th 2024 at 06:28:52 UTC by @dontonka for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29225
 
@@ -83,7 +83,7 @@ Apply the following changes in order to fix the two issues reported in this repo
     }
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Not applicable really, simple by inspecting the code.

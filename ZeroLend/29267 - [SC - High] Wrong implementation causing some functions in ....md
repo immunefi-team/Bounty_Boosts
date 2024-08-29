@@ -1,7 +1,7 @@
 
 # Wrong implementation causing some functions in governance/contracts/voter/PoolVoter.sol unusable.
 
-Submitted on Tue Mar 12 2024 12:54:46 GMT-0400 (Atlantic Standard Time) by @EricTee for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 12th 2024 at 18:54:46 UTC by @EricTee for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29267
 
@@ -70,8 +70,8 @@ Consider making the following changes in `PoolVoter::registerGauge`:
 
 ## References
 https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L136
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Manual Analysis

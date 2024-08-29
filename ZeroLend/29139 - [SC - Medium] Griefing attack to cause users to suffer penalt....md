@@ -1,7 +1,7 @@
 
-# Griefing attack to cause users to suffer penalty by calling the tokenId of another user that have VestedZeroNFT id with _hasPenalty is true
+# Griefing attack to cause users to suffer penalty by calling the tokenId of another user that have VestedZeroNFT id with _hasPenalty is true 
 
-Submitted on Fri Mar 08 2024 04:00:01 GMT-0400 (Atlantic Standard Time) by @perseverance for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 8th 2024 at 10:00:01 UTC by @perseverance for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29139
 
@@ -146,8 +146,8 @@ So the vulnerability here is the claim function does not check the caller msg.se
 
 So the bug allow griefing attack that don't bring benefit to the hacker that cause damage to users. 
 So the Severity is Medium with Category: Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Test case to demonstrate the bug

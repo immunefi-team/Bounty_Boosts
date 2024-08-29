@@ -1,7 +1,7 @@
 
 # Granting DEFAULT_ADMIN_ROLE to the deployer in the constructor allows them to modify any aspect of the contract.
 
-Submitted on Sat Mar 09 2024 11:05:08 GMT-0400 (Atlantic Standard Time) by @jimmyhackd for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 9th 2024 at 17:05:08 UTC by @jimmyhackd for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29175
 
@@ -153,7 +153,7 @@ For general information on Role-Based Access Control (RBAC) in Solidity, you can
 
 To learn more about access control best practices in smart contract development, consider searching for resources from reputable security firms or blockchain development communities.
 
-        
+
 ## Proof of concept
 I understand the importance of providing a Proof of Concept (PoC) to demonstrate the vulnerability in the ZeroLend contract. However, creating a fully functional PoC that interacts with the actual contract on the blockchain could be risky and violate the PoC Guidelines and Rules you mentioned. Here's what I can offer as an alternative:
 

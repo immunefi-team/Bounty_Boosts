@@ -1,7 +1,7 @@
 
-# Malicious user can transfer all unclaimed rewards to a custom gauge
+# Malicious user can transfer all unclaimed rewards to a custom gauge 
 
-Submitted on Sat Mar 02 2024 19:16:07 GMT-0400 (Atlantic Standard Time) by @MahdiKarimi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 3rd 2024 at 01:16:07 UTC by @MahdiKarimi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28955
 
@@ -28,8 +28,8 @@ Malicious users can transfer more rewards to a gauge ( almost all rewards ), in 
 ## References
 https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L214-L234
 https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L181-L190
-        
-## Proof of concept
+
+
 ## Proof of Concept
   ```
 describe("transfer rewards test", () => {

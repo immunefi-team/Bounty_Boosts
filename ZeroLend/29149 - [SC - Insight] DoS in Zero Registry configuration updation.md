@@ -1,7 +1,7 @@
 
 # DoS in Zero Registry configuration updation
 
-Submitted on Fri Mar 08 2024 11:44:51 GMT-0400 (Atlantic Standard Time) by @oxumarkhatab for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 8th 2024 at 17:44:51 UTC by @oxumarkhatab for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29149
 
@@ -95,8 +95,8 @@ Protocol functioning damage - Updates through registry can not be done due to in
 
 ## References
 see PoC for details
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Although it's clear from the above report description , you can visualize the scenario from this PoC
 

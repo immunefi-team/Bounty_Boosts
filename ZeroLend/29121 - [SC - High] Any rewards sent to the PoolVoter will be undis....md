@@ -1,7 +1,7 @@
 
 # Any rewards sent to the PoolVoter will be undispatchable and lost
 
-Submitted on Thu Mar 07 2024 12:36:15 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 7th 2024 at 18:36:15 UTC by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29121
 
@@ -78,8 +78,8 @@ This means _pools will never be populated. After funds are sent to the PoolVoter
 Rewards sent to the PoolVoter will be forever stuck.
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 The POC is implemented in a single file. Simply run DistributorPOC's `PoolFailPOC()` which shows that `_pools` stays empty.
 ```

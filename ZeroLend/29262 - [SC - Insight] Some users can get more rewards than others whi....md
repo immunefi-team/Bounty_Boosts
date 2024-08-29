@@ -1,7 +1,7 @@
 
 # Some users can get more rewards than others while staking for exact same time
 
-Submitted on Tue Mar 12 2024 06:49:20 GMT-0400 (Atlantic Standard Time) by @oxumarkhatab for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 12th 2024 at 12:49:20 UTC by @oxumarkhatab for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29262
 
@@ -172,7 +172,7 @@ This is a source of unfair distribution.
 - Unfair rewards distribution between users
 
 - Theft of rewards
-        
+
 ## Proof of concept
 Disclaimer: This is essentially the same PoC in Vulnerability Details section.
 If you've read that, you can safely ignore this one

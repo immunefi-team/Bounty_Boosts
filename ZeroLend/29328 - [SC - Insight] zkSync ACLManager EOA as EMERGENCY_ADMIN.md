@@ -1,7 +1,7 @@
 
 # zkSync ACLManager EOA as EMERGENCY_ADMIN
 
-Submitted on Wed Mar 13 2024 21:29:05 GMT-0400 (Atlantic Standard Time) by @mhmd_alfa for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 14th 2024 at 03:29:05 UTC by @mhmd_alfa for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29328
 
@@ -18,8 +18,8 @@ Impacts:
 ## Description
 ## Brief/Intro
 An EOA 0x0f6e98a756a40dd050dc78959f45559f98d3289d has EMERGENCY_ADMIN role. Leaked private key could lead to griefing and/or malicious halt of the protocol assets.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 1. go to https://explorer.zksync.io/address/0x9A60cce3da06d246b492931d2943A8F574e67389#contract

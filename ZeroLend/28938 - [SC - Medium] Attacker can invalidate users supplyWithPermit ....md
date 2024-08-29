@@ -1,7 +1,7 @@
 
 # Attacker can invalidate users `supplyWithPermit()` and `repayWithPermit()` transactions
 
-Submitted on Sat Mar 02 2024 06:59:17 GMT-0400 (Atlantic Standard Time) by @Norah for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 2nd 2024 at 12:59:17 UTC by @Norah for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28938
 
@@ -49,8 +49,8 @@ if (IERC20(address(asset)).allowance(msg.sender,address(this)) < amount) {
 ## References
 Add any relevant links to documentation or code
  
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 - Following is POCs demonstrating the attack vector on Manta-Pacific fork in foundry..

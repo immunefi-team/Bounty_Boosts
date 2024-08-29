@@ -1,7 +1,7 @@
 
 # Using permit inside the function can lead to DoS and griefing
 
-Submitted on Mon Mar 11 2024 21:02:58 GMT-0400 (Atlantic Standard Time) by @stiglitz for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 12th 2024 at 03:02:58 UTC by @stiglitz for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29249
 
@@ -50,8 +50,8 @@ DoS, which can be temporary or longer lasting if there is no walk-around for the
 
 ## References
 It is exactly the scenario described by Trust: https://www.trust-security.xyz/post/permission-denied
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ### XVault is BaseLPVault
 #### tests/XVault.sol

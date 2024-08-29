@@ -1,7 +1,7 @@
 
 # Attacker can grief a user by making his 'supplyWithPermit' call fail
 
-Submitted on Sun Mar 03 2024 13:57:36 GMT-0400 (Atlantic Standard Time) by @djxploit for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 3rd 2024 at 19:57:36 UTC by @djxploit for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28970
 
@@ -34,8 +34,8 @@ Implement a try-catch statement. Inside the `supplyWithPermit` function, call th
 
 ## References
 https://www.trust-security.xyz/post/permission-denied
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Here is the test file. The specific test case showing the vulnerability is "Supply with permit test'"

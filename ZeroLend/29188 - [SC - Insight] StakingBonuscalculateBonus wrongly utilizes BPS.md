@@ -1,7 +1,7 @@
 
 # StakingBonus:calculateBonus wrongly utilizes BPS
 
-Submitted on Sat Mar 09 2024 19:21:12 GMT-0400 (Atlantic Standard Time) by @jovi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 10th 2024 at 01:21:12 UTC by @jovi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29188
 
@@ -44,8 +44,8 @@ calculateBonus is called at the onERC721Received function at the StakingBonus co
 
 calculateBonus implementation at the StakingBonus contract:
 https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/vesting/StakingBonus.sol#L89C5-L96C6
-        
-## Proof of concept
+
+
 ## Proof of concept
 Paste the following code snippet inside the test folder:
 ```solidity

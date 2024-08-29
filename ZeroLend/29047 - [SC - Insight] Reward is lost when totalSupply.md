@@ -1,7 +1,7 @@
 
 # Reward is lost when totalSupply==0
 
-Submitted on Tue Mar 05 2024 12:52:00 GMT-0400 (Atlantic Standard Time) by @DuckAstronomer for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 5th 2024 at 18:52:00 UTC by @DuckAstronomer for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29047
 
@@ -32,8 +32,8 @@ Consider the following scenario:
 For the mitigation, add a check `require(totalSupply > 0)` to the `notifyRewardAmount()` of `RewardBase`.
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 To run the Poc put it's code to the `governance-main/test/Gauge.poc.ts` file, generate random private key, and issue the following command:
 

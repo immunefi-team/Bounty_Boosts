@@ -1,7 +1,7 @@
 
 # DoS by front-runnable externall call
 
-Submitted on Sat Mar 09 2024 06:31:48 GMT-0400 (Atlantic Standard Time) by @Lastc0de for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 9th 2024 at 12:31:48 UTC by @Lastc0de for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29170
 
@@ -111,8 +111,8 @@ Griefing is when the attacker calls certain functions of the smart contract that
 ## References
 https://eips.ethereum.org/EIPS/eip-2612
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ~~~

@@ -1,7 +1,7 @@
 
 # Manipulation of governance is possible by minting to self
 
-Submitted on Sun Mar 03 2024 22:01:59 GMT-0400 (Atlantic Standard Time) by @dontonka for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 4th 2024 at 04:01:59 UTC by @dontonka for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28987
 
@@ -30,8 +30,8 @@ Manipulation of governance is possible by minting to self a VestedNFT with no du
 ## References
 https://github.com/zerolend/governance/blob/main/contracts/vesting/VestedZeroNFT.sol#L63-L100
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Add the following changes in `StakingBonus.test.ts` and run `npm test` command.

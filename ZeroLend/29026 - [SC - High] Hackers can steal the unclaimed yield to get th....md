@@ -1,7 +1,7 @@
 
 # Hackers can steal the unclaimed yield to get the double reward from the Poolvoter contract by calling distributeEx() 2 times in the same block
 
-Submitted on Mon Mar 04 2024 18:43:27 GMT-0400 (Atlantic Standard Time) by @perseverance for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 5th 2024 at 00:43:27 UTC by @perseverance for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29026
 
@@ -220,7 +220,7 @@ So we can see that this bug allow the hackers to double the reward get from the 
 This bug allow the hackers to double the reward get from the protocol and thus steal yield from other users. 
 
 This bug is high category "Theft of unclaimed yield"
-        
+
 ## Proof of concept
 #  Proof of concept
 

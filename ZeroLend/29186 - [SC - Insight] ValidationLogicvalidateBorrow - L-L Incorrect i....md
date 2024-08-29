@@ -1,7 +1,7 @@
 
 # `ValidationLogic::validateBorrow()` - L227-L231: Incorrect implementation of the intended (AAVE) protocol logic prevents all users with a health factor (HF) equal to `HEALTH_FACTOR_LIQUIDATION_THRESHOLD` from borrowing.
 
-Submitted on Sat Mar 09 2024 18:25:30 GMT-0400 (Atlantic Standard Time) by @OxSCSamurai for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 10th 2024 at 00:25:30 UTC by @OxSCSamurai for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29186
 
@@ -73,8 +73,8 @@ IMPACTS:
 https://github.com/zerolend/core-contracts/blob/2448f46b6b472ba0f83a615f68aa8614866a8321/contracts/protocol/libraries/logic/ValidationLogic.sol#L227-L231
 https://github.com/zerolend/core-contracts/blob/2448f46b6b472ba0f83a615f68aa8614866a8321/contracts/protocol/libraries/logic/GenericLogic.sol#L172-L176
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 PoC:

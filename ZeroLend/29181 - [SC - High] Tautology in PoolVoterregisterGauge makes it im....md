@@ -1,7 +1,7 @@
 
 # Tautology in `PoolVoter::registerGauge` makes it impossible to add pools to the `_pools` array
 
-Submitted on Sat Mar 09 2024 14:29:08 GMT-0400 (Atlantic Standard Time) by @nethoxa for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 9th 2024 at 20:29:08 UTC by @nethoxa for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29181
 
@@ -40,8 +40,8 @@ however, as mappings defaults to `0` or `false`, it won't be triggered and the `
 ## Impact Details
 Calls to `distribute` or `distributeEx` will either revert or return without doing anything, as they rely on `_pools.length` to iterate the array or they will access it, even if it is empty. That is, those functions remain useless, so it can be seen a self-griefing from the contract to any user who calls those functions.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 I initialized a Foundry repo to test it, but I believe this is simple enough that it does not matter which framework you use to test it. I can provide the repo if you want:

@@ -1,7 +1,7 @@
 
 # Bool check wrong in registerGauge
 
-Submitted on Fri Mar 01 2024 11:07:59 GMT-0400 (Atlantic Standard Time) by @offside0011 for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 1st 2024 at 17:07:59 UTC by @offside0011 for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28910
 
@@ -42,7 +42,7 @@ lead to pools will never be success registered
 ## References
 https://github.com/zerolend/governance/blob/main/contracts/voter/PoolVoter.sol#L136
 
-        
+
 ## Proof of concept
     function testEXP() public {
 

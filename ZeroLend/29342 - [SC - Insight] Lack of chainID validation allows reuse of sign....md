@@ -1,7 +1,7 @@
 
 # Lack of chainID validation allows reuse of signatures across different chains and forks
 
-Submitted on Thu Mar 14 2024 07:22:04 GMT-0400 (Atlantic Standard Time) by @azhar0406 for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 14th 2024 at 13:22:04 UTC by @azhar0406 for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29342
 
@@ -72,8 +72,8 @@ Bob has a wallet holding AToken. Following a contentious EIP, the community spli
 ## References
 https://solodit.xyz/issues/lack-of-chainid-trailofbits-yield-protocol-pdf [Vulnerability Detail - Lack of ChainID Validation]
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

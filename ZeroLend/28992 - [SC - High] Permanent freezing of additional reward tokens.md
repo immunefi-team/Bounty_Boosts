@@ -1,7 +1,7 @@
 
-# Permanent freezing of additional reward tokens
+# Permanent freezing of additional reward tokens 
 
-Submitted on Sun Mar 03 2024 22:59:12 GMT-0400 (Atlantic Standard Time) by @MahdiKarimi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 4th 2024 at 04:59:12 UTC by @MahdiKarimi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #28992
 
@@ -34,8 +34,8 @@ This leads to a situation which `distributeEx` is unable to distribute additiona
 ## References
 https://github.com/zerolend/governance/blob/a30d8bb825306dfae1ec5a5a47658df57fd1189b/contracts/voter/PoolVoter.sol#L136-L139
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```
   describe("freezing of additional reward tokens", () => {

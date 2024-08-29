@@ -1,7 +1,7 @@
 
-# Direct theft of User's VestedZeroNFT by using split function to mint a new NFT to take most fraction of the theft NFT of other users
+#  Direct theft of User's VestedZeroNFT by using split function to mint a new NFT to take most fraction of the theft NFT of other users 
 
-Submitted on Sun Mar 10 2024 10:23:41 GMT-0400 (Atlantic Standard Time) by @perseverance for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 10th 2024 at 16:23:41 UTC by @perseverance for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29204
 
@@ -154,8 +154,8 @@ The attacker can steal from tokenID of any owner, including the StakingBonus con
 So the bug allow attackers to steal the VestedZeroNFT token of users.  
 So the Severity is Critical with Category: Direct theft of any user NFTs, whether at-rest or in-motion, other than unclaimed royalties
 
-        
-## Proof of concept
+
+
 # Proof of Concept
 
 Test code POC: 

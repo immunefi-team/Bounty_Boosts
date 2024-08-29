@@ -1,7 +1,7 @@
 
 # OmnichainStaking.sol:unstakeLP and OmnichainStaking.sol:unstakeToken allows anyone to unstake any token provided they own enough ZEROvp
 
-Submitted on Fri Mar 08 2024 01:52:20 GMT-0400 (Atlantic Standard Time) by @jovi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 8th 2024 at 07:52:20 UTC by @jovi for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29135
 
@@ -45,8 +45,8 @@ unstakeLP and unstakeToken functions at OmnichainStaking.sol: https://github.com
 votingPowerOf and calculatePower functions at BaseLocker.sol:
 https://github.com/zerolend/governance/blob/main/contracts/locker/BaseLocker.sol#L103C5-L116C6
 
-        
-## Proof of concept
+
+
 ## Proof of concept
 Paste the following code snippet inside the test folder:
 ```solidity

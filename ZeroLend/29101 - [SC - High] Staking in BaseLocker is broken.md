@@ -1,7 +1,7 @@
 
 # Staking in BaseLocker is broken
 
-Submitted on Wed Mar 06 2024 21:05:50 GMT-0400 (Atlantic Standard Time) by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 7th 2024 at 03:05:50 UTC by @Trust for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29101
 
@@ -111,8 +111,8 @@ Replace the `safeTransferFrom()` call with an external call:
 `IERC721(address(this)).safeTransferFrom(address(this), address(staking), _tokenId, data);`
 This way, the msg.sender is the Locker itself, so `spender` and `owner` line up.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 A single file POC is attached below. Simply run `showBrokenStaking()` to see that `createLock()` reverts. You can then do the following two actions to fix the issue:
 - comment the `safeTransferFrom()` function and uncomment the fix, one line above it.

@@ -1,7 +1,7 @@
 
 # The main functionality of the contract `EarlyZEROVesting` does not work due to a missing approval
 
-Submitted on Tue Mar 12 2024 16:40:12 GMT-0400 (Atlantic Standard Time) by @stiglitz for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 12th 2024 at 22:40:12 UTC by @stiglitz for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29270
 
@@ -63,8 +63,8 @@ The main functionality of the contract `EarlyZEROVesting`, which is `startVestin
 ## References
 PoC and .png shows the problem
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ### Test

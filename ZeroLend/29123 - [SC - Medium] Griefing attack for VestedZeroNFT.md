@@ -1,7 +1,7 @@
 
 # Griefing attack for VestedZeroNFT
 
-Submitted on Thu Mar 07 2024 13:12:50 GMT-0400 (Atlantic Standard Time) by @DuckAstronomer for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 7th 2024 at 19:12:50 UTC by @DuckAstronomer for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29123
 
@@ -27,8 +27,8 @@ This situation sets the stage for a Griefing attack scenario where an attacker c
 - https://github.com/zerolend/governance/blob/main/contracts/vesting/StakingBonus.sol#L74
 - https://github.com/zerolend/governance/blob/main/contracts/locker/BaseLocker.sol#L333
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 To run the Poc put it's code to the `governance-main/test/Gauge.poc.ts` file, generate a random private key, and issue the following command:
 

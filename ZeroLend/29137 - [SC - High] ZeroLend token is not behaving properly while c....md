@@ -1,7 +1,7 @@
 
 # ZeroLend token is not behaving properly while contract is paused
 
-Submitted on Fri Mar 08 2024 03:38:30 GMT-0400 (Atlantic Standard Time) by @dontonka for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 8th 2024 at 09:38:30 UTC by @dontonka for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29137
 
@@ -39,8 +39,8 @@ Apply the following changes.
          super._update(from, to, value);
     }
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Run the following command to create the fresh testing environnement based on Foundry.

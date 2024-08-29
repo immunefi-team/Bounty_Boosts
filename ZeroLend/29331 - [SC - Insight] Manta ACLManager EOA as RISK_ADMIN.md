@@ -1,7 +1,7 @@
 
 # Manta ACLManager EOA as RISK_ADMIN
 
-Submitted on Wed Mar 13 2024 21:49:33 GMT-0400 (Atlantic Standard Time) by @mhmd_alfa for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 14th 2024 at 03:49:33 UTC by @mhmd_alfa for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29331
 
@@ -22,8 +22,8 @@ An EOA 0x0f6e98a756a40dd050dc78959f45559f98d3289d has RISK_ADMIN role. Leaked pr
 https://docs.aave.com/developers/core-contracts/aclmanager
 `RISK_ADMIN` row
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 1. go to https://pacific-explorer.manta.network/address/0xb2178109a414c3a869e5104283fcf1a18923d0b8?tab=read_contract

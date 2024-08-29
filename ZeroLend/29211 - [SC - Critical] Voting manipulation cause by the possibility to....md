@@ -1,7 +1,7 @@
 
 # Voting manipulation cause by the possibility to transfer veNFT
 
-Submitted on Sun Mar 10 2024 13:37:05 GMT-0400 (Atlantic Standard Time) by @stiglitz for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 10th 2024 at 19:37:05 UTC by @stiglitz for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29211
 
@@ -43,8 +43,8 @@ Vote manipulation
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ### X contract
 ```solidity

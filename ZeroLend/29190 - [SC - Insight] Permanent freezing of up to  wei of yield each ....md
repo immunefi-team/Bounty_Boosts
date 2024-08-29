@@ -1,7 +1,7 @@
 
 # Permanent freezing of up to `3 wei` of yield each time `LendingPoolGauge::notifyRewardAmount`is called
 
-Submitted on Sat Mar 09 2024 19:46:37 GMT-0400 (Atlantic Standard Time) by @nethoxa for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 10th 2024 at 01:46:37 UTC by @nethoxa for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29190
 
@@ -45,8 +45,8 @@ It may not be a high amount for tokens with high decimals, but for other tokens 
 ## Impact Details
 Vanilla loss of yield, permanent as there is no way to take them back.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The runnable POC is the next one:

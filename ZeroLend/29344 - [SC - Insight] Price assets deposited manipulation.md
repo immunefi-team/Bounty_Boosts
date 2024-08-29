@@ -1,7 +1,7 @@
 
-# Price assets deposited manipulation
+# Price assets deposited manipulation 
 
-Submitted on Thu Mar 14 2024 07:49:09 GMT-0400 (Atlantic Standard Time) by @Lastc0de for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 14th 2024 at 13:49:09 UTC by @Lastc0de for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29344
 
@@ -64,8 +64,8 @@ Attacker, can first depasite a vulnerable token then increase its price using it
 ## References
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 NOTE : PoC only theoretically wrote that due to lack of time, vulnerability was discovered in the final hours.

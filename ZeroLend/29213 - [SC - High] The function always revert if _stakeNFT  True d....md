@@ -1,7 +1,7 @@
 
 # The function always revert if `_stakeNFT == True` due to a missing approval
 
-Submitted on Sun Mar 10 2024 14:34:07 GMT-0400 (Atlantic Standard Time) by @stiglitz for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 10th 2024 at 20:34:07 UTC by @stiglitz for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29213
 
@@ -60,8 +60,8 @@ I think the impact is very high and I would say critical. But because of the mis
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ### Ve mock token
 ```solidity

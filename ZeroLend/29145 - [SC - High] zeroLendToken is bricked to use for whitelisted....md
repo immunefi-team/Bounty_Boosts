@@ -1,7 +1,7 @@
 
 # zeroLendToken is bricked to use for whitelisted users
 
-Submitted on Fri Mar 08 2024 10:04:07 GMT-0400 (Atlantic Standard Time) by @oxumarkhatab for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 8th 2024 at 16:04:07 UTC by @oxumarkhatab for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29145
 
@@ -182,8 +182,8 @@ but breaking the protocol logic can be itself an impact and Ryker will know it's
 ## References
 see Poc for details
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Here's a sample PoC that can be used to visualize the bricking of the token.
 

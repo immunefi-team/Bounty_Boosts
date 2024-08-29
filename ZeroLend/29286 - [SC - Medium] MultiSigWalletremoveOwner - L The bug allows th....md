@@ -1,7 +1,7 @@
 
 # `MultiSigWallet::removeOwner()` - L127: The bug allows the last owner in the `owners` array to remain in the array even after being marked as not an owner if they are the one intended for removal.
 
-Submitted on Wed Mar 13 2024 03:20:08 GMT-0400 (Atlantic Standard Time) by @OxSCSamurai for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 13th 2024 at 09:20:08 UTC by @OxSCSamurai for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29286
 
@@ -85,8 +85,8 @@ Some possible worst case scenario impacts:
 
 https://github.com/zerolend/governance/blob/84d48522cdb14f4a5a4aefc4059c0ea1e2e97afa/contracts/governance/MultiSigWallet.sol#L127
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 # PROOF OF CONCEPT (PoC):

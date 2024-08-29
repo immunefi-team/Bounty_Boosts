@@ -1,7 +1,7 @@
 
 # Unlimited Minting of VestedZeroNFT
 
-Submitted on Thu Mar 07 2024 17:55:31 GMT-0400 (Atlantic Standard Time) by @oxumarkhatab for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 7th 2024 at 23:55:31 UTC by @oxumarkhatab for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29130
 
@@ -148,8 +148,8 @@ Hence this vulnerability is of critical importance.
 
 ## References
 See PoC for more details
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```solidity

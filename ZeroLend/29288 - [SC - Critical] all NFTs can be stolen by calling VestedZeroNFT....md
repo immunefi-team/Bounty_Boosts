@@ -1,7 +1,7 @@
 
 # all NFTs can be stolen by calling VestedZeroNFT::split()
 
-Submitted on Wed Mar 13 2024 05:27:54 GMT-0400 (Atlantic Standard Time) by @EricTee for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
+Submitted on Mar 13th 2024 at 11:27:54 UTC by @EricTee for [Boost | ZeroLend](https://immunefi.com/bounty/zerolend-boost/)
 
 Report ID: #29288
 
@@ -65,8 +65,8 @@ Consider making the following changes in `VestedZeroNFT::split()`:
 
 ## References
 https://github.com/zerolend/governance/blob/main/contracts/vesting/VestedZeroNFT.sol#L234
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 * Install foundry.
