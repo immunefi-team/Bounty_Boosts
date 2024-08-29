@@ -1,24 +1,22 @@
+
 # Timelock contract should use `canExecuteTransaction()` instead of multiple require statement on `executeTransaction()`
 
-Submitted  about 1 month  ago by @shanb1605 (Whitehat)  for  [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost)
-
+Submitted on Wed Mar 13 2024 16:35:50 GMT-0400 (Atlantic Standard Time) by @shanb1605 for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29318
 
 Report type: Smart Contract
 
-Has PoC?: Yes
+Report severity: Insight
 
 Target: https://github.com/immunefi-team/vaults/blob/main/src/Timelock.sol
 
-Impacts
+Impacts:
+- Contract fails to deliver promised returns, but doesn't lose value
 
--   Contract fails to deliver promised returns, but doesn't lose value
-
+## Description
 ## Brief/Intro
-
-The Timelock contract's  `executeTransaction()`  has multiple checks before executing a transaction:
-
+The Timelock contract's `executeTransaction()` has multiple checks before executing a transaction:
 ```solidity
         require(txData.state == TxState.Queued, "Timelock: transaction is not queued");
         require(
@@ -31,32 +29,27 @@ The Timelock contract's  `executeTransaction()`  has multiple checks before exec
         );
         
          require(!vaultFreezer.isFrozen(vault), "Timelock: vault is frozen");
-
 ```
-
-Instead of these multiple checks immunefi should consider using  `canExecuteTransaction()`
+Instead of these multiple checks immunefi should consider using `canExecuteTransaction()`
 
 ## Vulnerability Details
-
-Using multiple  `require`  statements may cost too much gas to execute transaction.
+Using multiple `require` statements may cost too much gas to execute transaction.
 
 ## Impact Details
-
-Immunefi promises to offer a smooth arbitration between the project and Whitehat, using multiple  `require`  statements will cost too much gas to execute.
+Immunefi promises to offer a smooth arbitration between the project and Whitehat, using multiple `require` statements will cost too much gas to execute. 
 
 ## Recommendation
-
 Immunefi can add this snippet if they wish to handle this as a single require statement:
-
 ```solidity
 require(canExecuteTransaction(txHash) == true);
-
 ```
+
+        
+## Proof of concept
 ## Proof of Concept
+I have commented out unnecessary require statements on `executeTransaction()` and added a single line of code as per recommendation.
 
-I have commented out unnecessary require statements on  `executeTransaction()`  and added a single line of code as per recommendation.
-
-Also, I have changed the function visibility of  `canExecuteTransaction()`from  `external`  to  `public`
+Also, I have changed the function visibility of `canExecuteTransaction()`from `external` to `public`
 
 ```solidity
     function executeTransaction(bytes32 txHash) external {
@@ -98,7 +91,6 @@ Also, I have changed the function visibility of  `canExecuteTransaction()`from  
             txData.queueTimestamp + txData.cooldown <= block.timestamp &&
             (txData.expiration == 0 || txData.queueTimestamp + txData.cooldown + txData.expiration > block.timestamp);
     }
-
 ```
 
-_**Run forge test --mp test/foundry/Timelock.t.sol and everything works fine :)**_
+***Run forge test --mp test/foundry/Timelock.t.sol and everything works fine :)***

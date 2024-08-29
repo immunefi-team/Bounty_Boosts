@@ -1,29 +1,27 @@
+
 # `RewardTimelock::canExecuteTransaction()` - Reward transaction allowed to execute before the cooldown period has strictly passed.
 
-Submitted  about 1 month  ago by @OxSCSamurai (Whitehat)  for  [Boost | Immunefi Arbitration]
-
-----------
+Submitted on Wed Mar 20 2024 15:59:38 GMT-0400 (Atlantic Standard Time) by @OxSCSamurai for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29483
 
 Report type: Smart Contract
 
-Has PoC?: Yes
+Report severity: Insight
 
 Target: https://github.com/immunefi-team/vaults/blob/main/src/RewardTimelock.sol
 
-Impacts
+Impacts:
+- Contract fails to deliver promised returns, but doesn't lose value
 
--   Contract fails to deliver promised returns, but doesn't lose value
+## Description
+## Brief/Intro
 
-## Details
-
-Note: The primary reason for this report is to draw your attention to something important, which if neglected, could in some cases/scenarios result in a high/critical vulnerability. In other words, anything other than PRECISE use of comparison operators will inevitably eventually result in a serious vulnerability, somewhere along the line... This report attempts to make it crystal clear why the difference between an inequality operator with an  `=`  sign and without an  `=`  sign is significant, and ALWAYS matters.
+Note: The primary reason for this report is to draw your attention to something important, which if neglected, could in some cases/scenarios result in a high/critical vulnerability. In other words, anything other than PRECISE use of comparison operators will inevitably eventually result in a serious vulnerability, somewhere along the line... This report attempts to make it crystal clear why the difference between an inequality operator with an `=` sign and without an `=` sign is significant, and ALWAYS matters.
 
 ## Vulnerability Details
 
 The "buggy" function:
-
 ```solidity
     function canExecuteTransaction(bytes32 txHash) external view returns (bool) {
         TxStorageData memory txData = txHashData[txHash];
@@ -40,45 +38,52 @@ The "buggy" function:
             //txData.queueTimestamp + txData.cooldown < block.timestamp && /// @audit added for PoC/testing purposes
             (txData.expiration == 0 || txData.queueTimestamp + txData.cooldown + txData.expiration > block.timestamp);
     }
-
 ```
 
-Given the requirement that the cooldown period must have elapsed before the transaction can be executed, the correct expression should ensure that the current timestamp is strictly greater than the timestamp when the reward transaction was queued plus the cooldown period.
+Given the requirement that the cooldown period must have elapsed before the transaction can be executed, the correct expression should ensure that the current timestamp is strictly greater than the timestamp when the reward transaction was queued plus the cooldown period. 
 
-Thus, the correct expression is:  `txData.queueTimestamp + txData.cooldown < block.timestamp`  not:  `txData.queueTimestamp + txData.cooldown <= block.timestamp`
+Thus, the correct expression is:
+`txData.queueTimestamp + txData.cooldown < block.timestamp`
+not:
+`txData.queueTimestamp + txData.cooldown <= block.timestamp`
 
-So, in the case(not necessarily relevant here but could have been) where a state change needs to happen AT exactly  `queuedRewardTxTimestamp + rewardTimelock.txCooldown()`  but BEFORE reward transaction's  `block.timestamp`, then using  `txData.queueTimestamp + txData.cooldown < block.timestamp`  instead of  `<=`  ensures that the state change occurs at the exact moment when the cooldown period ends but before the current reward tx gets executed, at least 1 second apart but still within the same block. (Unless we explicitly separate these transactions by at least 12 seconds, i.e. the average block time.)
+So, in the case(not necessarily relevant here but could have been) where a state change needs to happen AT exactly `queuedRewardTxTimestamp + rewardTimelock.txCooldown()` but BEFORE reward transaction's `block.timestamp`, then using `txData.queueTimestamp + txData.cooldown < block.timestamp` instead of `<=` ensures that the state change occurs at the exact moment when the cooldown period ends but before the current reward tx gets executed, at least 1 second apart but still within the same block. (Unless we explicitly separate these transactions by at least 12 seconds, i.e. the average block time.)
 
-If we were to use  `<=`  instead, this would open up the possibility of executing the reward tx BEFORE the relevant state change gets executed. If arguments against my argument insist that this 1 second difference is negligible, then I could ping pong back an argument that states that OK, if you insist the difference between  `<`  and  `<=`  is negligible in this specific case, then I can just as easily insist that you should rather use  `<`  because even though the difference, in your opinion, is negligible, it does however ensure that the state change can never happen after the reward tx, besides the fact that using  `<`  would be more in line with the language/grammar, although this is of secondary importance. Getting the actual implemented logic 100% right is what really matters.
+If we were to use `<=` instead, this would open up the possibility of executing the reward tx BEFORE the relevant state change gets executed. If arguments against my argument insist that this 1 second difference is negligible, then I could ping pong back an argument that states that OK, if you insist the difference between `<` and `<=` is negligible in this specific case, then I can just as easily insist that you should rather use `<` because even though the difference, in your opinion, is negligible, it does however ensure that the state change can never happen after the reward tx, besides the fact that using `<` would be more in line with the language/grammar, although this is of secondary importance. Getting the actual implemented logic 100% right is what really matters.
 
 # Awesome Analogy:
-
--   Imagine you are on a mission to infiltrate a high-security facility, and to reach the other side, you must cross a narrow bridge that spans a treacherous chasm. At the end of the bridge, there is a deadly vaporizing laser that will instantly vaporize anyone who lingers within its range. The secret instructions for the mission are clear: you must start at one end of the bridge and stop only after PASSING beyond the end of the bridge. If you stop prematurely, the vaporizing laser will detect you and vaporize you, but if you follow the instructions and go beyond the end of the bridge, you will be out of harm's way and can continue your mission safely.
--   In this analogy, the 100m strip of bridge represents the queued transaction's delay period, the deadly vaporizing laser represents the danger zone, and the instructions to stop only after passing beyond the end of the bridge are crucial to avoid getting vaporized.
--   Similarly, in the context of the cooldown period and the queued transaction, the correct logic for allowing the execution of the queued transaction after the cooldown period is fully completed would be:
-
+- Imagine you are on a mission to infiltrate a high-security facility, and to reach the other side, you must cross a narrow bridge that spans a treacherous chasm. At the end of the bridge, there is a deadly vaporizing laser that will instantly vaporize anyone who lingers within its range. The secret instructions for the mission are clear: you must start at one end of the bridge and stop only after PASSING beyond the end of the bridge. If you stop prematurely, the vaporizing laser will detect you and vaporize you, but if you follow the instructions and go beyond the end of the bridge, you will be out of harm's way and can continue your mission safely.
+- In this analogy, the 100m strip of bridge represents the queued transaction's delay period, the deadly vaporizing laser represents the danger zone, and the instructions to stop only after passing beyond the end of the bridge are crucial to avoid getting vaporized. 
+- Similarly, in the context of the cooldown period and the queued transaction, the correct logic for allowing the execution of the queued transaction after the cooldown period is fully completed would be:
 `txData.queueTimestamp + txData.cooldown < block.timestamp`.
-
--   This ensures that the entire cooldown period has passed since the transaction was queued, and only then can the transaction be executed.
+- This ensures that the entire cooldown period has passed since the transaction was queued, and only then can the transaction be executed.
 
 # So to summarize:
-
--   `txData.queueTimestamp + txData.cooldown <= block.timestamp`: This condition dictates that the transaction can be executed precisely when the cooldown period ends or at the same time, potentially overlapping with the danger zone of the vaporizing laser. It's akin to stopping your advance at the very edge of the bridge, where even the slightest overlap risks encountering the deadly laser, disregarding the imperative to surpass the end of the bridge for safety.
--   `txData.queueTimestamp + txData.cooldown < block.timestamp`: This alternative condition specifies that the transaction execution must occur strictly after the cooldown period has concluded. Much like the necessity of moving beyond the bridge's end to avoid the vaporizing laser, this logic guarantees that the transaction executes precisely when it's safe to do so.
+- `txData.queueTimestamp + txData.cooldown <= block.timestamp`: This condition dictates that the transaction can be executed precisely when the cooldown period ends or at the same time, potentially overlapping with the danger zone of the vaporizing laser. It's akin to stopping your advance at the very edge of the bridge, where even the slightest overlap risks encountering the deadly laser, disregarding the imperative to surpass the end of the bridge for safety.
+- `txData.queueTimestamp + txData.cooldown < block.timestamp`: This alternative condition specifies that the transaction execution must occur strictly after the cooldown period has concluded. Much like the necessity of moving beyond the bridge's end to avoid the vaporizing laser, this logic guarantees that the transaction executes precisely when it's safe to do so.
 
 ## Impact Details
 
--   Likelihood: High, Impact: Low = Severity: LOW.
--   Potential Impact in Scope: Contract fails to deliver promised returns, but doesn't lose value -- Allowing reward tx to get executed before the cooldown period has FULLY passed.
+# IMPACT:
+- Likelihood: High, Impact: Low = Severity: LOW.
+- Potential Impact in Scope: Contract fails to deliver promised returns, but doesn't lose value
+  -- Allowing reward tx to get executed before the cooldown period has FULLY passed.
 
+## References
+Add any relevant links to documentation or code
 
+        
+## Proof of concept
 ## Proof of Concept
 
--   I've put in some effort to demonstrate the different behaviours of the function's checks down to mere seconds differences in  `block.timestamp`  of reward tx execution. To this end for each test there is a console2.log emitted so we can see whether the reward tx is allowed to be executed during that  `block.timestamp`  or not.
--   cooldown period seems to be exactly 24hrs according to the protocol tests.
+# PoC:
 
-Test function used:  `RewardTimelock.t.sol::testTransactionInCooldownRevertsExecution()`  Modifications to test function:
+- I've put in some effort to demonstrate the different behaviours of the function's checks down to mere seconds differences in `block.timestamp` of reward tx execution. To this end for each test there is a console2.log emitted so we can see whether the reward tx is allowed to be executed during that `block.timestamp` or not.
+- cooldown period seems to be exactly 24hrs according to the protocol tests.
 
+Test function used:
+`RewardTimelock.t.sol::testTransactionInCooldownRevertsExecution()`
+Modifications to test function:
 ```solidity
         //vm.warp(block.timestamp + 1 hours);
         vm.warp(block.timestamp + 23 hours + 3602 seconds); /// @audit added for PoC/testing purposes
@@ -96,21 +101,16 @@ Test function used:  `RewardTimelock.t.sol::testTransactionInCooldownRevertsExec
         //     Enum.Operation.Call,
         //     true
         // );
-
 ```
 
 # TESTS:
 
-## Test 1: demonstrating the bug, allowing for reward tx execution during cooldown period, instead of only AFTER cooldown ends
-
-Using:
-
--   `txData.queueTimestamp + txData.cooldown <= block.timestamp`
--   `vm.warp(block.timestamp + 23 hours + 3600 seconds)`  >>> this precise timestamp is technically still part of cooldown
--   We expect the test to pass allowing for reward tx execution not AFTER cooldown period passed, but before/at exact boundary end of cooldown period.
-
+# Test 1: demonstrating the bug, allowing for reward tx execution during cooldown period, instead of only AFTER cooldown ends
+Using: 
+- `txData.queueTimestamp + txData.cooldown <= block.timestamp`
+- `vm.warp(block.timestamp + 23 hours + 3600 seconds)` >>> this precise timestamp is technically still part of cooldown
+- We expect the test to pass allowing for reward tx execution not AFTER cooldown period passed, but before/at exact boundary end of cooldown period.
 Test result:
-
 ```solidity
     ├─ [0] VM::warp(86401 [8.64e4])
     │   └─ ← ()
@@ -136,21 +136,16 @@ Test result:
     └─ ← ()
 
 Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 11.10ms (1.42ms CPU time)
-
 ```
+Ignore the failed here and check my console2.log result only:
+`console::log("CAN EXECUTE REWARD TX: true/false? ", true)`
 
-Ignore the failed here and check my console2.log result only:  `console::log("CAN EXECUTE REWARD TX: true/false? ", true)`
-
-## Test 2: demonstrating the bugfix, allowing for reward tx execution only AFTER cooldown period.
-
-Using:
-
--   `txData.queueTimestamp + txData.cooldown < block.timestamp`
--   `vm.warp(block.timestamp + 23 hours + 3600 seconds)`  >>> this precise timestamp is technically still part of cooldown
--   We expect the test to fail preventing reward tx execution before cooldown period has fully passed
-
+# Test 2: demonstrating the bugfix, allowing for reward tx execution only AFTER cooldown period.
+Using: 
+- `txData.queueTimestamp + txData.cooldown < block.timestamp`
+- `vm.warp(block.timestamp + 23 hours + 3600 seconds)` >>> this precise timestamp is technically still part of cooldown
+- We expect the test to fail preventing reward tx execution before cooldown period has fully passed
 Test result:
-
 ```solidity
     ├─ [0] VM::warp(86401 [8.64e4])
     │   └─ ← ()
@@ -173,23 +168,18 @@ Test result:
     └─ ← ()
 
 Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 17.41ms (2.36ms CPU time)
-
 ```
+Ignore the passed here and check my console2.log result only:
+`console::log("CAN EXECUTE REWARD TX: true/false? ", false)`
 
-Ignore the passed here and check my console2.log result only:  `console::log("CAN EXECUTE REWARD TX: true/false? ", false)`
+# For next two tests we increase the warp time by 1 second, i.e. 24 hours + 1 seconds.
 
-## For next two tests we increase the warp time by 1 second, i.e. 24 hours + 1 seconds.
-
-## Test 3: same as Test 1(with bug) but reward tx executed 1 second later:
-
-Using:
-
--   `txData.queueTimestamp + txData.cooldown <= block.timestamp`
--   `vm.warp(block.timestamp + 23 hours + 3601 seconds)`  >>> this precise timestamp is technically still part of cooldown
--   We expect the test to pass allowing for reward tx execution AFTER cooldown period has passed
-
+# Test 3: same as Test 1(with bug) but reward tx executed 1 second later:
+Using: 
+- `txData.queueTimestamp + txData.cooldown <= block.timestamp`
+- `vm.warp(block.timestamp + 23 hours + 3601 seconds)` >>> this precise timestamp is technically still part of cooldown
+- We expect the test to pass allowing for reward tx execution AFTER cooldown period has passed
 Test result:
-
 ```solidity
     ├─ [0] VM::warp(86402 [8.64e4])
     │   └─ ← ()
@@ -215,21 +205,16 @@ Test result:
     └─ ← ()
 
 Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 12.38ms (1.47ms CPU time)
-
 ```
+Ignore the failed here and check my console2.log result only:
+`console::log("CAN EXECUTE REWARD TX: true/false? ", true)`
 
-Ignore the failed here and check my console2.log result only:  `console::log("CAN EXECUTE REWARD TX: true/false? ", true)`
-
-## Test 4: demonstrating the bugfix, allowing for reward tx execution only AFTER cooldown period.
-
-Using:
-
--   `txData.queueTimestamp + txData.cooldown < block.timestamp`
--   `vm.warp(block.timestamp + 23 hours + 3601 seconds)`  >>> this precise timestamp is technically still part of cooldown
--   We expect the test to pass allowing reward tx execution strictly AFTER cooldown period has fully passed
-
+# Test 4: demonstrating the bugfix, allowing for reward tx execution only AFTER cooldown period.
+Using: 
+- `txData.queueTimestamp + txData.cooldown < block.timestamp`
+- `vm.warp(block.timestamp + 23 hours + 3601 seconds)` >>> this precise timestamp is technically still part of cooldown
+- We expect the test to pass allowing reward tx execution strictly AFTER cooldown period has fully passed
 Test result:
-
 ```solidity
     ├─ [0] VM::warp(86402 [8.64e4])
     │   └─ ← ()
@@ -255,17 +240,15 @@ Test result:
     └─ ← ()
 
 Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 284.36ms (1.36ms CPU time)
-
 ```
-
-Ignore the failed here and check my console2.log result only:  `console::log("CAN EXECUTE REWARD TX: true/false? ", true)`
+Ignore the failed here and check my console2.log result only:
+`console::log("CAN EXECUTE REWARD TX: true/false? ", true)`
 
 # Recommended bugfix:
 
--   Unless there's a valid logical argument against the recommended change below, the change should be implemented. In other words, unless there's a super valid reason why the reward tx can/should be allowed to get executed at EXACTLY  `txData.queueTimestamp + txData.cooldown`  timestamp, the below bugfix should be implemented.
+- Unless there's a valid logical argument against the recommended change below, the change should be implemented. In other words, unless there's a super valid reason why the reward tx can/should be allowed to get executed at EXACTLY `txData.queueTimestamp + txData.cooldown` timestamp, the below bugfix should be implemented.
 
-[https://github.com/immunefi-team/vaults/blob/49c1de26cda19c9e8a4aa311ba3b0dc864f34a25/src/RewardTimelock.sol#L193-L197](https://github.com/immunefi-team/vaults/blob/49c1de26cda19c9e8a4aa311ba3b0dc864f34a25/src/RewardTimelock.sol#L193-L197)
-
+https://github.com/immunefi-team/vaults/blob/49c1de26cda19c9e8a4aa311ba3b0dc864f34a25/src/RewardTimelock.sol#L193-L197
 ```diff
         return
             txData.state == TxState.Queued &&

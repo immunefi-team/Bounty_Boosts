@@ -1,66 +1,63 @@
+
 # Token price returned by `PriceConsumer` may be inaccurate
 
-Submitted  about 1 month  ago by @greed (Whitehat)  for  [Boost | Immunefi Arbitration]
-
-----------
-
+Submitted on Thu Mar 14 2024 13:19:29 GMT-0400 (Atlantic Standard Time) by @greed for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29348
 
 Report type: Smart Contract
 
-Has PoC?: Yes
+Report severity: Insight
 
 Target: https://github.com/immunefi-team/vaults/blob/main/src/RewardTimelock.sol
 
-Impacts
+Impacts:
+- Contract fails to deliver promised returns, but doesn't lose value
 
--   Contract fails to deliver promised returns, but doesn't lose value
-
+## Description
 ## Impact
 
-_Considering its likelihood the issue is marked as LOW_
+*Considering its likelihood the issue is marked as LOW*
 
-1.  The reward distribution function  `RewardTimelock::executeRewardTransaction()`  may revert while it should not due to the estimated USD price of tokens being out of bounds.
-    
-2.  The protocol may send more or less rewards in USD than the promised payout to the whitehat. This will either result in a loss for the protocol and a win for the researcher or a win for the protocol and a loss for the researcher.
-    
+1. The reward distribution function `RewardTimelock::executeRewardTransaction()` may revert while it should not due to the estimated USD price of tokens being out of bounds.
+
+2. The protocol may send more or less rewards in USD than the promised payout to the whitehat. This will either result in a loss for the protocol and a win for the researcher or a win for the protocol and a loss for the researcher.
 
 ## Vulnerability details
 
-When the reward transaction is fired through  `RewardTimelock::executeRewardTransaction()`, the price of the tokens being sent to the whitehat is calculated in  `_checkRewardDollarValue()`  and relies on  `PriceConsumer::tryGetSaneUsdPrice18Decimals()`.
+When the reward transaction is fired through `RewardTimelock::executeRewardTransaction()`, the price of the tokens being sent to the whitehat is calculated in `_checkRewardDollarValue()` and relies on `PriceConsumer::tryGetSaneUsdPrice18Decimals()`.
 
-This function uses different  **feed**  to calculate the price of an asset depending on if it has been configured or not.
+This function uses different **feed** to calculate the price of an asset depending on if it has been configured or not.
 
-Under certain circumstances, a  **feed**  can return an outdated price which in period of high volatility (where a pump or dump can happen in a matter of minutes) can be a critical issue.
+Under certain circumstances, a **feed** can return an outdated price which in period of high volatility (where a pump or dump can happen in a matter of minutes) can be a critical issue.
 
-In order to get a price that is as accurate as possible,  `PriceConsumer::tryGetSaneUsdPrice18Decimals()`  has the following check
+In order to get a price that is as accurate as possible, `PriceConsumer::tryGetSaneUsdPrice18Decimals()` has the following check
 
-[https://github.com/immunefi-team/vaults/blob/main/src/oracles/PriceConsumer.sol#L54]([https://github.com/immunefi-team/vaults/blob/main/src/oracles/PriceConsumer.sol#L54](https://github.com/immunefi-team/vaults/blob/main/src/oracles/PriceConsumer.sol#L54))
+[https://github.com/immunefi-team/vaults/blob/main/src/oracles/PriceConsumer.sol#L54](https://github.com/immunefi-team/vaults/blob/main/src/oracles/PriceConsumer.sol#L54)
 
 ```js
 require(block.timestamp - response.updatedAt <= _getFeedTimeout(base), "PriceConsumer: Feed is stale");
-
 ```
 
-The function  `_getFeedTimeout(base)`  can return  `1 days`  if the corresponding  `customFeedTimeout[base]`  has not been configured.
+The function `_getFeedTimeout(base)` can return `1 days` if the corresponding `customFeedTimeout[base]` has not been configured.
 
-The check basically accepts a price that is at worse  `1 days`  old.
+The check basically accepts a price that is at worse `1 days` old.
 
 ## Recommended mitigation steps
 
-Lower the value of  `FEED_TIMEOUT`  to make the transaction revert in case the price may not be accurate enough
+Lower the value of `FEED_TIMEOUT` to make the transaction revert in case the price may not be accurate enough
 
+        
+## Proof of concept
 ## Proof of Concept
 
-In order to test the  **execution reverts when it should not**  case, the following script (based on  `testQueuesAndExecutesRewardTx()`) can be added in  `test/foundry/RewardTimelock.t.sol`
+In order to test the **execution reverts when it should not** case, the following script (based on `testQueuesAndExecutesRewardTx()`) can be added in `test/foundry/RewardTimelock.t.sol`
 
 ```sh
 forge test --match-test testOldPriceRevert -vvvv
-
 ```
 
-_The comments describe the events that occur during the lifecycle of the payout_
+*The comments describe the events that occur during the lifecycle of the payout*
 
 ```js
 function testOldPriceRevert() public {
@@ -128,19 +125,17 @@ function testOldPriceRevert() public {
     assertEq(rewardTimelock.vaultTxNonce(address(vault)), nonce + 1);
     assertEq(address(vault).balance, 0);
 }
-
 ```
 
-----------
+---
 
-In order to test the  **win or loss of rewards**  case, the following script (based on  `testQueuesAndExecutesRewardTx()`) can be added in  `test/foundry/RewardTimelock.t.sol`
+In order to test the **win or loss of rewards** case, the following script (based on `testQueuesAndExecutesRewardTx()`) can be added in `test/foundry/RewardTimelock.t.sol`
 
 ```sh
 forge test --match-test testOldPricePass -vvvv
-
 ```
 
-_The comments describe the events that occur during the lifecycle of the payout_
+*The comments describe the events that occur during the lifecycle of the payout*
 
 ```js
 function testOldPricePass() public {

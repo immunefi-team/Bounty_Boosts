@@ -1,35 +1,33 @@
+
 # Malicious project can remove the ImmunefiGuard in case of emergency shutdown
 
-Submitted  about 1 month  ago by @marchev (Whitehat)  for  [Boost | Immunefi Arbitration]
-
-----------
-
+Submitted on Fri Mar 15 2024 22:37:03 GMT-0400 (Atlantic Standard Time) by @marchev for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29384
 
 Report type: Smart Contract
 
-Has PoC?: Yes
+Report severity: Insight
 
 Target: https://github.com/immunefi-team/vaults/blob/main/src/guards/ImmunefiGuard.sol
 
-Impacts
+Impacts:
+- Theft of unclaimed yield
 
--   Theft of unclaimed yield
-
-## Details
-
-In case Emergency Exit mode is activated,  `ImmunefiGuard`  allows vault owners to execute  **any**  action on the underlying Gnosis Safe. This also allows adding/removing guards and modules from the vault including  `ImmunefiGuard`  or  `ImmunefiModule`. This flexibility, however, compromises the protocol's integrity once Emergency Exit is deactivated, as it allows vault owners to sidestep the safeguards provided by  `ImmunefiGuard`  and  `ImmunefiModule`.
-
+## Description
 ## Brief/Intro
 
-When the emergency shutdown mode is activated,  `ImmunefiGuard`  enables vault owners to perform  **any**  action on their Gnosis Safe, including adding or removing guards and modules. This presents a vulnerability where a malicious vault owner could disable the  `ImmunefiModule`. Consequently, when emergency shutdown mode is turned off, attempts to payout rewards to whitehats via the Arbitration system would revert.
+In case Emergency Exit mode is activated, `ImmunefiGuard` allows vault owners to execute **any** action on the underlying Gnosis Safe. This also allows adding/removing guards and modules from the vault including `ImmunefiGuard` or `ImmunefiModule`. This flexibility, however, compromises the protocol's integrity once Emergency Exit is deactivated, as it allows vault owners to sidestep the safeguards provided by `ImmunefiGuard` and `ImmunefiModule`.
+
+## Brief/Intro
+  
+When the emergency shutdown mode is activated, `ImmunefiGuard` enables vault owners to perform **any** action on their Gnosis Safe, including adding or removing guards and modules. This presents a vulnerability where a malicious vault owner could disable the `ImmunefiModule`. Consequently, when emergency shutdown mode is turned off, attempts to payout rewards to whitehats via the Arbitration system would revert.
 
 ## Vulnerability Details
 
-The protocol features a singleton  `EmergencySystem`. Activation of the emergency shutdown mode affects all vaults, enabling unrestricted action by vault owners.
+The protocol features a singleton `EmergencySystem`. Activation of the emergency shutdown mode affects all vaults, enabling unrestricted action by vault owners.
 
-This is highlighted in the  `ImmunefiGuard#checkTransaction()`  function, which during an emergency permits any transaction:
+This is highlighted in the `ImmunefiGuard#checkTransaction()` function, which during an emergency permits any transaction:
 
 ```sol
     function checkTransaction(
@@ -43,33 +41,32 @@ This is highlighted in the  `ImmunefiGuard#checkTransaction()`  function, which 
 
         // ...
     }
-
 ```
 
-Such design permits the removal of critical components like  `ImmunefiGuard`  and  `ImmunefiModule`, undermining protocol integrity and security post-emergency. It is worth noting the  `EmergencySystem`  also allows deactivation of the emergency mode once issues are addressed (via  `deactivateEmergencyShutdown()`), intending for the protocol to resume normal operations with its core invariants remaining intact.
+Such design permits the removal of critical components like `ImmunefiGuard` and `ImmunefiModule`, undermining protocol integrity and security post-emergency. It is worth noting the `EmergencySystem` also allows deactivation of the emergency mode once issues are addressed (via `deactivateEmergencyShutdown()`), intending for the protocol to resume normal operations with its core invariants remaining intact.
 
 The current capability to remove core component for the protocol violates this intent and poses a significant security risk.
 
 Here's how the vulnerability could be misused:
 
-1.  The protocol owner activates the emergency shutdown.
-2.  A malicious project takes advantage of the vulnerability and removes  `ImmunefiGuard`  and  `ImmunefiModule`  from their vault.
-3.  The protocol owner deactivates the emergency mode.
-4.  A whitehat requests an arbitration.
-5.  An arbiter rules in favor of the whitehat, triggering a reward payout and attempts to enforce reward payout.
-6.  The reward payout gets reverted since the  `RewardSystem`  attempts to force the payour via the  `ImmunefiModule`  which has been disabled by the malicious project for their vault.
+1. The protocol owner activates the emergency shutdown.
+2. A malicious project takes advantage of the vulnerability and removes `ImmunefiGuard` and `ImmunefiModule` from their vault.
+3. The protocol owner deactivates the emergency mode.
+4. A whitehat requests an arbitration.
+5. An arbiter rules in favor of the whitehat, triggering a reward payout and attempts to enforce reward payout.
+6. The reward payout gets reverted since the `RewardSystem` attempts to force the payour via the `ImmunefiModule` which has been disabled by the malicious project for their vault.
 
 ## Impact Details
 
-The core components,  `ImmunefiGuard`  and  `ImmunefiModule`, ensure compliance with arbitration decisions.
+The core components, `ImmunefiGuard` and `ImmunefiModule`, ensure compliance with arbitration decisions.
 
-Removing or disabling the  `ImmunefiModule`  component enables a malicious project to evade payouts determined by arbitration, leading to financial losses for whitehats.
-
-Additionally, by being able to remove the  `ImmunefiGuard`  during the emergency shutdown mode, a malicious project now can freely execute any action on their vault without any limitations which also breaks core invariants of the Arbitration system.
+Removing or disabling the `ImmunefiModule` component enables a malicious project to evade payouts determined by arbitration, leading to financial losses for whitehats.
+  
+Additionally, by being able to remove the `ImmunefiGuard` during the emergency shutdown mode, a malicious project now can freely execute any action on their vault without any limitations which also breaks core invariants of the Arbitration system.
 
 ## Solution
 
-The  `ImmunefiGuard`  can be modified as follows to let vault owners execute any function during an emergency exit, except for adding or removing guards and modules:
+The `ImmunefiGuard` can be modified as follows to let vault owners execute any function during an emergency exit, except for adding or removing guards and modules:
 
 ```diff
 diff --git a/src/guards/ImmunefiGuard.sol b/src/guards/ImmunefiGuard.sol
@@ -90,21 +87,20 @@ index e17b40d..3e6fe70 100644
          }
 
          if (guardBypassers[msgSender]) {
-
 ```
 
-The ability to add/remove guards is not critical in case of emergency, especially given the fact that the Emergency System bypasses both the  `ImmunefiModule`  and the  `ImmunefiGuard`. Moreover, it is imperative that Immunefi vaults are used solely for the purposes of reward distribution for bug bounty programs at Immunefi. Thus, blocking the ability to add/remove modules/guards does not affect the ability of the protocol to withdraw their funds or perform other critical functions in case of an emergency.
+The ability to add/remove guards is not critical in case of emergency, especially given the fact that the Emergency System bypasses both the `ImmunefiModule` and the `ImmunefiGuard`. Moreover, it is imperative that Immunefi vaults are used solely for the purposes of reward distribution for bug bounty programs at Immunefi. Thus, blocking the ability to add/remove modules/guards does not affect the ability of the protocol to withdraw their funds or perform other critical functions in case of an emergency.
 
 ## References
 
-[https://github.com/immunefi-team/vaults/blob/49c1de26cda19c9e8a4aa311ba3b0dc864f34a25/src/guards/ImmunefiGuard.sol#L66-L68](https://github.com/immunefi-team/vaults/blob/49c1de26cda19c9e8a4aa311ba3b0dc864f34a25/src/guards/ImmunefiGuard.sol#L66-L68)
-
-
+https://github.com/immunefi-team/vaults/blob/49c1de26cda19c9e8a4aa311ba3b0dc864f34a25/src/guards/ImmunefiGuard.sol#L66-L68
+        
+## Proof of concept
 ## Proof of Concept
 
-The vulnerability could be reproduced by modifying the  `Arbitration.t.sol`  file and adding the following test to it.
+The vulnerability could be reproduced by modifying the `Arbitration.t.sol` file and adding the following test to it.
 
-The implemented scenario demonstrates how a malicous project could disable their vault's  `ImmunefiModule`  during emergency which later on results in revert of payouts which are attempted by the Arbitration system.
+The implemented scenario demonstrates how a malicous project could disable their vault's `ImmunefiModule` during emergency which later on results in revert of payouts which are attempted by the Arbitration system.
 
 ```sol
     function testMaliciousProjectCanCauseSendRewardToFailAfterEmergencyShutdown() public {
@@ -195,7 +191,6 @@ The implemented scenario demonstrates how a malicous project could disable their
         );
         vm.stopPrank();
     }
-
 ```
 
 Run the PoC via:

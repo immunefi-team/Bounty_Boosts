@@ -1,38 +1,39 @@
+
 # Missing Chainlink circuit breaker check allows malicious project to send lower than market value rewards
 
-Submitted  25 days  ago by @marchev (Whitehat)  for  [Boost | Immunefi Arbitration]
+Submitted on Mon Apr 01 2024 00:09:20 GMT-0400 (Atlantic Standard Time) by @marchev for [Boost | Immunefi Arbitration](https://immunefi.com/bounty/immunefiarbitration-boost/)
 
 Report ID: #29738
 
 Report type: Smart Contract
 
-Has PoC?: Yes
+Report severity: Low
 
 Target: https://github.com/immunefi-team/vaults/blob/main/src/RewardTimelock.sol
 
-Impacts
+Impacts:
+- Theft of unclaimed royalties
 
--   Theft of unclaimed royalties
-
+## Description
 ## Brief/Intro
 
 Chainlink aggregators feature a built-in circuit breaker that activates during significant price fluctuations, keeping the asset price within a pre-defined range. In scenarios like the LUNA crash, the oracle reports a pre-set minimum value (`minAnswer`) rather than the real market price. This mechanism could enable malicious projects to payout rewards that are below market value by leveraging the inflated price from the Chainlink oracle.
 
-Such a vulnerability has resulted in a $11M exploit on Venus Protocol during the LUNA crash:  [https://therecord.media/collapse-of-luna-cryptocurrency-leads-to-11-million-exploit-on-venus-protocol](https://therecord.media/collapse-of-luna-cryptocurrency-leads-to-11-million-exploit-on-venus-protocol)
+Such a vulnerability has resulted in a $11M exploit on Venus Protocol during the LUNA crash: https://therecord.media/collapse-of-luna-cryptocurrency-leads-to-11-million-exploit-on-venus-protocol
 
 ## Vulnerability Details
 
-The  `RewardTimelock`  contract depends on Chainlink price oracles to align reward payouts with the actual market value. It employs  `_checkRewardDollarValue`, a function that fetches the asset's current market price with  `PriceConsumer#tryGetSaneUsdPrice18Decimals()`, implementing various checks to ensure the price's accuracy and relevance.
+The `RewardTimelock` contract depends on Chainlink price oracles to align reward payouts with the actual market value. It employs `_checkRewardDollarValue`, a function that fetches the asset's current market price with `PriceConsumer#tryGetSaneUsdPrice18Decimals()`, implementing various checks to ensure the price's accuracy and relevance.
 
-Nonetheless, this function lacks verification for the activation of Chainlink's circuit breaker. In extreme price movements, when the asset price falls below  `minAnswer`  or rises above  `maxAnswer`, the Chainlink feed still reports these thresholds instead of the actual market price of the asset. Missing this critical check means a project could exploit the situation and pay whitehats a reduced award under these circumstances.
+Nonetheless, this function lacks verification for the activation of Chainlink's circuit breaker. In extreme price movements, when the asset price falls below `minAnswer` or rises above `maxAnswer`, the Chainlink feed still reports these thresholds instead of the actual market price of the asset. Missing this critical check means a project could exploit the situation and pay whitehats a reduced award under these circumstances.
 
 Let's take the following example:
 
 Example scenario:
 
-1.  A significant price drop triggers the Chainlink circuit breaker for a reward token, causing the feed to report  `minAnswer`.
-2.  A project initiates a whitehat reward payout via  `RewardTimelock`.
-3.  After the cooldown period, the project executes the payout at the reported, inflated price.
+1. A significant price drop triggers the Chainlink circuit breaker for a reward token, causing the feed to report `minAnswer`.
+2. A project initiates a whitehat reward payout via `RewardTimelock`.
+3. After the cooldown period, the project executes the payout at the reported, inflated price.
 
 ## Impact Details
 
@@ -91,10 +92,9 @@ index a024bd3..2025e4a 100644
 +
          return uint256(response.answer);
      }
-
 ```
 
-Furthermore, a new interface,  `src/oracles/IOffchainAggregatorMinimal.sol`, is required to fetch the  `minAnswer`  and  `maxAnswer`  directly from the aggregator:
+Furthermore, a new interface, `src/oracles/IOffchainAggregatorMinimal.sol`, is required to fetch the `minAnswer` and `maxAnswer` directly from the aggregator:
 
 ```sol
 // SPDX-License-Identifier: Immuni Software PTE Ltd General Source License
@@ -104,18 +104,18 @@ interface IOffchainAggregatorMinimal {
     function minAnswer() external view returns (int192);
     function maxAnswer() external view returns (int192);
 }
-
 ```
 
+        
+## Proof of concept
 ## Proof of Concept
 
 The following coded PoC demonstrates how a payout could be performed even if the Chainlink price oracle's circuit breaker is activated.
 
-Add the following import in  `test/foundry/RewardTimelock.t.sol`:
+Add the following import in `test/foundry/RewardTimelock.t.sol`:
 
 ```sol
 import { ERC20PresetMinterPauser } from "openzeppelin-contracts/token/ERC20/presets/ERC20PresetMinterPauser.sol";
-
 ```
 
 Then add the following test case to it as well:
@@ -216,9 +216,8 @@ Then add the following test case to it as well:
             true
         );
     }
-
 ```
 
-Run the PoC via  `forge test --mt "testNoCircuitBreakerForMinMaxPriceWhenExecutingRewardTx" -vvvvv`
+Run the PoC via `forge test --mt "testNoCircuitBreakerForMinMaxPriceWhenExecutingRewardTx" -vvvvv`
 
 The expected behavior is that the reward payout fails but the actual behavior is that it gets executed successfully.

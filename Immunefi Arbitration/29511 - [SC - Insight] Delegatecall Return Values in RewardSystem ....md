@@ -9,6 +9,8 @@ Report ID: #29511
 
 Report type: Smart Contract
 
+Report severity: Insight
+
 Has PoC?: Yes
 
 Target: https://github.com/immunefi-team/vaults/blob/main/src/oracles/PriceConsumer.sol
