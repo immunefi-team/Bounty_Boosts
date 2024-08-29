@@ -1,7 +1,7 @@
 
 # Self Destruction of 1inchRouter can lead to loss of 50% functionality of the puffer depositor
 
-Submitted on Sat Mar 02 2024 08:39:01 GMT-0400 (Atlantic Standard Time) by @oxumarkhatab for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 2nd 2024 at 14:39:01 UTC by @oxumarkhatab for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28942
 
@@ -145,8 +145,8 @@ When the protocol is self-destructed, the calls to the 1inchRouter will always f
 
 https://etherscan.io/address/0x1111111254EEB25477B68fb85Ed929f73A960582#code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Even the biggest protocols like `kyberswap` are hacked due to the `0.0000001%` chance of it being exploited so there is a chance that 1InchRouter is also hacked, `self-destructed` to prevent potentially greater damages, and be `deployed at a new address` which now new users can use. However, our current implementation does not allow to change the deployed address of 1inchRouter without revamping and re-deploying the entire depositor contract and other contracts that are harcodedly connected with the address of the puffer depositor.
 

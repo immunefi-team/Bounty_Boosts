@@ -1,7 +1,7 @@
 
 # EigenLayer's share rate can be massively inflated by griefing attacks which will result in PufferVault receiving less shares
 
-Submitted on Thu Feb 22 2024 08:10:16 GMT-0400 (Atlantic Standard Time) by @Shaheen for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 22nd 2024 at 14:10:16 UTC by @Shaheen for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28612
 
@@ -57,8 +57,8 @@ To enhance security for the users'/protocol's funds, it is recommended to add a 
 https://github.com/code-423n4/2023-04-eigenlayer-findings/issues/343
 https://github.com/Layr-Labs/eigenlayer-contracts/blob/d80482086a8391be7a7bbf3fb1287a68b338cc73/src/contracts/strategies/StrategyBase.sol#L118
 https://github.com/code-423n4/2023-04-eigenlayer-findings/issues/343#issuecomment-1545067086
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Regrettably, due to the nature of this issue being specific to griefing attacks on EigenLayer, I find it challenging to construct a Coded Proof of Concept (PoC). I hope that the protocol team and triagers will comprehend this limitation. Thank you for your understanding.

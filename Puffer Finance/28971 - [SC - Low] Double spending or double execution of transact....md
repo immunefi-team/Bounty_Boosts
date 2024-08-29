@@ -1,7 +1,7 @@
 
 # Double spending or double execution of transaction is possible by passing delay period of Timelock contract
 
-Submitted on Sun Mar 03 2024 14:33:14 GMT-0400 (Atlantic Standard Time) by @codesentry for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 3rd 2024 at 20:33:14 UTC by @codesentry for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28971
 
@@ -65,8 +65,8 @@ Overall timelock contract has sever bug in executeTransaction(). Ideally this sh
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```solidity
 // SPDX-License-Identifier: GPL-3.0

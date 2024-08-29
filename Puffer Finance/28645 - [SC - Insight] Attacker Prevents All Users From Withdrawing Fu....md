@@ -1,7 +1,7 @@
 
 # Attacker Prevents All Users From Withdrawing Funds by Exploiting The Daily Withdrawal Limit
 
-Submitted on Thu Feb 22 2024 16:35:17 GMT-0400 (Atlantic Standard Time) by @misuz for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 22nd 2024 at 22:35:17 UTC by @misuz for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28645
 
@@ -28,8 +28,8 @@ All funds deposited by users into the vault become inaccessible for withdrawal.
 ## Recommendation
 
 It is recommended to implement a daily withdrawal limit for every user (on a user level) to mitigate the risk of this vulnerability.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

@@ -1,7 +1,7 @@
 
 # Return value of call is not checked causing failed transactions to go through
 
-Submitted on Tue Feb 27 2024 05:05:49 GMT-0400 (Atlantic Standard Time) by @MrPotatoMagic for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 27th 2024 at 11:05:49 UTC by @MrPotatoMagic for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28789
 
@@ -159,8 +159,8 @@ File: Timelock.sol
 238:             return (success, returnData);
 238:         }
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Some points to understand the POC:

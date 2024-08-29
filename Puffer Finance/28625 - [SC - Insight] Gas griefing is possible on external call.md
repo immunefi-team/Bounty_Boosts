@@ -1,7 +1,7 @@
 
 # Gas griefing is possible on external call
 
-Submitted on Thu Feb 22 2024 11:24:08 GMT-0400 (Atlantic Standard Time) by @djxploit for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 22nd 2024 at 17:24:08 UTC by @djxploit for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28625
 
@@ -34,8 +34,8 @@ It is recommended to implement the low level call using assembly.
 
 ## References
 https://solodit.xyz/issues/m-03-gas-griefingtheft-is-possible-on-unsafe-external-call-pashov-none-zerem-markdown
-        
-## Proof of concept
+
+
 ## Proof of Concept
 In `executeTransaction` function  of `Timelock.sol` contract
 ```

@@ -1,7 +1,7 @@
 
 # Protocol Insolvency due to the over inflated calculation of working capital
 
-Submitted on Thu Feb 22 2024 19:09:56 GMT-0400 (Atlantic Standard Time) by @marqymarq10 for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 23rd 2024 at 01:09:56 UTC by @marqymarq10 for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28650
 
@@ -132,7 +132,7 @@ If this accounting error is left unresolved, the users of the protocol are at ri
 - [withdraw (PufferVaultMainnet)](https://github.com/PufferFinance/pufETH/blob/0a345743ec4886735b046164876be32c35e59ebe/src/PufferVaultMainnet.sol#L111-L137)
 
 
-        
+
 ## Proof of concept
 ## PoC
 Add the following code snippet to `test/integration/PufferDepositorMainnet.fork.t.sol`:

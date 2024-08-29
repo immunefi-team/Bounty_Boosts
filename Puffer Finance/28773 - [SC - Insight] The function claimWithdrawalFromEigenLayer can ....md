@@ -1,7 +1,7 @@
 
 # The function "claimWithdrawalFromEigenLayer" can be called by anyone
 
-Submitted on Mon Feb 26 2024 12:37:32 GMT-0400 (Atlantic Standard Time) by @crazy_squirrel for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 26th 2024 at 18:37:32 UTC by @crazy_squirrel for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28773
 
@@ -49,6 +49,6 @@ Provide a detailed breakdown of possible losses from an exploit, especially if t
 ## References
 
 https://github.com/PufferFinance/pufETH/blob/d340d40a2ebb72993cd7dd6049a78a01bcef32ae/src/PufferVault.sol#L217
-        
-## Proof of concept
+
+
 ## Proof of Concept

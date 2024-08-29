@@ -1,7 +1,7 @@
 
 # Resubmission with Pause Bypass: Potential Exploit in swapAndDeposit1Inch Function due to Incorrect Return Value Assumption and Residual stETH Risk
 
-Submitted on Thu Feb 22 2024 17:05:17 GMT-0400 (Atlantic Standard Time) by @offside0011 for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 22nd 2024 at 23:05:17 UTC by @offside0011 for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28646
 
@@ -37,8 +37,8 @@ However, these swap functions are still accessible on the mainnet. We have alrea
 ## Recommendation
 
 Currently, only a small amount of dust (approximately $46) is vulnerable. The functions should be paused.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 We demonstrated the accessibility of the swap functions by checking the authority (AccessManager) of the depositor.

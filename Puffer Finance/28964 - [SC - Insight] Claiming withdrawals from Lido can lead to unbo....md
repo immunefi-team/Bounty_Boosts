@@ -1,7 +1,7 @@
 
 # Claiming withdrawals from Lido can lead to unbounded gas consumption
 
-Submitted on Sun Mar 03 2024 08:20:08 GMT-0400 (Atlantic Standard Time) by @LokiThe5th for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 3rd 2024 at 14:20:08 UTC by @LokiThe5th for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28964
 
@@ -54,8 +54,8 @@ As the number of checkpoints will continue increasing, and the length of the `re
 - Lido's `claimWithdraw`: https://etherscan.io/address/0xe42c659dc09109566720ea8b2de186c2be7d94d9#code#F22#L277  
 - Lido's `_findCheckpointHint`: https://etherscan.io/address/0xe42c659dc09109566720ea8b2de186c2be7d94d9#code#F23#L385
 
-        
-## Proof of concept
+
+
 ## Proof of Concept  
 
 Kindly inspect the `LidoWithdrawalQueueMockGasUse` file before running the PoC. As it is difficult to test this on a forked env, the aforementioned file mocks the functionality that is crucial to this PoC. It basically takes the code from Lido and places it in the mock, allowing us to approximate the issue (gas use).   

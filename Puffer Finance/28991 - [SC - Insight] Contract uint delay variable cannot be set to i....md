@@ -1,7 +1,7 @@
 
 # Contract `uint delay` variable cannot be set to its minimum value
 
-Submitted on Sun Mar 03 2024 22:53:59 GMT-0400 (Atlantic Standard Time) by @Obin for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 4th 2024 at 04:53:59 UTC by @Obin for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28991
 
@@ -44,8 +44,8 @@ function _setDelay(uint256 newDelay) internal {
     }
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```// SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.8.0 <0.9.0;

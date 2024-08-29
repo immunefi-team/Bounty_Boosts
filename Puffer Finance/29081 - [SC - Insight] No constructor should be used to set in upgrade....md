@@ -1,7 +1,7 @@
 
-# No constructor should be used to set in upgradeable contracts
+# No constructor should be used to set in upgradeable contracts 
 
-Submitted on Wed Mar 06 2024 13:13:58 GMT-0400 (Atlantic Standard Time) by @SAAJ for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 6th 2024 at 19:13:58 UTC by @SAAJ for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29081
 
@@ -37,7 +37,7 @@ https://github.com/PufferFinance/pufETH/blob/2768d69196717e9f77a6837153b426e06e1
 ## Recommendations
 The recommendation is made to avoid using constructor in upgradeable contract and move the immutable variables passed in constructor for both contracts of ```PufferDepositor``` and ```PufferVault``` to the ```initialize``` function. 
 
-        
+
 ## Proof of concept
 ## POC
 The POC for the issue is visible in context of not following OZ guideline in terms of not using constructor in upgradeable and using immutable with caution.

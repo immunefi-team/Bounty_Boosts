@@ -1,7 +1,7 @@
 
 # Silent Failure of ERC20 Permit Calls in PufferDepositor Contract
 
-Submitted on Thu Mar 07 2024 01:55:01 GMT-0400 (Atlantic Standard Time) by @cheatcode for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 7th 2024 at 07:55:01 UTC by @cheatcode for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29111
 
@@ -62,8 +62,8 @@ ERC20Permit(address(tokenIn)).permit({
 ```
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ### poc.py

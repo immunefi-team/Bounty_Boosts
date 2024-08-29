@@ -1,7 +1,7 @@
 
 # Lack of Success check of the "Timelock :: executeTransfer()" returned value leads to canceling the tx while emmitting it's been executed
 
-Submitted on Mon Mar 04 2024 10:26:05 GMT-0400 (Atlantic Standard Time) by @HX000 for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 4th 2024 at 16:26:05 UTC by @HX000 for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29006
 
@@ -75,6 +75,6 @@ This bug will result in 2 impacts:
 
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept

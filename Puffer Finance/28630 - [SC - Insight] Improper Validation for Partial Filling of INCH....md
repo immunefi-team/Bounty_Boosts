@@ -1,7 +1,7 @@
 
 # Improper Validation for Partial Filling of 1INCH_ROUTER Orders
 
-Submitted on Thu Feb 22 2024 12:40:15 GMT-0400 (Atlantic Standard Time) by @offside0011 for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 22nd 2024 at 18:40:15 UTC by @offside0011 for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28630
 
@@ -58,8 +58,8 @@ function swapAndDeposit1Inch(address tokenIn, uint256 amountIn, bytes calldata c
     }
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

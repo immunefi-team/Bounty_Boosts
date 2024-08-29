@@ -1,7 +1,7 @@
 
 # Return value of low level isn't checked, execution will resume even if the called contract throws an exception.
 
-Submitted on Tue Feb 27 2024 08:20:17 GMT-0400 (Atlantic Standard Time) by @Kenzo for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 27th 2024 at 14:20:17 UTC by @Kenzo for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28792
 
@@ -72,8 +72,8 @@ https://www.kingoftheether.com/postmortem.html?source=post_page-----fe794a7cdb6f
 
 ## Recommendation:
 Check the bool returned by the `.call` function call and revert if it is false.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Execution will resume even if the called contract throws an exception. If the call fails accidentally or an attacker forces the call to fail, this may cause unexpected behavior in the subsequent program logic. 
 

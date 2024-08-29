@@ -1,7 +1,7 @@
 
 # `pufETH/src/Timelock::_setDelay()` - L256: State constant `MINIMUM_DELAY` is incorrectly treated as an invalid minimum delay value, as can be seen here where `newDelay <= MINIMUM_DELAY` is used instead of `newDelay < MINIMUM_DELAY`.
 
-Submitted on Fri Feb 23 2024 02:47:31 GMT-0400 (Atlantic Standard Time) by @OxSCSamurai for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 23rd 2024 at 08:47:31 UTC by @OxSCSamurai for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28660
 
@@ -76,8 +76,8 @@ Therefore the `<=` in `newDelay <= MINIMUM_DELAY` should be `<`, because a `newD
 https://github.com/PufferFinance/pufETH/blob/3e76d02c7b54323d347c8277327d3877bab591f5/src/Timelock.sol#L255-L262
 https://github.com/PufferFinance/pufETH/blob/3e76d02c7b54323d347c8277327d3877bab591f5/src/Timelock.sol#L256
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 # TEST1:

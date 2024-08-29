@@ -1,7 +1,7 @@
 
 # External Call from Eigen Layer can fail silently in the claimWithdrawalFromEigenLayer function
 
-Submitted on Sun Feb 25 2024 06:05:50 GMT-0400 (Atlantic Standard Time) by @Cryptor for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 25th 2024 at 12:05:50 UTC by @Cryptor for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28732
 
@@ -56,8 +56,8 @@ https://github.com/ethereum/EIPs/blob/master/EIPS/eip-150.md
 https://solodit.xyz/issues/h-08-gas-limit-check-is-inaccurate-leading-to-an-operator-being-able-to-fail-a-job-intentionally-code4rena-holograph-holograph-contest-git
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 

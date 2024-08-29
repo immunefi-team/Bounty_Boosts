@@ -1,7 +1,7 @@
 
 # Timelock's executeTransaction incorrectly deletes transaction on failure
 
-Submitted on Fri Feb 23 2024 17:58:18 GMT-0400 (Atlantic Standard Time) by @honeymewn for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 23rd 2024 at 23:58:18 UTC by @honeymewn for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28687
 
@@ -36,8 +36,8 @@ if (success) {
 }
 ```
 Optionally add a reentrancy guard but I don't really think this is needed here.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 As I said earlier a transaction should be kept when it fails. Otherwise operations will need to wait for another week to reexecute. PoC demonstrates a case when operations multisig runs out of gas when pausing targets (there could be other cases of when a transaction fails temporarily). Run with:
 ```sh

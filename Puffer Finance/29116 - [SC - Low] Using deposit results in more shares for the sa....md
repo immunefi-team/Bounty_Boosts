@@ -1,7 +1,7 @@
 
 # Using deposit results in more shares for the same amount of stETH
 
-Submitted on Thu Mar 07 2024 07:58:54 GMT-0400 (Atlantic Standard Time) by @LokiThe5th for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 7th 2024 at 13:58:54 UTC by @LokiThe5th for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29116
 
@@ -35,8 +35,8 @@ In this case a user should always use `deposit` instead of mint, as the rounding
 ## References  
 Lido: https://docs.lido.fi/guides/lido-tokens-integration-guide/#1-2-wei-corner-case
 
-        
-## Proof of concept
+
+
 ## Proof of Concept  
 The below files should be placed within the `puffEth` repo.  
 

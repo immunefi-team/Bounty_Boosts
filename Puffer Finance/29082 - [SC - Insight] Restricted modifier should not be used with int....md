@@ -1,7 +1,7 @@
 
 # Restricted modifier should not be used with internal function
 
-Submitted on Wed Mar 06 2024 13:19:09 GMT-0400 (Atlantic Standard Time) by @SAAJ for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 6th 2024 at 19:19:09 UTC by @SAAJ for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29082
 
@@ -33,7 +33,7 @@ The recommendation is made to use ```ownable2StepUpgradeable``` instead of ```Ac
 
 
 
-        
+
 ## Proof of concept
 ## POC
 OZ clearly warns about using the ```restricted``` modifier with internal functions that can lead to serious security issues as stated in the [contract](https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable/blob/789ba4f167cc94088e305d78e4ae6f3c1ec2e6f1/contracts/access/manager/AccessManagedUpgradeable.sol#L55):

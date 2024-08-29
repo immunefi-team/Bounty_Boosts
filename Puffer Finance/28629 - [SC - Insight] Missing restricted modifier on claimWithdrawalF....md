@@ -1,7 +1,7 @@
 
 # Missing restricted modifier on claimWithdrawalFromEigenLayer() leads to Unauthorized access
 
-Submitted on Thu Feb 22 2024 12:38:33 GMT-0400 (Atlantic Standard Time) by @imaybeghost for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 22nd 2024 at 18:38:33 UTC by @imaybeghost for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28629
 
@@ -65,7 +65,7 @@ This leads to the unauthorized access to `claimWithdrawalFromEigenLayer()` when 
 ## References
 https://github.com/PufferFinance/pufETH/blob/main/src/PufferVault.sol#L215-L226
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Since the straightforwardness of the issue, i dont think POC is neccessary, I think adding POC for this issue would be Vacous and an opportunity cost for both of us

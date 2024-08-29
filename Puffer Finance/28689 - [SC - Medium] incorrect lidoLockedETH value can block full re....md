@@ -1,7 +1,7 @@
 
-# incorrect lidoLockedETH value can block full redeeming of puffETH in vault
+# incorrect lidoLockedETH value can block full redeeming of puffETH in vault 
 
-Submitted on Fri Feb 23 2024 18:39:16 GMT-0400 (Atlantic Standard Time) by @MahdiKarimi for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 24th 2024 at 00:39:16 UTC by @MahdiKarimi for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28689
 
@@ -36,8 +36,8 @@ Scenario :
 5 - now total assets = 10.999 ETH + 0.0001 lidoLockedETH = 11 ETH but contract balance is 10.999 ETH 
 6 - now if Alice decides to withdraw 10 puffETh, 10 vault shares = 11 ETH 
 7 - since contact doesn't have 11 ETH balance it can't fully repay Alice so she needs to redeem lower shares. 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```
 function test_lido_withdrawal_lidoLockedETH()

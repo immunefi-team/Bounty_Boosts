@@ -1,7 +1,7 @@
 
 # MINIMUM_DELAY uses incorrect value of 7 days instead of 2 days
 
-Submitted on Sun Feb 25 2024 03:04:26 GMT-0400 (Atlantic Standard Time) by @MrPotatoMagic for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 25th 2024 at 09:04:26 UTC by @MrPotatoMagic for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28729
 
@@ -49,8 +49,8 @@ File: Timelock.sol
 301:         delay = newDelay;
 302:     }
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 How to use this POC:

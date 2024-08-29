@@ -1,7 +1,7 @@
 
 # `pufETH/src/Timelock::executeTransaction()` - L213: The timelock expiry check incorrectly allows for transaction execution AT the final/last block of the timelocked delay represented by `lockedUntil`.
 
-Submitted on Fri Feb 23 2024 22:26:26 GMT-0400 (Atlantic Standard Time) by @OxSCSamurai for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 24th 2024 at 04:26:26 UTC by @OxSCSamurai for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28695
 
@@ -88,8 +88,8 @@ Not 100% sure about the following two impacts:
 
 https://github.com/PufferFinance/pufETH/blob/3e76d02c7b54323d347c8277327d3877bab591f5/src/Timelock.sol#L213
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 # PoC:

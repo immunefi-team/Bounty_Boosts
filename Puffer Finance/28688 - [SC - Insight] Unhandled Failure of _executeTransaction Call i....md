@@ -1,7 +1,7 @@
 
-# Unhandled Failure of `_executeTransaction` Call in `executeTransaction` Function Poses Risk of Misrepresentation of Transaction Status
+# Unhandled Failure of `_executeTransaction` Call in `executeTransaction` Function Poses Risk of Misrepresentation of Transaction Status 
 
-Submitted on Fri Feb 23 2024 18:15:20 GMT-0400 (Atlantic Standard Time) by @ihtishamsudo for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 24th 2024 at 00:15:20 UTC by @ihtishamsudo for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28688
 
@@ -59,7 +59,7 @@ function executeTransaction(address target, bytes calldata callData, uint256 ope
 [Timelock.executeTransaction](https://etherscan.io/address/0x3C28B7c7Ba1A1f55c9Ce66b263B33B204f2126eA?utm_source=immunefi#code#F1#L218)
 
 https://docs.soliditylang.org/en/v0.8.4/control-structures.html#error-handling-assert-require-revert-and-exceptions
-        
-## Proof of concept
+
+
 ## Proof of Concept
 N/A

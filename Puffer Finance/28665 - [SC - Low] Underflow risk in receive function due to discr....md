@@ -1,7 +1,7 @@
 
 # Underflow risk in receive() function due to discrepancies between locked and claimed ETH amounts
 
-Submitted on Fri Feb 23 2024 04:40:26 GMT-0400 (Atlantic Standard Time) by @grobelr for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 23rd 2024 at 10:40:26 UTC by @grobelr for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28665
 
@@ -46,8 +46,8 @@ Besides that, an underflow on receive() function can completely freeze claiming 
 
 
 This function presupposes a one-to-one correspondence between the amount initially "locked" in $.lidoLockedETH and the ETH amount received (msg.value). However, a closer inspection of Lido's [WithdrawalQueueBase.sol](https://etherscan.io/address/0xe42c659dc09109566720ea8b2de186c2be7d94d9#code#F23#L472)  at line 472 reveals that the _claim function, through _calculateClaimableEther, may introduce rounding discrepancies. Moreover, an underflow in the receive() function could severely disrupt the ability to claim ETH from Lido, particularly if a negative rebase occurs between the stages of [initiateETHWithdrawalsFromLido](https://etherscan.io/address/0x39ca0a6438b6050ea2ac909ba65920c7451305c1#code#F1#L159) and [claimWithdrawalsFromLido](https://etherscan.io/address/0x39ca0a6438b6050ea2ac909ba65920c7451305c1#code#F1#L106) 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Add this function to [PufferTest.integration.t.sol](https://github.com/PufferFinance/pufETH/blob/main/test/Integration/PufferTest.integration.t.sol)

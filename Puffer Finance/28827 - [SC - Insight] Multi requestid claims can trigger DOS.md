@@ -1,7 +1,7 @@
 
 # Multi requestid claims can trigger DOS
 
-Submitted on Tue Feb 27 2024 21:26:42 GMT-0400 (Atlantic Standard Time) by @SentientX for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 28th 2024 at 03:26:42 UTC by @SentientX for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28827
 
@@ -59,8 +59,8 @@ Result after running POC:
     │   │   └─ ←
 	
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 1. mkdir pufferPOC

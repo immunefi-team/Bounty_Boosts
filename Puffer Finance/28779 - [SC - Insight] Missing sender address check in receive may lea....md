@@ -1,7 +1,7 @@
 
 # Missing sender address check in receive() may lead to locked Ether
 
-Submitted on Mon Feb 26 2024 15:58:19 GMT-0400 (Atlantic Standard Time) by @djxploit for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 26th 2024 at 21:58:19 UTC by @djxploit for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28779
 
@@ -28,8 +28,8 @@ Ethers will get permanently locked in the PufferVault contract, if they are sent
 
 ## References
 https://etherscan.io/address/0xd9a442856c234a39a81a089c06451ebaa4306a72?utm_source=immunefi
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Receive function of PufferVault contract

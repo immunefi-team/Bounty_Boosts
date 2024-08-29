@@ -1,7 +1,7 @@
 
 # Info
 
-Submitted on Sat Mar 02 2024 12:35:50 GMT-0400 (Atlantic Standard Time) by @OxJoyBoy03 for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 2nd 2024 at 18:35:50 UTC by @OxJoyBoy03 for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28947
 
@@ -46,6 +46,6 @@ these errors and events were not used anywhere, you can remove or use them.
 
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept

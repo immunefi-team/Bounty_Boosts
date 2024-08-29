@@ -1,7 +1,7 @@
 
 # Insecure Token Allowance Management in PufferDepositor Contract
 
-Submitted on Thu Mar 07 2024 01:45:54 GMT-0400 (Atlantic Standard Time) by @cheatcode for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 7th 2024 at 07:45:54 UTC by @cheatcode for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29110
 
@@ -57,8 +57,8 @@ if (remainingAllowance > 0) {
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ### poc.py

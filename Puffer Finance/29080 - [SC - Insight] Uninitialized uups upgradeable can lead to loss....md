@@ -1,7 +1,7 @@
 
 # Uninitialized uups upgradeable can lead to loss of funds
 
-Submitted on Wed Mar 06 2024 13:08:33 GMT-0400 (Atlantic Standard Time) by @SAAJ for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 6th 2024 at 19:08:33 UTC by @SAAJ for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29080
 
@@ -54,7 +54,7 @@ The recommendation is made for initializing the ```UUPSUpgradeable``` contract i
  __UUPSUpgradeable_init();
 ```
 
-        
+
 ## Proof of concept
 ## POC
 Here is a POC clearly evident absence of initialization of ```UUPSUpgradeable``` contract for both ```PufferDepositor``` and ```PufferVault``` that can be used by an attacker to upgrade and then destroy the implementation contract.

@@ -1,7 +1,7 @@
 
 # `PufferVault::claimWithdrawalFromLido`, according to natspec, should be restrcited but it is lacking restricted modifier
 
-Submitted on Tue Feb 27 2024 17:19:21 GMT-0400 (Atlantic Standard Time) by @ihtishamsudo for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 27th 2024 at 23:19:21 UTC by @ihtishamsudo for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28813
 
@@ -39,8 +39,8 @@ https://github.com/PufferFinance/pufETH/blob/d340d40a2ebb72993cd7dd6049a78a01bce
 
 https://github.com/PufferFinance/pufETH/blob/d340d40a2ebb72993cd7dd6049a78a01bcef32ae/src/PufferVault.sol#L226
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Here is the test in `PufferTest.integration.t.sol` that is testing withdrawal from Eigen layer and this test is using `OPERATION_MULTISIG` address to call every function in this test and `OPERATION_MULTISIG` is one of the puffer team address.

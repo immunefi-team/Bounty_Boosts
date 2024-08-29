@@ -1,7 +1,7 @@
 
 # User can frontrun claim transaction to make claim failed if the protocol wants to claim multiple request Id in batch.
 
-Submitted on Sat Feb 24 2024 00:46:29 GMT-0400 (Atlantic Standard Time) by @ladboy233 for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 24th 2024 at 06:46:29 UTC by @ladboy233 for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28698
 
@@ -59,7 +59,7 @@ malicious user can frontrun the claimWithdrawalsFromLido and calls the function 
 then when the admin's request execute, the whole transaction will revert because we cannot withdraw ETH using the request id 10000 twice.
 
 the recommendation is adding access control to the function claimWithdrawalsFromLido
-        
+
 ## Proof of concept
 ```
 // SPDX-License-Identifier: UNLICENSED

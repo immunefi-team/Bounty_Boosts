@@ -1,7 +1,7 @@
 
 # Actual amount of stETH deposited is less than the specified amount parameter to be deposited
 
-Submitted on Wed Mar 06 2024 20:56:41 GMT-0400 (Atlantic Standard Time) by @kaysoft for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 7th 2024 at 02:56:41 UTC by @kaysoft for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29099
 
@@ -69,8 +69,8 @@ Instead of `stEth`, consider integration the non-rebasable value-accruing counte
 ## References
 https://docs.lido.fi/guides/lido-tokens-integration-guide/#1-2-wei-corner-case
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 1. Create a file in the `test/integration` directory and name is `POC.t.sol`
 2. Copy and paste the code below to the new file: `POC.t.sol`.

@@ -1,7 +1,7 @@
 
 # `pufETH/src/Timelock.sol::executeTransaction()` - This bug makes it possible to unexpectedly execute a timelocked queued transaction TWICE, either accidentally, or intentionally.
 
-Submitted on Mon Feb 26 2024 14:13:12 GMT-0400 (Atlantic Standard Time) by @OxSCSamurai for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 26th 2024 at 20:13:12 UTC by @OxSCSamurai for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28775
 
@@ -119,8 +119,8 @@ Therefore both mentioned impacts should be relevant to this bug and bug report, 
 ## References
 https://github.com/PufferFinance/pufETH/blob/3e76d02c7b54323d347c8277327d3877bab591f5/src/Timelock.sol#L182-L225
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 # PoC tests:

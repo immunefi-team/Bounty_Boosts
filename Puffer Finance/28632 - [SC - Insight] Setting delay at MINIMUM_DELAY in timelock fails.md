@@ -1,7 +1,7 @@
 
 # Setting delay at `MINIMUM_DELAY` in timelock fails
 
-Submitted on Thu Feb 22 2024 13:10:48 GMT-0400 (Atlantic Standard Time) by @Haxatron for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 22nd 2024 at 19:10:48 UTC by @Haxatron for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28632
 
@@ -45,8 +45,8 @@ This can be surprising to users such as the operations multisig, that waited to 
 
 https://etherscan.io/address/0x3C28B7c7Ba1A1f55c9Ce66b263B33B204f2126eA?utm_source=immunefi#code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Add this to the `test/unit/Timelock.t.sol` test found in https://github.com/PufferFinance/pufETH
 

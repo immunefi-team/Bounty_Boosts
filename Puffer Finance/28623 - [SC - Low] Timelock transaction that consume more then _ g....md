@@ -1,7 +1,7 @@
 
 # Timelock transaction that consume more then `209_595` gas will not be executed but the upper transaction will succeed
 
-Submitted on Thu Feb 22 2024 11:00:05 GMT-0400 (Atlantic Standard Time) by @OxDEADBEEF for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 22nd 2024 at 17:00:05 UTC by @OxDEADBEEF for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28623
 
@@ -60,8 +60,8 @@ I suggest to check after the call to target if there is more then needed gasleft
 When the `OPERATIONS_MULTISIG` calls `executeTransaction` to execute a long waited transaction it can by mistake or maliciously set the exact gas needed for `executeTransaction` to succeed but the underlying call to target will fail. 
 
 This means that the transaction would need to be listed again in the timelock. If the call to target resolves around movement of funds or any other critical operation - it will be delayed
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Add the following function to `Timelock.t.sol`

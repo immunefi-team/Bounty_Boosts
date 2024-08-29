@@ -1,7 +1,7 @@
 
 # Insufficient Handling of Partial Failures in Withdrawal Requests
 
-Submitted on Wed Mar 06 2024 23:22:54 GMT-0400 (Atlantic Standard Time) by @cheatcode for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 7th 2024 at 05:22:54 UTC by @cheatcode for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29106
 
@@ -135,8 +135,8 @@ In the modified `initiateStETHWithdrawalFromEigenLayer` function, we account for
 In the `claimWithdrawalFromEigenLayer` function, we introduce logic to handle partial withdrawals. If the actual amount received is less than the expected amount, the function calculates the remaining shares based on the discrepancy and adds them back to the `eigenLayerPendingWithdrawalSharesAmount`. This allows users to retry the withdrawal for the remaining amount. Additionally, an event `PartialWithdrawal` is emitted to notify users about the partial withdrawal.
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ### poc.py

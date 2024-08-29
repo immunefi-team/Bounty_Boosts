@@ -1,7 +1,7 @@
 
 # Timelock::cancelTransaction() does not check / assert input is pre-queued Tx.
 
-Submitted on Fri Mar 01 2024 23:15:26 GMT-0400 (Atlantic Standard Time) by @Obin for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 2nd 2024 at 05:15:26 UTC by @Obin for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28934
 
@@ -42,8 +42,8 @@ function cancelTransaction(address target, bytes memory callData, uint256 operat
     }
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```javascript
 // SPDX-License-Identifier: GPL-3.0

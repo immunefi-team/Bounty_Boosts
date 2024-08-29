@@ -1,7 +1,7 @@
 
 # Missing slippage protection in functions depositWstETH(), depositStETH(), deposit() and mint()
 
-Submitted on Wed Feb 28 2024 06:35:02 GMT-0400 (Atlantic Standard Time) by @MrPotatoMagic for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 28th 2024 at 12:35:02 UTC by @MrPotatoMagic for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28833
 
@@ -106,8 +106,8 @@ The issue has been marked as Medium-severity since:
 1. When a user uses functions `depositWstETH()`, `depositStETH()`  and `deposit`,  they receive lesser shares than expected due to the slippage.
 2. When a user uses function `mint()`, the slippage could cause the user to receive lesser shares or entirely revert due to enough assets not being approved.
 3. This is mentioned as a security consideration in EIP4626.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 How to use this POC:

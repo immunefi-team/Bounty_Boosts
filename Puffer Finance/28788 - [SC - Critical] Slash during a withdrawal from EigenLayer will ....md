@@ -1,7 +1,7 @@
 
 # Slash during a withdrawal from EigenLayer will break PufferVault accounting
 
-Submitted on Tue Feb 27 2024 02:04:12 GMT-0400 (Atlantic Standard Time) by @dontonka for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 27th 2024 at 08:04:12 UTC by @dontonka for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28788
 
@@ -149,8 +149,8 @@ There is no magic mitigation for this issue. Since at that point `isValidWithdra
     }
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Unfortunatelly, I cannot have a coded PoC for this report as the `slashQueuedWithdrawal` is owned by EigenLayer (`onlyOwner`), so I cannot really simulate this with the current integration test suite, but we can `reason about it in a clear way` with the code indicated previously, so I don't think it is really required.

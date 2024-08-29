@@ -1,7 +1,7 @@
 
 # Timelock is not capable of performing payable transactions like swapAndDeposit
 
-Submitted on Mon Mar 04 2024 13:46:44 GMT-0400 (Atlantic Standard Time) by @oxumarkhatab for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 4th 2024 at 19:46:44 UTC by @oxumarkhatab for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29017
 
@@ -154,8 +154,8 @@ https://etherscan.io/address/0x3C28B7c7Ba1A1f55c9Ce66b263B33B204f2126eA?utm_sour
 
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Consider following scenario :

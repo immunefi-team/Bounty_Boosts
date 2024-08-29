@@ -1,7 +1,7 @@
 
 # Queued data will be lost if Tx is unsuccessful or intended Tx operation / effect not exerted.
 
-Submitted on Tue Mar 05 2024 00:07:31 GMT-0400 (Atlantic Standard Time) by @Obin for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 5th 2024 at 06:07:31 UTC by @Obin for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29033
 
@@ -45,8 +45,8 @@ Note that the re-queued Tx will still be susceptible.
 ## References 
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```
 // SPDX-License-Identifier: GPL-3.0

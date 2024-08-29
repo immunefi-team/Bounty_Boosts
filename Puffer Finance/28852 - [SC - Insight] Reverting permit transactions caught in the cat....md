@@ -1,7 +1,7 @@
 
 # Reverting permit transactions caught in the catch block continue execution
 
-Submitted on Wed Feb 28 2024 16:08:17 GMT-0400 (Atlantic Standard Time) by @MrPotatoMagic for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 28th 2024 at 22:08:17 UTC by @MrPotatoMagic for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28852
 
@@ -111,8 +111,8 @@ File: PufferDepositor.sol
 OR
 
 2. In the catch block, consider reverting with an error.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 How to use this POC:

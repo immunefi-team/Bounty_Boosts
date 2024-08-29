@@ -1,7 +1,7 @@
 
 # "excuteTransaction()" in timelock contract will unable to fail if the target contract is non-existent
 
-Submitted on Wed Mar 06 2024 09:16:49 GMT-0400 (Atlantic Standard Time) by @Kenzo for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 6th 2024 at 15:16:49 UTC by @Kenzo for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29073
 
@@ -67,7 +67,7 @@ Low Severity as the function is being controlled by the `OPERATIONS_MULTISIG` an
 Consider adding contract existence check on ` timelock.executeTransaction`.
 
 POC is attached.
-        
+
 ## Proof of concept
 The POC can be run by placing the following code in `PufferTest.integration.t.sol` and running this command: `forge test --mt test_call_to_unknown_contract -vv`
 

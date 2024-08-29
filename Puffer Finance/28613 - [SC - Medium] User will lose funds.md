@@ -1,7 +1,7 @@
 
 # User will lose funds
 
-Submitted on Thu Feb 22 2024 08:16:18 GMT-0400 (Atlantic Standard Time) by @shadowHunter for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 22nd 2024 at 14:16:18 UTC by @shadowHunter for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28613
 
@@ -87,8 +87,8 @@ User will pay more for shares than required.
 ## Recommendation
 Track the delta slashing amount and deduct the same from `$.lidoLockedETH` for correct accounting
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

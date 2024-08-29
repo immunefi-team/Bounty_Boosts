@@ -1,7 +1,7 @@
 
 # The `PufferVault::getPendingLidoETHAmount` will return values , which infact is not locked in Lido.  
 
-Submitted on Tue Feb 27 2024 10:52:00 GMT-0400 (Atlantic Standard Time) by @aman for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 27th 2024 at 16:52:00 UTC by @aman for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28796
 
@@ -89,6 +89,6 @@ Due to which the `lidoLockedETH` will report a value which in reality is not pre
 https://github.com/PufferFinance/pufETH/blob/main/src/PufferVault.sol#L83
 https://github.com/PufferFinance/pufETH/blob/main/src/PufferVault.sol#L262
 
-        
-## Proof of concept
+
+
 ## Proof of Concept

@@ -1,7 +1,7 @@
 
 # Boolean return value of `address.call()` function not check for successful contract call
 
-Submitted on Mon Mar 04 2024 13:36:27 GMT-0400 (Atlantic Standard Time) by @kaysoft for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 4th 2024 at 19:36:27 UTC by @kaysoft for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29015
 
@@ -95,8 +95,8 @@ Consider adding a check for `target.call()` and also add a contract existence ch
 - https://github.com/PufferFinance/pufETH/blob/2768d69196717e9f77a6837153b426e06e15c51f/src/Timelock.sol#L265
 - https://docs.soliditylang.org/en/latest/control-structures.html#error-handling-assert-require-revert-and-exceptions
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 This POC can be added to the Timelock.t.sol file
 

@@ -1,7 +1,7 @@
 
 # Malicious users can frontrun permits to DoS swaps
 
-Submitted on Sat Feb 24 2024 06:22:34 GMT-0400 (Atlantic Standard Time) by @jaraxxus for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 24th 2024 at 12:22:34 UTC by @jaraxxus for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28702
 
@@ -46,8 +46,8 @@ Permit will be frontrunned and swaps can be griefed. The user will lose the func
 https://vscode.blockscan.com/ethereum/0x7276925e42f9c4054afa2fad80fa79520c453d6a
 
 Permit issue: https://www.trust-security.xyz/post/permission-denied
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The permit call is within the `swapAndDepositWithPermit()` function. Also, the permit call does not catch any errors.

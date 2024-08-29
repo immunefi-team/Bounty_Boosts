@@ -1,7 +1,7 @@
 
 # Puffer Finance : Missing Verification of External Call Success
 
-Submitted on Wed Mar 06 2024 06:04:59 GMT-0400 (Atlantic Standard Time) by @Norah for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 6th 2024 at 12:04:59 UTC by @Norah for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29067
 
@@ -82,8 +82,8 @@ In cases, where wrong inputs (like non-existent address or incorrect signatures)
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 - Add below tests in the timelock.t.sol file in the current test suite :

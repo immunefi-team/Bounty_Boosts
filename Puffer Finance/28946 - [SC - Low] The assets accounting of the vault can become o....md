@@ -1,7 +1,7 @@
 
 # The assets accounting of the vault can become out of sync
 
-Submitted on Sat Mar 02 2024 12:26:27 GMT-0400 (Atlantic Standard Time) by @LokiThe5th for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 2nd 2024 at 18:26:27 UTC by @LokiThe5th for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28946
 
@@ -49,8 +49,8 @@ As per Lido docs: https://help.lido.fi/en/articles/7858292-faq-ethereum-withdraw
 >   The amount you can claim may differ from your initial request due to slashings and penalties. For these reasons, the total claimable reward amount could be lower than the amount withdrawn.  
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept  
 
 The below files should be placed within the `puffEth` repo. The files can be found here: https://drive.google.com/drive/folders/1M1dsrQ5plIr8xge9jL90-Q1PXiy5JGfl?usp=sharing  

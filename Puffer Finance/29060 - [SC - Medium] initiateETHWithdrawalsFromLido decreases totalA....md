@@ -1,7 +1,7 @@
 
 # initiateETHWithdrawalsFromLido decreases totalAssets()
 
-Submitted on Tue Mar 05 2024 20:04:33 GMT-0400 (Atlantic Standard Time) by @OxDEADBEEF for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 6th 2024 at 02:04:33 UTC by @OxDEADBEEF for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29060
 
@@ -63,8 +63,8 @@ the call to `initiateETHWithdrawalsFromLido` will decrease totalAssets().
 
 Depositors that deposit before `initiateETHWithdrawalsFromLido` will receive more shares then depositors that deposit after `initiateETHWithdrawalsFromLido`
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 This POC shows that a depositor before `initiateETHWithdrawalsFromLido` will earn more shares then a deposit after `initiateETHWithdrawalsFromLido`.

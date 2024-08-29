@@ -1,7 +1,7 @@
 
 # Lido discounted withdrawals are not accounted for
 
-Submitted on Tue Mar 05 2024 16:27:05 GMT-0400 (Atlantic Standard Time) by @OxDEADBEEF for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 5th 2024 at 22:27:05 UTC by @OxDEADBEEF for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #29054
 
@@ -129,8 +129,8 @@ Currently withdrawals are not allowed.
 
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Here is proof showing that `totalAssets` does not change after taking the loss and of the claim.

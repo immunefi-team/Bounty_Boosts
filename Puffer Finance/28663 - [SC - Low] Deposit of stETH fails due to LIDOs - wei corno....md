@@ -1,7 +1,7 @@
 
 # Deposit of stETH fails due to LIDO's 1-2 wei cornor issue
 
-Submitted on Fri Feb 23 2024 04:22:59 GMT-0400 (Atlantic Standard Time) by @codesentry for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 23rd 2024 at 10:22:59 UTC by @codesentry for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28663
 
@@ -52,7 +52,7 @@ depositStETH() fails . Contract fails to perform intended functionality.
 ## References
 https://github.com/lidofinance/lido-dao/issues/442
 https://docs.lido.fi/guides/lido-tokens-integration-guide/
-        
+
 ## Proof of concept
 ## 
 Bug in this line of code 

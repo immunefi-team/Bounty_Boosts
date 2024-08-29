@@ -1,7 +1,7 @@
 
 # Blocking redeem/withdraw from vault
 
-Submitted on Thu Feb 22 2024 22:20:29 GMT-0400 (Atlantic Standard Time) by @DuckAstronomer for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Feb 23rd 2024 at 04:20:29 UTC by @DuckAstronomer for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28656
 
@@ -35,8 +35,8 @@ To mitigate the issue:
  - Replenish the daily limit whenever a mint/deposit occur.
  - Prohibit flash deposit-redeem actions taking place in one tx.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 To run the PoC place the file inside `test/Integration/Immunefi.fork.t.sol` and run the following command.
 

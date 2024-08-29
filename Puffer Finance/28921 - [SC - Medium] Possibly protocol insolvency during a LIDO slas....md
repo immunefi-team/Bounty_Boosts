@@ -1,7 +1,7 @@
 
 # Possibly protocol insolvency during a LIDO slashing event once redeem/withdraw is enabled
 
-Submitted on Fri Mar 01 2024 15:43:56 GMT-0400 (Atlantic Standard Time) by @yixxas for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
+Submitted on Mar 1st 2024 at 21:43:56 UTC by @yixxas for [Boost | Puffer Finance](https://immunefi.com/bounty/pufferfinance-boost/)
 
 Report ID: #28921
 
@@ -89,8 +89,8 @@ The amount you can claim may differ from your initial request due to a slashing 
 
 If the protocol needs further proof that claimed amount can be different from requested amount, happy to assist.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 As `withdrawal()` and `redeem()` is still disabled in the current implementation, it is difficult to show the full impact via a runnable PoC.
