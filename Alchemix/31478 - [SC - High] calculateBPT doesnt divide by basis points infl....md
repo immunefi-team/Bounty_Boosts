@@ -1,7 +1,7 @@
 
 # `calculateBPT()` doesn't divide by basis points, inflating the result by 10000x
 
-Submitted on Sun May 19 2024 23:03:00 GMT-0400 (Atlantic Standard Time) by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 05:03:00 UTC by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31478
 
@@ -40,8 +40,8 @@ This function is used when calculating the amount of FLUX that is claimable for 
 ## References
 
 `FluxToken.sol`
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The following test can be added to `FluxToken.t.sol`. It should return 0.4% of amount, which would equal `40`, but instead returns `400_000`.

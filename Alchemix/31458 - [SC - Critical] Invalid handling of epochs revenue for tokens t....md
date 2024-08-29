@@ -1,7 +1,7 @@
 
 # Invalid handling of epoch's revenue for tokens that have no pool adapter, leading to rewards being stuck forever
 
-Submitted on Sun May 19 2024 14:57:08 GMT-0400 (Atlantic Standard Time) by @OxAlix2 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 20:57:08 UTC by @OxAlix2 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31458
 
@@ -38,7 +38,7 @@ Users will receive an inaccurate representation of their claimable rewards, and 
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/RevenueHandler.sol#L245
 
-        
+
 ## Proof of concept
 ```
 function testInvalidEpochRevenue() public {

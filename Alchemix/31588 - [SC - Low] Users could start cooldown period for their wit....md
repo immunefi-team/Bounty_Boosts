@@ -1,7 +1,7 @@
 
 # Users could start cooldown period for their withdrawal without paying any FLUX tokens
 
-Submitted on Tue May 21 2024 09:18:40 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 15:18:40 UTC by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31588
 
@@ -143,8 +143,8 @@ Implement correct checks as described above.
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/VotingEscrow.sol
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/Bribe.sol
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/Voter.sol
-        
-## Proof of concept
+
+
 ## Proof Of Concept
 
 **Steps to Run using Foundry:**

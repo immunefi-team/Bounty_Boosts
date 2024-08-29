@@ -1,7 +1,7 @@
 
 # Checkpoints won't update block number in point because of a Rounding issue
 
-Submitted on Tue May 21 2024 06:27:19 GMT-0400 (Atlantic Standard Time) by @copperscrewer for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 12:27:19 UTC by @copperscrewer for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31566
 
@@ -38,8 +38,8 @@ The Point objects used in _checkpoint never have their block value updated. This
 ## Remediation
 Increase MULTIPLIER to a much higher value ~ 10000
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Run 
 `forge test --match-test testRounding --fork-url https://eth-mainnet.alchemyapi.io/v2/[API_KETY] -vvv`

@@ -1,7 +1,7 @@
 
 # Discrepancy in MAX_PROPOSAL_NUMERATOR Value in AlchemixGovernor Contract
 
-Submitted on Tue May 21 2024 03:40:57 GMT-0400 (Atlantic Standard Time) by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 09:40:57 UTC by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31558
 
@@ -59,8 +59,8 @@ The discrepancy between the documented and implemented values can have the follo
 
 ## References
   - [Quote from “veALCX Launch Parameters Proposal”](https://arc.net/l/quote/itavdnan)
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Here is a simple test case that you can use to verify the correct discrepancy behavior
 

@@ -1,7 +1,7 @@
 
 # Alchemix : Incorrect Initialisation of struct in `checkpoint()` routine of votingEscrow
 
-Submitted on Fri May 17 2024 13:51:58 GMT-0400 (Atlantic Standard Time) by @Norah for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 17th 2024 at 19:51:58 UTC by @Norah for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31381
 
@@ -76,8 +76,8 @@ Impacts:
 ---    Point memory initialLastPoint = lastPoint;
  
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 - I have attached POC using the existing test suite show casing the impact of vulnerability.
 - I have also attached additional test with simplified code of `_checkpoint()`, showcasing how both struct are pointing to the same struct instance in memory.

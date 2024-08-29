@@ -1,7 +1,7 @@
 
 # `FluxToken.calculateBPT` uses wrong algorithm causing `FluxToken.nftClaim` revenue to be 10,000 times higher than expected
 
-Submitted on Fri May 17 2024 13:31:09 GMT-0400 (Atlantic Standard Time) by @yttriumzz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 17th 2024 at 19:31:09 UTC by @yttriumzz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31380
 
@@ -67,7 +67,7 @@ Users can get 10,000 times more $FLUX than expected
 ## References
 
 None
-        
+
 ## Proof of concept
 The PoC patch
 

@@ -1,7 +1,7 @@
 
 # Stealing FLUX by claiming, then merging positions and re-claiming.
 
-Submitted on Mon May 06 2024 05:30:27 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 6th 2024 at 11:30:27 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30800
 
@@ -86,8 +86,8 @@ The consequences of gaming the system to claim more FLUX than accrued are:
 - Protocol insolvency.
 - Manipulation of governance voting.
 - Direct theft of funds.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Remember to run the code with the correct block number (the one used in your tests: 17133822)

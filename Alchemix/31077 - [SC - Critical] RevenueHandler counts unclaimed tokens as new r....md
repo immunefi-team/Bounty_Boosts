@@ -1,7 +1,7 @@
 
 # `RevenueHandler` counts unclaimed tokens as new revenue
 
-Submitted on Sun May 12 2024 05:02:22 GMT-0400 (Atlantic Standard Time) by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 12th 2024 at 11:02:22 UTC by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31077
 
@@ -60,8 +60,8 @@ Once an epoch has an inflated revenue, a malicious user can call `claim()` to ta
 
 ## References
 See the PoC below.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 I have created the following test case that can be added to `RevenueHandler.t.sol`:

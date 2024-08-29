@@ -1,7 +1,7 @@
 
 # Users approved for a single token id cannot withdraw or merge for that token id
 
-Submitted on Sat May 04 2024 18:02:52 GMT-0400 (Atlantic Standard Time) by @imsrybr0 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 5th 2024 at 00:02:52 UTC by @imsrybr0 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30694
 
@@ -90,8 +90,8 @@ Use the `_clearApproval(owner, _tokenId)` to clear the approvals in the `_burn` 
 * https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/VotingEscrow.sol#L501-L514
 * https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/VotingEscrow.sol#L1558-L1574
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```solidity
     function testApproveSingleAndMerge() public {

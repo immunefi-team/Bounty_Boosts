@@ -1,7 +1,7 @@
 
-# `checkpointTotalSupply()` can checkpoint before a timestamp is complete
+# `checkpointTotalSupply()` can checkpoint before a timestamp is complete 
 
-Submitted on Sun May 12 2024 04:57:42 GMT-0400 (Atlantic Standard Time) by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 12th 2024 at 10:57:42 UTC by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31076
 
@@ -64,8 +64,8 @@ it will always revert on this line, and users will be in a state where they are 
 
 ## References
 See the PoC below.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 I have created the following test file and added it to the `tests/` directory:

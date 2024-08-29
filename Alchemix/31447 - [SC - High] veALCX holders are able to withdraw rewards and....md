@@ -1,7 +1,7 @@
 
-# veALCX holders are able to withdraw rewards and vote even when their token is under cooldown
+# veALCX holders are able to withdraw rewards and vote even when their token is under cooldown 
 
-Submitted on Sun May 19 2024 06:58:15 GMT-0400 (Atlantic Standard Time) by @xBentley for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 12:58:15 UTC by @xBentley for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31447
 
@@ -74,8 +74,8 @@ Users are able to claim rewards when their token in under cooldown contrary to t
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/RevenueHandler.sol#L186
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Add this test to src/test/RevenueHandler.t.sol for claiming revenue:
 

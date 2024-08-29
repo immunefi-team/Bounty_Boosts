@@ -1,7 +1,7 @@
 
 # price feed's sanity checks isn't correct in function `RewardsDistributor.amountToCompound`
 
-Submitted on Fri May 17 2024 14:40:50 GMT-0400 (Atlantic Standard Time) by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 17th 2024 at 20:40:50 UTC by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31383
 
@@ -48,8 +48,8 @@ The timestamp of the price update (priceTimestamp) is checked to be less than 60
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 In the follow code, I will demo that [RewardsDistributor.amountToCompound](https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/RewardsDistributor.sol#L116-L133) can use stale price. And because `RewardsDistributor.amountToCompound` is used by `RewardsDistributor.claim` in [RewardsDistributor.sol#L175](https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/RewardsDistributor.sol#L175), so the stale price might impact the transaction.
 

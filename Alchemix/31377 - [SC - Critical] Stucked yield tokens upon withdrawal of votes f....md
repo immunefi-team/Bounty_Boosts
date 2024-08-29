@@ -1,7 +1,7 @@
 
 # Stucked yield tokens upon withdrawal of votes from Bribe contract
 
-Submitted on Fri May 17 2024 12:16:22 GMT-0400 (Atlantic Standard Time) by @Saediek for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 17th 2024 at 18:16:22 UTC by @Saediek for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31377
 
@@ -86,8 +86,8 @@ Withdraw():[https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3
     }
 And also they should be a recovery mode for cases where all the voters withdraw their votes so that rewardTokens wouldn't just get lost in the pool.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 //SPDX-License-Identifier:UNLICENSED
 //@author:<Saediek@proton.me>

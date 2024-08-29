@@ -1,7 +1,7 @@
 
 # Past defeated proposals may become executable if the quorum requirement is lowered
 
-Submitted on Tue Apr 30 2024 12:46:43 GMT-0400 (Atlantic Standard Time) by @mt030d for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on Apr 30th 2024 at 18:46:43 UTC by @mt030d for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30556
 
@@ -39,8 +39,8 @@ A malicious user could propose a malicious proposal and vote for it. Since it's 
 - [L2GovernorVotesQuorumFraction contract](https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/governance/L2GovernorVotesQuorumFraction.sol)
 - [The issue for OpenZeppelin's GovernorVotesQuorumFraction](https://github.com/OpenZeppelin/openzeppelin-contracts/security/advisories/GHSA-xrc4-737v-9q75) 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```solidity

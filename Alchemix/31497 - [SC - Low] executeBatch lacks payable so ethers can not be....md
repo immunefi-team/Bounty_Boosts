@@ -1,7 +1,7 @@
 
 # `executeBatch()` lacks `payable` so ethers can not be a part of batch execution
 
-Submitted on Mon May 20 2024 10:11:09 GMT-0400 (Atlantic Standard Time) by @OxRizwan for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 16:11:09 UTC by @OxRizwan for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31497
 
@@ -101,8 +101,8 @@ Consider below changes:
         _afterCall(id);
     }
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The issue can be easily understood with above description and recommendation to fix.

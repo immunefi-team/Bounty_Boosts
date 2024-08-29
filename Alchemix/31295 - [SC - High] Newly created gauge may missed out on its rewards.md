@@ -1,7 +1,7 @@
 
 # Newly created gauge may missed out on its rewards.
 
-Submitted on Thu May 16 2024 11:25:04 GMT-0400 (Atlantic Standard Time) by @Lin511 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 16th 2024 at 17:25:04 UTC by @Lin511 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31295
 
@@ -81,8 +81,8 @@ Contracts may not work as intended, in the worst-case scenario, if the distribut
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L366-L375
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L481
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```solidity
 // SPDX-License-Identifier: GPL-3

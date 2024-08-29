@@ -1,7 +1,7 @@
 
 # No accounting for totalVoting in `Bribe.sol::withdraw` function leads to loss of Yield
 
-Submitted on Mon May 20 2024 20:17:27 GMT-0400 (Atlantic Standard Time) by @gladiator111 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 02:17:27 UTC by @gladiator111 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31527
 
@@ -63,8 +63,8 @@ modify the function as follows
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Bribe.sol#L319-329
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Paste the following in Voting.t.sol and run using
 ```bash

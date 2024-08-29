@@ -1,7 +1,7 @@
 
 # DoS in startCooldown() when users want start coold down before lock is expired
 
-Submitted on Sun May 12 2024 05:24:32 GMT-0400 (Atlantic Standard Time) by @Lastc0de for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 12th 2024 at 11:24:32 UTC by @Lastc0de for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31080
 
@@ -139,8 +139,8 @@ Attacker can Freeze this function for users so users for short -or long time can
 
 https://alchemixfi.medium.com/vealcx-update-272e8900ac5a
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 1- Add this function in `VotingEscrow.t.sol` file :
 

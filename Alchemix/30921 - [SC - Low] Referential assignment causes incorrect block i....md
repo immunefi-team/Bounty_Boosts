@@ -1,7 +1,7 @@
 
 # Referential assignment causes incorrect block interpolation
 
-Submitted on Wed May 08 2024 01:08:16 GMT-0400 (Atlantic Standard Time) by @NinetyNineCrits for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 8th 2024 at 07:08:16 UTC by @NinetyNineCrits for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30921
 
@@ -107,8 +107,8 @@ GlobalPoint memory initialLastPoint = GlobalPoint({
 ## References
 None
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Same test as in the description:

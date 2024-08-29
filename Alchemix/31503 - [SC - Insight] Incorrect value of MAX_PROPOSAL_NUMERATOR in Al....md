@@ -1,7 +1,7 @@
 
 # Incorrect value of `MAX_PROPOSAL_NUMERATOR` in `AlchemixGovernor.sol`
 
-Submitted on Mon May 20 2024 12:26:21 GMT-0400 (Atlantic Standard Time) by @OxRizwan for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 18:26:21 UTC by @OxRizwan for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31503
 
@@ -78,8 +78,8 @@ Use the correct values of `MAX_PROPOSAL_NUMERATOR` as per Alchemix-V2 governance
 -    uint256 public constant MAX_PROPOSAL_NUMERATOR = 5000; // 50% of total supply to create a proposal
 +    uint256 public constant MAX_PROPOSAL_NUMERATOR = 6600; // 66% of total supply to create a proposal
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The issue is about incorrect value of `MAX_PROPOSAL_NUMERATOR ` which is CONSTANT variable used in governance contracts which is deviating from Alchemix-V2 governance design and documentation. The value are used in contracts as a part of contract so highlighting the issue is important since it returns incorrect values which is against intended governance design. The constant variable can not be changed and there is no setter function so impact is severe.

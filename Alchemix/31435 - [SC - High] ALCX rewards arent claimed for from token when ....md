@@ -1,7 +1,7 @@
 
 # ALCX rewards aren't claimed for "from" token when merging
 
-Submitted on Sat May 18 2024 20:47:23 GMT-0400 (Atlantic Standard Time) by @OxAlix2 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 02:47:23 UTC by @OxAlix2 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31435
 
@@ -38,7 +38,7 @@ Add the following in `VotingEscrow::merge`:
 IRewardsDistributor(distributor).claim(_from, false);
 ```
 
-        
+
 ## Proof of concept
 ```
 function testALCXRewardsNotClaimedOnMerge() public {

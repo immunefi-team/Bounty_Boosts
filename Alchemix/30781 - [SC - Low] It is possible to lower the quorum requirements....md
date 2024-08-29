@@ -1,7 +1,7 @@
 
 # It is possible to lower the quorum requirements that will lead to the past unmet proposals become executable
 
-Submitted on Sun May 05 2024 14:55:25 GMT-0400 (Atlantic Standard Time) by @MTNether for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 5th 2024 at 20:55:25 UTC by @MTNether for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30781
 
@@ -71,8 +71,8 @@ Or you can update the contracts to match the OpenZeppelin contracts version 4.7.
 ```
 // OpenZeppelin Contracts (last updated v4.5.0) (governance/extensions/GovernorVotesQuorumFraction.sol)
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 You can add these tests to the file `AlchemixGovernor.t.sol` and run it:

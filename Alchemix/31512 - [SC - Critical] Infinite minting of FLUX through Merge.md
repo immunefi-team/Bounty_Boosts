@@ -1,7 +1,7 @@
 
 # Infinite minting of FLUX through Merge
 
-Submitted on Mon May 20 2024 16:10:34 GMT-0400 (Atlantic Standard Time) by @Django for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 22:10:34 UTC by @Django for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31512
 
@@ -62,8 +62,8 @@ Logs:
   After 3 merges, user has claimed 250% more rewards (10x/4x)
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

@@ -1,7 +1,7 @@
 
 # Reward token permanent freeze due to bulk call of Poke function
 
-Submitted on Fri May 03 2024 18:49:59 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 4th 2024 at 00:49:59 UTC by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30671
 
@@ -147,8 +147,8 @@ The totalVoting is used to calculate reward amount of a tokenId.
 
 Unfortunately, the bribe contract does not have a function to withdraw this remaining amount.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

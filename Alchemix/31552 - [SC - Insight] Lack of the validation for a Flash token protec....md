@@ -1,7 +1,7 @@
 
 # Lack of the validation for a `Flash token protection` in the VotingEscrow#`getVotes()`, which potentially allow a malicious actor to launch a `Flash token` attack to manipulate governance voting result
 
-Submitted on Tue May 21 2024 02:14:05 GMT-0400 (Atlantic Standard Time) by @Oxmuxyz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 08:14:05 UTC by @Oxmuxyz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31552
 
@@ -129,6 +129,6 @@ Within the VotingEscrow#`getVotes()`,  consider implementing the validation to c
         return votes;
     }
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept

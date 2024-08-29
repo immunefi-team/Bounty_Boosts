@@ -1,7 +1,7 @@
 
 # Wrong calculation of boost amount in Voter.poke
 
-Submitted on Mon May 06 2024 10:29:36 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 6th 2024 at 16:29:36 UTC by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30814
 
@@ -53,8 +53,8 @@ This only reflects the previous weight and does not reproduce the previous boost
 
 ## Recommendation
 In order to reproduce the boost in the Poke function, it is recommended to record the previous boost amount.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

@@ -1,7 +1,7 @@
 
 # Wrong totalWeight in Voter.sol
 
-Submitted on Tue May 07 2024 12:39:32 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 7th 2024 at 18:39:32 UTC by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30886
 
@@ -66,8 +66,8 @@ Even if a token expires, this phenomenon continues.
 
 ## Impact Details
 The governance voting results are manipulated, leading to a direct deviation from the intended impact of the original results.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

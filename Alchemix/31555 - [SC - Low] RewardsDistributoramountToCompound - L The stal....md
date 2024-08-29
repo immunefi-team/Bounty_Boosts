@@ -1,7 +1,7 @@
 
 # `RewardsDistributor::amountToCompound()` - L118: The `staleThreshold` variable was accidentally left at a value suitable for testing phase only, which carries a very high risk of very stale prices being used.
 
-Submitted on Tue May 21 2024 02:32:49 GMT-0400 (Atlantic Standard Time) by @OxSCSamurai for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 08:32:49 UTC by @OxSCSamurai for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31555
 
@@ -42,8 +42,8 @@ Potential impacts:
 
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/9e14da88d8db05794623d8ab5f449451a10c15ac/src/RewardsDistributor.sol#L118
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ## PoC:

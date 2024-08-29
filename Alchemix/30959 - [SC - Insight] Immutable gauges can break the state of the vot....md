@@ -1,7 +1,7 @@
 
 # Immutable gauges can break the state of the voting system
 
-Submitted on Thu May 09 2024 00:48:38 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 9th 2024 at 06:48:38 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30959
 
@@ -58,8 +58,8 @@ function updateGaugeFactory(address _gaugefactory) external {
 Due to the catastrophic impact this issue may have, we consider the report to be of `Critical` severity.
 
 But because there is a prerequisite, we consider a fair severity to be `High`.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 This specific report related to a business logic flag does not require an "executable proof of concept" to verify its validity.

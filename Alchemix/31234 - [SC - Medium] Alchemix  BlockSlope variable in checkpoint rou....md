@@ -1,7 +1,7 @@
 
 # Alchemix : BlockSlope variable in checkpoint() routine is rounded down to zero
 
-Submitted on Wed May 15 2024 09:56:44 GMT-0400 (Atlantic Standard Time) by @Norah for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 15th 2024 at 15:56:44 UTC by @Norah for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31234
 
@@ -55,8 +55,8 @@ Impacts:
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 - Following POC demonstrates for block rate of `1/12`, how in current calculation `blockSlope` will evaluate to zero.
 - To run the test, add the test in file in the existing test suite and then execute it with the command :

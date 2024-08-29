@@ -1,7 +1,7 @@
 
 # Misuse of curve pool calls results for precision loss and unintended revertion
 
-Submitted on Wed May 08 2024 10:46:08 GMT-0400 (Atlantic Standard Time) by @OceanAndThunders for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 8th 2024 at 16:46:08 UTC by @OceanAndThunders for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30939
 
@@ -147,8 +147,8 @@ reverts with "Too few coins in result" as the revenue contract was is supposed t
 
 ## References
 https://curve.readthedocs.io/exchange-pools.html
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 checking both cases for "0x890f4e345B1dAED0367A877a1612f86A1f86985f" and "0xa5407eae9ba41422680e2e00537571bcc53efbfd" ....etc and all curve pools

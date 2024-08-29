@@ -1,7 +1,7 @@
 
 # Inflation Of Total Votes and Potential Freeze of Unclaimable Bribes
 
-Submitted on Tue May 14 2024 19:14:14 GMT-0400 (Atlantic Standard Time) by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 15th 2024 at 01:14:14 UTC by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31211
 
@@ -72,7 +72,7 @@ Immediate measures should include implementing checks that verify actual changes
 - **Governance Manipulation**: The inflated votes can alter the outcome of governance decisions, leading to implementations that do not reflect the true consensus of the token holders, thus undermining the democratic process of the DAO.
 
 
-        
+
 ## Proof of concept
 ### Test Case (Foundry)
 

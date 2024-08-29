@@ -1,7 +1,7 @@
 
 # Oracle 60 days staleThreshold for priceTimestamp cause stale prices to be accepted
 
-Submitted on Tue May 21 2024 05:15:40 GMT-0400 (Atlantic Standard Time) by @SAAJ for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 11:15:40 UTC by @SAAJ for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31563
 
@@ -71,8 +71,8 @@ Stale prices of asset will be accepted as the current price, causing wrong/stale
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/RewardsDistributor.sol#L123
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 The ```RewardsDistributor``` contract have ``` amountToCompound``` function makes call to Chainlink oracle receiving the update price.
 The ```staleThreshold``` impact is clearly to give out stale price which is accepted and deposited in the ```claim``` function.

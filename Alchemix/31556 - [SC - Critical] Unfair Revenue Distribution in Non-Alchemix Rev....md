@@ -1,7 +1,7 @@
 
 # Unfair Revenue Distribution in Non-Alchemix Revenue Tokens Leading to Theft of Unclaimed Revenues
 
-Submitted on Tue May 21 2024 02:51:51 GMT-0400 (Atlantic Standard Time) by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 08:51:51 UTC by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31556
 
@@ -62,8 +62,8 @@ To mitigate this vulnerability, the `checkpoint` function needs to be revised to
 
   1. Tracking deposits and withdrawals separately for each epoch.
   2. Calculating the new revenue by subtracting last epoch revenues (excluding its withdrawals (claims)) from the current balance to ensure only the new revenue is distributed.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The test can be added to a new file under the current test suite `src/test/RevenueHandlerPoC.t.sol`, then specify the file name in `FILE` flag under `Makefile` configuration. Run using `make test_file`

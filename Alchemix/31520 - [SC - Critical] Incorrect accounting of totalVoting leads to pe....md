@@ -1,7 +1,7 @@
 
 # Incorrect accounting of `totalVoting` leads to permanent freeze of funds in Bribe contract and incorrect bribe distribution.
 
-Submitted on Mon May 20 2024 18:33:37 GMT-0400 (Atlantic Standard Time) by @hulkvision for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 00:33:37 UTC by @hulkvision for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31520
 
@@ -97,8 +97,8 @@ The issue is when poke is called by a user multiple times `totalVoting` is infla
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Bribe.sol#L303-329
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Bribe.sol#L221-280
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 * Add this test to `src/test/Voting.t.sol` and run with
 `forge test --mt testPocBribeAccountingErrorwithPoke  --rpc-url $RPC_URL -vvvv`

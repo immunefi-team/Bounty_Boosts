@@ -1,7 +1,7 @@
 
 # Malicious user can steal FLUX token by abusing `Voter.poke`
 
-Submitted on Fri May 17 2024 16:21:25 GMT-0400 (Atlantic Standard Time) by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 17th 2024 at 22:21:25 UTC by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31386
 
@@ -62,8 +62,8 @@ Malicious user can steal FLUX token by abusing `Voter.poke`
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Put the following code in `src/test/Voting.t.sol` and run
 ```bash

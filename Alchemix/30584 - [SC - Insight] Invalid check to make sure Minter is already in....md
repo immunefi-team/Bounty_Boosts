@@ -1,7 +1,7 @@
 
 # Invalid check to make sure Minter is already initialized
 
-Submitted on Wed May 01 2024 07:08:37 GMT-0400 (Atlantic Standard Time) by @kankodu for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 1st 2024 at 13:08:37 UTC by @kankodu for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30584
 
@@ -37,8 +37,8 @@ Impacts:
 
 ## References
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/Minter.sol?utm_source=immunefi#L98
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 - Take a look at [this](https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/test/Minter.t.sol#L343) test. 

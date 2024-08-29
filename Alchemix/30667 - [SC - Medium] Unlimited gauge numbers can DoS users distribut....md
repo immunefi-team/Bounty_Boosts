@@ -1,7 +1,7 @@
 
 # Unlimited gauge numbers can DoS user's distribute action
 
-Submitted on Fri May 03 2024 14:20:16 GMT-0400 (Atlantic Standard Time) by @Hoverfly9132 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 3rd 2024 at 20:20:16 UTC by @Hoverfly9132 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30667
 
@@ -36,8 +36,8 @@ Users can't execute `Voter#distribute` any more when created gauges numbers is l
 
 NA
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Because the needed gauges need cost much time in test case, so I will show distribute to different gauges would cost how much gas:

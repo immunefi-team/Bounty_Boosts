@@ -1,7 +1,7 @@
 
-# RewardPoolManager can only add RewardPoolToken and does not have way to remove it
+#  RewardPoolManager can only add RewardPoolToken and does not have way to remove it
 
-Submitted on Tue May 21 2024 09:49:14 GMT-0400 (Atlantic Standard Time) by @hulkvision for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 15:49:14 UTC by @hulkvision for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31594
 
@@ -52,8 +52,8 @@ function setClaimFee(uint256 _claimFeeBps) external { //@audit no upper limit ch
 
 ## Impact Details #2
 * Allowing arbitrary fee without upper limit  could reduce user  trust in the protocol.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Add this test to `src/test/VotingEscrow.t.sol` 
 and run test with `forge test --mt testPocArbitraryClaimFees --rpc-url $RPC_URL `

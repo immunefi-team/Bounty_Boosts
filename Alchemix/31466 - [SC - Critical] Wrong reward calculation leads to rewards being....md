@@ -1,7 +1,7 @@
 
 # Wrong reward calculation leads to rewards being unclaimable/claimable once
 
-Submitted on Sun May 19 2024 18:08:35 GMT-0400 (Atlantic Standard Time) by @RandomSec for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 00:08:35 UTC by @RandomSec for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31466
 
@@ -39,8 +39,8 @@ Best
 RandomSec
 
 (PS: I will add my wallet address later)
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```
 // PoC 1: Copied & edited from testClaimNonAlchemicRevenue()

@@ -1,7 +1,7 @@
 
 # Compound claiming transactions will revert if users veALCX NFT token is expired
 
-Submitted on Sat May 18 2024 15:09:37 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 18th 2024 at 21:09:37 UTC by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31417
 
@@ -78,8 +78,8 @@ function claim(uint256 _tokenId, bool _compound) external payable nonReentrant r
 
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/RewardsDistributor.sol#L174-L189
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L667-L672
-        
-## Proof of concept
+
+
 ## Proof Of Concept
 
 **Note:**  For PoC to work, we need to move time beyond 60 days which is hardcoded in `RewardsDistributor` contract as `staleThreshold = 60 days` at https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/RewardsDistributor.sol#L118. Since time has moved beyond 60 days but oracle(priceFeed) has not updated during this time interval, its reverting with `Price stale` message. To mimic oracle update, we have updated `updatedAt` field returns from `latestRoundData()` to avoid `Price stale` revert using foundry cheatcode - `load` and `store`.

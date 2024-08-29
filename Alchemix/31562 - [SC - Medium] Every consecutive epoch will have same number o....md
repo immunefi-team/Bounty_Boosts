@@ -1,7 +1,7 @@
 
 # Every consecutive epoch will have same number of rewards if its <= TAIL_EMISSIONS_RATE in current epoch
 
-Submitted on Tue May 21 2024 05:06:37 GMT-0400 (Atlantic Standard Time) by @SAAJ for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 11:06:37 UTC by @SAAJ for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31562
 
@@ -110,8 +110,8 @@ Recommendation is made to change the logic from ```<=``` to ```>=``` to clearly 
 ```
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 This test demonstrate the no change in impact in value of ```rewards``` for next epoch if its value is less or equal to ```TAIL_EMISSIONS_RATE``` in current one.
 For this test values for variables are assumed to have clear idea on the outcome generated when the ```updatePeriod``` is called in 2nd epoch.

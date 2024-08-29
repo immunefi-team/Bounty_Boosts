@@ -1,7 +1,7 @@
 
 # Processing of voting results is not implemented in the next epoch.
 
-Submitted on Tue May 07 2024 17:52:40 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 7th 2024 at 23:52:40 UTC by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30910
 
@@ -84,8 +84,8 @@ So don't need to update that variable in vote and reset function.
 This is just a recommendation.
 You can find a better solution.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

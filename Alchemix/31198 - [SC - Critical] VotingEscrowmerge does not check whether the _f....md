@@ -1,7 +1,7 @@
 
 # `VotingEscrow.merge` does not check whether the `_from` $veToken has voted causing it can be exploited to receive $FLUX unlimitedly
 
-Submitted on Tue May 14 2024 14:31:50 GMT-0400 (Atlantic Standard Time) by @yttriumzz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 14th 2024 at 20:31:50 UTC by @yttriumzz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31198
 
@@ -77,8 +77,8 @@ Attackers can receive unlimited $FLUX unlimitedly
 ## References
 
 None
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The PoC patch

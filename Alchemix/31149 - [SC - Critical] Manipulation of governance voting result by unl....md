@@ -1,7 +1,7 @@
 
 # Manipulation of governance voting result by unlimited minting the Flux Token by repeatly call poke function
 
-Submitted on Mon May 13 2024 10:06:32 GMT-0400 (Atlantic Standard Time) by @perseverance for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 13th 2024 at 16:06:32 UTC by @perseverance for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31149
 
@@ -213,7 +213,7 @@ Because the bug 39030 describes the exploit using poke() and merge() function. T
 
 This bug involves only exploit of poke() function. For this bug the attacker can mint unlimited amount of Flux token. 
 
-        
+
 ## Proof of concept
 #  Proof of concept
 

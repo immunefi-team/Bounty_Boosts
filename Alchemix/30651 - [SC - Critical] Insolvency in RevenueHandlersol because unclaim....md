@@ -1,7 +1,7 @@
 
 # Insolvency in `RevenueHandler.sol` because unclaimed revenue is re-counted
 
-Submitted on Thu May 02 2024 20:32:14 GMT-0400 (Atlantic Standard Time) by @Django for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 3rd 2024 at 02:32:14 UTC by @Django for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30651
 
@@ -92,8 +92,8 @@ Logs:
       Actual: 1000000000000000000000
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

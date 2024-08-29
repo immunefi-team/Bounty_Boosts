@@ -1,7 +1,7 @@
 
 # QA
 
-Submitted on Sat May 18 2024 19:07:31 GMT-0400 (Atlantic Standard Time) by @imsrybr0 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 01:07:31 UTC by @imsrybr0 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31430
 
@@ -447,7 +447,7 @@ This would allow to create a proposal with 0 voting power as the proposal thresh
 | Bribe              | lock         | Yes                               |
 | BaseGauge          | lock         | Yes                               |
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 QA report

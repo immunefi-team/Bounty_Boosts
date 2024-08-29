@@ -1,7 +1,7 @@
 
 # Voters who withdraw veLACX tokens risk losing gained bribes rewards
 
-Submitted on Thu May 16 2024 09:21:17 GMT-0400 (Atlantic Standard Time) by @xBentley for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 16th 2024 at 15:21:17 UTC by @xBentley for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31293
 
@@ -65,8 +65,8 @@ veALCX token owners risk permanently locking bribe rewards.
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L851
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Add this test to src/test/VotingEscrow.t.sol:
 

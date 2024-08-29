@@ -1,7 +1,7 @@
 
 # The user can propose with less voting power than proposalThreshold.
 
-Submitted on Wed May 15 2024 21:55:34 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 16th 2024 at 03:55:34 UTC by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31277
 
@@ -44,8 +44,8 @@ Or the attacker can propose in the same transaction as soon as a user withdraw a
 
 ## Impact Details
 By lowering the minimum unit price to create an offer, it makes it easier for an attacker to generate a malicious offer.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

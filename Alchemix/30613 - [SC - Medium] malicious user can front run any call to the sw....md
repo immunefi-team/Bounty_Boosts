@@ -1,7 +1,7 @@
 
 # malicious user can front run any call to the `swapReward` and cause reverting admin calls and prevent setting the correct index to the newToken
 
-Submitted on Wed May 01 2024 21:23:54 GMT-0400 (Atlantic Standard Time) by @zeroK for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 2nd 2024 at 03:23:54 UTC by @zeroK for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30613
 
@@ -89,8 +89,8 @@ malicious user can front run admin call to the `swapReward` and cause loss of ga
 ## Recommend
 we recommend to prevent any direct call to the `notifyRewardAmount` function in the bribe.sol and adding `require(msg.sender == voter)`  to prevent this case which leads to Griefing.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 run the test file below in src/test

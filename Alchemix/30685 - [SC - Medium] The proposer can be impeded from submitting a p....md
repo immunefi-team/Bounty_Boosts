@@ -1,7 +1,7 @@
 
 # "The proposer can be impeded from submitting a proposal by an attacker who inflates the proposalThreshold."
 
-Submitted on Sat May 04 2024 07:33:54 GMT-0400 (Atlantic Standard Time) by @OxG0P1 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 4th 2024 at 13:33:54 UTC by @OxG0P1 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30685
 
@@ -38,8 +38,8 @@ Opposing an user from proposing by manipulating the `totalSupply`
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/AlchemixGovernor.sol#L45-L47
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/governance/L2Governor.sol#L309-L312
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 `Test :`
 ```solidity

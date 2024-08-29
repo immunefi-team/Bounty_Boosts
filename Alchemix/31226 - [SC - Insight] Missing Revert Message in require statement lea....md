@@ -1,7 +1,7 @@
 
-# Missing Revert Message in require statement leading to debugging difficulties
+# Missing Revert Message in require statement leading to debugging difficulties 
 
-Submitted on Wed May 15 2024 02:49:18 GMT-0400 (Atlantic Standard Time) by @Wizard for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 15th 2024 at 08:49:18 UTC by @Wizard for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31226
 
@@ -35,8 +35,8 @@ https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/Bribe.sol?utm_
 
 
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/Bribe.sol?utm_source=immunefi#L332
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

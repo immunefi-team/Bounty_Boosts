@@ -1,7 +1,7 @@
 
-# Miscalculation of global bias
+# Miscalculation of global bias 
 
-Submitted on Sun May 19 2024 23:12:32 GMT-0400 (Atlantic Standard Time) by @MahdiKarimi for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 05:12:32 UTC by @MahdiKarimi for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31480
 
@@ -51,8 +51,8 @@ sum of all users balances wouldn't be equal to global bias, it affects some impo
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L1181
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L1177
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L1260
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```
  function testSupplyandBalance() public {

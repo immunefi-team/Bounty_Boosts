@@ -1,7 +1,7 @@
 
 # veALCX does not comply with ERC721, breaking composability
 
-Submitted on Tue Apr 30 2024 16:36:45 GMT-0400 (Atlantic Standard Time) by @marchev for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on Apr 30th 2024 at 22:36:45 UTC by @marchev for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30565
 
@@ -60,8 +60,8 @@ Docs references which state that ERC721 compliance is expected:
 
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/CONTRACTS.md
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Add the following test to `src/test/VotingEscrow.t.sol`:

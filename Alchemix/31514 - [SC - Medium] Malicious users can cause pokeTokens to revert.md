@@ -1,7 +1,7 @@
 
 # Malicious users can cause `pokeTokens()` to revert
 
-Submitted on Mon May 20 2024 16:41:29 GMT-0400 (Atlantic Standard Time) by @Django for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 22:41:29 UTC by @Django for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31514
 
@@ -87,8 +87,8 @@ Logs:
   Admin finally calls pokeTokens() successfully.
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

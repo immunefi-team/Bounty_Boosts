@@ -1,7 +1,7 @@
 
 # `depositIntoRewardPool()` and  `withdrawFromRewardPool()` in `RewardPoolManager` contract  are missing slippage control mechanism
 
-Submitted on Tue May 21 2024 08:08:32 GMT-0400 (Atlantic Standard Time) by @Kenzo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 14:08:32 UTC by @Kenzo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31575
 
@@ -53,7 +53,7 @@ https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/RewardPoolMana
 ## Recommendation
 Implement proper slippage control mechanism in these two functions to avoid the mentioned issue.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept 
 Attack is straightforward and POC for Mev attacks are hard to simulate.

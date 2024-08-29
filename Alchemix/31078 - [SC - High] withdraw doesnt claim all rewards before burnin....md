@@ -1,7 +1,7 @@
 
 # `withdraw()` doesn't claim all rewards before burning token
 
-Submitted on Sun May 12 2024 05:07:38 GMT-0400 (Atlantic Standard Time) by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 12th 2024 at 11:07:38 UTC by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31078
 
@@ -69,8 +69,8 @@ Yield is permanently frozen whenever a user calls `withdraw()` on a `tokenId` th
 
 ## References
 See the PoC below.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 I have created the following test file and added it to the `tests/` directory:

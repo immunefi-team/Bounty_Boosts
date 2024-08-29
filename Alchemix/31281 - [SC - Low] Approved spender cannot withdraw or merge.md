@@ -1,7 +1,7 @@
 
 # Approved spender cannot withdraw or merge
 
-Submitted on Thu May 16 2024 01:15:47 GMT-0400 (Atlantic Standard Time) by @OxAnmol for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 16th 2024 at 07:15:47 UTC by @OxAnmol for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31281
 
@@ -114,8 +114,8 @@ https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L772
 
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L510
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Paste this test inside `VotingEscrow.t.sol`. 

@@ -1,7 +1,7 @@
 
-# Alchemix : ALCX rewards are currently subject to a 2-week delay before reaching to the gauges.
+# Alchemix : ALCX rewards are currently subject to a 2-week delay before reaching to the gauges. 
 
-Submitted on Mon May 20 2024 10:15:19 GMT-0400 (Atlantic Standard Time) by @Norah for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 16:15:19 UTC by @Norah for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31498
 
@@ -113,8 +113,8 @@ Add any relevant links to documentation or code
 
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 - I've created a test to demonstrate that rewards for epoch `X` are only transferred during epoch `X+1`, meaning after two weeks. 
 - Also, run this test after implementing the recommendations for better understanding as mentioned in POC.

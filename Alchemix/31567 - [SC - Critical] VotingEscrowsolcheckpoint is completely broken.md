@@ -1,7 +1,7 @@
 
 # `VotingEscrow.sol::checkpoint` is completely broken
 
-Submitted on Tue May 21 2024 06:28:04 GMT-0400 (Atlantic Standard Time) by @gladiator111 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 12:28:04 UTC by @gladiator111 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31567
 
@@ -184,8 +184,8 @@ The whole functionality of the protocol breaks
 
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L1170-1301
-        
-## Proof of concept
+
+
 ## Proof of Concept
 This POC shows that after passing just 1 EPOCH timestamp, the epoch gets from 0 to 4 clearly indicating broken epoch accounting.
 Paste the following code in `VotingEscrow.t.sol` and run using the command

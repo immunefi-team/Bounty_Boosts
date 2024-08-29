@@ -1,7 +1,7 @@
 
 # Loss of precision while calculating claimable flux and Point
 
-Submitted on Tue May 21 2024 10:09:53 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 16:09:53 UTC by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31597
 
@@ -103,8 +103,8 @@ Increase `MULTIPLIER` and `iMULTIPLIER` precision from `2` to `1e18`, for higher
 
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/VotingEscrow.sol
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/FluxToken.sol
-        
-## Proof of concept
+
+
 ## Proof Of Concept
 
 **Steps to Run using Foundry:**

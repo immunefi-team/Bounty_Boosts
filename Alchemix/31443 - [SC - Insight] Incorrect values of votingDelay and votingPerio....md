@@ -1,7 +1,7 @@
 
 # Incorrect values of `votingDelay` and `votingPeriod` would break intended design of governance
 
-Submitted on Sun May 19 2024 05:50:41 GMT-0400 (Atlantic Standard Time) by @OxRizwan for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 11:50:41 UTC by @OxRizwan for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31443
 
@@ -58,8 +58,8 @@ Use the correct values of `votingDelay` and `votingPeriod` as per Alchemix-V2 go
 +    uint256 public votingPeriod = 2 weeks;        @audit // 1 epoch (2 weeks) as per docs
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 The issue is about incorrect values used in governance contracts which is deviating from Alchemix-V2 governance design and documentation. The value are used in contracts as a part of contract so highlighting the issue is important since it returns incorrect values which is against intended governance design.
 

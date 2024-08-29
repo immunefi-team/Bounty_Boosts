@@ -1,7 +1,7 @@
 
 # Rounding down in getClaimableFlux leads to less reward minting in nftClaim
 
-Submitted on Mon May 20 2024 19:08:34 GMT-0400 (Atlantic Standard Time) by @SAAJ for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 01:08:34 UTC by @SAAJ for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31524
 
@@ -53,8 +53,8 @@ The recommended code will mint exact value that the depositor is eligible for cl
     }
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 This simple test clearly demonstrates loss of rewards for user against amount deposited due to rounding down issue.
 

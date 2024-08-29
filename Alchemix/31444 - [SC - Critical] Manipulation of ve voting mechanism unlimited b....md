@@ -1,7 +1,7 @@
 
 # Manipulation of ve voting mechanism, unlimited boost, circumvention of cooldown
 
-Submitted on Sun May 19 2024 05:53:51 GMT-0400 (Atlantic Standard Time) by @riptide for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 11:53:51 UTC by @riptide for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31444
 
@@ -28,8 +28,8 @@ The purpose of the `ve` voting and locking mechanism is that a user must lock up
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Add the following test to existing test suite in `FluxToken.t.sol`

@@ -1,7 +1,7 @@
 
 # Malicious users can front-run the distribution transaction to steal bribes
 
-Submitted on Sun May 12 2024 08:17:54 GMT-0400 (Atlantic Standard Time) by @Ch301 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 12th 2024 at 14:17:54 UTC by @Ch301 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31085
 
@@ -75,8 +75,8 @@ File: Bribe.sol
 #1: https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/Voter.sol#L449
 
 #2: https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/Bribe.sol?utm_source=immunefi#L351-L360
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Foundry PoC:
 1. Please copy the following PoC in `Voting.t.sol`

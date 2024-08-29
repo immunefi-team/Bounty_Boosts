@@ -1,7 +1,7 @@
 
 # Malicious actor can acquire bribe rewards by blocking other users
 
-Submitted on Mon May 13 2024 14:01:40 GMT-0400 (Atlantic Standard Time) by @DuckAstronomer for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 13th 2024 at 20:01:40 UTC by @DuckAstronomer for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31163
 
@@ -46,8 +46,8 @@ This way an attacker can discourage users with significant voting power from par
 - Theft of unclaimed yield.
 - Permanent freezing of unclaimed yield.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 POC scenario:

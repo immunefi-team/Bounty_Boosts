@@ -1,7 +1,7 @@
 
-# `getActualSupply` should be used instead of `totalSupply` for balancer pools
+# `getActualSupply` should be used instead of `totalSupply` for balancer pools 
 
-Submitted on Fri May 17 2024 05:44:53 GMT-0400 (Atlantic Standard Time) by @OxAnmol for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 17th 2024 at 11:44:53 UTC by @OxAnmol for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31335
 
@@ -57,8 +57,8 @@ https://docs.balancer.fi/concepts/advanced/valuing-bpt/valuing-bpt.html#getting-
 
 ##Recommedation
 use getActualSupply instead of totalSupply
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Here I have added a new interface `IBalancerPool`, edited the RewardDistributor:_depositIntoBalancerPool  in RewardDistributor and used getTotalSupply to get bptAmountOut2 The console log is used to show the difference between the two outputs. 

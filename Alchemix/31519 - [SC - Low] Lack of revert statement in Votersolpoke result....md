@@ -1,7 +1,7 @@
 
 # Lack of revert statement in `Voter.sol::poke` results in freezing of yield for an entire epoch
 
-Submitted on Mon May 20 2024 18:31:49 GMT-0400 (Atlantic Standard Time) by @gladiator111 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 00:31:49 UTC by @gladiator111 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31519
 
@@ -83,8 +83,8 @@ function poke(uint256 _tokenId) public {
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L195-212
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Paste the following code in `Voting.t.sol` and run the test with the following command
 ```bash

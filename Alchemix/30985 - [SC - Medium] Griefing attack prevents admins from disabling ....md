@@ -1,7 +1,7 @@
 
 # Griefing attack prevents admins from disabling reward tokens
 
-Submitted on Thu May 09 2024 21:16:13 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 10th 2024 at 03:16:13 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30985
 
@@ -101,8 +101,8 @@ Griefing attack that prevents admin from disabling a token.
 > The 5-reports/48-hours limit makes time management crucial, and every day we invest in attempting to escalate the impact of a specific report decreases the total number of bugs we can submit to the Boost.
 >
 > We suspect the impact could be increased from griefing to a denial of service in parts of the protocol or the Bribe itself, but we can't afford to allocate time to dig deeper.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The following test replicates the attack vector.

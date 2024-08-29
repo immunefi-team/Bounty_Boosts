@@ -1,7 +1,7 @@
 
 # Malicious user can mint unlimited flux tokens
 
-Submitted on Wed May 15 2024 23:35:05 GMT-0400 (Atlantic Standard Time) by @MahdiKarimi for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 16th 2024 at 05:35:05 UTC by @MahdiKarimi for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31280
 
@@ -38,8 +38,8 @@ Minting unlimited flux tokens leads flux price to 0 ( Direct theft of any user f
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L183-L192
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L618-L651
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```
       function testMintUnlimitedFlux() external {

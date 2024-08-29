@@ -1,7 +1,7 @@
 
 # Users can call `reset` on their token even if they don't have active votes, griefing potential token buyer/receiver
 
-Submitted on Sat May 18 2024 17:01:57 GMT-0400 (Atlantic Standard Time) by @OxAlix2 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 18th 2024 at 23:01:57 UTC by @OxAlix2 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31425
 
@@ -40,7 +40,7 @@ Add the following in `Voter::reset`:
 require(poolVote[_tokenId].length > 0, "No active votes");
 ```
 This could be added in `if (msg.sender != admin)` just in case the admin wanted a higher authority in case of an error.
-        
+
 ## Proof of concept
 ```
 function testBlockVotingForBuyers() public {

@@ -1,7 +1,7 @@
 
-# Users can vote multiple times in one epoch
+# Users can vote multiple times in one epoch 
 
-Submitted on Sun May 19 2024 23:58:18 GMT-0400 (Atlantic Standard Time) by @MahdiKarimi for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 05:58:18 UTC by @MahdiKarimi for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31483
 
@@ -30,8 +30,8 @@ Loss of distributed rewards at underlying bribes
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L195-L212
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```
 function testVoteWithoutLimit() external {

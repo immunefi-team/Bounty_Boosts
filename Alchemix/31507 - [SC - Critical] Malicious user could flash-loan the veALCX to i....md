@@ -1,7 +1,7 @@
 
 # Malicious user could flash-loan the veALCX to inflate the voting balance of their account
 
-Submitted on Mon May 20 2024 13:48:27 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 19:48:27 UTC by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31507
 
@@ -129,8 +129,8 @@ Flashloan protection check should be implemented in `_balanceOfTokenAt` function
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L264-L277
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L359-L363
 
-        
-## Proof of concept
+
+
 ## Proof Of Concept
 
 **Steps to Run using Foundry:**

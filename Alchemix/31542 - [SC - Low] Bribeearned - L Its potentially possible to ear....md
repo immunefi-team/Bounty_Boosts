@@ -1,7 +1,7 @@
 
 # `Bribe::earned()` - L229: It's potentially possible to earn TWICE in an epoch due to a small logical oversight in `if (block.timestamp - _bribeStart(_startTimestamp) < DURATION) {`.
 
-Submitted on Mon May 20 2024 22:19:40 GMT-0400 (Atlantic Standard Time) by @OxSCSamurai for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 04:19:40 UTC by @OxSCSamurai for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31542
 
@@ -122,8 +122,8 @@ Severity: low - medium
 
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/9e14da88d8db05794623d8ab5f449451a10c15ac/src/Bribe.sol#L229
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ## PoC:

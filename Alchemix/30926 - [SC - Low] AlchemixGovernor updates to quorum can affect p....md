@@ -1,7 +1,7 @@
 
 # `AlchemixGovernor` updates to quorum can affect past defeated proposals
 
-Submitted on Wed May 08 2024 07:10:54 GMT-0400 (Atlantic Standard Time) by @Lastc0de for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 8th 2024 at 13:10:54 UTC by @Lastc0de for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30926
 
@@ -54,8 +54,8 @@ Past proposals may become executable if they had been defeated only due to lack 
 https://github.com/OpenZeppelin/openzeppelin-contracts/security/advisories/GHSA-xrc4-737v-9q75
 
 https://docs.openzeppelin.com/contracts/4.x/api/governance
-        
-## Proof of concept
+
+
 ## Proof of Concept
 * To manually prank the executer and call a function with `onlyGovernance` modifier we need add calldata to queue:
 

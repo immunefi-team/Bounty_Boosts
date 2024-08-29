@@ -1,7 +1,7 @@
 
 # Certain small amount of tokens are not accounted for when deposited
 
-Submitted on Mon May 20 2024 22:49:19 GMT-0400 (Atlantic Standard Time) by @jecikpo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 04:49:19 UTC by @jecikpo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31544
 
@@ -28,8 +28,8 @@ The Voting power of a user is not increased despite increased deposit. While the
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L1157
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Paste the following code into `Voting.t.sol`:
 ```

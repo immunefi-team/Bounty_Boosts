@@ -1,7 +1,7 @@
 
 # Binary search does not correctly handle duplicate timestamps
 
-Submitted on Thu May 02 2024 23:25:10 GMT-0400 (Atlantic Standard Time) by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 3rd 2024 at 05:25:10 UTC by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30655
 
@@ -65,8 +65,8 @@ Other than this, it appears that `RevenueHandler` logic can be tricked into givi
 
 ## References
 See the proof of concept below.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 I've created the following test case which can be added to the `AlchemixGovernorTest` contract:

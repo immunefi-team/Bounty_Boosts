@@ -1,7 +1,7 @@
 
 # Users can use Voter@poke to accrue Flux tokens indefinitely
 
-Submitted on Thu May 09 2024 23:45:32 GMT-0400 (Atlantic Standard Time) by @imsrybr0 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 10th 2024 at 05:45:32 UTC by @imsrybr0 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30990
 
@@ -76,8 +76,8 @@ Since `Voter@poke` does not check if the given token id already voted in the cur
 * https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/Voter.sol#L195-L212
 * https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/Voter.sol#L423
 * https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/FluxToken.sol#L188-L192
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```solidity
     function testPokeRepeatedly() public {

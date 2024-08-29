@@ -1,7 +1,7 @@
 
 # Past Defeated Proposals Can Be Executed in the Future
 
-Submitted on Fri May 17 2024 10:06:05 GMT-0400 (Atlantic Standard Time) by @Breeje for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 17th 2024 at 16:06:05 UTC by @Breeje for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31355
 
@@ -117,8 +117,8 @@ OpenZeppelin mitigated this issue in version `4.7.2` by:
 * Implementing `Checkpoints` for the new `_quorumNumeratorHistory` variable to track past values of the quorum numerator relative to time and using the value as it was at the blockTimestamp.
 
 The changes are detailed in this [commit](https://github.com/OpenZeppelin/openzeppelin-contracts/pull/3561/files).
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 #### Adding Test

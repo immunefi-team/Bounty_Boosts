@@ -1,7 +1,7 @@
 
 # Stealing all revenue from the Alchemix protocol
 
-Submitted on Sun May 19 2024 21:18:32 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 03:18:32 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31472
 
@@ -92,8 +92,8 @@ This can be repeated with more almost-empty locks to drain the protocol fully.
 Stealing all revenue from the Alchemix protocol
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 In the `RevenueHandlerTest ` paste this test and run it with the same timestamp and block used in the test suite.

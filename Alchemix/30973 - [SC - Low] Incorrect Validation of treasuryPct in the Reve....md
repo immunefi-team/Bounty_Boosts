@@ -1,7 +1,7 @@
 
 # Incorrect Validation of `treasuryPct` in the `RevenueHandler` Constructor
 
-Submitted on Thu May 09 2024 17:24:07 GMT-0400 (Atlantic Standard Time) by @The_Seraphs for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 9th 2024 at 23:24:07 UTC by @The_Seraphs for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30973
 
@@ -55,8 +55,8 @@ If not corrected, this bug could allow the initialisation of the `RevenueHandler
 * Link to code (contract): https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/RevenueHandler.sol#L73C1-L79C6
 * Link to code (test file): https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/test/BaseTest.sol#L151
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 * Using the existing `src/test/RevenueHandler.t.sol` test contract
 * Add the following test function

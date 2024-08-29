@@ -1,7 +1,7 @@
 
 # Loss of Unclaimed Bribes After Burning veALCX Token
 
-Submitted on Wed May 15 2024 15:09:32 GMT-0400 (Atlantic Standard Time) by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 15th 2024 at 21:09:32 UTC by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31258
 
@@ -75,7 +75,7 @@ To mitigate this issue, it is recommended to enhance the withdrawal process to e
 - VotingEscrow.sol#L1558-L1575: https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L1558-L1575
 - Voter.sol#L331-L339: https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L331-L339
 
-        
+
 ## Proof of concept
 ### Test Case (Foundry)
 

@@ -1,7 +1,7 @@
 
 # `alchemechNFT` holder will get too little FLUX because of double application of multipliers
 
-Submitted on Sun May 19 2024 23:06:46 GMT-0400 (Atlantic Standard Time) by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 05:06:46 UTC by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31479
 
@@ -34,8 +34,8 @@ Alchemic NFT holders will receive 250x less FLUX than they should when claiming.
 ## References
 
 `FluxToken.sol`
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The following test can be added to `FluxToken.t.sol`. It should return 0.05% of `500_000`, which would equal `250`, but instead returns `1`.

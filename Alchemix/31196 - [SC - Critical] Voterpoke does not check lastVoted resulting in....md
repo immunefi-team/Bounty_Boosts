@@ -1,7 +1,7 @@
 
 # `Voter.poke` does not check `lastVoted` resulting in infinite replication of $FLUX
 
-Submitted on Tue May 14 2024 13:38:20 GMT-0400 (Atlantic Standard Time) by @yttriumzz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 14th 2024 at 19:38:20 UTC by @yttriumzz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31196
 
@@ -90,8 +90,8 @@ Users can infinitely copy $FLUX causing Alchemix token economics to collapse.
 ## References
 
 None
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The PoC patch

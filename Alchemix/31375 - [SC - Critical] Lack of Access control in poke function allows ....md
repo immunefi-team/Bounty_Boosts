@@ -1,7 +1,7 @@
 
 # Lack of Access control in poke() function allows  in unlimited minting of flux token
 
-Submitted on Fri May 17 2024 11:45:04 GMT-0400 (Atlantic Standard Time) by @hulkvision for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 17th 2024 at 17:45:04 UTC by @hulkvision for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31375
 
@@ -67,8 +67,8 @@ function _vote(uint256 _tokenId, address[] memory _poolVote, uint256[] memory _w
 }
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 * Add this function to `src/test/Voting.t.sol` and run the test 
 `forge test --mt testPocAccrueFluxMultipleTimes  --rpc-url $RPC_URL -vvvv`

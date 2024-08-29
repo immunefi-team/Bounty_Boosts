@@ -1,7 +1,7 @@
 
 # `RevenueHandler.checkpoint` counts unclaimed rewards as new rewards causing reduced rewards for users who have not claimed rewards in time
 
-Submitted on Wed May 15 2024 16:47:08 GMT-0400 (Atlantic Standard Time) by @yttriumzz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 15th 2024 at 22:47:08 UTC by @yttriumzz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31263
 
@@ -58,7 +58,7 @@ Users who claim rewards every epoch will receive more rewards, and other users w
 ## References
 
 None
-        
+
 ## Proof of concept
 The PoC patch
 

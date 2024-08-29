@@ -1,7 +1,7 @@
 
 # Bypassing the Governance's proposal threshold to spam malicious proposal as a griefing attack
 
-Submitted on Sun May 19 2024 07:27:32 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 13:27:32 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31448
 
@@ -41,8 +41,8 @@ After we mentioned this flag in a Discord thread, *Ov3rkoalafied* from Alchemix'
 ## Impact Details
 A Griefing attack with no profit motive.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 In the "AlchemixGovernorTest.sol" smart contract go to the function "setUp()" and comment the two calls to "createVeAlcx(...)", to simulate that nobody has yet deposited (akka. total supply is 0).

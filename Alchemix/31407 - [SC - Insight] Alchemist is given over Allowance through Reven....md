@@ -1,7 +1,7 @@
 
 # Alchemist is given over Allowance through RevenueHandler
 
-Submitted on Sat May 18 2024 06:35:45 GMT-0400 (Atlantic Standard Time) by @gladiator111 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 18th 2024 at 12:35:45 UTC by @gladiator111 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31407
 
@@ -135,8 +135,8 @@ Update the function as follows
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/RevenueHandler.sol#L210-L213
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Paste the following code in `RevenueHandler.t.sol` and run using
 ```bash

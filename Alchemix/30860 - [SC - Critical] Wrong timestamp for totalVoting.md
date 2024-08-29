@@ -1,7 +1,7 @@
 
 # Wrong timestamp for totalVoting
 
-Submitted on Mon May 06 2024 22:17:29 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 7th 2024 at 04:17:29 UTC by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30860
 
@@ -58,8 +58,8 @@ to
 ```
 uint256 _priorSupply = votingCheckpoints[getPriorVotingIndex(_lastEpochEnd) - 1].votes;
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

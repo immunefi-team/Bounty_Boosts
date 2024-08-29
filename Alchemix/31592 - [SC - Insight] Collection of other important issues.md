@@ -1,7 +1,7 @@
 
 # Collection of other important issues
 
-Submitted on Tue May 21 2024 09:27:42 GMT-0400 (Atlantic Standard Time) by @Minato7namikazi for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 15:27:42 UTC by @Minato7namikazi for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31592
 
@@ -288,6 +288,6 @@ So it's important to consider using the **OpenZeppelin's** new Ownable2Step cont
 
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept

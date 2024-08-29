@@ -1,7 +1,7 @@
 
 # Voter.poke() can be called at will, leading to a user accruing FLUX at an abnormal rate.
 
-Submitted on Tue May 07 2024 15:34:31 GMT-0400 (Atlantic Standard Time) by @dirtymic for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 7th 2024 at 21:34:31 UTC by @dirtymic for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30906
 
@@ -72,8 +72,8 @@ https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4
 claimableFlux:
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L376-L385
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 This was written in the provided Voting.t.sol

@@ -1,7 +1,7 @@
 
 # `MAX_PROPOSAL_NUMERATOR` is incorrectly set.
 
-Submitted on Sun May 19 2024 08:34:45 GMT-0400 (Atlantic Standard Time) by @Kenzo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 14:34:45 UTC by @Kenzo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31451
 
@@ -45,8 +45,8 @@ Change the following according to the docs:
     uint256 public constant MAX_PROPOSAL_NUMERATOR = 6600;  
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Run this test in `AlchemixGovernor.t.sol`:
 ```

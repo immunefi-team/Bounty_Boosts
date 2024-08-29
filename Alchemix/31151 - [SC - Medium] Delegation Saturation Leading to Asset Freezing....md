@@ -1,7 +1,7 @@
 
 # Delegation Saturation Leading to Asset Freezing and Operational Disruption in VotingEscrow
 
-Submitted on Mon May 13 2024 11:22:16 GMT-0400 (Atlantic Standard Time) by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 13th 2024 at 17:22:16 UTC by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31151
 
@@ -49,8 +49,8 @@ To effectively mitigate the risks associated with the `MAX_DELEGATES` vulnerabil
 [2]: [alchemix-v2-dao/src/VotingEscrow.sol#L1040 at GitHub](https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L1040)
 
 [3]: [alchemix-v2-dao/src/VotingEscrow.sol#L1110 at GitHub](https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L1110)
-        
-## Proof of concept
+
+
 ## Proof of Concept
 The Proof of Concept (PoC) involves creating the `VotingEscrowBlocker` contract which is designed to exploit this vulnerability. Here are key functionalities demonstrated by the PoC:
 

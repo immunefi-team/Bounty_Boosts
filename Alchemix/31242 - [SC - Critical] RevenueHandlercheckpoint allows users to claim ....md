@@ -1,7 +1,7 @@
 
-# # `RevenueHandler.checkpoint` allows users to claim rewards in the current block causing attacker can claim rewards repeatedly  -
+# # `RevenueHandler.checkpoint` allows users to claim rewards in the current block causing attacker can claim rewards repeatedly  - 
 
-Submitted on Wed May 15 2024 13:01:43 GMT-0400 (Atlantic Standard Time) by @yttriumzz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 15th 2024 at 19:01:43 UTC by @yttriumzz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31242
 
@@ -78,8 +78,8 @@ Users can claim rewards repeatedly
 ## References
 
 None
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The PoC patch

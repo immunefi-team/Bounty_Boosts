@@ -1,7 +1,7 @@
 
 # Expired Token Locks Impacting Vote Weight Calculation
 
-Submitted on Mon May 20 2024 22:17:10 GMT-0400 (Atlantic Standard Time) by @cheatcode for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 04:17:10 UTC by @cheatcode for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31540
 
@@ -89,8 +89,8 @@ function _balanceOfTokenAt(uint256 _tokenId, uint256 _time) internal view return
 }
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```python

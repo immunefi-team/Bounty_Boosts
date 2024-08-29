@@ -1,7 +1,7 @@
 
 # Killed Gauge continue to accrue and steal rewards from `Minter` contract
 
-Submitted on Sat May 18 2024 09:36:49 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 18th 2024 at 15:36:49 UTC by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31408
 
@@ -191,8 +191,8 @@ function killGauge(address _gauge) external {
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L469-L486
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L293-L298
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L341-L380
-        
-## Proof of concept
+
+
 ## Proof Of Concept
 
 In PoC, we have shown how `claimable` mapping is updated for the gauge even when gauge is killed.

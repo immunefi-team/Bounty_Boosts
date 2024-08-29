@@ -1,7 +1,7 @@
 
 # Alchemix : The first epoch's ALCX emissions of voter contract will be stuck forever.
 
-Submitted on Mon May 20 2024 07:23:00 GMT-0400 (Atlantic Standard Time) by @Norah for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 13:23:00 UTC by @Norah for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31494
 
@@ -78,8 +78,8 @@ Add any relevant links to documentation or code
 
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 I have created a test showcasing how the rewards sent during the first epoch are stuck in the voter contract for 3 epochs.

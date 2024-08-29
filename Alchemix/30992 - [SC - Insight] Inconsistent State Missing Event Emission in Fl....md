@@ -1,7 +1,7 @@
 
 # Inconsistent State: Missing Event Emission in FluxToken::nftClaim
 
-Submitted on Fri May 10 2024 02:29:50 GMT-0400 (Atlantic Standard Time) by @Wizard for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 10th 2024 at 08:29:50 UTC by @Wizard for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30992
 
@@ -30,8 +30,8 @@ While there are no direct financial losses associated with the missing event., n
 
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/FluxToken.sol?utm_source=immunefi#L134
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

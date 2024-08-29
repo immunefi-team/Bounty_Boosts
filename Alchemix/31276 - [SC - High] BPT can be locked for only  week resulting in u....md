@@ -1,7 +1,7 @@
 
 # BPT can be locked for only 1 week, resulting in unfair ALCX reward distribution
 
-Submitted on Wed May 15 2024 21:32:46 GMT-0400 (Atlantic Standard Time) by @marchev for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 16th 2024 at 03:32:46 UTC by @marchev for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31276
 
@@ -86,8 +86,8 @@ The flawed minimum lock time check allows users to lock BPTs for only 1 week but
 
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L1375-L1381
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The following coded PoC demonstrates the issue.

@@ -1,7 +1,7 @@
 
 # Infinite minting of FLUX through `voter.poke()`
 
-Submitted on Thu May 02 2024 19:32:01 GMT-0400 (Atlantic Standard Time) by @Django for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 3rd 2024 at 01:32:01 UTC by @Django for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30650
 
@@ -73,8 +73,8 @@ Logs:
   FLUX Balance 11518584506499525663
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

@@ -1,7 +1,7 @@
 
 # `RevenueHandler.checkpoint` isn't correctly
 
-Submitted on Wed May 15 2024 14:16:14 GMT-0400 (Atlantic Standard Time) by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 15th 2024 at 20:16:14 UTC by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31253
 
@@ -61,8 +61,8 @@ __The issue is that `IERC20(token).balanceOf(address(this))` may contains the to
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Put the following code in `src/test/RevenueHandler.t.sol` and run
 ```bash

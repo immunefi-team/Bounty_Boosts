@@ -1,7 +1,7 @@
 
 # Griefing an account from getting votes delegated to it
 
-Submitted on Sun May 05 2024 03:56:52 GMT-0400 (Atlantic Standard Time) by @Shahen for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 5th 2024 at 09:56:52 UTC by @Shahen for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30704
 
@@ -31,8 +31,8 @@ A malicious actor can grief another address from getting votes delegated to it b
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/VotingEscrow.sol
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Paste the below testfile under src/test and run.

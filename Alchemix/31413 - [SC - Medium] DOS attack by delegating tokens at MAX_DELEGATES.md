@@ -1,7 +1,7 @@
 
 # DOS attack by delegating tokens at `MAX_DELEGATES = 1024`
 
-Submitted on Sat May 18 2024 14:04:09 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 18th 2024 at 20:04:09 UTC by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31413
 
@@ -147,8 +147,8 @@ Adjust the `MAX_DELEGATES` from 1024 to 128 Or Give an option for users to opt-o
 
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L1033-L1052
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L1103-L1130
-        
-## Proof of concept
+
+
 ## Proof Of Concept
 
 **Steps to Run using Foundry:**

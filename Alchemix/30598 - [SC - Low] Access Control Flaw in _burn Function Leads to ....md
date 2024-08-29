@@ -1,7 +1,7 @@
 
 # Access Control Flaw in `_burn` Function Leads to Operational Disruption
 
-Submitted on Wed May 01 2024 13:08:15 GMT-0400 (Atlantic Standard Time) by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 1st 2024 at 19:08:15 UTC by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30598
 
@@ -87,8 +87,8 @@ This results in operational disruptions for users who are legitimately authorize
   - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L501C1-L514C6
   - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L912C5-L919C6
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Consider a scenario where a user has received specific approval for token ID `123` to facilitate a token merge or withdrawal. Under the current implementation, if this user attempts to initiate these actions, the transaction will revert during the `_burn` call due to the internal [`approve`](https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L501C1-L514C6) function not recognizing their limited approval as sufficient.
 

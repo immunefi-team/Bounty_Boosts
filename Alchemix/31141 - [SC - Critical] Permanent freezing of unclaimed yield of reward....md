@@ -1,7 +1,7 @@
 
 # Permanent freezing of unclaimed yield of reward tokens in Bribe contract when attackers maliciously exploit voter.poke()
 
-Submitted on Mon May 13 2024 04:11:55 GMT-0400 (Atlantic Standard Time) by @perseverance for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 13th 2024 at 10:11:55 UTC by @perseverance for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31141
 
@@ -375,7 +375,7 @@ Category: Permanent freezing of unclaimed yield or Permanent freezing of unclaim
 Capital for the attack: Gas to execute the transactions. Some amount of BPT to invest to lock to get the VeAlcx tokens. 
 
 Easy to exploit and easy to be automated. 
-        
+
 ## Proof of concept
 #  Proof of concept
 

@@ -1,7 +1,7 @@
 
 # RewardDistributor claims can be DoSed through excess amount of userPoint creation
 
-Submitted on Fri May 17 2024 21:47:27 GMT-0400 (Atlantic Standard Time) by @jecikpo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 18th 2024 at 03:47:27 UTC by @jecikpo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31399
 
@@ -37,8 +37,8 @@ Te veALCX token holder loses irreversibly all claims.
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/RewardsDistributor.sol#L365
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 paste the following code into `Minter.t.sol`:
 ```

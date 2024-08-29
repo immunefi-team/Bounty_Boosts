@@ -1,7 +1,7 @@
 
 # Griefing Attack using `delegate` will expose User to `100x` Cost to transfer tokens
 
-Submitted on Sat May 18 2024 11:34:53 GMT-0400 (Atlantic Standard Time) by @Breeje for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 18th 2024 at 17:34:53 UTC by @Breeje for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31410
 
@@ -61,8 +61,8 @@ Griefing Attack exposes users to a `100x` increase in the cost of transferring t
 ## Recommendation
 
 While testing, I found that Keeping `MAX_DELEGATES` value to `128` will max cost User close to 3M Gas, around `10x` the normal cost. This can provide a balance between offering delegation and protecting users from a Griefing Attack that could increase their costs by `100x`.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 #### Test Code

@@ -1,7 +1,7 @@
 
-# Theft of unclaimed yield of the revenue in the RevenueHandler contract by claimming and merge the tokens
+# Theft of unclaimed yield of the revenue in the RevenueHandler contract by claimming and merge the tokens 
 
-Submitted on Thu May 09 2024 17:19:54 GMT-0400 (Atlantic Standard Time) by @perseverance for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 9th 2024 at 23:19:54 UTC by @perseverance for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30972
 
@@ -321,7 +321,7 @@ Category:
 Capital for the attack: Gas to execute the transactions. Some amount of BPT to invest to lock to get the VeAlcx tokens. BPT can be big, the the bigger amount of the rewards. Can theft most of the reward token in the contract. 
 
 Easy to exploit and easy to be automated. 
-        
+
 ## Proof of concept
 #  Proof of concept
 

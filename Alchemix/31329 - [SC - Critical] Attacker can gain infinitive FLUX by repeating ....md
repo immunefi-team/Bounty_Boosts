@@ -1,7 +1,7 @@
 
 # Attacker can gain infinitive FLUX by repeating this attack!
 
-Submitted on Fri May 17 2024 01:32:47 GMT-0400 (Atlantic Standard Time) by @Minato7namikazi for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 17th 2024 at 07:32:47 UTC by @Minato7namikazi for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31329
 
@@ -65,7 +65,7 @@ and accrue flux even if the same IDs tokens balance accrued flux previously in t
 the suitable in-scope impact is **Unauthorized minting of NFTs**
 because this will enable an attacker to gain infinitive FLUX by repeating this tricky scenario  
 
-        
+
 ## Proof of concept
 ``` 
 

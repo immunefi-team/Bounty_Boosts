@@ -1,7 +1,7 @@
 
 # Bribe.sol::withdraw doesn't update the totalVoting's amount accordingly to the deposited assets amount
 
-Submitted on Sun May 12 2024 17:48:52 GMT-0400 (Atlantic Standard Time) by @crazy_squirrel for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 12th 2024 at 23:48:52 UTC by @crazy_squirrel for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31112
 
@@ -81,8 +81,8 @@ function withdraw(uint256 amount, uint256 tokenId) external {
         emit Withdraw(msg.sender, tokenId, amount);
     }
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 See and compare the following PoC's `console.log`s.

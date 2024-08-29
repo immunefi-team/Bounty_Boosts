@@ -1,7 +1,7 @@
 
 # Users can grief Bribe rewards, forcing them to be stuck forever by continuously calling `Voter::poke`
 
-Submitted on Sat May 18 2024 09:43:37 GMT-0400 (Atlantic Standard Time) by @OxAlix2 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 18th 2024 at 15:43:37 UTC by @OxAlix2 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31409
 
@@ -43,7 +43,7 @@ totalVoting -= amount;
 _writeVotingCheckpoint();
 ```
  
-        
+
 ## Proof of concept
 Fork block number used: `19877251`
 

@@ -1,7 +1,7 @@
 
 # Anyone can let user's delegates reach the upper limit causing users to be unable to add more delegates
 
-Submitted on Thu May 16 2024 13:24:04 GMT-0400 (Atlantic Standard Time) by @yttriumzz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 16th 2024 at 19:24:04 UTC by @yttriumzz for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31298
 
@@ -48,7 +48,7 @@ An attacker can make the user no longer able to be delegated and mint $veToken. 
 ## References
 
 None
-        
+
 ## Proof of concept
 The PoC patch
 

@@ -1,7 +1,7 @@
 
 # Loss Of Boosted Weight When Poking In The Same Boosted Vote Period
 
-Submitted on Tue May 21 2024 08:48:26 GMT-0400 (Atlantic Standard Time) by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 14:48:26 UTC by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31584
 
@@ -78,8 +78,8 @@ Additionally, the `pokeTokens` function, which can be called by the admin, also 
 
 To mitigate this issue, the `poke` function should be updated to correctly account for the accumulated boost. The `_boost` variable should be calculated and passed appropriately to the `_vote` function. Since boost is only valid for the epoch it was used in, ensure that this information is properly retained and used when recalculating votes within the same epoch.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 The test can be added to a new file under the current test suite `src/test/VotingPoC.t.sol`, then specify the file name in `FILE` flag under `Makefile` configuration. Run using `make test_file`
 

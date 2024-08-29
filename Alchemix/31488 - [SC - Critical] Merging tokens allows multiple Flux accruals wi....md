@@ -1,7 +1,7 @@
 
 # Merging tokens allows multiple Flux accruals within an epoch
 
-Submitted on Mon May 20 2024 04:37:06 GMT-0400 (Atlantic Standard Time) by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 10:37:06 UTC by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31488
 
@@ -31,8 +31,8 @@ An attacker can repeat the accrual of their Flux multiple times in an epoch usin
 
 ## References
 See the PoC below.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 I have created the following test file and added it to the `tests/` directory:

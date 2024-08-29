@@ -1,7 +1,7 @@
 
 # Off by one error while adding reward pool token
 
-Submitted on Tue May 21 2024 08:45:01 GMT-0400 (Atlantic Standard Time) by @sss for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 14:45:01 UTC by @sss for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31583
 
@@ -57,8 +57,8 @@ https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/RewardPoolMana
         }
     }
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 on test file `RewardPoolManagerTest.t.sol` the test for max token is done but it is incomplete add these two lines to add two more tokens which makes total of 10 tokens which is max but it reverts and run poc
 ```diff

@@ -1,7 +1,7 @@
 
-# `cancel` should allow to cancel the proposal of the Expired state
+#  `cancel` should allow to cancel the proposal of the Expired state
 
-Submitted on Thu May 16 2024 05:26:54 GMT-0400 (Atlantic Standard Time) by @OxG0P1 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 16th 2024 at 11:26:54 UTC by @OxG0P1 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31284
 
@@ -32,8 +32,8 @@ Funds in the Timelock will be lost.
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/governance/L2Governor.sol#L445-L448
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/governance/L2Governor.sol#L625-L627
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Consider the following scenario:

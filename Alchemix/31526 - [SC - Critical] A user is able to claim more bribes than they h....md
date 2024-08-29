@@ -1,7 +1,7 @@
 
 # A user is able to claim more bribes than they have earned
 
-Submitted on Mon May 20 2024 20:09:30 GMT-0400 (Atlantic Standard Time) by @hulkvision for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 02:09:30 UTC by @hulkvision for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31526
 
@@ -60,8 +60,8 @@ function getRewardForOwner(uint256 tokenId, address[] memory tokens) external lo
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Bribe.sol#L283-300
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 * Add this test to `src/test/Voting.t.sol` and run with 
 `forge test --mt testPOCVoteOnceAndClaimBribes() --rpc-url $RPC_URL -vvvv

@@ -1,7 +1,7 @@
 
 # The `Voter.distribute` function can continue to fail.
 
-Submitted on Mon May 20 2024 22:16:06 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 04:16:06 UTC by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31539
 
@@ -90,8 +90,8 @@ I want you to look at the problems in this report precisely and carefully.
 This is a problem that often happens in real life.
 
 Thank you.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

@@ -1,7 +1,7 @@
 
-# Users cannot claim rewards from `RevenueHandler` if they update a veALCX lock time to max lock.
+# Users cannot claim rewards from `RevenueHandler` if they update a veALCX lock time to max lock. 
 
-Submitted on Mon May 20 2024 07:55:07 GMT-0400 (Atlantic Standard Time) by @OxAnmol for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 13:55:07 UTC by @OxAnmol for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31495
 
@@ -92,8 +92,8 @@ https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/RevenueHandler.sol#L322
 
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L714
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Paste this test in `RevenueHandler.t.sol` 

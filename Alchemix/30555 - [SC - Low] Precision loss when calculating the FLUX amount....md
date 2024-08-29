@@ -1,7 +1,7 @@
 
 # Precision loss when calculating the FLUX amount required to ragequit for a token
 
-Submitted on Tue Apr 30 2024 12:42:03 GMT-0400 (Atlantic Standard Time) by @MTNether for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on Apr 30th 2024 at 18:42:03 UTC by @MTNether for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30555
 
@@ -83,8 +83,8 @@ Consider modifying the `ragequitAmount` calculation to prevent such precision lo
 ```
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 You can run this code inside the Forge to see the difference between the results:

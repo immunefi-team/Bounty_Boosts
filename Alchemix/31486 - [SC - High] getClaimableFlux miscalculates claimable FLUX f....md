@@ -1,7 +1,7 @@
 
 # `getClaimableFlux()` miscalculates claimable FLUX from veALCX values
 
-Submitted on Mon May 20 2024 03:53:00 GMT-0400 (Atlantic Standard Time) by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 09:53:00 UTC by @Holterhus for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31486
 
@@ -54,8 +54,8 @@ This will result in the wrong amount of FLUX being calculated when NFT holders c
 ## References
 
 `FluxToken.sol`
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The following test can be added to `FluxToken.t.sol`. It should show that different values arise for the calculated claimable FLUX amount and the actual amount that is accrued for a year.

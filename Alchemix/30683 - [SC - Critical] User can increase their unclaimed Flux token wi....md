@@ -1,7 +1,7 @@
 
 # User can increase their unclaimed Flux token without limits
 
-Submitted on Sat May 04 2024 05:47:30 GMT-0400 (Atlantic Standard Time) by @jecikpo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 4th 2024 at 11:47:30 UTC by @jecikpo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30683
 
@@ -30,8 +30,8 @@ The impact is that the user can accrue potentially unlimited amount of unclaimed
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L618
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Add to the `VotingEscrow.t.sol` the following code:
 

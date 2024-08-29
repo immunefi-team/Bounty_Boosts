@@ -1,7 +1,7 @@
 
 # An edge-case mints 2 times more FLUX than it should
 
-Submitted on Fri May 10 2024 06:45:39 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 10th 2024 at 12:45:39 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30999
 
@@ -80,8 +80,8 @@ The impacts of minting more FLUX tokens than what the system was designed to are
 
 FLUX is used to boost a veToken holder's voting power and exit a ve-position early, therefore edge cases that can break the protocol invariants and mint a bunch of additional FLUX will destabilize Alchemix's ecosystem.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 We modified the foundry test "**testVotingPowerDecay**" inside `alchemix-v2-dao/src/test/Voting.t.sol` to include this edge case.

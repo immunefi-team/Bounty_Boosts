@@ -1,7 +1,7 @@
 
 # Call the deposit function before the distribute function to steal tokens
 
-Submitted on Tue May 07 2024 13:44:37 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 7th 2024 at 19:44:37 UTC by @cryptoticky for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30898
 
@@ -32,8 +32,8 @@ If an attacker makes a deposit before the `Voter.distribute` function is called 
 
 ## Recommendation
 It is recommended to confirm that the Voter.distribute function was called when users call Voter.vote function in the new epoch, and if it is false, it is recommended to call the distribute function first.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```
 // SPDX-License-Identifier: GPL-3

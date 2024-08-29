@@ -1,7 +1,7 @@
 
 # The result of the AggregatorV3Interface is not validated for stale prices
 
-Submitted on Sun May 05 2024 08:39:56 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 5th 2024 at 14:39:56 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30711
 
@@ -60,8 +60,8 @@ Using stale prices results in wrong calculations for the amount to compound, whi
 
 ## Severity
 The report is technically valid and bugs that affect the solvency of the protocol are of critical severity. Still, the prerequisite decreases the severity of this finding to medium.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The finding is straightforward to understand, but the boost's policy requires creating a proof of concept, so here's one that can be quickly run in chisel.

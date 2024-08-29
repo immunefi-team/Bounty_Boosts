@@ -1,7 +1,7 @@
 
-# Rewards for the first epoch at rewards distributor would be lost
+# Rewards for the first epoch at rewards distributor would be lost 
 
-Submitted on Mon May 20 2024 00:25:57 GMT-0400 (Atlantic Standard Time) by @MahdiKarimi for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 06:25:57 UTC by @MahdiKarimi for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31484
 
@@ -26,8 +26,8 @@ loss of rewards at rewards distributor in the first epoch
 
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/RewardsDistributor.sol#L244-L248
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```
         function testLostRewardsFirstEpoch() public {

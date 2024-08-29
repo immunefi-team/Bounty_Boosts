@@ -1,7 +1,7 @@
 
 # ALCK rewards are lost when merging tokens because the rewards are not claimed before burning the token.
 
-Submitted on Mon May 06 2024 16:25:53 GMT-0400 (Atlantic Standard Time) by @Jonnes for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 6th 2024 at 22:25:53 UTC by @Jonnes for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30826
 
@@ -47,8 +47,8 @@ Permanent freezing of unclaimed rewards
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L649
 
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L767C1-L772C32
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The following test can be added to VotingEscrow.t.sol to show the described scenario.

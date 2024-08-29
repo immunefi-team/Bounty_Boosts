@@ -1,7 +1,7 @@
 
 # Approved user can't merge tokens (not approved for all)
 
-Submitted on Wed May 15 2024 19:14:43 GMT-0400 (Atlantic Standard Time) by @OxAlix2 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 16th 2024 at 01:14:43 UTC by @OxAlix2 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31272
 
@@ -32,8 +32,8 @@ Approved users (not for all) aren't able to merge tokens.
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/VotingEscrow.sol#L1567
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

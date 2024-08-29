@@ -1,7 +1,7 @@
 
 # Expired locks can be used to claim rewards
 
-Submitted on Sun May 12 2024 06:32:07 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 12th 2024 at 12:32:07 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31082
 
@@ -40,8 +40,8 @@ function claimBribes(address[] memory _bribes, address[][] memory _tokens, uint2
 ## Impact
 
 Stealing bribe rewards using expired tokens can lead to solvency issues.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 This proof of concept can be added to `src/test/Voting.t.sol`. It demonstrates how a user can create a lock for a min. of 1 epoch, and keep claiming rewards forever (even after expired).

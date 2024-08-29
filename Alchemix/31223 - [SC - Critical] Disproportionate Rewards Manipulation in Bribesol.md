@@ -1,7 +1,7 @@
 
 # Disproportionate Rewards Manipulation in Bribe.sol
 
-Submitted on Tue May 14 2024 22:32:25 GMT-0400 (Atlantic Standard Time) by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 15th 2024 at 04:32:25 UTC by @Limbooo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31223
 
@@ -65,7 +65,7 @@ Additionally, when `Voter::poke` is called, it saves another checkpoint only if 
 2. **Resource Drainage**: Continuous exploitation of this vulnerability could lead to significant resource drainage, reducing the overall effectiveness and sustainability of the DAO.
 
 
-        
+
 ## Proof of concept
 ### Test Case (Foundry)
 The provided test demonstrates how the manipulation of voting weights and reward claims can lead to disproportionate reward allocation. The test involves two participants, Alice and Bob, where Bob manipulates the system to claim full rewards for an epoch by strategically timing his votes and claims. This test is critical for illustrating the practical exploitability of the vulnerability under realistic conditions.

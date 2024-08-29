@@ -1,7 +1,7 @@
 
 # Claiming alchemic-token rewards can fail for some users
 
-Submitted on Sat May 11 2024 05:50:44 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 11th 2024 at 11:50:44 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31042
 
@@ -52,8 +52,8 @@ Users with deposits but no debt in AlchemistV2, when calling `RevenueHandler.cla
 
 ## Impact Details
 Claiming alchemic-token rewards can fail for some users
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Here's a test demonstrating the `revenueHandler.claim(...)` transaction reverting because the user has deposits but no debt.
 ```

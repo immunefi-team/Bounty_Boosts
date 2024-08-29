@@ -1,7 +1,7 @@
 
 # Early return in `RewardsDistributor.claim()` can cause stuck ETH
 
-Submitted on Mon May 20 2024 18:52:07 GMT-0400 (Atlantic Standard Time) by @Django for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 00:52:07 UTC by @Django for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31521
 
@@ -79,8 +79,8 @@ Logs:
   Contract has swallowed 40 ETH
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

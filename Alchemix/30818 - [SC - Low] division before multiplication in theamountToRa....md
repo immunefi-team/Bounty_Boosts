@@ -1,7 +1,7 @@
 
 # division before multiplication in the`amountToRagequit` function cause return less ragequitAmount than expected
 
-Submitted on Mon May 06 2024 13:37:35 GMT-0400 (Atlantic Standard Time) by @zeroK for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 6th 2024 at 19:37:35 UTC by @zeroK for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30818
 
@@ -45,8 +45,8 @@ division before multiplication cause rounding error/
 
 do multiplication before division.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 run the contract below in remix to show the difference between the value, one of them `MulandDiv` return 730 and the `divandMul` return 728.

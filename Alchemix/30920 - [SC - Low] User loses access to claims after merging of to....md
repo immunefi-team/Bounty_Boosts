@@ -1,7 +1,7 @@
 
 # User loses access to claims after merging of tokens
 
-Submitted on Tue May 07 2024 23:28:35 GMT-0400 (Atlantic Standard Time) by @jecikpo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 8th 2024 at 05:28:35 UTC by @jecikpo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30920
 
@@ -34,8 +34,8 @@ https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4
 The `_isApprovedOrOwner()` function:
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L826
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Paste the following code into `Voting.t.sol` file:
 ```solidity

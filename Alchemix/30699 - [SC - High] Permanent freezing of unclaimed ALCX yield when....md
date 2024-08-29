@@ -1,7 +1,7 @@
 
 # Permanent freezing of unclaimed ALCX yield when merging veALCX positions
 
-Submitted on Sat May 04 2024 21:53:39 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 5th 2024 at 03:53:39 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30699
 
@@ -54,8 +54,8 @@ Therefore, merging two positions burns one of the NFTs and permanently freezes t
 
 ## Impact Details
 Permanent freezing of unclaimed ALCX yield when merging veALCX positions
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Using Alchemix's test suite we created a foundry test inside "`alchemix-v2-dao/src/test/VotingEscrow.t.sol`" proving how all unclaimed ALCX yield is lost when merging two **veALCX** positions.
 

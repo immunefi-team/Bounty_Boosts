@@ -1,7 +1,7 @@
 
 # Users might receive less rewars token after `Voter.poke` is called.
 
-Submitted on Tue May 14 2024 14:56:20 GMT-0400 (Atlantic Standard Time) by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 14th 2024 at 20:56:20 UTC by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31199
 
@@ -94,8 +94,8 @@ User might receive less reward token after `Voter.poke` is called, and the uncla
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Add the following code to `src/test/Voting.t.sol`, and run 
 ```bash

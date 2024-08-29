@@ -1,7 +1,7 @@
 
 # Users can get unlimited amounts of Flux tokens
 
-Submitted on Mon May 06 2024 15:36:36 GMT-0400 (Atlantic Standard Time) by @imsrybr0 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 6th 2024 at 21:36:36 UTC by @imsrybr0 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30825
 
@@ -90,8 +90,8 @@ Steps 2), 3) and 4) can be repeated as needed carrying over unclaimed Flux earni
 * https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/Voter.sol#L183-L192
 * https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/FluxToken.sol#L180-L185
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```solidity
     function testMergeFlux() public {

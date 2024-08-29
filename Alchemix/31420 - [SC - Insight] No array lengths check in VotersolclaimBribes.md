@@ -1,7 +1,7 @@
 
 # No array lengths check in `Voter.sol::claimBribes`
 
-Submitted on Sat May 18 2024 15:57:38 GMT-0400 (Atlantic Standard Time) by @gladiator111 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 18th 2024 at 21:57:38 UTC by @gladiator111 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31420
 
@@ -78,8 +78,8 @@ Modify the function as follows
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L332-L338
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 In the  following POC we have given vote through 2 bribe Address but at the time of claimBribe only one bribe address is (unintentionally) given and 2 token arrays are given but the transaction still goes through resulting in user losing out on bribe from the second bribe address.
 Paste the following code in `Voting.t.sol` and run with the following command

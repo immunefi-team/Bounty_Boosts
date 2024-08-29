@@ -1,7 +1,7 @@
 
 # Alchemix : addReward() access control can be bypassed in Bribe contract
 
-Submitted on Sun May 19 2024 16:24:08 GMT-0400 (Atlantic Standard Time) by @Norah for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 22:24:08 UTC by @Norah for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31462
 
@@ -93,8 +93,8 @@ Remove the functionality that allows any user to add reward tokens by calling `n
         emit NotifyReward(msg.sender, token, adjustedTstamp, amount);
     }
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 - Below test showcases how any users can add any whitelisted token to the `rewardlist` using `notifyRewardAmount()` function.
 - Add the below test into the `voting.t.sol` file of the current test suite and run via following command :

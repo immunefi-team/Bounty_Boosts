@@ -1,7 +1,7 @@
 
 # the killed gauge collect claim amount
 
-Submitted on Sat May 18 2024 15:46:26 GMT-0400 (Atlantic Standard Time) by @zeroK for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 18th 2024 at 21:46:26 UTC by @zeroK for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31418
 
@@ -51,8 +51,8 @@ while the function is taken from the velo voter contract, the velo protocol set 
 ## Impact Details
 `updateFor` updates the claimable to killed gauge.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```

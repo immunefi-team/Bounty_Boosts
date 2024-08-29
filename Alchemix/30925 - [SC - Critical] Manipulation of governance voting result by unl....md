@@ -1,7 +1,7 @@
 
 # Manipulation of governance voting result by unlimited minting the Flux Token by exploiting the logic of reset and merge tokenId
 
-Submitted on Wed May 08 2024 05:09:39 GMT-0400 (Atlantic Standard Time) by @perseverance for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 8th 2024 at 11:09:39 UTC by @perseverance for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30925
 
@@ -276,7 +276,7 @@ Category:
 Capital for the attack: Gas to execute the transactions. Amount of BPT can be big, the the bigger amount of Flux tokens can be minted, manipulated. 
 
 Easy to exploit and easy to be automated. 
-        
+
 ## Proof of concept
 #  Proof of concept
 

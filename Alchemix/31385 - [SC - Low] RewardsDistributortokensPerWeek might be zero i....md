@@ -1,7 +1,7 @@
 
 # `RewardsDistributor.tokensPerWeek` might be zero in some extreme cases
 
-Submitted on Fri May 17 2024 16:21:00 GMT-0400 (Atlantic Standard Time) by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 17th 2024 at 22:21:00 UTC by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31385
 
@@ -55,8 +55,8 @@ Because `RewardsDistributor.tokensPerWeek` is used to calcuate the amount of alc
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Put the following code in `src/test/Minter.t.sol`, and run
 ```bash

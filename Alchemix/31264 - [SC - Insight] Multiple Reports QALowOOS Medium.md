@@ -1,7 +1,7 @@
 
 # Multiple Reports: QA/Low/OOS Medium
 
-Submitted on Wed May 15 2024 16:57:26 GMT-0400 (Atlantic Standard Time) by @The_Seraphs for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 15th 2024 at 22:57:26 UTC by @The_Seraphs for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31264
 
@@ -302,7 +302,7 @@ contract AlchemicTokenV2Base is ERC20Upgradeable, AccessControlUpgradeable, IERC
 ## **References**
 
 - Refer to the OpenZeppelin documentation on this topic: **[OpenZeppelin Upgradeable Contracts, Storage Gaps](https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable#storage-gaps)**
-        
-## Proof of concept
+
+
 ## Proof of Concept
 **All required POCs are with the respective reports above**

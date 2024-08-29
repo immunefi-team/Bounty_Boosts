@@ -1,7 +1,7 @@
 
 # Unauthorized minting of unlimited FLUX in 1 transaction
 
-Submitted on Thu May 02 2024 10:22:35 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 2nd 2024 at 16:22:35 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30634
 
@@ -97,8 +97,8 @@ Minting unlimited FLUX tokens has several (quite evident) impacts. Here's some o
 1- FLUX is an ERC20, minting unlimited FLUX leads to draining all liquidity in all AMMs where this token is deployed.
 
 2- FLUX is used to **boost a veToken holder's voting power** and **exit a ve-position early**, so minting unlimited FLUX will completely destabilize Alchemix's ecosystem.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 To quickly test the exploit add the following foundry test to your existing tests in `alchemix-v2-dao/src/test/FluxToken.t.sol` and run:

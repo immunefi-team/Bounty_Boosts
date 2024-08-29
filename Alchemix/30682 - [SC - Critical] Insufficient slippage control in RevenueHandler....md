@@ -1,7 +1,7 @@
 
 # Insufficient slippage control in RevenueHandler leads to loss of funds
 
-Submitted on Sat May 04 2024 04:35:52 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 4th 2024 at 10:35:52 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30682
 
@@ -106,8 +106,8 @@ Anyone can call `RevenueHandler.checkpoint()` so flash loans can be used to fund
 ## Impact Details
 Loss of funds.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 We modified your current `testCheckpointETH()` in `alchemix-v2-dao/src/test/RevenueHandler.t.sol`, adding the price manipulation before and after the checkpoint, to demonstrate the impact of the exploit.

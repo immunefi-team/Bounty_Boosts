@@ -1,7 +1,7 @@
 
 # Colition between approve() and _isApprovedOrOwner() when user merge two veALCX tokens
 
-Submitted on Sun May 12 2024 08:40:44 GMT-0400 (Atlantic Standard Time) by @Ch301 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 12th 2024 at 14:40:44 UTC by @Ch301 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31087
 
@@ -52,8 +52,8 @@ The owner sets both the NFTs `approve()` to the user. however, he cannot call `m
 ## References
 non
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Foundry PoC:
 1. Please copy the following POC in `VotingEscrow.t.sol`

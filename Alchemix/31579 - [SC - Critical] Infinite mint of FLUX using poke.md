@@ -1,7 +1,7 @@
 
 # Infinite mint of FLUX using poke
 
-Submitted on Tue May 21 2024 08:23:35 GMT-0400 (Atlantic Standard Time) by @konata for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 14:23:35 UTC by @konata for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31579
 
@@ -58,8 +58,8 @@ The vulnerability can be exploited by anyone and in the time frame of the same t
 ## References
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L412-L455
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/FluxToken.sol#L188-L192
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 A simple PoC that shows the attack scenario by calling `poke` each time.

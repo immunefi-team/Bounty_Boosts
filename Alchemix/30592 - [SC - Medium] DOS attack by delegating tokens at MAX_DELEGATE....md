@@ -1,7 +1,7 @@
 
 # DOS attack by delegating tokens at MAX_DELEGATES = 1024 in Voting escrow
 
-Submitted on Wed May 01 2024 09:20:17 GMT-0400 (Atlantic Standard Time) by @oxumarkhatab for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 1st 2024 at 15:20:17 UTC by @oxumarkhatab for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30592
 
@@ -102,7 +102,7 @@ Spearbit's Velodrome Audit : https://solodit.xyz/issues/dos-attack-by-delegating
 
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Please check the provided gist.

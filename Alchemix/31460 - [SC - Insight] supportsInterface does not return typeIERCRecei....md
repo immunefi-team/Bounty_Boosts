@@ -1,7 +1,7 @@
 
 # `supportsInterface()` does not return `type(IERC721Receiver).interfaceId`
 
-Submitted on Sun May 19 2024 15:40:50 GMT-0400 (Atlantic Standard Time) by @OxRizwan for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 21:40:50 UTC by @OxRizwan for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31460
 
@@ -61,8 +61,8 @@ https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4
     }
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The issue is simple to understand and very straight forward. It explains the interfaceId function unable to return the promised return i.e `interfaceId == type(IERC721Receiver).interfaceId` as true. 

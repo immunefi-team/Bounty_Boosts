@@ -1,7 +1,7 @@
 
-# Wrong condition check on RevenueHandler::constructor breaks invariant and allows to bypass maximum BPS value for treasury pct
+# Wrong condition check on RevenueHandler::constructor breaks invariant and allows to bypass maximum BPS value for treasury pct  
 
-Submitted on Mon May 20 2024 04:34:10 GMT-0400 (Atlantic Standard Time) by @cryptonoob2k for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 10:34:10 UTC by @cryptonoob2k for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31487
 
@@ -46,8 +46,8 @@ Impact: 				Low
 https://owasp.org/www-project-smart-contract-top-10/2023/en/src/SC07-logic-errors.html
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 To show the vulnerability  
 Add this test on src/test/RevenueHandler.t.sol  

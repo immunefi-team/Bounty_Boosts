@@ -1,7 +1,7 @@
 
 # slippage protection is inaccurate
 
-Submitted on Thu May 16 2024 15:08:22 GMT-0400 (Atlantic Standard Time) by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 16th 2024 at 21:08:22 UTC by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31309
 
@@ -52,8 +52,8 @@ The issue is that the price between normal token and alAsset isn't 1:1, based on
 ## References
 https://github.com/sherlock-audit/2024-04-alchemix-judging/issues/5
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Because there is no WETH/ALETH Curve pool onchain, I will use ETH/ALETH pool as example.
 

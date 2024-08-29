@@ -1,7 +1,7 @@
 
 # `treasuryPct` can be exceeded than `BPS` due to incorrect validation in `RevenueHandler.sol` constructor
 
-Submitted on Sun May 05 2024 05:43:39 GMT-0400 (Atlantic Standard Time) by @OxRizwan for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 5th 2024 at 11:43:39 UTC by @OxRizwan for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30708
 
@@ -69,8 +69,8 @@ Consider below changes:
         treasuryPct = _treasuryPct;
     }
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The issue is about incorrect logic error with respect to input error handling in current implementation of constructor. This would allow to by pass the treasury percent value greater than BPS.

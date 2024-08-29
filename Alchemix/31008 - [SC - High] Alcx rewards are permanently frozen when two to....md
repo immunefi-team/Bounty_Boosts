@@ -1,7 +1,7 @@
 
 # Alcx rewards are permanently frozen when two tokens are merged.
 
-Submitted on Fri May 10 2024 13:51:14 GMT-0400 (Atlantic Standard Time) by @Adrianx for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 10th 2024 at 19:51:14 UTC by @Adrianx for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31008
 
@@ -44,8 +44,8 @@ Alcx rewards are permanently frozen when the from tokens are burnt during token 
 
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/VotingEscrow.sol#L649
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Add the test below to VotingEscrow.t.sol and check the logs to see the frozen rewards.
 ```

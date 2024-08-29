@@ -1,7 +1,7 @@
 
 # DOS of withdrawals through filling the userPointHistory
 
-Submitted on Wed May 08 2024 01:48:35 GMT-0400 (Atlantic Standard Time) by @NinetyNineCrits for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 8th 2024 at 07:48:35 UTC by @NinetyNineCrits for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30922
 
@@ -59,8 +59,8 @@ if (userEpoch != 0 && _userPointHistory[_tokenId][userEpoch].ts == block.timesta
 ```
 
 This would also add a time constraint on the attack, which would require 380 years, assuming a a block each 12 seconds.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```solidity

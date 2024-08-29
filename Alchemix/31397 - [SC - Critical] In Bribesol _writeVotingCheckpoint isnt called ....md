@@ -1,7 +1,7 @@
 
 # In Bribe.sol `_writeVotingCheckpoint()` isn't called to update `votingCheckpoints` and `votingNumCheckpoints` whenever votes are withdrawn or there's a reset
 
-Submitted on Fri May 17 2024 19:42:23 GMT-0400 (Atlantic Standard Time) by @Praise for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 18th 2024 at 01:42:23 UTC by @Praise for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31397
 
@@ -77,8 +77,8 @@ https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4
 
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Bribe.sol#L332
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ```solidity

@@ -1,7 +1,7 @@
 
 # Unlimited Flux minting
 
-Submitted on Tue May 14 2024 22:01:45 GMT-0400 (Atlantic Standard Time) by @Tapir49939 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 15th 2024 at 04:01:45 UTC by @Tapir49939 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31222
 
@@ -61,8 +61,8 @@ The attack scenario is simple:
 Consequences are dire:
 1. Flux token has a market value.
 1. Flux token could be used to boost the voting power.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Run the test as: `forge test --mp src/test/Boost.t.sol  --fork-url 'https://...' -vv`
 

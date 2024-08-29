@@ -1,7 +1,7 @@
 
-# User can steal bribes and prevent other users from claiming theirs
+# User can steal bribes and prevent other users from claiming theirs 
 
-Submitted on Sun May 12 2024 02:42:33 GMT-0400 (Atlantic Standard Time) by @imsrybr0 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 12th 2024 at 08:42:33 UTC by @imsrybr0 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31071
 
@@ -120,8 +120,8 @@ The impact of this issue will vary based on the participating voters voting powe
 ## References
 * https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/Voter.sol#L332-L380
 * https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/Bribe.sol
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```solidity
     function testStealBribes() public {

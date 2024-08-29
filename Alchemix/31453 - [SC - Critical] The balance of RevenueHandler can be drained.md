@@ -1,7 +1,7 @@
 
 # The balance of RevenueHandler can be drained
 
-Submitted on Sun May 19 2024 12:09:45 GMT-0400 (Atlantic Standard Time) by @DuckAstronomer for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 18:09:45 UTC by @DuckAstronomer for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31453
 
@@ -42,8 +42,8 @@ This means that an attacker can flash-mint veALCX at that specific block and cla
 ## Impact Details
 Theft on reward from the `RevenueHandler` contract.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Poc scenario:

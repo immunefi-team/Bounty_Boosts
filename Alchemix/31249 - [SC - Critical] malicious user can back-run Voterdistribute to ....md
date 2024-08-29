@@ -1,7 +1,7 @@
 
 # malicious user can back-run `Voter.distribute` to steal reards
 
-Submitted on Wed May 15 2024 13:58:42 GMT-0400 (Atlantic Standard Time) by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 15th 2024 at 19:58:42 UTC by @jasonxiale for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31249
 
@@ -58,8 +58,8 @@ In current implementation, `Voter.distribute` is used to distribute ALCX among g
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 put the follow code in `src/test/Voting.t.sol` and run 
 ```bash

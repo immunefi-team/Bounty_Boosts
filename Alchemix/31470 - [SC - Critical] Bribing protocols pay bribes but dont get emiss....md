@@ -1,7 +1,7 @@
 
 # Bribing protocols pay bribes but don't get emissions, undermining incentives
 
-Submitted on Sun May 19 2024 20:10:23 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 02:10:23 UTC by @savi0ur for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31470
 
@@ -237,8 +237,8 @@ It should have some small window of say 1 hours at the start of each epoch to pr
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L359-L380
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Minter.sol#L134-L187
 
-        
-## Proof of concept
+
+
 ## Proof Of Concept
 
 To show difference between two scenarios mentioned below, we have written two test cases, namely: `testStealingEmittedRewardsBugDistributeBeforeVote()` and `testStealingEmittedRewardsBugVoteBeforeDistribute()`.

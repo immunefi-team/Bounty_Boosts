@@ -1,7 +1,7 @@
 
 # Front running of pokeTokens could lead to loss of portion of bribe claims to all voters of a gauge
 
-Submitted on Tue May 07 2024 22:39:00 GMT-0400 (Atlantic Standard Time) by @jecikpo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 8th 2024 at 04:39:00 UTC by @jecikpo for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30919
 
@@ -29,8 +29,8 @@ The bribes of all users on a given gauge will be diminished by proportional amou
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L215
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Copy the following code to the `Voting.t.sol`:

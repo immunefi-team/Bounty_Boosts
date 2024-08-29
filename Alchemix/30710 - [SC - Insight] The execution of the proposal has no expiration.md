@@ -1,7 +1,7 @@
 
 # The execution of the proposal has no expiration.
 
-Submitted on Sun May 05 2024 07:17:09 GMT-0400 (Atlantic Standard Time) by @OxG0P1 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 5th 2024 at 13:17:09 UTC by @OxG0P1 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30710
 
@@ -33,8 +33,8 @@ Due to the absence of an expiration mechanism, Proposal A can be executed at any
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/governance/L2Governor.sol#L352-L375
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 `Test :`
 ```solidity

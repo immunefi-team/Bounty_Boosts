@@ -1,7 +1,7 @@
 
 # Claiming bribes for epochs you didn't vote for, leading to protocol insolvency.
 
-Submitted on Sun May 12 2024 05:10:23 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 12th 2024 at 11:10:23 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31079
 
@@ -154,8 +154,8 @@ Try to rerun the test. It will fail indicating that rewards can be claimed for e
 Solvency issues as the users that voted cannot receive their
 share of bribes.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 This test reproduces the example given about "Bob" and "Alice", proving the solvency issues and how "Bob" can't receive his share of bribes.

@@ -1,7 +1,7 @@
 
 # USDT Approval will cause function failure
 
-Submitted on Mon May 20 2024 19:03:13 GMT-0400 (Atlantic Standard Time) by @SAAJ for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 01:03:13 UTC by @SAAJ for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31523
 
@@ -126,8 +126,8 @@ https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/RevenueHandler.sol#L210
 
 
-        
-## Proof of concept
+
+
 
 ## Proof of Concept
 The ```USDT``` [contract](https://etherscan.io/address/0xdac17f958d2ee523a2206206994597c13d831ec7#code#L199) clearly mentions ```approve``` function to be used for changing allowance only after resetting the approved amount to zero.

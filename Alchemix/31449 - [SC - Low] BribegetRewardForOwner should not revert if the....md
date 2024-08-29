@@ -1,7 +1,7 @@
 
 # Bribe::getRewardForOwner should not revert if there are no bribe rewards.
 
-Submitted on Sun May 19 2024 07:39:38 GMT-0400 (Atlantic Standard Time) by @OxAnmol for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 13:39:38 UTC by @OxAnmol for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31449
 
@@ -96,8 +96,8 @@ The function will assuredly revert without yielding any bribe reward for the use
 
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Bribe.sol#L290
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 paste this test in `Voting.t.sol`

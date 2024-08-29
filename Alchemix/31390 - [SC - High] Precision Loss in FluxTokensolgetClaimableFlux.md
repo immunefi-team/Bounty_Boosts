@@ -1,7 +1,7 @@
 
 # Precision Loss in `FluxToken.sol::getClaimableFlux`
 
-Submitted on Fri May 17 2024 17:44:47 GMT-0400 (Atlantic Standard Time) by @gladiator111 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 17th 2024 at 23:44:47 UTC by @gladiator111 for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31390
 
@@ -59,8 +59,8 @@ User will get less Flux because of precision Loss.
 ## References
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/FluxToken.sol#L224
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Add the following to the FluxToken.t.sol and run using
 ```bash

@@ -1,7 +1,7 @@
 
 # veALCX holder can mint Unlimited FLUX tokens
 
-Submitted on Sun May 19 2024 15:51:12 GMT-0400 (Atlantic Standard Time) by @OxAnmol for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 19th 2024 at 21:51:12 UTC by @OxAnmol for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31461
 
@@ -101,8 +101,8 @@ Based on above stated reason I believe this to be a critical issue.
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/Voter.sol#L195C3-L212C6
 
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/FluxToken.sol#L188C3-L192C6
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Here is a simple test to show how veALCX holder can call `Voter::poke` many times and accrue unlimited flux.

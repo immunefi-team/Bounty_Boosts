@@ -1,7 +1,7 @@
 
 # Voting algorithm does not apply maximum available voting power when voting due to Solidity rounding down
 
-Submitted on Tue May 14 2024 09:36:44 GMT-0400 (Atlantic Standard Time) by @xBentley for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 14th 2024 at 15:36:44 UTC by @xBentley for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31189
 
@@ -51,8 +51,8 @@ I would recommend that the weight for the last pool be allocated via Subtraction
 uint256 _poolWeight = totalPower - _totalWeight;
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Add this test to src/test/Voting.t.sol:
 

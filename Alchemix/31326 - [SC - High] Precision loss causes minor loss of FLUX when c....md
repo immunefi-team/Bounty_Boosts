@@ -1,7 +1,7 @@
 
 # Precision loss causes minor loss of FLUX when claiming with NFTs
 
-Submitted on Thu May 16 2024 21:06:09 GMT-0400 (Atlantic Standard Time) by @marchev for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 17th 2024 at 03:06:09 UTC by @marchev for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31326
 
@@ -36,8 +36,8 @@ The `claimableFlux` formula contains an unnecessary calculation that leads to a 
 ## References
 
 https://github.com/alchemix-finance/alchemix-v2-dao/blob/f1007439ad3a32e412468c4c42f62f676822dc1f/src/FluxToken.sol#L224
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 The following coded PoC demonstrates the issue.

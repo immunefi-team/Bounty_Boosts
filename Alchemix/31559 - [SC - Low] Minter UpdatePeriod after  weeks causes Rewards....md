@@ -1,7 +1,7 @@
 
 # Minter UpdatePeriod after 20 weeks causes RewardsDistributor contract to lose claimable amount
 
-Submitted on Tue May 21 2024 04:20:50 GMT-0400 (Atlantic Standard Time) by @copperscrewer for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 21st 2024 at 10:20:50 UTC by @copperscrewer for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31559
 
@@ -49,8 +49,8 @@ Since the rewards are not entered correctly, the protocol permanently loses the 
 ## Impact Details
 The impact is that the user will permanently lose rewards, and the exploit can be as easy as 20 weeks of negligence and no added complexity to carry out the attack.
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Copy paste the following code in Minter.t.sol and execute the following command 
 `forge test --match-test testtokensPerWeekPOC* --fork-url https://eth-mainnet.alchemyapi.io/v2/[API_KEY] -vvv`

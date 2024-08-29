@@ -1,7 +1,7 @@
 
 # Undound FLUX accrual through reset and merge
 
-Submitted on Sun May 19 2024 23:17:59 GMT-0400 (Atlantic Standard Time) by @DuckAstronomer for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 20th 2024 at 05:17:59 UTC by @DuckAstronomer for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31481
 
@@ -28,8 +28,8 @@ However, it's possible to transfer veALCX balance to a new tokeId by calling `ve
 ## Impact Details
 Flux token allows to boost voting power. Unbounded Flux accrual allows to significantly change the voting results. 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Poc scenario:
 1. The attacker mints the main veALCX with 1000 BAL tokens.

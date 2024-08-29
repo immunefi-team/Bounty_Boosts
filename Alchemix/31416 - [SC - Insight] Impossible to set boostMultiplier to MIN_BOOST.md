@@ -1,7 +1,7 @@
 
 # Impossible to set boostMultiplier to MIN_BOOST
 
-Submitted on Sat May 18 2024 14:29:44 GMT-0400 (Atlantic Standard Time) by @RNemes for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 18th 2024 at 20:29:44 UTC by @RNemes for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31416
 
@@ -38,8 +38,8 @@ The condition `_boostMultiplier > MIN_BOOST` translates to `_boostMultiplier > 0
 ## Impact Details
 
 The impact of this vulnerability is primarily operational rather than financial. If the `boostMultiplier` needs to be set to zero for certain operations or configurations, the current implementation will prevent this, potentially leading to incorrect contract behavior or inability to revert to a default state. This could disrupt contract functionality and the ability of the admin to control the `boostMultiplier` as intended. In scenarios where setting the multiplier to zero is necessary for security or protocol reasons, this bug could pose a more significant risk.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Add the following failing test to `src/test/Voting.t.sol`
 

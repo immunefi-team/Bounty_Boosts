@@ -1,7 +1,7 @@
 
 # Incorrect implementation of ownerOf() makes veALCX non-ERC721 compliant
 
-Submitted on Tue May 07 2024 22:15:13 GMT-0400 (Atlantic Standard Time) by @marchev for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 8th 2024 at 04:15:13 UTC by @marchev for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #30918
 
@@ -58,8 +58,8 @@ Docs references which state that ERC721 compliance is expected:
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/src/VotingEscrow.sol#L16
 
 - https://github.com/alchemix-finance/alchemix-v2-dao/blob/main/CONTRACTS.md
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Add the following test to `src/test/VotingEscrow.t.sol`:

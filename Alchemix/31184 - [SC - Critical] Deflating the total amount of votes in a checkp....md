@@ -1,7 +1,7 @@
 
 # Deflating the total amount of votes in a checkpoint, to steal bribes and create solvency issues
 
-Submitted on Tue May 14 2024 04:19:20 GMT-0400 (Atlantic Standard Time) by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
+Submitted on May 14th 2024 at 10:19:20 UTC by @infosec_us_team for [Boost | Alchemix](https://immunefi.com/bounty/alchemix-boost/)
 
 Report ID: #31184
 
@@ -144,8 +144,8 @@ If Alice (or Bob) claims rewards, an inflated share of tokens is received, and t
 ## Impact
 
 Deflating the total amount of votes in a checkpoint, to steal bribes and create solvency issues
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 We are going to share 2 foundry tests, the first one is for the "happy path" and in the second one Alice front-runs the `voter.distribute()`, then claim bribes, making the system insolvent and preventing Bob from claiming his shares.
