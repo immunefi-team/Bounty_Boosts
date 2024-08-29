@@ -1,29 +1,32 @@
+
 # Liquidation Abuse: More than half of all assets can be liquidated in recovery mode.
 
-Submitted 25 days ago by @cryptoticky (Whitehat) for Boost | eBTC
+Submitted on Fri Mar 01 2024 13:48:51 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28916
 
 Report type: Smart Contract
 
-Has PoC? Yes
+Report severity: Insight
 
 Target: https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/LiquidationLibrary.sol
 
-# Impacts
+Impacts:
+- Direct theft of 2 stETH worth of any user funds, whether at-rest or in-motion, other than unclaimed yield
 
-Direct theft of 2 stETH worth of any user funds, whether at-rest or in-motion, other than unclaimed yield
-
-# Details
-
+## Description
 Liquidation Abuse: More than half of all assets can be liquidated in recovery mode.
 
-# Brief/Intro
+
+## Brief/Intro
 At the end of the grace period in recovery mode, the liquidator can maximize profits and cause enormous losses to the protocol.
 
-# Vulnerability Details
+## Vulnerability Details
+
+![img_1.png](img_1.png)
 
 The vulnerability is that in recovery mode, the liquidator can arbitrarily liquidate ICRs equal to or smaller than TCR.
+
 
 When CDP with ICR smaller than TCR is liquidated, TCR rises.
 
@@ -35,26 +38,36 @@ Conversely, the smaller ICR is than TCR, the faster the system can enter the rec
 
 These maximization and minimization principles have a significant impact on the amount of total assets held at the same time as the system transitions to normal mode, and the wave of total assets determines the system's stability (intensity) for future market fluctuations.
 
-`The distribution of collateral amount according to ICR is similar to one normal distribution chart in which the amount decreases as the distance to TCR is centered on the TCR. Of course, the real graph will draw a curve in which the right and left are not symmetrical to each other around TCR and the right is slower than the left. What is important is that assets are concentrated and distributed around TCRs.`
+``
+The distribution of collateral amount according to ICR is similar to one normal distribution chart in which the amount decreases as the distance to  TCR is centered on the TCR.
+Of course, the real graph will draw a curve in which the right and left are not symmetrical to each other around TCR and the right is slower than the left.
+What is important is that assets are concentrated and distributed around TCRs.
+``
 
 This means that the maximization of liquidation leads to the rapid liquidation of the system's main assets, and in the worst-case scenario, more than half of the total collateral can be eliminated in a tx.
 
-In particular, when TCR reaches MCR, this maximization reaches its peak, and the attacker can liquidate all CDPs between MCR and CCR. In the end, liquidation in recovery mode will deal a significant blow to the protocol and later bring about protocol bankruptcy, contrary to the initial purpose of maintaining the normal operation of the system by allowing liquidation in recovery mode to be allowed to recover quickly and improve the market situation.
 
-Additionally, attempts to maximize liquidation lead to liquidation from a higher ICR to a lower one. This goes against the general principle that CDPs with higher ICRs should be relatively safer than CDPs with lower ICRs, which leads to the destruction of community.
+In particular, when TCR reaches MCR, this maximization reaches its peak, and the attacker can liquidate all CDPs between  MCR and CCR. In the end, liquidation in recovery mode will deal a significant blow to the protocol and later bring about protocol bankruptcy, contrary to the initial purpose of maintaining the normal operation of the system by allowing liquidation in recovery mode to be allowed to recover quickly and improve the market situation.
 
-# Scenario for Liquidation Maximization Attack
-Now the system is in recoveryMode and grace period is finished.
+Additionally, attempts to maximize liquidation lead to liquidation from a higher ICR to a lower one.
+This goes against the general principle that CDPs with higher ICRs should be relatively safer than CDPs with lower ICRs, which leads to the destruction of community.
 
-1. The attacker searches CDPs (ICR = TCR).
-2. The attacker liquidates the CDPs (ICR = TCR). => oldTCR = newTCR.
-3. The attacker searches the largest CDP (ICR < TCR)
-4. The attacker searches the smallest CDP (TCR < ICR < CCR). And then the attacker calculates the debtAmount to make TCR to ICR of the found CDP.
-5. The attacker liquidates the largest CDP (ICR < TCR) partially or fully until TCR reaches the desired ICR value.
-6. If the liquidation of one CDP does not produce the desired TCR value, continue with the step 5.
-7. Steps 1 through 6 are repeated until there is no CDP with an ICR greater than the TCR and less than the MCR.
-8. Proceed to step 1 ~ step 6 until TCR reaches CCR - 1. Repeated steps 1, 2, 3, and 4 are due to the fact that partial liquidation of the CDP results in changes in ICR, so that the CDP may be larger than TCR and smaller than CCR.
-9. Completely liquidate the CDP, which has the largest collateral amount among CDPs with ICRs smaller than TCRs.
+### Scenario for Liquidation Maximization Attack
+
+Now the system is in recoveryMode and grace period is finished. 
+
+1) The attacker searches CDPs (ICR = TCR).
+2) The attacker liquidates the CDPs (ICR = TCR). => oldTCR = newTCR.
+3) The attacker searches the largest CDP (ICR < TCR)
+4) The attacker searches the smallest CDP (TCR < ICR < CCR). 
+    And then the attacker calculates the debtAmount to make TCR to ICR of the found CDP.
+5) The attacker liquidates the largest CDP (ICR < TCR) partially or fully until TCR reaches the desired ICR value.
+6) If the liquidation of one CDP does not produce the desired TCR value, continue with the step 5.
+7) Steps 1 through 6 are repeated until there is no CDP with an ICR greater than the TCR and less than the MCR.
+8) Proceed to step 1 ~ step 6 until TCR reaches CCR - 1.
+   Repeated steps 1, 2, 3, and 4 are due to the fact that partial liquidation of the CDP results in changes in ICR, so that the CDP may be larger than TCR and smaller than CCR.
+9) Completely liquidate the CDP, which has the largest collateral amount among CDPs with ICRs smaller than TCRs.
+
 
 As a result of this attack, all CDPs between the initial TCR and CCR are liquidated, and some CDPs with ICRs smaller than TCR are also completely and partially liquidated.
 
@@ -64,9 +77,10 @@ You can create PoC_CdpManagerLiquidationRecoveryTest.t.sol file in foundry_test 
 
 And run this in terminal.
 
+
 `forge test -vvv --match-contract PoC_CdpManagerLiquidationRecoveryTest`.
 
-```
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.17;
 
@@ -314,9 +328,9 @@ contract PoC_CdpManagerLiquidationRecoveryTest is eBTCBaseInvariants {
 }
 ```
 
-The result:
+The result: 
 
-```
+```text
 [PASS] test_PoC1LiquidationWithMinimalAmountInRecoveryMode() (gas: 436732)
 Logs:
   block.timestamp 1
@@ -412,45 +426,53 @@ Logs:
   Final user revenue(stETH in wei):  4148222783222976688
 
 Test result: ok. 2 passed; 0 failed; 0 skipped; finished in 25.64ms
-```
 
+```
 As can be seen from the code execution results, with the liquidation of the first CDP, we can return the system to normal mode and keep the system's holdings as much as possible.
 
 However, the attacker liquidated all four CDPs in a maximization manner and made a quadruple profit, resulting in System losing 80% of its original assets.
 
 Of course, the attacker will have to pay a small fee in the process of obtaining and repay again for debtToken because he uses a pool of several protocols such as balancer FlashLoan and uniswap dex to borrow debtToken, but if he calculates it well, a considerable amount of collateral can be liquidated and he would get much revenue.
 
-Attached is a graph for intuitive understanding. The collateral itself according to the actual ICR is close to a normal distribution, but not a complete normal distribution.
+Attached is a graph for intuitive understanding.
+The collateral itself according to the actual ICR is close to a normal distribution, but not a complete normal distribution.
 
-# Impact Details
-As you can see, the attacker can maximize his or her profits by liquidating a significant number of CDPs through a maximization method rather than a minimization method. As a result, the protocol's holdings will be seriously affected, and more than half of the total holdings may be liquidated in the worst-case scenario, despite the fact that it can go to normal mode while minimizing the reduction of the protocol's holdings. This vicious cycle can deplete the protocol's assets, leading to the protocol's bankruptcy.
+## Impact Details
+As you can see, the attacker can maximize his or her profits by liquidating a significant number of CDPs through a maximization method rather than a minimization method.
+As a result, the protocol's holdings will be seriously affected, and more than half of the total holdings may be liquidated in the worst-case scenario, despite the fact that it can go to normal mode while minimizing the reduction of the protocol's holdings.
+This vicious cycle can deplete the protocol's assets, leading to the protocol's bankruptcy.
 
-# References
+## References
 To solve this vulnerability, we can simply check the TCR whenever the function proceeds with a CDP.
 
 We can modify CdpManager.sol:393-395 lines like
 
-```
+```solidity
 while (
     currentBorrower != address(0) && totals.remainingDebtToRedeem > 0 && getCachedTCR(totals.price) >= MCR
 ) {
 ```
 
-# Proof of concept
+        
+## Proof of concept
+## Proof of Concept
 
-# Scenario for Liquidation Maximization Attack
+### Scenario for Liquidation Maximization Attack
 
-Now the system is in recoveryMode and grace period is finished.
+Now the system is in recoveryMode and grace period is finished. 
 
-1. The attacker searches CDPs (ICR = TCR).
-2. The attacker liquidates the CDPs (ICR = TCR). => oldTCR = newTCR.
-3. The attacker searches the largest CDP (ICR < TCR)
-4. The attacker searches the smallest CDP (TCR < ICR < CCR). And then the attacker calculates the debtAmount to make TCR to ICR of the found CDP.
-5. The attacker liquidates the largest CDP (ICR < TCR) partially or fully until TCR reaches the desired ICR value.
-6. If the liquidation of one CDP does not produce the desired TCR value, continue with the step 5.
-7. Steps 1 through 6 are repeated until there is no CDP with an ICR greater than the TCR and less than the MCR.
-8. Proceed to step 1 ~ step 6 until TCR reaches CCR - 1. Repeated steps 1, 2, 3, and 4 are due to the fact that partial liquidation of the CDP results in changes in ICR, so that the CDP may be larger than TCR and smaller than CCR.
-9. Completely liquidate the CDP, which has the largest collateral amount among CDPs with ICRs smaller than TCRs.
+1) The attacker searches CDPs (ICR = TCR).
+2) The attacker liquidates the CDPs (ICR = TCR). => oldTCR = newTCR.
+3) The attacker searches the largest CDP (ICR < TCR)
+4) The attacker searches the smallest CDP (TCR < ICR < CCR). 
+    And then the attacker calculates the debtAmount to make TCR to ICR of the found CDP.
+5) The attacker liquidates the largest CDP (ICR < TCR) partially or fully until TCR reaches the desired ICR value.
+6) If the liquidation of one CDP does not produce the desired TCR value, continue with the step 5.
+7) Steps 1 through 6 are repeated until there is no CDP with an ICR greater than the TCR and less than the MCR.
+8) Proceed to step 1 ~ step 6 until TCR reaches CCR - 1.
+   Repeated steps 1, 2, 3, and 4 are due to the fact that partial liquidation of the CDP results in changes in ICR, so that the CDP may be larger than TCR and smaller than CCR.
+9) Completely liquidate the CDP, which has the largest collateral amount among CDPs with ICRs smaller than TCRs.
+
 
 As a result of this attack, all CDPs between the initial TCR and CCR are liquidated, and some CDPs with ICRs smaller than TCR are also completely and partially liquidated.
 
@@ -460,9 +482,10 @@ You can create PoC_CdpManagerLiquidationRecoveryTest.t.sol file in foundry_test 
 
 And run this in terminal.
 
+
 `forge test -vvv --match-contract PoC_CdpManagerLiquidationRecoveryTest`.
 
-```
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.17;
 
@@ -710,9 +733,9 @@ contract PoC_CdpManagerLiquidationRecoveryTest is eBTCBaseInvariants {
 }
 ```
 
-The result:
+The result: 
 
-```
+```text
 [PASS] test_PoC1LiquidationWithMinimalAmountInRecoveryMode() (gas: 436732)
 Logs:
   block.timestamp 1
@@ -808,12 +831,13 @@ Logs:
   Final user revenue(stETH in wei):  4148222783222976688
 
 Test result: ok. 2 passed; 0 failed; 0 skipped; finished in 25.64ms
-```
 
+```
 As can be seen from the code execution results, with the liquidation of the first CDP, we can return the system to normal mode and keep the system's holdings as much as possible.
 
 However, the attacker liquidated all four CDPs in a maximization manner and made a quadruple profit, resulting in System losing 80% of its original assets.
 
 Of course, the attacker will have to pay a small fee in the process of obtaining and repay again for debtToken because he uses a pool of several protocols such as balancer FlashLoan and uniswap dex to borrow debtToken, but if he calculates it well, a considerable amount of collateral can be liquidated and he would get much revenue.
 
-Attached is a graph for intuitive understanding. The collateral itself according to the actual ICR is close to a normal distribution, but not a complete normal distribution.
+Attached is a graph for intuitive understanding.
+The collateral itself according to the actual ICR is close to a normal distribution, but not a complete normal distribution.

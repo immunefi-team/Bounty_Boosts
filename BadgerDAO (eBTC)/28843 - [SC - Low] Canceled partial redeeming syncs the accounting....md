@@ -1,23 +1,24 @@
+
 # Canceled partial redeeming syncs the accounting of a particular cdp without further updating its stake.
 
-Submitted 27 days ago by @Stormy (Whitehat) for Boost | eBTC
+Submitted on Wed Feb 28 2024 10:02:19 GMT-0400 (Atlantic Standard Time) by @Stormy for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28843
 
 Report type: Smart Contract
 
-Has PoC?: Yes
+Report severity: Low
 
 Target: https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/CdpManager.sol
 
-# Impacts
+Impacts:
 - Contract fails to deliver promised returns, but doesn't lose value
 
-# Details
-
+## Description
+## Brief/Intro
 l would say this bug breaks an important invariant as the stake of every cdp is supposed to be updated on every cdp operation, duo to the fact that the stake ratio always changes with every split fee. This issue will allow the user to pay less or simply wrong collateral fee onwards as the split fee owned by the cdp is calculated based on its stake.
 
-# Vulnerability Details
+## Vulnerability Details
 The total stake variable is used for the determination of the correct amount of collateral fee that needs to be payed per unit staked and every cdp has an amount of stake which correspondents to the amount of collateral the position has. As the system takes its split fee from the total collateral shares, this stake ratio changes as a result when doing any cdp operation the system correctly syncs and adjusts the collateral shares of the cdp and updates its stake based on the new stake ratio.
 
 By going over the protocol logic, we can notice that on every cdp operation the system updates the cdp's stake:
@@ -33,7 +34,7 @@ The problem we are facing occurs when partial redeeming, before every redemption
 
 In a case when partial redeeming is canceled the system doesn't revert but returns, in this case the particular cdp will keep its synced stats but the system misses to update its stake to correspondent the synced collateral shares and the latest stake ratio. This can be problematic considering that the split fee the cdp owns will be calculated based on the wrong stake when the next positive rebase happens.
 
-```
+```solidity
         } else {
             // Debt remains, reinsert Cdp
             uint256 newNICR = EbtcMath._computeNominalCR(newColl, newDebt);
@@ -73,14 +74,16 @@ In a case when partial redeeming is canceled the system doesn't revert but retur
         }
 ```
 
-# Impact Details
+
+## Impact Details
 The stake functionality is crucial for the protocol as both the split fee and bad debt is calculated based on it. So it is mandatory to keep this value of stake as accurate as possible. Not updating a cdp stake after syncing the accounting may lead to the cdp paying a wrong amount of split fee or bad debt next time. As mentioned in my brief/info section this is more like an invariant that needs to hold as on every cdp operation the system updates the cdp's stake.
 
-# References
+## References
 https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/CdpManager.sol#L190-L197
 
-# Proof of concept
-```
+        
+## Proof of concept
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.17;
 

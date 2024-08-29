@@ -1,32 +1,30 @@
-# EBTCToken.sol mint function lack of checks allows minting EBTC Tokens to itself ie to EBTCToken contract making it incompatible with transfer and transferFrom restrictions allowing EBTCToken EBTC balance to be positive and have funds frozen
 
-Submitted 26 days ago by @cryptonoob2k (Whitehat) for Boost | eBTC
+# EBTCToken.sol mint function lack of checks allows minting EBTC Tokens to itself ie to EBTCToken contract making it incompatible with transfer and transferFrom restrictions allowing  EBTCToken EBTC balance to be positive and have funds frozen
+
+Submitted on Thu Feb 29 2024 19:09:47 GMT-0400 (Atlantic Standard Time) by @cryptonoob2k for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28890
 
 Report type: Smart Contract
 
-Has PoC?: Yes
+Report severity: Insight
 
 Target: https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/EBTCToken.sol
 
-# Impacts
-
+Impacts:
 - Permanent freezing of funds
 
-# Details
+## Description
+## Bug Description
+EBTCToken.sol mint function logic is incompatible with restrictions implemented in EBTCToken.sol::transfer and EBTCToken.sol::transferFrom methods that prevents EBTCToken holding EBTC tokens breaking EBTCToken balance restriction and leading to EBTC tokens funds stuck in contract  unable to recover  
 
-EBTCToken.sol mint function logic is incompatible with restrictions implemented in EBTCToken.sol::transfer and EBTCToken.sol::transferFrom methods that prevents EBTCToken holding EBTC tokens breaking EBTCToken balance restriction and leading to EBTC tokens funds stuck in contract unable to recover
-
-# Brief/Intro
-
-EBTCToken.sol::transfer and EBTCToken.sol::transferFrom methods implements restrictions to block users to send EBTC tokens to EBTCToken contract, thus ensuring EBTCToken contract EBTC balance always remains 0.
+## Brief/Intro
+EBTCToken.sol::transfer and EBTCToken.sol::transferFrom methods implements restrictions to block users to send EBTC tokens to EBTCToken contract, thus ensuring EBTCToken contract EBTC balance always remains 0.  
 However this restriction can be bypassed using mint function.
 
-# Vulnerability Details
+## Vulnerability Details
 The restriction inside transfer and transferFrom are implemented using the internal function `_requireValidRecipient`:
-
-```
+```js
 function _requireValidRecipient(address _recipient) internal view {
     require(
         _recipient != address(0) && _recipient != address(this),	// <@ block
@@ -36,9 +34,8 @@ function _requireValidRecipient(address _recipient) internal view {
 }
 ```
 
-This function ensures that EBTCToken's EBTC balance remains 0 because it blocks transfer to EBTCToken address:
-
-```
+This function ensures that EBTCToken's EBTC balance remains 0 because it blocks transfer to EBTCToken address:  
+```js
 contract EBTCToken is IEBTCToken, AuthNoOwner, PermitNonce {
 	//...
     function transfer(address recipient, uint256 amount) external override returns (bool) {
@@ -57,10 +54,8 @@ contract EBTCToken is IEBTCToken, AuthNoOwner, PermitNonce {
         //...
     }
 ```
-
-However this restriction doesnt hold if a user mints tokens directly to this contract, because in mint function there isnt this check in place:
-
-```
+However this restriction doesnt hold if a user mints tokens directly to this contract, because in mint function there isnt this check in place:    
+```js
     function mint(address _account, uint256 _amount) external override {
         _requireCallerIsBOorCdpMOrAuth();	// <@ no restriction 
         _mint(_account, _amount);
@@ -74,15 +69,14 @@ However this restriction doesnt hold if a user mints tokens directly to this con
         emit Transfer(address(0), account, amount);
     }
 ```
+## Impact Details
+By using mint function to directly issue EBTC tokens to EBTCToken contract the restrictions implemented in transfer and transferFrom functions to keep EBTCToken balance to 0 are bypassed allowing EBTCToken contract to hold tokens and have EBTC tokens stuck in contract      
 
-# Impact Details
-By using mint function to directly issue EBTC tokens to EBTCToken contract the restrictions implemented in transfer and transferFrom functions to keep EBTCToken balance to 0 are bypassed allowing EBTCToken contract to hold tokens and have EBTC tokens stuck in contract
+## Risk Breakdown
+The vulnerability is easy to exploit, however to exploit it mint capability is needed leading to stuck tokens in EBTCToken contract and balance restriction bypass  
 
-# Risk Breakdown
-The vulnerability is easy to exploit, however to exploit it mint capability is needed leading to stuck tokens in EBTCToken contract and balance restriction bypass
-
-# Recommendation
-Implement a restriction in mint function like the ones implemented in transfer and transferFrom function such as
+## Recommendation
+Implement a restriction in mint function like the ones implemented in transfer and transferFrom function such as  
 ```
     function mint(address _account, uint256 _amount) external override {
         _requireCallerIsBOorCdpMOrAuth();
@@ -91,16 +85,16 @@ Implement a restriction in mint function like the ones implemented in transfer a
     }
 ```
 
-# Proof of concept
 
-Here is a foundry test file, save it in packages/contracts/foundry_test subdir and run it with:
-
-```
+        
+## Proof of concept
+## Proof of Concept
+Here is a foundry test file, save it in packages/contracts/foundry_test subdir and run it with:  
+```bash
 forge test -vvv --match-contract EBTCTokenMintToItself
 ```
-
-Code:
-```
+Code:  
+```js
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.17;
 import "forge-std/Test.sol";

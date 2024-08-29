@@ -1,29 +1,28 @@
+
 # Execution of SortedCpd's while command may cause excessive gas consumption.
 
-Submitted 27 days ago by @cryptoticky (Whitehat) for Boost | eBTC
+Submitted on Wed Feb 28 2024 19:10:58 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28858
 
 Report type: Smart Contract
 
-Has PoC? Yes
+Report severity: Insight
 
 Target: https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/SortedCdps.sol
 
-# Impacts
+Impacts:
 - Unbounded gas consumption
 
-# Details
-
+## Description
+## Brief/Intro
 Execution of SortedCpd's while command may cause excessive gas consumption.
 
-# Vulnerability Details
-
+## Vulnerability Details
 The codes below can result in significant gas costs.
 
 CdpManager.sol:373-376 lines
-
-```
+```solidity
 while (currentBorrower != address(0) && getSyncedICR(_cId, totals.price) < MCR) {
     _cId = sortedCdps.getPrev(_cId);
     currentBorrower = sortedCdps.getOwnerAddress(_cId);
@@ -31,8 +30,7 @@ while (currentBorrower != address(0) && getSyncedICR(_cId, totals.price) < MCR) 
 ```
 
 HintHelpers.sol:68-74 lines
-
-```
+```solidity
 while (
     vars.currentCdpUser != address(0) &&
     cdpManager.getSyncedICR(vars.currentCdpId, _price) < MCR
@@ -41,8 +39,9 @@ while (
     vars.currentCdpUser = sortedCdps.getOwnerAddress(vars.currentCdpId);
 }
 ```
-
-If there are a significant number of CDPs with ICRs smaller than MCRs, the user must pay a significant gas cost and out of gas exception can occur, resulting in gas loss. In the worst-case scenario, the gas cost may exceed the block gas limit and the protocol will not be able to operate normally. However, the latter is theoretically possible, but will not happen in reality.
+If there are a significant number of CDPs with ICRs smaller than MCRs, the user must pay a significant gas cost and out of gas exception can occur, resulting in gas loss.
+In the worst-case scenario, the gas cost may exceed the block gas limit and the protocol will not be able to operate normally.
+However, the latter is theoretically possible, but will not happen in reality.
 
 In this report, the former is explained and solutions are presented.
 
@@ -54,7 +53,7 @@ And run this in terminal.
 
 `forge test -vvvv --match-contract PoC_CDPManagerRedemptionsGasLimitTest`.
 
-```
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.17;
 
@@ -212,13 +211,17 @@ contract PoC_CDPManagerRedemptionsGasLimitTest is eBTCBaseInvariants {
         );
     }
 }
+
 ```
 
-It can be seen that when there are 100 CDPs with ICR < MCR, the gas cost is about 3.7 times higher than when there is no. If 1000 CDPs were present, it would take about 37 times more gas.
+It can be seen that when there are 100 CDPs with ICR < MCR, the gas cost is about 3.7 times higher than when there is no.
+If 1000 CDPs were present, it would take about 37 times more gas.
 
-# Impact Details
-1. The user has to pay a considerable fee for gas.
-2. It is easy to cause gas loss due to out of gas exception.
+## Impact Details
+
+#### 1. The user has to pay a considerable fee for gas.
+#### 2. It is easy to cause gas loss due to out of gas exception.
+
 As you can see, the gas amount is 1066824 with 100 CDPs (ICR < MCR).
 
 This transaction is created at Feb-28-2024 06:25:23 PM +UTC.
@@ -229,22 +232,24 @@ The gas price is 139.797022618 Gwei.
 
 1066824 * 139.797022618 Gwei = 149,138,818,857,425,232
 
-ether price is $3,350 so gas cost = $3,350 * 0.149 = $499.15
+ether price is $3,350
+so gas cost = $3,350 * 0.149 = $499.15
 
 This increases arithmetic with more CDP (ICR < MCR).
 
-If there are 1000 CDPs, the gas cost is about $5,000. :)
+If there are 1000 CDPs, the gas cost is about $5,000.  :)
 
-# Recommend
-# Solution 1: Binary search engine
+## Recommend
 
-I recommend you use binary search engine to search the FirstCDP (ICR >= MCR) in the code.
+### Solution 1: `Binary search engine`
+
+I recommend you use `binary search` engine to search the FirstCDP (ICR >= MCR) in the code.
 
 Fortunately, Openzeppelin provides useful library for our problem.
 
 https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.6.0/contracts/utils/Arrays.sol
 
-```
+```solidity
 library Arrays {
     /**
      * @dev Searches a sorted `array` and returns the first index that contains
@@ -289,16 +294,19 @@ The number of calculations is log2(n).
 
 n is number of items in array.
 
-# Solution 2
+#### Solution 2
+
 Every time a liquidation is made, we can store last CDP (ICR < MCR) position.
 
 When price is changed, the IRC and last CDP would be changed.
 
 But based on the stored last CDP, the search can be carried out back and forth.
 
-This does not require many modifications to SortedCDPs contact than Solution 1, and will also drastically reduce the number of computations. It may be more effective to update this variable whenever there is a change in CDP due to various operations.
-
-# Proof of concept
+This does not require many modifications to SortedCDPs contact than Solution 1, and will also drastically reduce the number of computations.
+It may be more effective to update this variable whenever there is a change in CDP due to various operations.
+        
+## Proof of concept
+## Proof of Concept
 
 Let's look at the cases (no CDP and 100 CDPs) : ICR < MCR
 
@@ -308,7 +316,7 @@ And run this in terminal.
 
 `forge test -vvvv --match-contract PoC_CDPManagerRedemptionsGasLimitTest`.
 
-```
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.17;
 
@@ -466,13 +474,16 @@ contract PoC_CDPManagerRedemptionsGasLimitTest is eBTCBaseInvariants {
         );
     }
 }
+
 ```
 
-It can be seen that when there are 100 CDPs with ICR < MCR, the gas cost is about 3.7 times higher than when there is no. If 1000 CDPs were present, it would take about 37 times more gas.
+It can be seen that when there are 100 CDPs with ICR < MCR, the gas cost is about 3.7 times higher than when there is no.
+If 1000 CDPs were present, it would take about 37 times more gas.
 
-# Impact Details
-1. The user has to pay a considerable fee for gas.
-2. It is easy to cause gas loss due to out of gas exception.
+## Impact Details
+
+#### 1. The user has to pay a considerable fee for gas.
+#### 2. It is easy to cause gas loss due to out of gas exception.
 
 As you can see, the gas amount is 1066824 with 100 CDPs (ICR < MCR).
 
@@ -484,7 +495,8 @@ The gas price is 139.797022618 Gwei.
 
 1066824 * 139.797022618 Gwei = 149,138,818,857,425,232
 
-ether price is $3,350 so gas cost = $3,350 * 0.149 = $499.15
+ether price is $3,350
+so gas cost = $3,350 * 0.149 = $499.15
 
 This increases arithmetic with more CDP (ICR < MCR).
 

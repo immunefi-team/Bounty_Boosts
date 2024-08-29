@@ -1,53 +1,57 @@
+
 # Incorrect implementation of EIP-712 domain separator construction
 
-Submitted 22 days ago by @cheatcode (Whitehat) for Boost | eBTC
+Submitted on Mon Mar 04 2024 07:58:49 GMT-0400 (Atlantic Standard Time) by @cheatcode for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #29002
 
 Report type: Smart Contract
 
-Has PoC? Yes
+Report severity: Insight
 
 Target: https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/BorrowerOperations.sol
 
-# Impacts
+Impacts:
 - Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
 
-# Details
+## Description
+## Brief/Intro
+See below
 
-EIP-712 provides a standard for signing typed structured data in Ethereum smart contracts, using the concept of domain separation to prevent collisions and replay attacks.
+## Vulnerability Details
+EIP-712 provides a standard for signing typed structured data in Ethereum smart contracts, using the concept of domain separation to prevent collisions and replay attacks. 
 
 A key component of validation is the domain separator, which uniquely identifies the specific contract and chain for message signing purposes. The domain separator is constructed from:
 
-- **DOMAIN_TYPEHASH**: The keccak256 hash of the EIP-712 domain schema definition itself (the actual string types used like name, version etc.)
+- **DOMAIN_TYPEHASH**: The keccak256 hash of the EIP-712 domain schema definition itself (the actual string types used like name, version etc.) 
 
 - **Contract Specific Values**: Domain values like name, version, chain ID and contract address.
 
 In the current contract, the `_TYPE_HASH` variable used in the domain separator construction does not match the expected `DOMAIN_TYPEHASH`. Upon closer inspection, it is aligned closer to the hash of the full message type itself rather than the domain type schema.
 
-# Impact Details
-
+## Impact Details
 While this does not directly introduce security vulnerabilities per se, it indicates a gap in properly differentiating between DOMAIN_TYPEHASH and actual message TYPEHASH as EIP-712 expects
 
-# References
-
+## References
 Add any relevant links to documentation or code
 
-# Proof of concept
+        
+## Proof of concept
+## Proof of Concept
 
 This could lead to the following issues:
 
 - Domain separators constructed incorrectly as per standards
-- Signatures validated against such separators fail externally
+- Signatures validated against such separators fail externally 
 - Mismatched assumptions between contract and clients
 - Confusing for future audit and maintenance
 
-# Recommendations
+**Recommendations**
 
 1. Introduce a properly defined DOMAIN_TYPEHASH constant
 
 2. Construct domain separator by passing DOMAIN_TYPEHASH and contract-specific values
 
-3. Optionally validate both DOMAIN_TYPEHASH and message TYPEHASH on chain
+3. Optionally validate both DOMAIN_TYPEHASH and message TYPEHASH on chain 
 
 This will greatly improve standards compliance, clarity and future security.

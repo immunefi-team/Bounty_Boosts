@@ -1,36 +1,35 @@
+
 # The system protects from any rounding issues when accounting the surplus in NM, but this protection isn't made in RM as a result liquidated position with ICR < MCR can issue surplus to the cdp owner.
 
-Submitted 28 days ago by @Stormy (Whitehat) for Boost | eBTC
+Submitted on Tue Feb 27 2024 08:19:55 GMT-0400 (Atlantic Standard Time) by @Stormy for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28791
 
 Report type: Smart Contract
 
-Has PoC? Yes
+Report severity: Low
 
 Target: https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/LiquidationLibrary.sol
 
-# Impacts
+Impacts:
 - Contract fails to deliver promised returns, but doesn't lose value
 
-# Details
-
+## Description
+## Brief/Intro
 The system may issue surplus in recovery mode when liquidating cdps with ICR < MCR duo to rounding error.
 
-# Vulnerability Details
-
+## Vulnerability Details
 On short explanation the liquidating system in eBTC works on the following bases.
-
 - The system is in normal mode as a result any cdps with ICR < MCR can be liquidated.
 - The system is in recovery mode duo to that cdps with ICR < CCR can be liquidated.
 
-# Normal mode liquidation
+### Normal mode liquidation
 
 If we look at the function _liquidateIndividualCdpSetupCDPInNormalMode which liquidates a cdp position with collateral ratio below the minimum one, we can see that the system doesn't allow any spare collateral to be send to the cdp owner when accounting the surplus of the liquidation.
 
 - This is made in case any rounding errors occur when calculating the incentive collateral, as based on the system rules when liquidation happens with a cdp's ICR < MCR the whole cdp collateral should be send to the liquidator.
 
-```
+```solidity
             if (_collSurplus > 0) {
                 // due to division precision loss, should be zero surplus in normal mode
                 _cappedColPortion = _cappedColPortion + _collSurplus;
@@ -38,14 +37,14 @@ If we look at the function _liquidateIndividualCdpSetupCDPInNormalMode which liq
             }
 ```
 
-# Recovery mode liquidation
-The system enters recovery mode as a defensive mode to increase the total collateral ratio of the system, as a result liquidators can further liquidate positions with ICR above the MCR and below the CCR one.
+### Recovery mode liquidation
+The system enters recovery mode as a defensive mode to increase the total collateral ratio of the system, as a result liquidators can further liquidate positions with ICR above the MCR and below the CCR one. 
 
 - Lets say we liquidate cdp position with ICR == 120%, the liquidator gets a maximum incentive of 110% and the rest is returned to the cdp owner via surplus.
 
 However in recovery mode we are still free to liquidate cdps below the minimum collateral ratio which can still lead to the rounding error when calculating the surplus. In this case the liquidator will get less incentive collateral while the cdp owner will earn extra surplus which shouldn't be possible when liquidating cdps with ICR < MCR.
 
-```
+```solidity
             if (_collSurplus > 0) {
                 collSurplusPool.increaseSurplusCollShares(_borrower, _collSurplus);
                 _recoveryState.totalSurplusCollShares =
@@ -54,14 +53,17 @@ However in recovery mode we are still free to liquidate cdps below the minimum c
             }
 ```
 
-# Impact Details
+
+
+## Impact Details
 l would say the loss here is not significant but rather broken invariant, the system enforces a rule that there should not be any surplus in normal mode which is true as when liquidating cdps with ICR < MCR the whole incentive collateral is supposed to be send to the liquidator. However this invariant doesn't hold in recovery mode, but theoretically it should be the same as the system is allowed to liquidate cdps below the minimum collateral ratio which shouldn't issue any surplus.
 
-# References
+## References
 https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/LiquidationLibrary.sol#L336
 
-# Proof of concept
-```
+        
+## Proof of concept
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.17;
 

@@ -1,37 +1,40 @@
+
 # Using batchRedemption, even if the TCR becomes smaller in MCR, redemption is possible.
 
-Submitted 27 days ago by @cryptoticky (Whitehat) for Boost | eBTC
+Submitted on Wed Feb 28 2024 15:07:22 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28849
 
 Report type: Smart Contract
 
-Has PoC? Yes
+Report severity: Low
 
 Target: https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/CdpManager.sol
 
-# Impacts
+Impacts:
 - Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
 - Protocol insolvency
 
-# Details
-
+## Description
+## Brief/Intro
 When the TCR is smaller than the MCR, the TCR continues to be smaller if redeemer redeem debt token, and to suppress this, eBTC protocol does not allow redeem debt token when the TCR is smaller than the MCR.
 
-# Vulnerability Details
+## Vulnerability Details
 https://docs.ebtc.finance/ebtc/protocol-mechanics/redemptions
+![img.png](img.png)
 
 As you can see on the redemption description page, Redemptions are disabled whenever the Total Collateral Ratio (TCR) goes below the Minimum Collateral Ratio (MCR) of 110%.
 
 - CdpManager.sol:line 354
-  
-`_requireTCRisNotBelowMCR(totals.price, totals.tcrAtStart);`
-
+```solidity
+_requireTCRisNotBelowMCR(totals.price, totals.tcrAtStart);
+```
 The problem is that an attacker can bypass this require and continue to redeem it even when the TCR is smaller than the MCR.
 
-# Attack Scenario
+### Attack Scenario
 
-Let's look at the case where TCR is very close to MCR and larger than the MCR, but now TCR becomes smaller than the MCR with full redemption to the first ICR that is larger than the MCR. When this redemption is made, TCR becomes smaller than MCR, so the redemption cannot proceed until TCR becomes larger than MCR again.
+Let's look at the case where TCR is very close to MCR and larger than the MCR, but now TCR becomes smaller than the MCR with full redemption to the first ICR that is larger than the MCR.
+When this redemption is made, TCR becomes smaller than MCR, so the redemption cannot proceed until TCR becomes larger than MCR again.
 
 However, if an attacker redeems multiple CDPs, not just CDP(the first ICR), multiple redemptions can proceed despite the fact that the TCR is smaller than the MCR with the repayment of the first CDP.
 
@@ -43,7 +46,7 @@ And run this in terminal.
 
 `forge test -vvv --match-contract PoC_CDPManagerRedemptionsTest`.
 
-```
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.17;
 
@@ -176,11 +179,12 @@ contract PoC_CDPManagerRedemptionsTest is eBTCBaseInvariants {
         );
     }
 }
-```
-
-The result:
 
 ```
+
+The result: 
+
+```text
 Ran 2 tests for foundry_test/PoC_CDPManager.redemptions.t.sol:PoC_CDPManagerRedemptionsTest
 [PASS] test_PoC1SingleRedemption() (gas: 652421)
 Logs:
@@ -221,27 +225,32 @@ Logs:
   !!!CdpManager.redeemCollateral doesn't check (TCR < MCR) since the second CDPs!!!
 
 Test result: ok. 2 passed; 0 failed; 0 skipped; finished in 23.33ms
+
 ```
 
-# Impact Details
-An attacker can exploit this vulnerability to send the TCR quickly down the MCR and launch an attack whenever the TCR rises above the MCR to prevent the protocol from returning to normal. There is no direct benefit to the attacker, but it interferes with the normal operation of the protocol, which continues to be present in recovery mode. This prevents the borrowers from disposing of their CDP, resulting in the destruction of community. If this continues, the protocol will go bankrupt.
+## Impact Details
+An attacker can exploit this vulnerability to send the TCR quickly down the MCR and launch an attack whenever the TCR rises above the MCR to prevent the protocol from returning to normal.
+There is no direct benefit to the attacker, but it interferes with the normal operation of the protocol, which continues to be present in recovery mode.
+This prevents the borrowers from disposing of their CDP, resulting in the destruction of community.
+If this continues, the protocol will go bankrupt.
 
-# References
+## References
 To solve this vulnerability, we can simply check the TCR whenever the function proceeds with a CDP.
 
 We can modify CdpManager.sol:393-395 lines like
 
-```
+```solidity
 while (
     currentBorrower != address(0) && totals.remainingDebtToRedeem > 0 && _maxIterations > 0 && _requireTCRisNotBelowMCR(totals.price, getCachedTCR(totals.price))
 ) {
 ```
+        
+## Proof of concept
+## Proof of Concept
+### Attack Scenario
 
-# Proof of concept
-
-# Attack Scenario
-
-Let's look at the case where TCR is very close to MCR and larger than the MCR, but now TCR becomes smaller than the MCR with full redemption to the first ICR that is larger than the MCR. When this redemption is made, TCR becomes smaller than MCR, so the redemption cannot proceed until TCR becomes larger than MCR again.
+Let's look at the case where TCR is very close to MCR and larger than the MCR, but now TCR becomes smaller than the MCR with full redemption to the first ICR that is larger than the MCR.
+When this redemption is made, TCR becomes smaller than MCR, so the redemption cannot proceed until TCR becomes larger than MCR again.
 
 However, if an attacker redeems multiple CDPs, not just CDP(the first ICR), multiple redemptions can proceed despite the fact that the TCR is smaller than the MCR with the repayment of the first CDP.
 
@@ -253,7 +262,7 @@ And run this in terminal.
 
 `forge test -vvv --match-contract PoC_CDPManagerRedemptionsTest`.
 
-```
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.17;
 
@@ -386,11 +395,12 @@ contract PoC_CDPManagerRedemptionsTest is eBTCBaseInvariants {
         );
     }
 }
-```
-
-The result:
 
 ```
+
+The result: 
+
+```text
 Ran 2 tests for foundry_test/PoC_CDPManager.redemptions.t.sol:PoC_CDPManagerRedemptionsTest
 [PASS] test_PoC1SingleRedemption() (gas: 652421)
 Logs:
@@ -431,4 +441,5 @@ Logs:
   !!!CdpManager.redeemCollateral doesn't check (TCR < MCR) since the second CDPs!!!
 
 Test result: ok. 2 passed; 0 failed; 0 skipped; finished in 23.33ms
+
 ```

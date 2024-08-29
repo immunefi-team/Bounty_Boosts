@@ -1,30 +1,29 @@
+
 # Reentrancy on BorrowerOperations allows users to borrow greater than Max Flash Loan
 
-Submitted about 1 month ago by @shanb1605 (Whitehat) for Boost | eBTC
+Submitted on Sat Feb 24 2024 13:57:39 GMT-0400 (Atlantic Standard Time) by @shanb1605 for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28713
 
 Report type: Smart Contract
 
-Has PoC? Yes
+Report severity: Insight
 
 Target: https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/BorrowerOperations.sol
 
-# Impacts
+Impacts:
 - Contract fails to deliver promised returns, but doesn't lose value
 
-# Details
+## Description
+***Permalink:*** https://github.com/ebtc-protocol/ebtc/blob/a96bd000c23425f04c3223a441a625bfb21f6686/packages/contracts/contracts/BorrowerOperations.sol#L1091
 
-Permalink: https://github.com/ebtc-protocol/ebtc/blob/a96bd000c23425f04c3223a441a625bfb21f6686/packages/contracts/contracts/BorrowerOperations.sol#L1091
-
-# Brief/Intro
+## Brief/Intro
 The `flashLoan()` allows users to borrow ebtc on BorrowerOperations. The amount that can be borrowed is limited to maxFlashLoan(token) means one can borrow within the maximum limit of the amount. This limit can be bypassed with a reentrant call on the `flashLoan()` function.
 
-# Vulnerability Details
-
+## Vulnerability Details
 The BorrowerOperations contract misses reentrancy protection on flashLoan() which leads to borrowing over the max borrowing limit of the token.
 
-```
+```solidity
     function flashLoan(
         IERC3156FlashBorrower receiver,
         address token,
@@ -59,22 +58,23 @@ The BorrowerOperations contract misses reentrancy protection on flashLoan() whic
     }
 ```
 
-# Impact Details
-**Contract fails to deliver promised returns, but doesn't lose value**: The contract promises to lend within the maximum flash loan amount to the users. However, the malicious users can re-enter the `flashloan()` function and borrow above the maximum limit. Hence, the contract fails to deliver the promise.
+## Impact Details
+***Contract fails to deliver promised returns, but doesn't lose value:*** The contract promises to lend within the maximum flash loan amount to the users. However, the malicious users can re-enter the `flashloan()` function and borrow above the maximum limit. Hence, the contract fails to deliver the promise.
 
-# References
+## References
 MakerDao has Reentrancy Protection on the FlashLoan module: https://github.com/makerdao/dss-flash/blob/9d492aa6148c35f568400a1ab85cd6df43b2ccc8/src/flash.sol#L74
 
 https://github.com/makerdao/dss-flash/blob/9d492aa6148c35f568400a1ab85cd6df43b2ccc8/src/flash.sol#L137
 
-# Proof of concept
+        
+## Proof of concept
+## Proof of Concept
+* First `call_Flashloan()` is executed to borrow the max amount of ebtc.
+* Inside `onFlashLoan` `some_actions()` will executed to borrow again the ebtc from the BorrowerOperations contract.
+* It sets `attack_done = true` to prevent an unbounded loop.
+* Further actions will be carried out with the Flash Loan amount.
 
-- First `call_Flashloan()` is executed to borrow the max amount of ebtc.
-- Inside `onFlashLoan some_actions()` will executed to borrow again the ebtc from the BorrowerOperations contract.
-- It sets `attack_done = true` to prevent an unbounded loop.
-- Further actions will be carried out with the Flash Loan amount.
-
-```
+```solidity
 pragma solidity ^0.8.0;
 
 interface BorrowerOperations {

@@ -1,23 +1,24 @@
+
 # User's CDP's can be removed unintentionally by CDP Manager which will freeze user's collateral
 
-Submitted 23 days ago by @savi0ur (Whitehat) for Boost | eBTC
+Submitted on Sun Mar 03 2024 15:16:50 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28973
 
 Report type: Smart Contract
 
-Has PoC? Yes
+Report severity: Insight
 
 Target: https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/SortedCdps.sol
 
-# Impacts
+Impacts:
 - Permanent freezing of funds
 
-# Details
+## Description
+## Bug Description
 
 https://github.com/ebtc-protocol/ebtc/blob/a96bd000c23425f04c3223a441a625bfb21f6686/packages/contracts/contracts/SortedCdps.sol#L420-L455
-
-```
+```solidity
 function batchRemove(bytes32[] memory _ids) external override {
 	_requireCallerIsCdpManager();
 	uint256 _len = _ids.length;
@@ -56,17 +57,18 @@ function batchRemove(bytes32[] memory _ids) external override {
 }
 ```
 
-Function `batchRemove(bytes32[] memory _ids)` is used by CDP Manager to remove CDP IDs in batch. However, its assuming that `_ids` provided to remove are sorted in the same order as in the input array. If required ordering is not followed, it will also remove CDP's of the users which its not supposed to remove i.e., whose ID is not specified in `_ids`.
+ Function `batchRemove(bytes32[] memory _ids)` is used by CDP Manager to remove CDP IDs in batch. However, its assuming that `_ids` provided to remove are sorted in the same order as in the input array. If required ordering is not followed, it will also remove CDP's of the users which its not supposed to remove i.e., whose ID is not specified in `_ids`.
 
 If this happened, it will remove CDP of some users, which then wont be able to claim their reward / collateral as their position is removed.
+## Impact
 
-# Impact
 Since there is no validation on `_ids` to be in sorted order in the same way as in the input array, if its provided in out of order, it will remove some additional CDP's that its not intending to delete. Which will make those additional CDP position non existent from the system and the user belonging to those positions wont be able to claim their rewards / collateral back.
 
-# Recommendation
+## Recommendation
+
 There should be a validation on `_ids` to be in a sorted order in the same way as in the input array. It can be done as below
 
-```
+```diff
 function batchRemove(bytes32[] memory _ids) external override {
     _requireCallerIsCdpManager();
     uint256 _len = _ids.length;
@@ -113,17 +115,19 @@ function batchRemove(bytes32[] memory _ids) external override {
 }
 ```
 
-# References
+## References
+
 https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/SortedCdps.sol
 
-# Proof of concept
+        
+## Proof of concept
+## Proof Of Concept
 
 **Steps to Run using Foundry:**
-
-- Paste following foundry code in /ebtc-boost/packages/contracts/foundry_test/SortedCdps.t.sol
+- Paste following foundry code in `/ebtc-boost/packages/contracts/foundry_test/SortedCdps.t.sol`
 - Run using `forge test --match-contract CDPOpsTest --match-test testBatchRemoveInOrderRemovesMore -vvvv`
 
-```  
+```solidity
 function testBatchRemoveInOrderRemovesMore() public {
     uint8 amntOfCdps = 5;
 

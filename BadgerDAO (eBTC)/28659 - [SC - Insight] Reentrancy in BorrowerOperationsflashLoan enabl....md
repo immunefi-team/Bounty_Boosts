@@ -1,40 +1,42 @@
+
 # Reentrancy in BorrowerOperations.flashLoan(), enabling an attacker to borrow unlimited eBTC exceeding the maxFlashLoan limit
 
-Submitted about 1 month ago by @OxG0P1 (Whitehat) for Boost | eBTC
+Submitted on Fri Feb 23 2024 02:12:41 GMT-0400 (Atlantic Standard Time) by @OxG0P1 for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28659
 
 Report type: Smart Contract
 
-Has PoC? Yes
+Report severity: Insight
 
 Target: https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/BorrowerOperations.sol
 
-# Impacts
+Impacts:
 - Griefing (e.g. no profit motive for an attacker, but damage to the users or the protocol)
 
-# Details
-
+## Description
+## Brief/Intro
 Due to an reentrancy attack vector, an attacker can flashLoan an unlimited amount of eBTC. For example the attacker can create a malicious contract as the receiver, to execute the attack via the onFlashLoan callback .
 
 The exploit works because BorrowerOperations.flashLoan() is missing a reentrancy protection (modifier).
 
 As a result an unlimited amount of eBTC can be borrowed by an attacker via the flashLoan .
 
-# Vulnerability Details
+## Vulnerability Details
 The BorrowerOperations.sol contract facilitates the execution of flash loans for eBTC. A user is permitted to loan a maximum amount of type(uint112).max. However, a vulnerability exists wherein an attacker can exploit the absence of the Reentrancy modifier in the BorrowerOperations.flashLoan() function. This oversight enables an attacker to potentially mint an infinite amount of eBTC tokens. By leveraging a malicious receiver implementation contract, the attacker can execute this exploit, posing a significant risk to the integrity and security of the eBTC ecosystem.
 
-# Impact Details
+## Impact Details
 An attacker can bypass the maxFlashloan amount and mint infinite amount of eBTC tokens.
 
-# References
+## References
 https://github.com/ebtc-protocol/ebtc/blob/a96bd000c23425f04c3223a441a625bfb21f6686/packages/contracts/contracts/BorrowerOperations.sol#L1091-L1122
 
-# Proof of concept
-
+        
+## Proof of concept
+## Proof of Concept
 `Test :`
 
-```
+```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.17;
 
@@ -108,7 +110,7 @@ contract FlashLoanUnitEBTC is eBTCBaseFixture {
 
 `Receiver Implementation :`
 
-```
+```solidity
 interface IborrowerOperations{
     function flashLoan( 
         IERC3156FlashBorrower receiver,
@@ -152,8 +154,7 @@ contract eBTCFlashReceiver is IERC3156FlashBorrower {
 ```
 
 `Test Results :`
-
-```
+```solidity
 [PASS] testReenter() (gas: 275631)
 Logs:
   10384593717069655257060992658440190
