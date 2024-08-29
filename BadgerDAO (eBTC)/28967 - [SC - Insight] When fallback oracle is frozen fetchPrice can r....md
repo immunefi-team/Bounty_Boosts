@@ -1,7 +1,7 @@
 
 # When fallback oracle is frozen, fetchPrice() can return same outdated price even if chainlink oracle is operational
 
-Submitted on Sun Mar 03 2024 10:40:29 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Mar 3rd 2024 at 16:40:29 UTC by @savi0ur for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28967
 
@@ -111,8 +111,8 @@ if (status == Status.usingFallbackChainlinkFrozen) {
 ## References
 
 https://github.com/ebtc-protocol/ebtc/blob/a96bd000c23425f04c3223a441a625bfb21f6686/packages/contracts/contracts/PriceFeed.sol
-        
-## Proof of concept
+
+
 ## Proof Of Concept
 
 **Steps to Run using Foundry:**

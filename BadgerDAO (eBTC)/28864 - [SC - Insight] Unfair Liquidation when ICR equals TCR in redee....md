@@ -1,7 +1,7 @@
 
 # Unfair Liquidation when ICR equals TCR in redeemption which contradicts the official documentation.
 
-Submitted on Thu Feb 29 2024 00:08:41 GMT-0400 (Atlantic Standard Time) by @Saediek for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 29th 2024 at 06:08:41 UTC by @Saediek for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28864
 
@@ -35,8 +35,8 @@ https://github.com/ebtc-protocol/ebtc/blob/a96bd000c23425f04c3223a441a625bfb21f6
 https://github.com/ebtc-protocol/ebtc/blob/a96bd000c23425f04c3223a441a625bfb21f6686/packages/contracts/contracts/Dependencies/EbtcBase.sol#L126
 https://github.com/ebtc-protocol/ebtc/blob/a96bd000c23425f04c3223a441a625bfb21f6686/packages/contracts/contracts/Dependencies/EbtcBase.sol#L142
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 --Check Code for how to run
 /**

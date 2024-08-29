@@ -1,7 +1,7 @@
 
 # Lido slashing can negatively affect the whole liquidation logic.
 
-Submitted on Tue Feb 27 2024 19:49:05 GMT-0400 (Atlantic Standard Time) by @Stormy for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 28th 2024 at 01:49:05 UTC by @Stormy for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28823
 
@@ -97,7 +97,7 @@ It will be hard for the system to survive more severe slashing, as once the syst
 ## References
 https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/BorrowerOperations.sol#L470
 https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/LiquidationLibrary.sol#L592-#L601
-        
+
 ## Proof of concept
 ```solidity
 // SPDX-License-Identifier: UNLICENSED

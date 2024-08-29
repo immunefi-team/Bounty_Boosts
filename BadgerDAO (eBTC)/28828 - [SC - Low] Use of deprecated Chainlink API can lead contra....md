@@ -1,7 +1,7 @@
 
 # Use of deprecated Chainlink API can lead contract to never return the correct price
 
-Submitted on Tue Feb 27 2024 22:14:22 GMT-0400 (Atlantic Standard Time) by @holydevoti0n for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 28th 2024 at 04:14:22 UTC by @holydevoti0n for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28828
 
@@ -56,8 +56,8 @@ https://etherscan.io/address/0x986b5E1e1755e3C2440e960477f25201B0a8bbD4#code#L22
 https://github.com/ebtc-protocol/ebtc/blob/a96bd000c23425f04c3223a441a625bfb21f6686/packages/contracts/contracts/PriceFeed.sol#L759
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Add the PoC below on `ChainlinkAdapter.t.sol` and run:
 `forge test --match-test testLatestRoundWhenDeprecatedWillRevertDueToUnderflow`

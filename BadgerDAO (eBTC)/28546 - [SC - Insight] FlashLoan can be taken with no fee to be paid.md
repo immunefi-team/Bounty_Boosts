@@ -1,7 +1,7 @@
 
 # FlashLoan can be taken with no fee to be paid
 
-Submitted on Tue Feb 20 2024 10:02:57 GMT-0400 (Atlantic Standard Time) by @OceanAndThunders for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 20th 2024 at 16:02:57 UTC by @OceanAndThunders for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28546
 
@@ -91,8 +91,8 @@ Combination of both can lead to the protocol being providing a flash loan of any
 
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ActivePool is deployed on mainnet at "0x1e3Bf0965dca89Cd057d63c0cD65A37Acf920590"
 

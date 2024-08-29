@@ -1,7 +1,7 @@
 
 # User's CDP's can be removed unintentionally by CDP Manager which will freeze user's collateral
 
-Submitted on Sun Mar 03 2024 15:16:50 GMT-0400 (Atlantic Standard Time) by @savi0ur for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Mar 3rd 2024 at 21:16:50 UTC by @savi0ur for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28973
 
@@ -119,8 +119,8 @@ function batchRemove(bytes32[] memory _ids) external override {
 
 https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/SortedCdps.sol
 
-        
-## Proof of concept
+
+
 ## Proof Of Concept
 
 **Steps to Run using Foundry:**

@@ -1,7 +1,7 @@
 
-# Incorrect implementation of EIP-712 domain separator construction
+# Incorrect implementation of EIP-712 domain separator construction 
 
-Submitted on Mon Mar 04 2024 07:58:49 GMT-0400 (Atlantic Standard Time) by @cheatcode for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Mar 4th 2024 at 13:58:49 UTC by @cheatcode for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #29002
 
@@ -35,8 +35,8 @@ While this does not directly introduce security vulnerabilities per se, it indic
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 This could lead to the following issues:

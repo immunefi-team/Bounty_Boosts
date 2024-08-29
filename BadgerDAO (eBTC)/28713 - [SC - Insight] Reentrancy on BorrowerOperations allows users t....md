@@ -1,7 +1,7 @@
 
 # Reentrancy on BorrowerOperations allows users to borrow greater than Max Flash Loan
 
-Submitted on Sat Feb 24 2024 13:57:39 GMT-0400 (Atlantic Standard Time) by @shanb1605 for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 24th 2024 at 19:57:39 UTC by @shanb1605 for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28713
 
@@ -66,8 +66,8 @@ MakerDao has Reentrancy Protection on the FlashLoan module: https://github.com/m
 
 https://github.com/makerdao/dss-flash/blob/9d492aa6148c35f568400a1ab85cd6df43b2ccc8/src/flash.sol#L137
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 * First `call_Flashloan()` is executed to borrow the max amount of ebtc.
 * Inside `onFlashLoan` `some_actions()` will executed to borrow again the ebtc from the BorrowerOperations contract.

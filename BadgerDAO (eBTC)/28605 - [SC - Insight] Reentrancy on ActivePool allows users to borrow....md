@@ -1,7 +1,7 @@
 
 # Reentrancy on ActivePool allows users to borrow greater than Max Flash Loan
 
-Submitted on Thu Feb 22 2024 06:24:10 GMT-0400 (Atlantic Standard Time) by @shanb1605 for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 22nd 2024 at 12:24:10 UTC by @shanb1605 for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28605
 
@@ -75,8 +75,8 @@ https://github.com/makerdao/dss-flash/blob/9d492aa6148c35f568400a1ab85cd6df43b2c
 
 https://github.com/makerdao/dss-flash/blob/9d492aa6148c35f568400a1ab85cd6df43b2ccc8/src/flash.sol#L137
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ```solidity
 pragma solidity ^0.8.0;

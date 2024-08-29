@@ -1,7 +1,7 @@
 
 # Potential for Denial-of-Service in the `redeemCollateral` function
 
-Submitted on Mon Mar 04 2024 07:39:32 GMT-0400 (Atlantic Standard Time) by @cheatcode for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Mar 4th 2024 at 13:39:32 UTC by @cheatcode for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #29000
 
@@ -27,8 +27,8 @@ An attacker, by specifying high values for both _debt and _maxIterations, could 
 ## References
 Add any relevant links to documentation or code
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 The loop continues until either the `currentBorrower` is the zero address, the `totals.remainingDebtToRedeem` is zero, or the `_maxIterations` counter reaches zero. The `_maxIterations` counter is decremented inside the loop body.
 

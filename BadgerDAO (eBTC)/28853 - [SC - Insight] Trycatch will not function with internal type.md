@@ -1,7 +1,7 @@
 
 # Try/catch will not function with internal type.
 
-Submitted on Wed Feb 28 2024 16:08:47 GMT-0400 (Atlantic Standard Time) by @thomastech for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 28th 2024 at 22:08:47 UTC by @thomastech for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28853
 
@@ -35,7 +35,7 @@ These functions will not update multiple ChainLink variables.
 Add any relevant links to documentation or code:
 
 https://github.com/ebtc-protocol/ebtc/blob/main/packages/contracts/contracts/PriceFeed.sol
-        
+
 ## Proof of concept
 Given my limited skills with Solidity/Foundry I have been unable to successfully test these functions in the time allowed but have deployed the code below on Remix and changed the function from public, external, and internal to confirm try/catch fails when internal is used.  
 

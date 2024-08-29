@@ -1,7 +1,7 @@
 
 # Canceled partial redeeming syncs the accounting of a particular cdp without further updating its stake.
 
-Submitted on Wed Feb 28 2024 10:02:19 GMT-0400 (Atlantic Standard Time) by @Stormy for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 28th 2024 at 16:02:19 UTC by @Stormy for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28843
 
@@ -81,7 +81,7 @@ The stake functionality is crucial for the protocol as both the split fee and ba
 ## References
 https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/CdpManager.sol#L190-L197
 
-        
+
 ## Proof of concept
 ```solidity
 // SPDX-License-Identifier: UNLICENSED

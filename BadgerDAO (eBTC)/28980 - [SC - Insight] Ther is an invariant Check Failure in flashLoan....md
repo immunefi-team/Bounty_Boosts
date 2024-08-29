@@ -1,7 +1,7 @@
 
 # Ther is an invariant Check Failure in flashLoan Function
 
-Submitted on Sun Mar 03 2024 19:28:46 GMT-0400 (Atlantic Standard Time) by @XDZIBECX for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Mar 4th 2024 at 01:28:46 UTC by @XDZIBECX for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28980
 
@@ -39,8 +39,8 @@ and in In severe cases, if the exploited discrepancies significantly impact the 
 ## References
 
  - https://github.com/ebtc-protocol/ebtc/blob/a96bd000c23425f04c3223a441a625bfb21f6686/packages/contracts/contracts/ActivePool.sol#L288C1-L338C6
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 i fuzz with a scenario that show under certain conditions,  when the collateral rate is manipulated within the transaction of a flash loan, the invariant check can fail. In the test, 481 out of 1000 runs failed the invariant check, indicating that the assumption of a constant collateral rate does not always hold. This serves as evidence that an attacker could exploit this assumption to their advantage.

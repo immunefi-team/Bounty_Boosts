@@ -1,7 +1,7 @@
 
 # The system protects from any rounding issues when accounting the surplus in NM, but this protection isn't made in RM as a result liquidated position with ICR < MCR can issue surplus to the cdp owner.
 
-Submitted on Tue Feb 27 2024 08:19:55 GMT-0400 (Atlantic Standard Time) by @Stormy for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 27th 2024 at 14:19:55 UTC by @Stormy for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28791
 
@@ -61,7 +61,7 @@ l would say the loss here is not significant but rather broken invariant, the sy
 ## References
 https://github.com/ebtc-protocol/ebtc/blob/release-0.7/packages/contracts/contracts/LiquidationLibrary.sol#L336
 
-        
+
 ## Proof of concept
 ```solidity
 // SPDX-License-Identifier: UNLICENSED

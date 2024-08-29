@@ -1,7 +1,7 @@
 
 # Using batchRedemption, even if the TCR becomes smaller in MCR, redemption is possible.
 
-Submitted on Wed Feb 28 2024 15:07:22 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 28th 2024 at 21:07:22 UTC by @cryptoticky for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28849
 
@@ -244,8 +244,8 @@ while (
     currentBorrower != address(0) && totals.remainingDebtToRedeem > 0 && _maxIterations > 0 && _requireTCRisNotBelowMCR(totals.price, getCachedTCR(totals.price))
 ) {
 ```
-        
-## Proof of concept
+
+
 ## Proof of Concept
 ### Attack Scenario
 

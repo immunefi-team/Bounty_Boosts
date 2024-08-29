@@ -1,7 +1,7 @@
 
 # Reentrancy in BorrowerOperations.flashLoan(), enabling an attacker to borrow unlimited eBTC exceeding the maxFlashLoan limit
 
-Submitted on Fri Feb 23 2024 02:12:41 GMT-0400 (Atlantic Standard Time) by @OxG0P1 for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 23rd 2024 at 08:12:41 UTC by @OxG0P1 for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28659
 
@@ -31,8 +31,8 @@ An attacker can bypass the maxFlashloan amount and mint infinite amount of eBTC 
 ## References
 https://github.com/ebtc-protocol/ebtc/blob/a96bd000c23425f04c3223a441a625bfb21f6686/packages/contracts/contracts/BorrowerOperations.sol#L1091-L1122
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 `Test :`
 

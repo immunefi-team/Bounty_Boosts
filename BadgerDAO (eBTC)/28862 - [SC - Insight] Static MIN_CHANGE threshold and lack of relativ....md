@@ -1,7 +1,7 @@
 
 # Static MIN_CHANGE threshold and lack of relative checks in BorrowerOperations.sol allow insignificant dust debt amounts to persist in CDPs
 
-Submitted on Wed Feb 28 2024 22:53:58 GMT-0400 (Atlantic Standard Time) by @cheatcode for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 29th 2024 at 04:53:58 UTC by @cheatcode for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28862
 
@@ -39,7 +39,7 @@ Tracking and closing out these tiny debt amounts has several disadvantages:
 3. It clutters the accounting of CDPs and the overall system
 4. It can make liquidations more difficult when negligible amounts are left in CDPs
 
-        
+
 ## Proof of concept
 Reference: https://forum.badger.finance/t/ebtc-builder-update-january/6145/1 
 

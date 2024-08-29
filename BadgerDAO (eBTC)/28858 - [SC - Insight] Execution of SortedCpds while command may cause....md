@@ -1,7 +1,7 @@
 
 # Execution of SortedCpd's while command may cause excessive gas consumption.
 
-Submitted on Wed Feb 28 2024 19:10:58 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Feb 29th 2024 at 01:10:58 UTC by @cryptoticky for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28858
 
@@ -304,8 +304,8 @@ But based on the stored last CDP, the search can be carried out back and forth.
 
 This does not require many modifications to SortedCDPs contact than Solution 1, and will also drastically reduce the number of computations.
 It may be more effective to update this variable whenever there is a change in CDP due to various operations.
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 Let's look at the cases (no CDP and 100 CDPs) : ICR < MCR

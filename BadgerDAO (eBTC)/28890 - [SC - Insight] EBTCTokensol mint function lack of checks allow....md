@@ -1,7 +1,7 @@
 
-# EBTCToken.sol mint function lack of checks allows minting EBTC Tokens to itself ie to EBTCToken contract making it incompatible with transfer and transferFrom restrictions allowing  EBTCToken EBTC balance to be positive and have funds frozen
+# EBTCToken.sol mint function lack of checks allows minting EBTC Tokens to itself ie to EBTCToken contract making it incompatible with transfer and transferFrom restrictions allowing  EBTCToken EBTC balance to be positive and have funds frozen  
 
-Submitted on Thu Feb 29 2024 19:09:47 GMT-0400 (Atlantic Standard Time) by @cryptonoob2k for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Mar 1st 2024 at 01:09:47 UTC by @cryptonoob2k for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28890
 
@@ -86,8 +86,8 @@ Implement a restriction in mint function like the ones implemented in transfer a
 ```
 
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 Here is a foundry test file, save it in packages/contracts/foundry_test subdir and run it with:  
 ```bash

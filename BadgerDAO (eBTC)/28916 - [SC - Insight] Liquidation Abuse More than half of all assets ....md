@@ -1,7 +1,7 @@
 
 # Liquidation Abuse: More than half of all assets can be liquidated in recovery mode.
 
-Submitted on Fri Mar 01 2024 13:48:51 GMT-0400 (Atlantic Standard Time) by @cryptoticky for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
+Submitted on Mar 1st 2024 at 19:48:51 UTC by @cryptoticky for [Boost | eBTC](https://immunefi.com/bounty/ebtc-boost/)
 
 Report ID: #28916
 
@@ -453,8 +453,8 @@ while (
 ) {
 ```
 
-        
-## Proof of concept
+
+
 ## Proof of Concept
 
 ### Scenario for Liquidation Maximization Attack
