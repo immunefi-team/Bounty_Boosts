@@ -105,7 +105,7 @@ You can run this code inside the Forge to see the difference between the results
 
 The result would be: (for a sample and real `claimableFlux` of `156510000000` just for testing purpose)
 
-```  
+```
      Current Implementation  16277040000000
      Actual Implementation   16321757142857
 ```
