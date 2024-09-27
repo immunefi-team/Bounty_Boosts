@@ -1,5 +1,5 @@
 
-# Boost | Shardeum: Core
+# Shardeum Core
 
 ## Reports by Severity
 
