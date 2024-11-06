@@ -4,7 +4,6 @@
 ## Reports by Severity
 
 [Critical](<README.md#critical>) | [High](<README.md#high>) | [Medium](<README.md#medium>) | [Low](<README.md#low>) | [Insight](<README.md#insight>)
-
 <details>
 <summary>Critical</summary>
 
