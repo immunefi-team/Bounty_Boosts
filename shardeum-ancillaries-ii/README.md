@@ -1,4 +1,4 @@
-# Audit Comp Shardeum Ancillaries II
+# Shardeum Ancillaries II
 
 ## Reports by Severity
 

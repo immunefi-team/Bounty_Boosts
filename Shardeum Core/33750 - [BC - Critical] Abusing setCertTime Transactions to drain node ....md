@@ -1,5 +1,4 @@
-
-# Abusing setCertTime Transactions to drain node operators' balance and blocking unstak transaction by renewing stake certificates repeatedly
+# 33750 - \[BC - Critical] Abusing setCertTime Transactions to drain node ...
 
 Submitted on Jul 28th 2024 at 19:37:22 UTC by @ZhouWu for [Boost | Shardeum: Core](https://immunefi.com/bounty/shardeum-core-boost/)
 
@@ -12,54 +11,36 @@ Report severity: Critical
 Target: https://github.com/shardeum/shardeum/tree/dev
 
 Impacts:
-- Direct loss of funds
+
+* Direct loss of funds
 
 ## Description
 
-
 ## Description
-In shardeum there's a mechnism that can extends the expiration date of a stake certificate by the node that is belong to the particular staking. Such transaction is considered
-internal tx type 5, according to enum ( see ref.1)
-Athough shardeum check the validity (see ref.2) of the signature, its failure to check the sign owner of the transaction is the same as nominated node's public key let attacker to be able to extends the stake certification on behalf of the victim node.
-Since shardeum deduct ( see ref.3) transaction cost from node operator account for transaction. The third party can drain the fund. Also unstaking is not possible (see ref.4) before the stake certificate expired, thus, attacker can renew stake certificate of aparitcular node indefintely to keep the stakes locked.
 
-References: 
+In shardeum there's a mechnism that can extends the expiration date of a stake certificate by the node that is belong to the particular staking. Such transaction is considered internal tx type 5, according to enum ( see ref.1) Athough shardeum check the validity (see ref.2) of the signature, its failure to check the sign owner of the transaction is the same as nominated node's public key let attacker to be able to extends the stake certification on behalf of the victim node. Since shardeum deduct ( see ref.3) transaction cost from node operator account for transaction. The third party can drain the fund. Also unstaking is not possible (see ref.4) before the stake certificate expired, thus, attacker can renew stake certificate of aparitcular node indefintely to keep the stakes locked.
+
+References:
+
 1. [enum](https://github.com/shardeum/shardeum/blob/c7b10c2370028f7c7cbd2a01839e50eb50faa904/src/shardeum/shardeumTypes.ts#L95)
-2. [validity]((https://github.com/shardeum/shardeum/blob/c7b10c2370028f7c7cbd2a01839e50eb50faa904/src/tx/setCertTime.ts#L86-L111))
+2. [validity](../Boost%20|%20Shardeum:%20Core/\(https:/github.com/shardeum/shardeum/blob/c7b10c2370028f7c7cbd2a01839e50eb50faa904/src/tx/setCertTime.ts#L86-L111\))
 3. [deduct](https://github.com/shardeum/shardeum/blob/c7b10c2370028f7c7cbd2a01839e50eb50faa904/src/tx/setCertTime.ts#L264-L272)
 4. [no possible](https://github.com/shardeum/shardeum/blob/c7b10c2370028f7c7cbd2a01839e50eb50faa904/src/index.ts#L3747-L3754)
 
-
-
-
-
-
-
 ## Proof of Concept
-- Launch a network of legit nodes 
 
-- Please stake them
-
-- Once you stake a node, wait for it to go active
-
-- Node has to be staked, (Warning: this will not work on node that can be active without staking)
-for some reason the first few node in shardeum go active without staking. Please launch more node than minNode is set in the config, the subsequent node will require staking.
-
-- Grab the public key of the staked node that is in the active list you want to attack its certificate
-
-- Create an empty node project for our attack script
-
-- `mkdir attack`
-
-- `cd attack`
-
-- `npm init -y`
-
-- `npm install axios @shardus/crypto-utils`
-
-- create a file and name `attack.js` and copy paste the source code below
-
-- execute below script `node attack.js [insert victim public key]`, 
+* Launch a network of legit nodes
+* Please stake them
+* Once you stake a node, wait for it to go active
+* Node has to be staked, (Warning: this will not work on node that can be active without staking) for some reason the first few node in shardeum go active without staking. Please launch more node than minNode is set in the config, the subsequent node will require staking.
+* Grab the public key of the staked node that is in the active list you want to attack its certificate
+* Create an empty node project for our attack script
+* `mkdir attack`
+* `cd attack`
+* `npm init -y`
+* `npm install axios @shardus/crypto-utils`
+* create a file and name `attack.js` and copy paste the source code below
+* execute below script `node attack.js [insert victim public key]`,
 
 (Example: `node attack.js b2ba1413988f41de86db7f7002adfbeaa97f6b294364e475feca76e2e0544d1e`)
 
@@ -140,7 +121,8 @@ const main = async  () => {
 
 main();
 ```
-- You can observe the balance of nominator / node operator account's balance being deducted 0.01 SHM per each tx and certExp is kept being updated to the future.
+
+* You can observe the balance of nominator / node operator account's balance being deducted 0.01 SHM per each tx and certExp is kept being updated to the future.
 
 Example output -
 
@@ -200,7 +182,9 @@ Balance and certExp after attack --------------------------------------
   }
 }
 ```
-- Observe operator account's balance is drained 0.01 SHM per attack and cerExp is updated per attack. This can be run in loop.
 
-## Impact 
+* Observe operator account's balance is drained 0.01 SHM per attack and cerExp is updated per attack. This can be run in loop.
+
+## Impact
+
 As stated above, this is a direct loss of fund for node operator and blocking the unstaking of a node. Attacker can modify this script to be in loop indefinity to drain the operator account and lock the unstaking forever. This can be targeted to single operator or all the operator in the network simultaneously.
