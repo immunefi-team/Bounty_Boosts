@@ -1,12 +1,6 @@
 # Table of contents
 
 * [README](README.md)
-* [Anvil: Letters of Credit](anvil-letters-of-credit/README.md)
-  * [36999 \[SC-Insight\] Incomplete Adjustment of \`globalAmountInDynamicUse\` During LOC Liquidation Causes](anvil-letters-of-credit/36999-sc-insight-incomplete-adjustment-of-globalamountindynamicuse-during-loc-liquidation-causes.md)
-  * [36807 \[SC Critical\] Attackers can create a dynamic LOC with any credited amount using minimal colla](anvil-letters-of-credit/36807-sc-critical-attackers-can-create-a-dynamic-loc-with-any-credited-amount-using-minimal-colla.md)
-  * [36970 \[SC-Insight\] Missing \`\_disableInitializer()\` implementation](anvil-letters-of-credit/36970-sc-insight-missing-_disableinitializer-implementation.md)
-  * [36910 \[SC-Critical\] LoC: The creator can withdraw the entire collateral of a Dynamic LoC making it i](anvil-letters-of-credit/36910-sc-critical-loc-the-creator-can-withdraw-the-entire-collateral-of-a-dynamic-loc-making-it-i.md)
-  * [36931 \[SC Critical\] Creators can modify LOCCollateral to release nearly all collateral in a dynamic](anvil-letters-of-credit/36931-sc-critical-creators-can-modify-loccollateral-to-release-nearly-all-collateral-in-a-dynamic.md)
 * [Alchemix](Alchemix/README.md)
   * [30555 - \[SC - Low\] Precision loss when calculating the FLUX amount...](<Alchemix/30555 - \[SC - Low] Precision loss when calculating the FLUX amount....md>)
   * [30556 - \[SC - Low\] Past defeated proposals may become executable i...](<Alchemix/30556 - \[SC - Low] Past defeated proposals may become executable i....md>)
@@ -820,3 +814,10 @@
   * [#36346 \[SC-Insight\] Typehash Discrepancy in CollateralizableTokenAllowanceAdjustment](anvil/36346-sc-insight-typehash-discrepancy-in-collateralizabletokenallowanceadjustment.md)
   * [#36340 \[SC-Insight\] TimeBasedCollateralPool::\_resetAccountTokenStateIfApplicable does not adjust tokenEpochExitBalances after redeeming the account's unstake Units](anvil/36340-sc-insight-timebasedcollateralpool-_resetaccounttokenstateifapplicable-does-not-adjust-tokenep.md)
   * [#36309 \[SC-Low\] TimeBasedCollateralPool: After \_resetPool gets called (internally) a depositor can break most functionalities of the smart contract](anvil/36309-sc-low-timebasedcollateralpool-after-_resetpool-gets-called-internally-a-depositor-can-break-m.md)
+* [Anvil: Letters of Credit](anvil-letters-of-credit/README.md)
+  * [#36807 \[SC-Critical\] attackers can create dynamic loc with any credited amount with very small co...](anvil-letters-of-credit/36807-sc-critical-attackers-can-create-dynamic-loc-with-any-credited-amount-with-very-small-co....md)
+  * [#36931 \[SC-Critical\] critical creators can modifyloccollateral of dynamic loc to release ....](anvil-letters-of-credit/36931-sc-critical-critical-creators-can-modifyloccollateral-of-dynamic-loc-to-release-.....md)
+  * [#36910 \[SC-Critical\] LoC: The creator can withdraw the entire collateral of a Dynamic LoC making it insolvent](anvil-letters-of-credit/36910-sc-critical-loc-the-creator-can-withdraw-the-entire-collateral-of-a-dynamic-loc-making-it-inso.md)
+  * [#36970 \[SC-Insight\] Missing \`\_disableInitializer()\` implementation](anvil-letters-of-credit/36970-sc-insight-missing-_disableinitializer-implementation.md)
+  * [#36999 \[SC-Insight\] Incomplete Adjustment of \`globalAmountInDynamicUse\` During LOC Liquidation Causes Accumulated Dust and DoS Risk](anvil-letters-of-credit/36999-sc-insight-incomplete-adjustment-of-globalamountindynamicuse-during-loc-liquidation-causes-acc.md)
+* [Page](page.md)

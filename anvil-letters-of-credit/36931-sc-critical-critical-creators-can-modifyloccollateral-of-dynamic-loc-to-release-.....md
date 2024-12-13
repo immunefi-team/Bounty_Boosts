@@ -1,4 +1,4 @@
-# 36931 \[SC Critical] Creators can modify LOCCollateral to release nearly all collateral in a dynamic
+# #36931 \[SC-Critical] critical creators can modifyloccollateral of dynamic loc to release ....
 
 ## #36931 \[SC-Critical] Creators can modifyLOCCollateral of dynamic LOC to release almost all the collateral of LOC
 

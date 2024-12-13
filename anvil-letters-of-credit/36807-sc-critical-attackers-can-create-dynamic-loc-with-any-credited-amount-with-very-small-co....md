@@ -1,4 +1,4 @@
-# 36807 \[SC Critical] Attackers can create a dynamic LOC with any credited amount using minimal collat
+# #36807 \[SC-Critical] attackers can create dynamic loc with any credited amount with very small co...
 
 ## #36807 \[SC-Critical] Attackers can create dynamic LOC with any credited amount with very small collateral amount
 
