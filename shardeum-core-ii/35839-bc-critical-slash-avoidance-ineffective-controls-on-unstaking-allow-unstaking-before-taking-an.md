@@ -56,11 +56,11 @@ In order to exploit the bug, the attacker would need to be a validator in the ne
 
 Demo video of PoC: https://youtu.be/rkp3IG9YPPQ
 
-GIST with PoC code: https://gist.github.com/byronrthomas/1ac9bdfb55e3278371448b1e82329d79
+GIST with PoC code: [https://youtu.be/rkp3IG9YPPQ](https://youtu.be/rkp3IG9YPPQ)
 
 ## Link to Proof of Concept
 
-https://gist.github.com/byronrthomas/1ac9bdfb55e3278371448b1e82329d79
+[https://youtu.be/rkp3IG9YPPQ](https://youtu.be/rkp3IG9YPPQ)
 
 ## Proof of Concept
 

@@ -73,7 +73,7 @@ https://youtu.be/8-\_fydHRUbU - the video of my PoC
 
 ## Link to Proof of Concept
 
-https://gist.github.com/byronrthomas/95752480309f6711367895b4dcf30ac6
+[https://youtu.be/8-\_fydHRUbU](https://youtu.be/8-_fydHRUbU)
 
 ## Proof of Concept
 
