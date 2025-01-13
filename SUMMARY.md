@@ -820,7 +820,6 @@
   * [#36910 \[SC-Critical\] LoC: The creator can withdraw the entire collateral of a Dynamic LoC making it insolvent](anvil-letters-of-credit/36910-sc-critical-loc-the-creator-can-withdraw-the-entire-collateral-of-a-dynamic-loc-making-it-inso.md)
   * [#36970 \[SC-Insight\] Missing \`\_disableInitializer()\` implementation](anvil-letters-of-credit/36970-sc-insight-missing-_disableinitializer-implementation.md)
   * [#36999 \[SC-Insight\] Incomplete Adjustment of \`globalAmountInDynamicUse\` During LOC Liquidation Causes Accumulated Dust and DoS Risk](anvil-letters-of-credit/36999-sc-insight-incomplete-adjustment-of-globalamountindynamicuse-during-loc-liquidation-causes-acc.md)
-* [Page](page.md)
 * [Fluid Protocol](fluid-protocol/README.md)
   * [#36922 \[SC-Insight\] the function claim\_collateral in borrowOperation have read only attribute while the invoked claim\_collateral function have write attribute, this lead to compiler-time error](fluid-protocol/36922-sc-insight-the-function-claim_collateral-in-borrowoperation-have-read-only-attribute-while-the.md)
   * [#37056 \[SC-Insight\] \`require\_at\_least\_min\_net\_debt\` did not emit correct error message](fluid-protocol/37056-sc-insight-require_at_least_min_net_debt-did-not-emit-correct-error-message.md)
