@@ -1,4 +1,4 @@
-# IOP SwayLend Frontend
+# SwayLend Frontend
 
 ## Reports by Severity
 
