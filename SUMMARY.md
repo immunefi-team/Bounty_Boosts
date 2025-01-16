@@ -866,3 +866,6 @@
   * [#37311 \[SC-High\] Attackers can steal rewards by depositing, updating vault balance and withdrawing immediately after a large reward is deposited](jito-restaking/37311-sc-high-attackers-can-steal-rewards-by-depositing-updating-vault-balance-and-withdrawing-immed.md)
   * [#37295 \[SC-High\] Rewards can be stolen by depositing immediately after reward tokens get sent to vault](jito-restaking/37295-sc-high-rewards-can-be-stolen-by-depositing-immediately-after-reward-tokens-get-sent-to-vault.md)
   * [#37314 \[SC-High\] Vault creators can not withdraw their fees without being recursively charged (vault and program) fees on their own fees which causes permanent loss of funds](jito-restaking/37314-sc-high-vault-creators-can-not-withdraw-their-fees-without-being-recursively-charged-vault-and.md)
+* [IOP SwayLend Frontend](iop-swaylend-frontend/README.md)
+  * [#37822 \[W\&A-Insight\] insight incorrect amounts displayed to foreign users](iop-swaylend-frontend/37822-w-and-a-insight-insight-incorrect-amounts-displayed-to-foreign-users.md)
+  * [#37196 \[W\&A-Insight\] DOS due to Misleading 'CircularProgressBar' Display Due to Rounding of 'supplyUsed"](iop-swaylend-frontend/37196-w-and-a-insight-dos-due-to-misleading-circularprogressbar-display-due-to-rounding-of-supplyuse.md)
